@@ -52,12 +52,14 @@ GUARDRAILS = {
         "Use semantic shape scale rather than repeating one large radius across every component.",
         "Lean on tonal containers and role-driven color emphasis instead of neutral enterprise panels.",
         "Do not default to a fixed desktop sidebar when generating Material dashboard screens.",
+        "Vary container shapes and corner sizes by component role instead of applying one universal rounded treatment.",
     ],
     "primer-product-ui": [
         "Favor calm PageLayout-style structure, clear page headers, and product-oriented navigation over bespoke dashboard framing.",
         "Keep radii, shadows, and surface treatment restrained, relying on muted containers and whitespace discipline.",
         "Prefer page header, nav list, and underline-nav style patterns before inventing custom chrome.",
         "Use semantic landmarks and focused hierarchy so the output feels like a GitHub product surface rather than a themed admin panel.",
+        "Prefer flat borders and section grouping over repeated tile-like dashboard cards.",
     ],
     "smarthr-design-system": [
         "Use calm, approachable Japanese business-product surfaces with whitespace and borders doing more work than shadow or contrast-heavy shells.",
@@ -76,6 +78,7 @@ GUARDRAILS = {
         "Express Adobe-like polish through typography, spacing, and detailed component hierarchy rather than generic enterprise density.",
         "Favor cohesive, approachable, contextual workflows over heavy admin-console styling.",
         "Use accent color and panel structure with restraint so the result feels modern, friendly, and detail-oriented.",
+        "Use lighter navigation framing and refined workflow chrome before falling back to console-like side rails.",
     ],
 }
 

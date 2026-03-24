@@ -350,13 +350,16 @@ def status_color(system, label):
 def badge(system, label):
     color = status_color(system, label)
     if system["slug"] == "atlassian-design-system":
-        return f'<span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:{system["primary_soft"]}; color:{color};">{label}</span>'
+        tone = {"Critical": "Removed", "Warning": "In progress", "Approval": "Moved", "Update": "New", "Notice": "Default"}.get(label, label)
+        return f'<span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:{system["primary_soft"]}; color:{color};">{tone}</span>'
     if system["slug"] == "carbon-design-system":
         return f'<span class="inline-flex items-center px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:{system["surface_alt"]}; color:{color}; border-left:3px solid {color};">{label}</span>'
     if system["slug"] == "material-design":
         return f'<span class="inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-medium" style="background:{system["primary_soft"]}; color:{color};">{label}</span>'
     if system["slug"] == "primer-product-ui":
-        return f'<span class="inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-medium" style="border-color:{system["border"]}; color:{color}; background:{system["surface"]};">{label}</span>'
+        return f'<span class="inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-medium" style="border-color:{system["border"]}; color:{color}; background:{system["surface"]};">{label}</span>'
+    if system["slug"] == "digital-agency-design-system":
+        return f'<span class="inline-flex items-center border px-2 py-1 text-[11px] font-semibold" style="background:{system["surface"]}; color:{color}; border-color:{color};">{label}</span>'
     if system["slug"] == "fluent-2":
         phrase = {"Update": "Updated", "Approval": "Needs review", "Critical": "Critical", "Warning": "Warning", "Notice": "Info"}.get(label, label)
         return f'<span class="inline-flex items-center rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:{system["primary_soft"]}; color:{color};">{phrase}</span>'
@@ -366,6 +369,20 @@ def badge(system, label):
 
 
 def control_button(system, label, kind="secondary"):
+    if system["slug"] == "carbon-design-system":
+        if kind == "primary":
+            return f'<button class="px-4 py-2 text-sm font-semibold" style="background:{system["primary"]}; color:white; border-radius:0;">{label} →</button>'
+        if kind == "ghost":
+            return f'<button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:{system["primary"]}; border-radius:0;">{label}</button>'
+        return f'<button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:{system["text"]}; border:1px solid {system["border"]}; border-radius:0;">{label}</button>'
+    if system["slug"] == "fluent-2":
+        if kind == "primary":
+            return f'<button class="px-4 py-2 text-sm font-semibold" style="background:{system["primary"]}; color:white; border-radius:{system["button_radius"]};">{label}</button>'
+        if kind == "ghost":
+            return f'<button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:{system["primary"]}; border-radius:{system["button_radius"]};">{label}</button>'
+        return f'<button class="px-3 py-2 text-sm font-medium" style="background:{system["surface_alt"]}; color:{system["text"]}; border:1px solid {system["border"]}; border-radius:{system["button_radius"]};">{label}</button>'
+    if system["slug"] == "digital-agency-design-system" and kind == "ghost":
+        return f'<button class="px-3 py-2 text-sm font-medium underline underline-offset-4" style="background:transparent; color:{system["primary"]}; border-radius:{system["button_radius"]};">{label}</button>'
     if kind == "primary":
         return f'<button class="px-4 py-2 text-sm font-semibold" style="background:{system["primary"]}; color:white; border-radius:{system["button_radius"]};">{label}</button>'
     if kind == "ghost":
@@ -381,10 +398,11 @@ def summary_cards(system):
             tone = "Approval"
         if "エラー" in label:
             tone = "Critical"
-        bg = system["surface_alt"] if system["slug"] in {"material-design", "sparkle-design"} else system["surface"]
+        bg = system["surface_alt"] if system["slug"] in {"material-design", "sparkle-design", "fluent-2"} else system["surface"]
+        shadow = "none" if system["slug"] in {"primer-product-ui", "digital-agency-design-system"} else system["shadow"]
         blocks.append(
             f"""
-            <section class="border p-4" style="background:{bg}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{system['shadow']};">
+            <section class="border p-4" style="background:{bg}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{shadow};">
               <div class="flex items-start justify-between gap-3">
                 <div>
                   <p class="text-sm font-semibold" style="color:{system['muted']};">{label}</p>
@@ -428,6 +446,14 @@ def alert_list(system):
 def approval_list(system):
     items = []
     for user, master, kind, time, sla in APPROVALS:
+        primary_kind = "primary"
+        primary_label = "承認"
+        if system["slug"] in {"fluent-2", "carbon-design-system"}:
+            primary_kind = "secondary"
+            primary_label = "レビュー"
+        if system["slug"] == "primer-product-ui":
+            primary_kind = "secondary"
+            primary_label = "Open"
         items.append(
             f"""
             <li class="border p-4" style="background:{system['surface_alt']}; border-color:{system['border']}; border-radius:{system['radius']};">
@@ -442,7 +468,7 @@ def approval_list(system):
                 <span>{time} / {sla}</span>
                 <div class="flex gap-2">
                   {control_button(system, "詳細")}
-                  {control_button(system, "承認", "primary")}
+                  {control_button(system, primary_label, primary_kind)}
                 </div>
               </div>
             </li>
@@ -499,8 +525,9 @@ def table_region(system):
             </tr>
             """
         )
+    article_shadow = "none" if system["slug"] in {"primer-product-ui", "digital-agency-design-system"} else system["shadow"]
     return f"""
-    <article class="border overflow-hidden" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{system['shadow']};">
+    <article class="border overflow-hidden" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{article_shadow};">
       {toolbar}
       <div class="overflow-x-auto">
         <table class="min-w-full text-sm" style="color:{system['muted']};">
@@ -540,8 +567,9 @@ def timeline_region(system):
             </li>
             """
         )
+    article_shadow = "none" if system["slug"] in {"primer-product-ui", "digital-agency-design-system"} else system["shadow"]
     return f"""
-    <article class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{system['shadow']};">
+    <article class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{article_shadow};">
       <div class="flex items-center justify-between">
         <div>
           <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Activity</p>
@@ -565,20 +593,44 @@ def side_nav(system, active_index=0):
     for idx, label in enumerate(NAV):
         bg = system["primary_soft"] if idx == active_index else "transparent"
         color = system["primary"] if idx == active_index else system["muted"]
-        text = f"{icon_map[idx]} {label}" if system["slug"] in {"fluent-2", "primer-product-ui"} else label
+        text = f"{icon_map[idx]} {label}" if system["slug"] in {"fluent-2"} else label
+        trailing = f"{idx + 1:02d}"
+        if system["slug"] == "atlassian-design-system":
+            text = ["Overview", "Masters", "Approvals", "Activity", "Audit", "People", "Settings"][idx]
+            trailing = ""
+        if system["slug"] == "human-interface-guidelines":
+            text = ["Overview", "Masters", "Approvals", "Recents", "Logs", "People", "Settings"][idx]
+            trailing = ""
         items.append(
-            f'<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:{bg}; color:{color}; border-radius:{system["button_radius"]};"><span>{text}</span><span class="text-[11px] opacity-70">{idx + 1:02d}</span></a>'
+            f'<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:{bg}; color:{color}; border-radius:{system["button_radius"]};"><span>{text}</span><span class="text-[11px] opacity-70">{trailing}</span></a>'
         )
     return "\n".join(items)
 
 
 def header_block(system):
+    eyebrow = system["header_tag"]
+    body = "更新・承認・異常検知を1画面で確認できる運用ダッシュボード"
+    create_label = "新規登録"
+    notice_label = "通知 3"
     if system["slug"] == "smarthr-design-system":
         eyebrow = "マスタ管理システム"
         body = "更新・承認・異常検知を、落ち着いた業務UIで確認する画面"
-    else:
-        eyebrow = system["header_tag"]
-        body = "更新・承認・異常検知を1画面で確認できる運用ダッシュボード"
+    if system["slug"] == "fluent-2":
+        body = "作業導線を優先した、落ち着いた生産性UIのダッシュボード"
+        create_label = "新規作成"
+        notice_label = "アクティビティ"
+    if system["slug"] == "primer-product-ui":
+        body = "Focused product page for operational review, approval, and audit activity."
+        create_label = "New master"
+        notice_label = "Notifications"
+    if system["slug"] == "digital-agency-design-system":
+        body = "手続きの状況、承認、更新を分かりやすく確認するための画面"
+        create_label = "登録"
+        notice_label = "お知らせ"
+    if system["slug"] == "human-interface-guidelines":
+        body = "Content-first operational overview using sidebar, toolbar, and grouped content."
+        create_label = "Add"
+        notice_label = "Updates"
     search = f'<label class="flex min-w-[220px] items-center gap-3 border px-3 py-2" style="background:{system["surface"]}; border-color:{system["border"]}; border-radius:{system["button_radius"]}; color:{system["muted"]};"><span class="text-xs">Search</span><input class="w-full bg-transparent text-sm outline-none" value="商品 / コード / 管理部署" /></label>'
     return f"""
     <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -589,8 +641,8 @@ def header_block(system):
       </div>
       <div class="flex flex-wrap items-center gap-2">
         {search}
-        {control_button(system, '新規登録', 'primary')}
-        {control_button(system, '通知 3')}
+        {control_button(system, create_label, 'primary')}
+        {control_button(system, notice_label)}
       </div>
     </div>
     """
@@ -602,10 +654,11 @@ def content_grid(system):
     approvals = approval_list(system)
     table = table_region(system)
     activity = timeline_region(system)
+    section_shadow = "none" if system["slug"] in {"primer-product-ui", "digital-agency-design-system"} else system["shadow"]
     return f"""
     <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">{cards}</section>
     <section class="mt-6 grid gap-4 xl:grid-cols-[1.2fr_1fr]">
-      <article class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{system['shadow']};">
+      <article class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{section_shadow};">
         <div class="flex items-center justify-between">
           <div>
             <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Alerts</p>
@@ -615,7 +668,7 @@ def content_grid(system):
         </div>
         <ul class="mt-4 space-y-3">{alerts}</ul>
       </article>
-      <article class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{system['shadow']};">
+      <article class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{section_shadow};">
         <div class="flex items-center justify-between">
           <div>
             <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Approvals</p>
@@ -825,15 +878,115 @@ def layout_material(system):
         f'<a href="#" class="flex flex-col items-center gap-1 px-2 py-3 text-xs font-medium" style="color:{system["primary"] if i == 0 else system["muted"]};"><span class="rounded-full px-3 py-2" style="background:{system["primary_soft"] if i == 0 else "transparent"};">●</span><span>{label[:4]}</span></a>'
         for i, label in enumerate(NAV[:5])
     )
+    cards = summary_cards(system)
+    alerts = alert_list(system)
+    approvals = approval_list(system)
+    table = table_region(system)
+    activity = timeline_region(system)
     return f"""
-    <div class="min-h-screen lg:grid lg:grid-cols-[96px_minmax(0,1fr)]">
+    <div class="min-h-screen">
+      <div class="px-4 py-2 text-xs lg:px-8" style="background:{system['primary_soft']}; color:{system['primary']};">Adaptive shell preview: top app bar, navigation rail, and supporting pane shift with viewport width.</div>
+      <header class="border-b px-4 py-3 lg:px-8" style="background:{system['surface']}; border-color:{system['border']};">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Adaptive shell</p>
+            <h1 class="mt-1 text-2xl font-semibold" style="color:{system['text']};">マスタ管理ダッシュボード</h1>
+          </div>
+          <div class="flex gap-2">
+            {control_button(system, 'フィルタ')}
+            {control_button(system, '新規登録', 'primary')}
+          </div>
+        </div>
+      </header>
+      <div class="lg:grid lg:grid-cols-[96px_minmax(0,1fr)]">
       <aside class="border-r px-3 py-5" style="background:{system['secondary_shell']}; border-color:{system['border']};">
         <div class="space-y-2">{rail}</div>
       </aside>
       <main class="px-4 py-4 lg:px-8 lg:py-6">
-        <header class="border px-5 py-4" style="background:{system['surface_alt']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{system['shadow']};">{header_block(system)}</header>
-        <div class="mt-6">{content_grid(system)}</div>
+        <section class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <div class="space-y-4">
+            <header class="border px-5 py-4" style="background:{system['surface_alt']}; border-color:{system['border']}; border-radius:12px; box-shadow:{system['shadow']};">
+              <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Role-driven containers</p>
+                  <p class="mt-2 text-sm" style="color:{system['muted']};">Use tonal hierarchy, adaptive navigation, and shape variation across summary, approval, and data regions.</p>
+                </div>
+                <div class="flex gap-2">
+                  {control_button(system, 'チップ: 全体', 'ghost')}
+                  {control_button(system, '通知')}
+                </div>
+              </div>
+            </header>
+            <section class="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+              <article class="border p-5" style="background:{system['surface_alt']}; border-color:{system['border']}; border-radius:24px; box-shadow:{system['shadow']};">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Featured container</p>
+                    <h3 class="mt-2 text-2xl font-semibold" style="color:{system['text']};">Operational status</h3>
+                    <p class="mt-2 text-sm" style="color:{system['muted']};">Lead with a higher-emphasis tonal container before lower-priority metric tiles.</p>
+                  </div>
+                  {badge(system, 'Update')}
+                </div>
+                <div class="mt-5 grid gap-4 sm:grid-cols-3">
+                  <div class="rounded-[20px] px-4 py-4" style="background:{system['surface']};">
+                    <p class="text-sm" style="color:{system['muted']};">Pending approval</p>
+                    <p class="mt-2 text-3xl font-semibold" style="color:{system['text']};">7</p>
+                  </div>
+                  <div class="rounded-[16px] px-4 py-4" style="background:{system['surface']};">
+                    <p class="text-sm" style="color:{system['muted']};">Alerts</p>
+                    <p class="mt-2 text-3xl font-semibold" style="color:{system['text']};">5</p>
+                  </div>
+                  <div class="rounded-[12px] px-4 py-4" style="background:{system['surface']};">
+                    <p class="text-sm" style="color:{system['muted']};">Updated today</p>
+                    <p class="mt-2 text-3xl font-semibold" style="color:{system['text']};">42</p>
+                  </div>
+                </div>
+              </article>
+              <section class="grid gap-4 sm:grid-cols-2">{cards}</section>
+            </section>
+          </div>
+          <aside class="space-y-4">
+            <section class="border p-4" style="background:{system['surface']}; border-color:{system['border']}; border-radius:28px 12px 28px 12px; box-shadow:{system['shadow']};">
+              <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Supporting pane</p>
+              <p class="mt-2 text-sm" style="color:{system['muted']};">Adaptive layout uses a rail for destinations and a separate supporting pane for low-priority operational context.</p>
+            </section>
+            <section class="border p-4" style="background:{system['surface']}; border-color:{system['border']}; border-radius:12px; box-shadow:{system['shadow']};">
+              <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Pending work</p>
+              <div class="mt-3 space-y-3">
+                <div class="rounded-full px-3 py-2 text-sm" style="background:{system['primary_soft']}; color:{system['primary']};">承認待ち 7</div>
+                <div class="rounded-full px-3 py-2 text-sm" style="background:{system['surface_alt']}; color:{system['warning']};">期限超過 3</div>
+              </div>
+            </section>
+          </aside>
+        </section>
+        <section class="mt-6 grid gap-4 xl:grid-cols-[1.15fr_0.95fr]">
+          <article class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:12px; box-shadow:{system['shadow']};">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Approvals</p>
+                <h3 class="mt-2 text-xl font-semibold" style="color:{system['text']};">承認待ち</h3>
+              </div>
+              {badge(system, 'Approval')}
+            </div>
+            <ul class="mt-4 space-y-3">{approvals}</ul>
+          </article>
+          <article class="border p-5" style="background:{system['surface_alt']}; border-color:{system['border']}; border-radius:28px 12px 28px 12px; box-shadow:{system['shadow']};">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Alerts</p>
+                <h3 class="mt-2 text-xl font-semibold" style="color:{system['text']};">要対応アラート</h3>
+              </div>
+              {badge(system, 'Critical')}
+            </div>
+            <ul class="mt-4 space-y-3">{alerts}</ul>
+          </article>
+        </section>
+        <section class="mt-6 grid gap-4 2xl:grid-cols-[1.45fr_0.75fr]">
+          {table}
+          {activity}
+        </section>
       </main>
+      </div>
     </div>
     """
 
@@ -843,9 +996,15 @@ def layout_primer(system):
         f'<a href="#" class="px-3 py-3 text-sm font-medium" style="color:{system["primary"] if i == 0 else system["muted"]}; border-bottom:2px solid {system["primary"] if i == 0 else "transparent"};">{label}</a>'
         for i, label in enumerate(["Overview", "Approvals", "History", "Audit"])
     )
+    cards = summary_cards(system)
+    alerts = alert_list(system)
+    approvals = approval_list(system)
+    table = table_region(system)
+    activity = timeline_region(system)
     return f"""
     <div class="min-h-screen px-4 py-5 lg:px-8">
       <header class="border-b pb-4" style="border-color:{system['border']};">
+        <div class="mb-3 text-sm" style="color:{system['muted']};">Settings / Data governance / Masters</div>
         <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p class="text-sm" style="color:{system['muted']};">{system['header_tag']}</p>
@@ -858,17 +1017,58 @@ def layout_primer(system):
         </div>
         <nav class="mt-4 flex flex-wrap gap-1">{tabs}</nav>
       </header>
-      <div class="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
-        <div>{content_grid(system)}</div>
+      <div class="mt-6 grid gap-6 xl:grid-cols-[220px_minmax(0,1fr)_320px]">
+        <aside>
+          <nav class="border rounded-md p-2" style="background:{system['surface']}; border-color:{system['border']};">
+            {side_nav(system)}
+          </nav>
+        </aside>
+        <div class="space-y-6">
+          <section class="grid gap-3 md:grid-cols-2">
+            <article class="border rounded-md px-4 py-3" style="background:{system['surface']}; border-color:{system['border']};">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold" style="color:{system['text']};">Overview</p>
+                  <p class="mt-1 text-sm" style="color:{system['muted']};">Low-noise summary blocks with direct counts and restrained framing.</p>
+                </div>
+                {badge(system, 'Update')}
+              </div>
+            </article>
+            <article class="border rounded-md px-4 py-3" style="background:{system['surface_alt']}; border-color:{system['border']};">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold" style="color:{system['text']};">Checks</p>
+                  <p class="mt-1 text-sm" style="color:{system['muted']};">Alerts, approvals, and metadata stay near the records they affect.</p>
+                </div>
+                <span class="text-xs" style="color:{system['muted']};">3 open</span>
+              </div>
+            </article>
+          </section>
+          <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">{cards}</section>
+          <section class="grid gap-4 xl:grid-cols-[1.2fr_1fr]">
+            {table}
+            <section class="space-y-4">
+              {activity}
+              <article class="border p-4" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']};">
+                <p class="text-sm font-semibold" style="color:{system['text']};">Review queue</p>
+                <ul class="mt-3 space-y-3">{approvals}</ul>
+              </article>
+            </section>
+          </section>
+        </div>
         <aside class="space-y-4">
-          <section class="border p-4" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']};">
-            <p class="text-sm font-semibold" style="color:{system['text']};">Repository-style navigation</p>
-            <nav class="mt-3 space-y-1">{side_nav(system)}</nav>
+          <section class="border p-4" style="background:{system['surface_alt']}; border-color:{system['border']}; border-radius:{system['radius']};">
+            <p class="text-sm font-semibold" style="color:{system['text']};">Repository-style context</p>
+            <p class="mt-2 text-sm" style="color:{system['muted']};">Focused side pane for metadata, checks, and related context.</p>
           </section>
           <section class="border p-4" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']};">
             <p class="text-sm font-semibold" style="color:{system['text']};">Notes</p>
             <p class="mt-2 text-sm" style="color:{system['muted']};">Focused PageLayout with restrained panels, muted chrome, and product-oriented hierarchy.</p>
           </section>
+          <article class="border p-4" style="background:{system['surface_alt']}; border-color:{system['border']}; border-radius:{system['radius']};">
+            <p class="text-sm font-semibold" style="color:{system['text']};">Alert summary</p>
+            <ul class="mt-3 space-y-3">{alerts}</ul>
+          </article>
         </aside>
       </div>
     </div>
@@ -918,19 +1118,86 @@ def layout_sparkle(system):
 
 
 def layout_spectrum(system):
+    cards = summary_cards(system)
+    alerts = alert_list(system)
+    approvals = approval_list(system)
+    table = table_region(system)
+    activity = timeline_region(system)
     return f"""
     <div class="min-h-screen">
-      <div class="lg:grid lg:grid-cols-[88px_minmax(0,1fr)]">
-        <aside class="px-3 py-5" style="background:{system['secondary_shell']}; color:white;">
-          <div class="space-y-4 text-center text-xs text-slate-300">
-            <div>A</div><div>L</div><div>R</div><div>C</div>
+      <header class="border-b px-4 py-3 lg:px-8" style="background:{system['surface']}; border-color:{system['border']};">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Spectrum workflow</p>
+            <h1 class="mt-1 text-2xl font-semibold" style="color:{system['text']};">マスタ管理ダッシュボード</h1>
+          </div>
+          <div class="flex gap-2">
+            {control_button(system, 'Share')}
+            {control_button(system, 'Publish', 'primary')}
+          </div>
+        </div>
+      </header>
+      <div class="lg:grid lg:grid-cols-[120px_minmax(0,1fr)]">
+        <aside class="px-4 py-5" style="background:{system['surface_alt']}; color:{system['muted']}; border-right:1px solid {system['border']};">
+          <div class="space-y-4 text-center text-xs">
+            <div class="rounded-xl py-2" style="background:{system['surface']}; color:{system['text']}; box-shadow:{system['shadow']};">Home</div>
+            <div>Assets</div>
+            <div>Review</div>
+            <div>Publish</div>
           </div>
         </aside>
         <main class="px-4 py-4 lg:px-8 lg:py-6">
           <header class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{system['shadow']};">
-            {header_block(system)}
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Creative workflow</p>
+                <h2 class="mt-2 text-3xl font-semibold" style="color:{system['text']};">Master data review workspace</h2>
+                <p class="mt-2 text-sm" style="color:{system['muted']};">Refined workflow chrome, lighter navigation framing, and friendlier hierarchy for approvals, alerts, and publishing.</p>
+              </div>
+              <div class="flex gap-2">
+                {control_button(system, 'Search')}
+                {control_button(system, 'Review', 'primary')}
+              </div>
+            </div>
           </header>
-          <div class="mt-6">{content_grid(system)}</div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:{system['surface']}; color:{system['text']}; border:1px solid {system['border']};">Review board</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:{system['surface_alt']}; color:{system['muted']};">Publishing</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:{system['surface_alt']}; color:{system['muted']};">Audit</span>
+          </div>
+          <section class="mt-6 grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
+            <div class="space-y-4">
+              <section class="grid gap-4 md:grid-cols-2">
+                <article class="border p-4 md:col-span-2" style="background:{system['surface']}; border-color:{system['border']}; border-radius:16px; box-shadow:{system['shadow']};">
+                  <div class="flex items-center justify-between gap-3">
+                    <div>
+                      <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Workspace status</p>
+                      <p class="mt-2 text-sm" style="color:{system['muted']};">Friendlier workflow framing with clearer review context, quieter shell chrome, and more polished panel hierarchy.</p>
+                    </div>
+                    {badge(system, 'Update')}
+                  </div>
+                </article>
+                {cards}
+              </section>
+              {table}
+            </div>
+            <div class="space-y-4">
+              <article class="border p-5" style="background:{system['surface']}; border-color:{system['border']}; border-radius:{system['radius']}; box-shadow:{system['shadow']};">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.16em]" style="color:{system['muted']};">Review</p>
+                    <h3 class="mt-2 text-xl font-semibold" style="color:{system['text']};">Approvals and alerts</h3>
+                  </div>
+                  {badge(system, 'Approval')}
+                </div>
+                <ul class="mt-4 space-y-3">{approvals}</ul>
+                <div class="mt-4 border-t pt-4" style="border-color:{system['border']};">
+                  <ul class="space-y-3">{alerts}</ul>
+                </div>
+              </article>
+              {activity}
+            </div>
+          </section>
         </main>
       </div>
     </div>

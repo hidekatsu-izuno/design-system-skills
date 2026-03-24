@@ -266,6 +266,8 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - Use semantic shape scale rather than repeating one large radius across every component.
 - Lean on tonal containers and role-driven color emphasis instead of neutral enterprise panels.
 - Do not default to a fixed desktop sidebar when generating Material dashboard screens.
+- Vary container shapes and corner sizes by component role instead of applying one universal rounded treatment.
+- Let one higher-emphasis tonal container lead the page before secondary metric cards; avoid making every summary tile equal in weight.
 
 ## Screen Generation Heuristics
 - **Default page structure:** Use a top app bar with one primary content column. Add navigation rail, drawer, or a supporting pane as complexity increases.

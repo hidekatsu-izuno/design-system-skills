@@ -266,6 +266,8 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - Express Adobe-like polish through typography, spacing, and detailed component hierarchy rather than generic enterprise density.
 - Favor cohesive, approachable, contextual workflows over heavy admin-console styling.
 - Use accent color and panel structure with restraint so the result feels modern, friendly, and detail-oriented.
+- Use lighter navigation framing and refined workflow chrome before falling back to console-like side rails.
+- Include a light workflow toolbar or context strip before relying on dense dashboard cards so the page reads like a polished Adobe workspace.
 
 ## Screen Generation Heuristics
 - **Default page structure:** Use a workflow shell with clear content region, supporting panels, and polished but restrained app chrome.

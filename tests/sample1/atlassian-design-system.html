@@ -27,13 +27,13 @@
       <div class="lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">
         <aside class="border-r px-4 py-5" style="background:#ffffff; border-color:#dcdfe4;">
           <div class="text-xs font-semibold uppercase tracking-[0.16em]" style="color:#44546f;">Workspace navigation</div>
-          <nav class="mt-4 space-y-1"><a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:#e9f2ff; color:#0c66e4; border-radius:8px;"><span>ダッシュボード</span><span class="text-[11px] opacity-70">01</span></a>
-<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>マスタ一覧</span><span class="text-[11px] opacity-70">02</span></a>
-<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>承認待ち</span><span class="text-[11px] opacity-70">03</span></a>
-<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>更新履歴</span><span class="text-[11px] opacity-70">04</span></a>
-<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>監査ログ</span><span class="text-[11px] opacity-70">05</span></a>
-<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>ユーザー/権限</span><span class="text-[11px] opacity-70">06</span></a>
-<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>設定</span><span class="text-[11px] opacity-70">07</span></a></nav>
+          <nav class="mt-4 space-y-1"><a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:#e9f2ff; color:#0c66e4; border-radius:8px;"><span>Overview</span><span class="text-[11px] opacity-70"></span></a>
+<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>Masters</span><span class="text-[11px] opacity-70"></span></a>
+<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>Approvals</span><span class="text-[11px] opacity-70"></span></a>
+<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>Activity</span><span class="text-[11px] opacity-70"></span></a>
+<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>Audit</span><span class="text-[11px] opacity-70"></span></a>
+<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>People</span><span class="text-[11px] opacity-70"></span></a>
+<a href="#" class="flex items-center justify-between px-3 py-2 text-sm font-medium" style="background:transparent; color:#44546f; border-radius:8px;"><span>Settings</span><span class="text-[11px] opacity-70"></span></a></nav>
         </aside>
         <main class="px-4 py-5 lg:px-8">
           <div class="mb-4 rounded px-4 py-3 text-sm" style="background:#e9f2ff; color:#172b4d; border:1px solid #dcdfe4;">Workflow notice: 3 records are waiting on approval and 1 record needs an owner update.</div>
@@ -59,7 +59,7 @@
                   <p class="text-sm font-semibold" style="color:#44546f;">管理中マスタ</p>
                   <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#172b4d;">128</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#0c66e4;">Update</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#0c66e4;">New</span>
               </div>
               <p class="mt-3 text-sm" style="color:#44546f;">+6 this week</p>
             </section>
@@ -71,7 +71,7 @@
                   <p class="text-sm font-semibold" style="color:#44546f;">本日の更新</p>
                   <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#172b4d;">42</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#0c66e4;">Update</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#0c66e4;">New</span>
               </div>
               <p class="mt-3 text-sm" style="color:#44546f;">14 pending approval</p>
             </section>
@@ -83,7 +83,7 @@
                   <p class="text-sm font-semibold" style="color:#44546f;">承認待ち</p>
                   <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#172b4d;">7</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Approval</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Moved</span>
               </div>
               <p class="mt-3 text-sm" style="color:#44546f;">3 over SLA</p>
             </section>
@@ -95,7 +95,7 @@
                   <p class="text-sm font-semibold" style="color:#44546f;">不整合 / エラー</p>
                   <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#172b4d;">5</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#c9372c;">Critical</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#c9372c;">Removed</span>
               </div>
               <p class="mt-3 text-sm" style="color:#44546f;">2 critical</p>
             </section>
@@ -107,7 +107,7 @@
             <p class="text-xs uppercase tracking-[0.16em]" style="color:#44546f;">Alerts</p>
             <h3 class="mt-2 text-xl font-semibold" style="color:#172b4d;">要対応アラート</h3>
           </div>
-          <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#c9372c;">Critical</span>
+          <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#c9372c;">Removed</span>
         </div>
         <ul class="mt-4 space-y-3">
             <li class="border p-4" style="background:#f1f2f4; border-color:#dcdfe4; border-radius:10px;">
@@ -116,7 +116,7 @@
                   <p class="text-sm font-semibold" style="color:#172b4d;">商品マスタ</p>
                   <p class="mt-1 text-sm" style="color:#44546f;">参照不整合</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#c9372c;">Critical</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#c9372c;">Removed</span>
               </div>
               <div class="mt-3 flex items-center justify-between text-xs" style="color:#44546f;">
                 <span>10:24</span>
@@ -134,7 +134,7 @@
                   <p class="text-sm font-semibold" style="color:#172b4d;">取引先マスタ</p>
                   <p class="mt-1 text-sm" style="color:#44546f;">必須項目欠損</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Warning</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">In progress</span>
               </div>
               <div class="mt-3 flex items-center justify-between text-xs" style="color:#44546f;">
                 <span>09:18</span>
@@ -152,7 +152,7 @@
                   <p class="text-sm font-semibold" style="color:#172b4d;">拠点マスタ</p>
                   <p class="mt-1 text-sm" style="color:#44546f;">公開期限切れ</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#0c66e4;">Notice</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#0c66e4;">Default</span>
               </div>
               <div class="mt-3 flex items-center justify-between text-xs" style="color:#44546f;">
                 <span>08:52</span>
@@ -170,7 +170,7 @@
             <p class="text-xs uppercase tracking-[0.16em]" style="color:#44546f;">Approvals</p>
             <h3 class="mt-2 text-xl font-semibold" style="color:#172b4d;">承認待ち</h3>
           </div>
-          <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Approval</span>
+          <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Moved</span>
         </div>
         <ul class="mt-4 space-y-3">
             <li class="border p-4" style="background:#f1f2f4; border-color:#dcdfe4; border-radius:10px;">
@@ -179,7 +179,7 @@
                   <p class="text-sm font-semibold" style="color:#172b4d;">商品分類マスタ</p>
                   <p class="mt-1 text-sm" style="color:#44546f;">山田 花子 / 更新申請</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Approval</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Moved</span>
               </div>
               <div class="mt-3 flex items-center justify-between text-xs" style="color:#44546f;">
                 <span>09:42 / SLA 2h</span>
@@ -197,7 +197,7 @@
                   <p class="text-sm font-semibold" style="color:#172b4d;">店舗マスタ</p>
                   <p class="mt-1 text-sm" style="color:#44546f;">佐藤 健 / 削除申請</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Approval</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Moved</span>
               </div>
               <div class="mt-3 flex items-center justify-between text-xs" style="color:#44546f;">
                 <span>08:30 / SLA 5h</span>
@@ -215,7 +215,7 @@
                   <p class="text-sm font-semibold" style="color:#172b4d;">権限グループ</p>
                   <p class="mt-1 text-sm" style="color:#44546f;">鈴木 一郎 / 新規申請</p>
                 </div>
-                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">Warning</span>
+                <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#b65c02;">In progress</span>
               </div>
               <div class="mt-3 flex items-center justify-between text-xs" style="color:#44546f;">
                 <span>昨日 18:12 / SLA over</span>
@@ -321,7 +321,7 @@
           <p class="text-xs uppercase tracking-[0.16em]" style="color:#44546f;">Activity</p>
           <h3 class="mt-2 text-xl font-semibold" style="color:#172b4d;">更新履歴 / 通知</h3>
         </div>
-        <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#0c66e4;">Update</span>
+        <span class="inline-flex items-center rounded px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.06em]" style="background:#e9f2ff; color:#0c66e4;">New</span>
       </div>
       <div class="mt-4 flex flex-wrap gap-2">
         <button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#0c66e4; border-radius:8px;">全体</button>
