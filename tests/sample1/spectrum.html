@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spectrum Dashboard Mock</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Adobe Clean', ui-sans-serif, system-ui, sans-serif;
+        background: #f5f5f5;
+        color: #2c2c2c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="min-h-screen">
+      <div class="lg:grid lg:grid-cols-[88px_minmax(0,1fr)]">
+        <aside class="px-3 py-5" style="background:#2c2c2c; color:white;">
+          <div class="space-y-4 text-center text-xs text-slate-300">
+            <div>A</div><div>L</div><div>R</div><div>C</div>
+          </div>
+        </aside>
+        <main class="px-4 py-4 lg:px-8 lg:py-6">
+          <header class="border p-5" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+            
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+      <div>
+        <p class="text-xs uppercase tracking-[0.16em]" style="color:#5c5c5c;">Creative workflow</p>
+        <h1 class="mt-2 text-3xl font-semibold" style="color:#2c2c2c;">マスタ管理ダッシュボード</h1>
+        <p class="mt-2 text-sm" style="color:#5c5c5c;">更新・承認・異常検知を1画面で確認できる運用ダッシュボード</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <label class="flex min-w-[220px] items-center gap-3 border px-3 py-2" style="background:#ffffff; border-color:#d5d5d5; border-radius:18px; color:#5c5c5c;"><span class="text-xs">Search</span><input class="w-full bg-transparent text-sm outline-none" value="商品 / コード / 管理部署" /></label>
+        <button class="px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:white; border-radius:18px;">新規登録</button>
+        <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">通知 3</button>
+      </div>
+    </div>
+    
+          </header>
+          <div class="mt-6">
+    <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <section class="border p-4" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#5c5c5c;">管理中マスタ</p>
+                  <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#2c2c2c;">128</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#1473e6; border-color:#1473e6;">Update</span>
+              </div>
+              <p class="mt-3 text-sm" style="color:#5c5c5c;">+6 this week</p>
+            </section>
+            
+
+            <section class="border p-4" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#5c5c5c;">本日の更新</p>
+                  <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#2c2c2c;">42</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#1473e6; border-color:#1473e6;">Update</span>
+              </div>
+              <p class="mt-3 text-sm" style="color:#5c5c5c;">14 pending approval</p>
+            </section>
+            
+
+            <section class="border p-4" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#5c5c5c;">承認待ち</p>
+                  <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#2c2c2c;">7</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Approval</span>
+              </div>
+              <p class="mt-3 text-sm" style="color:#5c5c5c;">3 over SLA</p>
+            </section>
+            
+
+            <section class="border p-4" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#5c5c5c;">不整合 / エラー</p>
+                  <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#2c2c2c;">5</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#d31510; border-color:#d31510;">Critical</span>
+              </div>
+              <p class="mt-3 text-sm" style="color:#5c5c5c;">2 critical</p>
+            </section>
+            </section>
+    <section class="mt-6 grid gap-4 xl:grid-cols-[1.2fr_1fr]">
+      <article class="border p-5" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.16em]" style="color:#5c5c5c;">Alerts</p>
+            <h3 class="mt-2 text-xl font-semibold" style="color:#2c2c2c;">要対応アラート</h3>
+          </div>
+          <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#d31510; border-color:#d31510;">Critical</span>
+        </div>
+        <ul class="mt-4 space-y-3">
+            <li class="border p-4" style="background:#f8f8f8; border-color:#d5d5d5; border-radius:12px;">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#2c2c2c;">商品マスタ</p>
+                  <p class="mt-1 text-sm" style="color:#5c5c5c;">参照不整合</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#d31510; border-color:#d31510;">Critical</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between text-xs" style="color:#5c5c5c;">
+                <span>10:24</span>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">詳細</button>
+                  <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">対象へ移動</button>
+                </div>
+              </div>
+            </li>
+            
+
+            <li class="border p-4" style="background:#f8f8f8; border-color:#d5d5d5; border-radius:12px;">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#2c2c2c;">取引先マスタ</p>
+                  <p class="mt-1 text-sm" style="color:#5c5c5c;">必須項目欠損</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Warning</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between text-xs" style="color:#5c5c5c;">
+                <span>09:18</span>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">詳細</button>
+                  <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">対象へ移動</button>
+                </div>
+              </div>
+            </li>
+            
+
+            <li class="border p-4" style="background:#f8f8f8; border-color:#d5d5d5; border-radius:12px;">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#2c2c2c;">拠点マスタ</p>
+                  <p class="mt-1 text-sm" style="color:#5c5c5c;">公開期限切れ</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#1473e6; border-color:#1473e6;">Notice</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between text-xs" style="color:#5c5c5c;">
+                <span>08:52</span>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">詳細</button>
+                  <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">対象へ移動</button>
+                </div>
+              </div>
+            </li>
+            </ul>
+      </article>
+      <article class="border p-5" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.16em]" style="color:#5c5c5c;">Approvals</p>
+            <h3 class="mt-2 text-xl font-semibold" style="color:#2c2c2c;">承認待ち</h3>
+          </div>
+          <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Approval</span>
+        </div>
+        <ul class="mt-4 space-y-3">
+            <li class="border p-4" style="background:#f8f8f8; border-color:#d5d5d5; border-radius:12px;">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#2c2c2c;">商品分類マスタ</p>
+                  <p class="mt-1 text-sm" style="color:#5c5c5c;">山田 花子 / 更新申請</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Approval</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between text-xs" style="color:#5c5c5c;">
+                <span>09:42 / SLA 2h</span>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">詳細</button>
+                  <button class="px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:white; border-radius:18px;">承認</button>
+                </div>
+              </div>
+            </li>
+            
+
+            <li class="border p-4" style="background:#f8f8f8; border-color:#d5d5d5; border-radius:12px;">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#2c2c2c;">店舗マスタ</p>
+                  <p class="mt-1 text-sm" style="color:#5c5c5c;">佐藤 健 / 削除申請</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Approval</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between text-xs" style="color:#5c5c5c;">
+                <span>08:30 / SLA 5h</span>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">詳細</button>
+                  <button class="px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:white; border-radius:18px;">承認</button>
+                </div>
+              </div>
+            </li>
+            
+
+            <li class="border p-4" style="background:#f8f8f8; border-color:#d5d5d5; border-radius:12px;">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold" style="color:#2c2c2c;">権限グループ</p>
+                  <p class="mt-1 text-sm" style="color:#5c5c5c;">鈴木 一郎 / 新規申請</p>
+                </div>
+                <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Warning</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between text-xs" style="color:#5c5c5c;">
+                <span>昨日 18:12 / SLA over</span>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">詳細</button>
+                  <button class="px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:white; border-radius:18px;">承認</button>
+                </div>
+              </div>
+            </li>
+            </ul>
+      </article>
+    </section>
+    <section class="mt-6 grid gap-4 2xl:grid-cols-[1.45fr_0.75fr]">
+      
+    <article class="border overflow-hidden" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+      
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b px-5 py-4" style="border-color:#d5d5d5; background:#f8f8f8;">
+          <div>
+            <p class="text-xs uppercase tracking-[0.16em]" style="color:#5c5c5c;">Master registry</p>
+            <h3 class="mt-2 text-xl font-semibold" style="color:#2c2c2c;">マスタ一覧</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">状態: すべて</button>
+            <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">部署: 全体</button>
+            <button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">更新順</button>
+          </div>
+        </div>
+        
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm" style="color:#5c5c5c;">
+          <thead style="background:#f8f8f8; color:#5c5c5c;">
+            <tr>
+              <th class="px-4 py-3 text-left font-semibold">マスタ名</th>
+              <th class="px-4 py-3 text-left font-semibold">コード</th>
+              <th class="px-4 py-3 text-left font-semibold">管理部署</th>
+              <th class="px-4 py-3 text-left font-semibold">最終更新</th>
+              <th class="px-4 py-3 text-left font-semibold">更新者</th>
+              <th class="px-4 py-3 text-left font-semibold">ステータス</th>
+              <th class="px-4 py-3 text-right font-semibold">件数</th>
+              <th class="px-4 py-3 text-right font-semibold">エラー</th>
+              <th class="px-4 py-3 text-right font-semibold">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr class="border-t" style="border-color:#d5d5d5;">
+              <td class="px-4 py-3 font-semibold" style="color:#2c2c2c;">商品マスタ</td>
+              <td class="px-4 py-3">MST-001</td>
+              <td class="px-4 py-3">営業本部</td>
+              <td class="px-4 py-3">2026-03-25 09:55</td>
+              <td class="px-4 py-3">山田</td>
+              <td class="px-4 py-3"><span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#008f5d; border-color:#008f5d;">正常</span></td>
+              <td class="px-4 py-3 text-right">3,240</td>
+              <td class="px-4 py-3 text-right">0</td>
+              <td class="px-4 py-3"><div class="flex justify-end gap-2"><button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">詳細</button><button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">編集</button></div></td>
+            </tr>
+            
+            <tr class="border-t" style="border-color:#d5d5d5;">
+              <td class="px-4 py-3 font-semibold" style="color:#2c2c2c;">取引先マスタ</td>
+              <td class="px-4 py-3">MST-004</td>
+              <td class="px-4 py-3">購買部</td>
+              <td class="px-4 py-3">2026-03-25 09:10</td>
+              <td class="px-4 py-3">佐藤</td>
+              <td class="px-4 py-3"><span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">注意</span></td>
+              <td class="px-4 py-3 text-right">1,148</td>
+              <td class="px-4 py-3 text-right">2</td>
+              <td class="px-4 py-3"><div class="flex justify-end gap-2"><button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">詳細</button><button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">編集</button></div></td>
+            </tr>
+            
+            <tr class="border-t" style="border-color:#d5d5d5;">
+              <td class="px-4 py-3 font-semibold" style="color:#2c2c2c;">店舗マスタ</td>
+              <td class="px-4 py-3">MST-021</td>
+              <td class="px-4 py-3">店舗運営部</td>
+              <td class="px-4 py-3">2026-03-25 08:55</td>
+              <td class="px-4 py-3">高橋</td>
+              <td class="px-4 py-3"><span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#1473e6; border-color:#1473e6;">承認待ち</span></td>
+              <td class="px-4 py-3 text-right">244</td>
+              <td class="px-4 py-3 text-right">0</td>
+              <td class="px-4 py-3"><div class="flex justify-end gap-2"><button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">詳細</button><button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">編集</button></div></td>
+            </tr>
+            
+            <tr class="border-t" style="border-color:#d5d5d5;">
+              <td class="px-4 py-3 font-semibold" style="color:#2c2c2c;">権限グループ</td>
+              <td class="px-4 py-3">MST-031</td>
+              <td class="px-4 py-3">情報システム部</td>
+              <td class="px-4 py-3">2026-03-24 18:12</td>
+              <td class="px-4 py-3">鈴木</td>
+              <td class="px-4 py-3"><span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#d31510; border-color:#d31510;">エラー</span></td>
+              <td class="px-4 py-3 text-right">58</td>
+              <td class="px-4 py-3 text-right">3</td>
+              <td class="px-4 py-3"><div class="flex justify-end gap-2"><button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">詳細</button><button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">編集</button></div></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </article>
+    
+      
+    <article class="border p-5" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44, 44, 44, 0.08);">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-[0.16em]" style="color:#5c5c5c;">Activity</p>
+          <h3 class="mt-2 text-xl font-semibold" style="color:#2c2c2c;">更新履歴 / 通知</h3>
+        </div>
+        <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#1473e6; border-color:#1473e6;">Update</span>
+      </div>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button class="px-3 py-2 text-sm font-medium" style="background:transparent; color:#1473e6; border-radius:18px;">全体</button>
+        <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">自分関連</button>
+        <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5; border-radius:18px;">エラーのみ</button>
+      </div>
+      <ul class="mt-5 space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full" style="background:#1473e6;"></span>
+              <div>
+                <p class="text-sm font-medium" style="color:#2c2c2c;">商品マスタが更新されました</p>
+                <p class="mt-1 text-xs" style="color:#5c5c5c;">09:55 / Update</p>
+              </div>
+            </li>
+            
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full" style="background:#b25f00;"></span>
+              <div>
+                <p class="text-sm font-medium" style="color:#2c2c2c;">商品分類マスタの承認依頼があります</p>
+                <p class="mt-1 text-xs" style="color:#5c5c5c;">09:42 / Approval</p>
+              </div>
+            </li>
+            
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full" style="background:#d31510;"></span>
+              <div>
+                <p class="text-sm font-medium" style="color:#2c2c2c;">取引先マスタで必須項目欠損を検知</p>
+                <p class="mt-1 text-xs" style="color:#5c5c5c;">09:18 / Alert</p>
+              </div>
+            </li>
+            
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full" style="background:#b25f00;"></span>
+              <div>
+                <p class="text-sm font-medium" style="color:#2c2c2c;">店舗マスタの削除申請が提出されました</p>
+                <p class="mt-1 text-xs" style="color:#5c5c5c;">08:30 / Approval</p>
+              </div>
+            </li>
+            </ul>
+    </article>
+    
+    </section>
+    </div>
+        </main>
+      </div>
+    </div>
+    </body>
+</html>

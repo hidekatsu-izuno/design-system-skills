@@ -261,6 +261,12 @@ Representative Primer palette for generation based on current product UI primiti
 - Do not over-round containers or use whimsical control styling.
 - Do not replace practical lists and tables with over-carded layouts without reason.
 
+## Dashboard Mock Guardrails
+- Favor calm PageLayout-style structure, clear page headers, and product-oriented navigation over bespoke dashboard framing.
+- Keep radii, shadows, and surface treatment restrained, relying on muted containers and whitespace discipline.
+- Prefer page header, nav list, and underline-nav style patterns before inventing custom chrome.
+- Use semantic landmarks and focused hierarchy so the output feels like a GitHub product surface rather than a themed admin panel.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a utility-first product page with a clear title, optional side navigation, explicit section grouping, and practical action placement.
 - **Default density:** Use medium density with compact tendencies for settings and tool screens.

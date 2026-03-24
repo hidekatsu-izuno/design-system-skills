@@ -261,6 +261,12 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - Do not use playful consumer gimmicks if the product context is serious.
 - Do not treat expressive accents as a substitute for hierarchy and layout discipline.
 
+## Dashboard Mock Guardrails
+- Preserve product personality and brand character instead of collapsing into a monochrome generic admin dashboard.
+- Use controlled accent color, deliberate hierarchy, and polished composition to express system voice without harming usability.
+- Treat reusable layout quality and crafted composition as part of the design output, not just component reuse.
+- Where public guidance is thin, avoid speculative component/token claims and keep the spec explicit about inference.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a clear product shell with opportunities for brand expression in selected anchor areas, while keeping operational content practical.
 - **Default density:** Use medium density with enough breathing room to let the visual system read clearly.

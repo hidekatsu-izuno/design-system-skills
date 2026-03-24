@@ -261,6 +261,12 @@ Representative Apple system palette for generation. Use semantic system colors i
 - Do not replace native segmented controls, sheets, or menus with bespoke alternatives without reason.
 - Do not use over-branded buttons or aggressively custom form fields.
 
+## Dashboard Mock Guardrails
+- Favor Apple-native-feeling sidebars, split views, and toolbars over web-dashboard shells.
+- Use materials and blur only when they read as platform-native structure, not as decorative frosting.
+- Integrate search into the toolbar or title area instead of presenting it as a large standalone utility field.
+- Keep grouped sections, buttons, and status indicators subtle and consistent with platform metaphors.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use content-first structure with native headers, grouped sections, and platform-appropriate sidebars or tab bars.
 - **Default density:** Use comfortable density. Let breathing room and legibility outweigh data compression.

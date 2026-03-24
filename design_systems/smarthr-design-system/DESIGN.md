@@ -261,6 +261,12 @@ Representative SmartHR palette for generation based on public design-token guida
 - Do not over-pack screens with dense micro-panels if simple sections will do.
 - Do not use playful novelty components that weaken trust.
 
+## Dashboard Mock Guardrails
+- Use calm, approachable Japanese business-product surfaces with whitespace and borders doing more work than shadow or contrast-heavy shells.
+- Prefer SmartHR's documented main blue as the primary action anchor in generated screens.
+- Keep labels concise and operational, avoiding presentation-oriented English dashboard framing language.
+- Make side navigation, cards, and data tables feel lightweight, practical, and accessible.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a calm business shell with a readable header, practical navigation, and content grouped into forms, lists, and sections.
 - **Default density:** Use medium density with readable spacing.

@@ -261,6 +261,12 @@ Representative Atlassian palette for generation based on current public guidance
 - Do not use novelty gradients or expressive illustration as the main hierarchy tool.
 - Do not collapse dense workflows into overly sparse mobile-style compositions on desktop.
 
+## Dashboard Mock Guardrails
+- Model the screen as a product workspace with top-level framing plus side navigation, not as an isolated generic admin page.
+- Favor token-driven neutrals, lozenges, banners, and inline messaging over pill-heavy status styling.
+- Keep typography practical and compact, with lightweight metadata rather than display-like page chrome.
+- Reduce heavy dark shells and decorative shadows; Atlassian surfaces should feel light, layered, and operational.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a workspace shell with side navigation, a practical page header, and dense operational content blocks.
 - **Default density:** Use medium-to-dense layout density.

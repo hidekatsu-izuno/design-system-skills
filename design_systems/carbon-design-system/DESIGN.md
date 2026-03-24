@@ -261,6 +261,12 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - Do not collapse dense workflows into excessively spacious layouts.
 - Do not sacrifice grid discipline for asymmetrical flourish.
 
+## Dashboard Mock Guardrails
+- Use Carbon UI shell patterns with a persistent shell header and productive navigation instead of a decorative dark sidebar dashboard.
+- Treat IBM Plex Sans productive hierarchy and a compact 14px-oriented rhythm as defining constraints.
+- Enforce one-primary-action layouts and rely on secondary, tertiary, or ghost buttons for nearby actions.
+- Make data-table toolbars, selection, sorting, and batch actions first-class parts of generated dashboards.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use an enterprise shell with side nav, precise sectioning, and structured content panes aligned to the grid.
 - **Default density:** Use medium-to-dense density with strong alignment.

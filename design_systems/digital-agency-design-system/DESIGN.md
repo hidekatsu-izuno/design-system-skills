@@ -260,6 +260,12 @@ Representative Digital Agency palette for generation based on public component e
 - Do not hide critical instructions inside tooltips or tertiary UI.
 - Do not use playful illustrations or novelty interactions in transactional service flows.
 
+## Dashboard Mock Guardrails
+- Prefer plain service headers, conventional page flow, and simple navigation over branded app-shell chrome.
+- Avoid blur, glossy effects, and heavily rounded card systems; public-service screens should feel direct and conventional.
+- Keep search, labels, notices, and actions utility-oriented rather than hero-like or presentation-led.
+- Favor readable sections and explicit borders over dashboard tile styling.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a conventional service page or form page with strong heading hierarchy, notices, and a clear primary action path.
 - **Default density:** Use medium density with generous readability for text and forms.

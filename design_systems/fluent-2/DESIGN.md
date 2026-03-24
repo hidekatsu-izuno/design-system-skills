@@ -261,6 +261,12 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - Do not over-brand the shell when the product task should dominate.
 - Do not replace standard productivity components with experimental shapes.
 
+## Dashboard Mock Guardrails
+- Use calm token-driven surfaces with subtle dividers instead of decorative shells or glossy header treatments.
+- Keep exactly one prominent primary action per task area and demote the rest to outline, subtle, or transparent styles.
+- Use short task-oriented nav labels and support icon-led navigation where it helps recognition.
+- Write status labels in short sentence-style language and keep badges semantically focused rather than ornamental.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a productivity shell with persistent navigation, clear page title, command region, and structured content panes.
 - **Default density:** Use medium-to-compact density by default.

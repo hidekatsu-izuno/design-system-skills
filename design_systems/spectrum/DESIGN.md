@@ -261,6 +261,12 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - Do not flatten all hierarchy into one neutral gray layer.
 - Do not use rough or mismatched component styling that breaks the polished system tone.
 
+## Dashboard Mock Guardrails
+- Do not treat a dark utility shell as the default Spectrum expression; prefer lighter, refined workflow surfaces unless context clearly calls for dark framing.
+- Express Adobe-like polish through typography, spacing, and detailed component hierarchy rather than generic enterprise density.
+- Favor cohesive, approachable, contextual workflows over heavy admin-console styling.
+- Use accent color and panel structure with restraint so the result feels modern, friendly, and detail-oriented.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a workflow shell with clear content region, supporting panels, and polished but restrained app chrome.
 - **Default density:** Use medium density, allowing denser panels where workflow complexity requires it.

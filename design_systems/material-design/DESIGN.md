@@ -261,6 +261,12 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - Do not use consumer-social styling such as oversized avatars and playful gradients by default.
 - Do not invent custom control shapes that fight Material components.
 
+## Dashboard Mock Guardrails
+- Make adaptive shell behavior explicit: use top app bars, navigation rails, drawers, and supporting panes based on width and complexity.
+- Use semantic shape scale rather than repeating one large radius across every component.
+- Lean on tonal containers and role-driven color emphasis instead of neutral enterprise panels.
+- Do not default to a fixed desktop sidebar when generating Material dashboard screens.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a top app bar with one primary content column. Add navigation rail, drawer, or a supporting pane as complexity increases.
 - **Default density:** Use medium density by default. Tighten spacing only for data-heavy enterprise screens.

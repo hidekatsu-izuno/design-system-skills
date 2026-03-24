@@ -261,6 +261,12 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - Do not replace straightforward controls with overly bespoke alternatives.
 - Do not bury key filters and table actions behind excessive nesting.
 
+## Dashboard Mock Guardrails
+- Prefer functional management shells with literal sider or header navigation over decorative dashboard framing.
+- Keep radii moderate and avoid glass, frosted, or overly soft consumer-style panels.
+- Treat button hierarchy strictly: one primary action in a local group, with default, text, or link buttons for secondary work.
+- Make table toolbars, sorting, filters, and row actions central to dashboard output rather than optional decoration.
+
 ## Screen Generation Heuristics
 - **Default page structure:** Use a management shell with optional sider, page header, filter region, and structured content blocks.
 - **Default density:** Use medium-to-dense density by default.
