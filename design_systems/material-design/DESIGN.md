@@ -271,7 +271,7 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 
 
 ## Responsive Behavior
-- **Mobile:** Use a top app bar with a menu icon that opens navigation as a temporary drawer or sheet. Do not leave a rail or permanent drawer visible.
+- **Mobile:** Use a top app bar with a menu icon that opens a left-side temporary navigation drawer. Do not leave a rail or permanent drawer visible.
 - **Tablet:** Prefer a navigation rail, optionally paired with a supporting pane, and let secondary content wrap under the app bar as needed.
 - **Desktop:** Allow rail, drawer, and supporting pane combinations as adaptive shell elements rather than one fixed sidebar.
 - **Navigation rule:** Material navigation should shift between drawer and rail by width; mobile access should be icon-triggered.

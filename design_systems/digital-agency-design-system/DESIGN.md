@@ -268,10 +268,10 @@ Representative Digital Agency palette for generation based on public component e
 
 
 ## Responsive Behavior
-- **Mobile:** Use a plain hamburger-style menu or disclosure in the header area and keep utility items minimal.
+- **Mobile:** Use a plain hamburger button that opens a left-side drawer / mobile menu, and keep utility items minimal.
 - **Tablet:** Preserve straightforward top-level navigation with limited nesting and restrained secondary actions.
 - **Desktop:** Allow a broader header/navigation presentation, but keep the shell simple and service-oriented.
-- **Navigation rule:** Prefer explicit, government-style menu disclosure over app-like persistent side rails.
+- **Navigation rule:** Prefer an explicit hamburger button plus drawer / mobile menu over app-like persistent side rails.
 - **Table rule:** Keep data readable with horizontal scroll and clear labels instead of compressing the interface aggressively.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a conventional service page or form page with strong heading hierarchy, notices, and a clear primary action path.
