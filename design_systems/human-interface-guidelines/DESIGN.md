@@ -266,6 +266,7 @@ Representative Apple system palette for generation. Use semantic system colors i
 - Use materials and blur only when they read as platform-native structure, not as decorative frosting.
 - Integrate search into the toolbar or title area instead of presenting it as a large standalone utility field.
 - Keep grouped sections, buttons, and status indicators subtle and consistent with platform metaphors.
+- Avoid KPI-tile dashboard grids as the dominant pattern; prefer grouped lists, inset tables, split views, and quiet summary sections that feel native to Apple platforms.
 
 ## Screen Generation Heuristics
 - **Default page structure:** Use content-first structure with native headers, grouped sections, and platform-appropriate sidebars or tab bars.

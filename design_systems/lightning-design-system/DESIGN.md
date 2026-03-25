@@ -266,6 +266,7 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - Use flatter utility-first surfaces and avoid soft rounded dashboard chrome.
 - Bring related lists, tabs, metric display, and explicit action regions into the default composition for dashboard-like pages.
 - Prefer utility icons and explicit status/action patterns over bespoke pills and decorative labels.
+- Do not lead with a generic hero card; start from an object/page header plus highlights panel and related-list structure when generating CRM-like dashboards.
 
 ## Screen Generation Heuristics
 - **Default page structure:** Use an app shell or record-page shell with utility navigation, object header, tabs, and related content regions.

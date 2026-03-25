@@ -266,6 +266,7 @@ Representative SmartHR palette for generation based on public design-token guida
 - Prefer SmartHR's documented main blue as the primary action anchor in generated screens.
 - Keep labels concise and operational, avoiding presentation-oriented English dashboard framing language.
 - Make side navigation, cards, and data tables feel lightweight, practical, and accessible.
+- Avoid chip-heavy navigation and overly rounded promotional framing; SmartHR screens should feel like steady back-office product UI with gentle emphasis.
 
 ## Screen Generation Heuristics
 - **Default page structure:** Use a calm business shell with a readable header, practical navigation, and content grouped into forms, lists, and sections.

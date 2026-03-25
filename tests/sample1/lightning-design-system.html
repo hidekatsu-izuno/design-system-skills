@@ -53,44 +53,50 @@
         </aside>
 
         <main class="px-4 py-4 md:px-6 lg:px-8 lg:py-6">
-          <section class="rounded-3xl border border-[#c9c9c9] bg-white p-5 shadow-sm">
-            <div class="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+          <section class="border border-[#c9c9c9] bg-white px-5 py-4 shadow-sm">
+            <div class="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
               <div>
-                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Record page</p>
-                <h2 class="mt-2 text-3xl font-semibold text-[#181818]">Master account overview</h2>
-                <p class="mt-2 max-w-2xl text-sm text-slate-600">Record-centric layout with clear regions, explicit statuses, and utility-oriented actions.</p>
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Object page</p>
+                <h2 class="mt-2 text-3xl font-semibold text-[#181818]">Master account</h2>
+                <p class="mt-1 text-sm text-slate-600">Record owner: Data Governance Team</p>
               </div>
               <div class="flex flex-wrap gap-2">
                 <button class="rounded-full border border-[#c9c9c9] bg-white px-4 py-2 text-sm font-semibold text-[#181818]">Follow</button>
                 <button class="rounded-full bg-[#0176D3] px-4 py-2 text-sm font-semibold text-white">Edit</button>
               </div>
             </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-[#eef4ff] px-3 py-1 text-[#0176D3]">Account</span>
+              <span class="rounded-full bg-[#f3f3f3] px-3 py-1 text-[#181818]">Active</span>
+              <span class="rounded-full bg-[#f3f3f3] px-3 py-1 text-[#181818]">Last updated today</span>
+            </div>
+          </section>
+
+          <section class="mt-4 border border-[#c9c9c9] bg-white p-5 shadow-sm">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Highlights panel</p>
+                <h3 class="mt-2 text-xl font-semibold text-[#181818]">Account summary</h3>
+              </div>
+              <span class="rounded-full bg-[#eef4ff] px-3 py-1 text-xs font-semibold text-[#0176D3]">Open</span>
+            </div>
+            <div class="mt-5 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl bg-[#f3f3f3] p-4">
+                <p class="text-sm text-slate-500">Health</p>
+                <p class="mt-2 text-3xl font-semibold text-[#181818]">Good</p>
+              </div>
+              <div class="rounded-2xl bg-[#f3f3f3] p-4">
+                <p class="text-sm text-slate-500">Open approvals</p>
+                <p class="mt-2 text-3xl font-semibold text-[#181818]">7</p>
+              </div>
+              <div class="rounded-2xl bg-[#f3f3f3] p-4">
+                <p class="text-sm text-slate-500">Alerts</p>
+                <p class="mt-2 text-3xl font-semibold text-[#181818]">5</p>
+              </div>
+            </div>
           </section>
 
           <section class="mt-6 grid gap-4 xl:grid-cols-[1.1fr_0.9fr]">
-            <article class="rounded-3xl border border-[#c9c9c9] bg-white p-5 shadow-sm">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Highlights</p>
-                  <h3 class="mt-2 text-xl font-semibold text-[#181818]">Account summary</h3>
-                </div>
-                <span class="rounded-full bg-[#eef4ff] px-3 py-1 text-xs font-semibold text-[#0176D3]">Open</span>
-              </div>
-              <div class="mt-5 grid gap-4 sm:grid-cols-3">
-                <div class="rounded-2xl bg-[#f3f3f3] p-4">
-                  <p class="text-sm text-slate-500">Health</p>
-                  <p class="mt-2 text-3xl font-semibold text-[#181818]">Good</p>
-                </div>
-                <div class="rounded-2xl bg-[#f3f3f3] p-4">
-                  <p class="text-sm text-slate-500">Open approvals</p>
-                  <p class="mt-2 text-3xl font-semibold text-[#181818]">7</p>
-                </div>
-                <div class="rounded-2xl bg-[#f3f3f3] p-4">
-                  <p class="text-sm text-slate-500">Alerts</p>
-                  <p class="mt-2 text-3xl font-semibold text-[#181818]">5</p>
-                </div>
-              </div>
-            </article>
 
             <article class="rounded-3xl border border-[#c9c9c9] bg-[#f3f3f3] p-5">
               <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Utility panel</p>

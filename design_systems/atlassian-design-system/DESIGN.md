@@ -266,6 +266,7 @@ Representative Atlassian palette for generation based on current public guidance
 - Favor token-driven neutrals, lozenges, banners, and inline messaging over pill-heavy status styling.
 - Keep typography practical and compact, with lightweight metadata rather than display-like page chrome.
 - Reduce heavy dark shells and decorative shadows; Atlassian surfaces should feel light, layered, and operational.
+- Prefer lozenge-like state treatment and inline flags over full rounded pill badges for routine status display.
 
 ## Screen Generation Heuristics
 - **Default page structure:** Use a workspace shell with side navigation, a practical page header, and dense operational content blocks.
