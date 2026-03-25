@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>デジタル庁デザインシステム ダッシュボード</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       body {
         font-family: "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
@@ -24,15 +25,15 @@
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <a class="rounded-none border border-[#005ac2] bg-[#e8f1ff] px-3 py-2 text-sm font-medium text-[#005ac2]" href="#">ヘルプ</a>
-            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white" style="border-color:#c8c8c8;">CSV出力</button>
-            <button class="rounded-none bg-[#005ac2] px-4 py-2 text-sm font-semibold text-white">新規登録</button>
+            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white" style="border-color:#c8c8c8;"><i class="fa-solid fa-file-export mr-2" aria-hidden="true"></i>CSV出力</button>
+            <button class="rounded-none bg-[#005ac2] px-4 py-2 text-sm font-semibold text-white"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
           </div>
         </div>
         <nav class="mt-4 flex flex-wrap gap-1 text-sm">
-          <a class="rounded-none bg-[#e8f1ff] px-3 py-2 font-medium text-[#005ac2]" href="#">ダッシュボード</a>
-          <a class="rounded-none px-3 py-2 text-slate-600" href="#">マスタ一覧</a>
-          <a class="rounded-none px-3 py-2 text-slate-600" href="#">承認待ち</a>
-          <a class="rounded-none px-3 py-2 text-slate-600" href="#">更新履歴</a>
+          <a class="rounded-none bg-[#e8f1ff] px-3 py-2 font-medium text-[#005ac2]" href="#"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</a>
+          <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</a>
+          <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</a>
+          <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</a>
         </nav>
       </header>
 
@@ -108,7 +109,7 @@
                     <td class="px-4 py-3">MST-021</td>
                     <td class="px-4 py-3">店舗運営部</td>
                     <td class="px-4 py-3">2026-03-25 08:55</td>
-                    <td class="px-4 py-3"><span class="inline-flex rounded-none border bg-white px-2.5 py-1 text-[11px] font-medium" style="border-color:#c8c8c8;">承認待ち</span></td>
+                    <td class="px-4 py-3"><span class="inline-flex rounded-none border bg-white px-2.5 py-1 text-[11px] font-medium" style="border-color:#c8c8c8;"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</span></td>
                     <td class="px-4 py-3 text-right"><button class="rounded-none border bg-white px-3 py-2 text-sm" style="border-color:#c8c8c8;">詳細</button></td>
                   </tr>
                   <tr>

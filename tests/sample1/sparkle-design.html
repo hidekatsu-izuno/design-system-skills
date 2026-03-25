@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sparkle Design Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       body {
         font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
@@ -23,17 +24,17 @@
             <p class="mt-2 max-w-2xl text-sm" style="color:#5e5a55;">A branded product shell with practical workflow structure and controlled expressive accents.</p>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button class="rounded-full border px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#111111; border-color:#ddd6ce;">CSV出力</button>
-            <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#ff6b3d; color:#ffffff;">新規登録</button>
+            <button class="rounded-full border px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#111111; border-color:#ddd6ce;"><i class="fa-solid fa-file-export mr-2" aria-hidden="true"></i>CSV出力</button>
+            <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#ff6b3d; color:#ffffff;"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
           </div>
         </div>
         <div class="mx-auto max-w-7xl px-4 pb-4 lg:px-8">
           <nav class="flex flex-wrap gap-2 text-sm">
-            <span class="rounded-full px-3 py-1.5 font-semibold" style="background:#111111; color:#ffffff;">ダッシュボード</span>
-            <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;">マスタ一覧</span>
-            <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;">更新履歴</span>
-            <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;">承認待ち</span>
-            <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;">ユーザー/権限管理</span>
+            <span class="rounded-full px-3 py-1.5 font-semibold" style="background:#111111; color:#ffffff;"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</span>
+            <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</span>
+            <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</span>
+            <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</span>
+            <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;"><i class="fa-solid fa-users-gear mr-2" aria-hidden="true"></i>ユーザー/権限管理</span>
           </nav>
         </div>
       </header>
@@ -44,11 +45,11 @@
             <div class="rounded-[24px] border p-4" style="background:#ffffff; border-color:#ddd6ce; box-shadow:0 14px 40px rgba(17,17,17,0.06);">
               <p class="text-xs font-semibold uppercase tracking-[0.18em]" style="color:#5e5a55;">Navigation</p>
               <div class="mt-3 space-y-2 text-sm">
-                <div class="rounded-full px-3 py-2" style="background:#fff1eb; color:#111111;">ダッシュボード</div>
-                <div class="rounded-full px-3 py-2" style="color:#5e5a55;">監査ログ</div>
-                <div class="rounded-full px-3 py-2" style="color:#5e5a55;">承認待ち</div>
-                <div class="rounded-full px-3 py-2" style="color:#5e5a55;">ユーザー/権限管理</div>
-                <div class="rounded-full px-3 py-2" style="color:#5e5a55;">設定</div>
+                <div class="rounded-full px-3 py-2" style="background:#fff1eb; color:#111111;"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</div>
+                <div class="rounded-full px-3 py-2" style="color:#5e5a55;"><i class="fa-regular fa-clipboard mr-2" aria-hidden="true"></i>監査ログ</div>
+                <div class="rounded-full px-3 py-2" style="color:#5e5a55;"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</div>
+                <div class="rounded-full px-3 py-2" style="color:#5e5a55;"><i class="fa-solid fa-users-gear mr-2" aria-hidden="true"></i>ユーザー/権限管理</div>
+                <div class="rounded-full px-3 py-2" style="color:#5e5a55;"><i class="fa-solid fa-gear mr-2" aria-hidden="true"></i>設定</div>
               </div>
             </div>
             <div class="rounded-[24px] border p-4" style="background:#f7f5f2; border-color:#ddd6ce;">
@@ -121,7 +122,7 @@
                         <p class="text-sm font-semibold" style="color:#111111;">Store master refresh</p>
                         <p class="mt-1 text-sm" style="color:#5e5a55;">Owner: Yamada / 10:30</p>
                       </div>
-                      <button class="rounded-full px-3 py-1.5 text-sm font-semibold" style="background:#111111; color:#ffffff;">Open</button>
+                      <button class="rounded-full px-3 py-1.5 text-sm font-semibold" style="background:#111111; color:#ffffff;"><i class="fa-regular fa-eye mr-2" aria-hidden="true"></i>Open</button>
                     </div>
                   </div>
                   <div class="rounded-[20px] border p-4" style="background:#fff1eb; border-color:#ddd6ce;">
@@ -183,9 +184,9 @@
                       <td class="px-4 py-3">MST-001</td>
                       <td class="px-4 py-3">Yamada</td>
                       <td class="px-4 py-3">09:55</td>
-                      <td class="px-4 py-3"><span class="rounded-full px-3 py-1 text-xs font-semibold" style="background:#fff1eb; color:#ff6b3d;">承認待ち</span></td>
+                      <td class="px-4 py-3"><span class="rounded-full px-3 py-1 text-xs font-semibold" style="background:#fff1eb; color:#ff6b3d;"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</span></td>
                       <td class="px-4 py-3 text-right">3,240</td>
-                      <td class="px-4 py-3 text-right"><button class="rounded-full px-3 py-1.5 text-sm font-medium" style="background:#111111; color:#ffffff;">Open</button></td>
+                      <td class="px-4 py-3 text-right"><button class="rounded-full px-3 py-1.5 text-sm font-medium" style="background:#111111; color:#ffffff;"><i class="fa-regular fa-eye mr-2" aria-hidden="true"></i>Open</button></td>
                     </tr>
                     <tr class="border-t" style="border-color:#ddd6ce;">
                       <td class="px-4 py-3 font-semibold" style="color:#111111;">Vendor master</td>
@@ -194,7 +195,7 @@
                       <td class="px-4 py-3">09:10</td>
                       <td class="px-4 py-3"><span class="rounded-full px-3 py-1 text-xs font-semibold" style="background:#fff7d9; color:#8a5d00;">Attention</span></td>
                       <td class="px-4 py-3 text-right">1,148</td>
-                      <td class="px-4 py-3 text-right"><button class="rounded-full px-3 py-1.5 text-sm font-medium" style="background:#ff6b3d; color:#ffffff;">Edit</button></td>
+                      <td class="px-4 py-3 text-right"><button class="rounded-full px-3 py-1.5 text-sm font-medium" style="background:#ff6b3d; color:#ffffff;"><i class="fa-solid fa-pen mr-2" aria-hidden="true"></i>Edit</button></td>
                     </tr>
                   </tbody>
                 </table>

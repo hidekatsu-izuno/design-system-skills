@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spectrum Dashboard Mock</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       body {
         font-family: "Adobe Clean", "Source Sans 3", "Segoe UI", sans-serif;
@@ -23,8 +24,8 @@
             <p class="mt-2 text-sm" style="color:#5c5c5c;">マスタ名・コード・担当部署を横断して確認できる画面。</p>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button class="rounded-full px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">CSV出力</button>
-            <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:#ffffff;">新規登録</button>
+            <button class="rounded-full px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;"><i class="fa-solid fa-file-export mr-2" aria-hidden="true"></i>CSV出力</button>
+            <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:#ffffff;"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
           </div>
         </div>
       </header>
@@ -32,12 +33,12 @@
       <div class="lg:grid lg:grid-cols-[120px_minmax(0,1fr)]">
         <aside class="border-r px-4 py-5" style="background:#f8f8f8; border-color:#d5d5d5;">
           <div class="space-y-4 text-center text-xs">
-            <div class="rounded-xl py-2" style="background:#ffffff; color:#2c2c2c; box-shadow:0 6px 20px rgba(44,44,44,0.08);">ダッシュボード</div>
-            <div>マスタ一覧</div>
-            <div>承認待ち</div>
-            <div>更新履歴</div>
-            <div>監査ログ</div>
-            <div>ユーザー/権限管理</div>
+            <div class="rounded-xl py-2" style="background:#ffffff; color:#2c2c2c; box-shadow:0 6px 20px rgba(44,44,44,0.08);"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</div>
+            <div><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</div>
+            <div><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</div>
+            <div><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</div>
+            <div><i class="fa-regular fa-clipboard mr-2" aria-hidden="true"></i>監査ログ</div>
+            <div><i class="fa-solid fa-users-gear mr-2" aria-hidden="true"></i>ユーザー/権限管理</div>
           </div>
         </aside>
 
@@ -50,16 +51,16 @@
                 <p class="mt-2 text-sm" style="color:#5c5c5c;">Refined workflow chrome, lighter navigation framing, and friendlier hierarchy for approvals and alerts.</p>
               </div>
               <div class="flex gap-2">
-                <button class="rounded-full px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">マスタ名・コード・担当部署で検索</button>
-                <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:#ffffff;">未読 3 件</button>
+                <button class="rounded-full px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;"><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i>マスタ名・コード・担当部署で検索</button>
+                <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:#ffffff;"><i class="fa-solid fa-bell mr-2" aria-hidden="true"></i>未読 3 件</button>
               </div>
             </div>
           </header>
 
           <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">承認待ち</span>
-            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;">更新履歴</span>
-            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;">監査ログ</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;"><i class="fa-regular fa-clipboard mr-2" aria-hidden="true"></i>監査ログ</span>
             <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;">情報システム部 / 管理者</span>
           </div>
 
@@ -155,7 +156,7 @@
                         <td class="px-4 py-3">09:55</td>
                         <td class="px-4 py-3"><span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#008f5d; border-color:#008f5d;">Normal</span></td>
                         <td class="px-4 py-3 text-right">3,240</td>
-                        <td class="px-4 py-3 text-right"><button class="rounded-full px-3 py-1.5 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">Open</button></td>
+                        <td class="px-4 py-3 text-right"><button class="rounded-full px-3 py-1.5 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;"><i class="fa-regular fa-eye mr-2" aria-hidden="true"></i>Open</button></td>
                       </tr>
                       <tr class="border-t" style="border-color:#d5d5d5;">
                         <td class="px-4 py-3 font-semibold" style="color:#2c2c2c;">Vendor master</td>
@@ -164,7 +165,7 @@
                         <td class="px-4 py-3">09:10</td>
                         <td class="px-4 py-3"><span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Attention</span></td>
                         <td class="px-4 py-3 text-right">1,148</td>
-                        <td class="px-4 py-3 text-right"><button class="rounded-full px-3 py-1.5 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">Open</button></td>
+                        <td class="px-4 py-3 text-right"><button class="rounded-full px-3 py-1.5 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;"><i class="fa-regular fa-eye mr-2" aria-hidden="true"></i>Open</button></td>
                       </tr>
                     </tbody>
                   </table>

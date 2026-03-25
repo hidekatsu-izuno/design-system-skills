@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carbon Dashboard Mock</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       body {
         font-family: "IBM Plex Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -23,9 +24,9 @@
             <div class="mt-1 text-sm text-slate-500">マスタ一覧、承認待ち、更新履歴を俯瞰する運用画面</div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white">フィルタ</button>
-            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white">CSV出力</button>
-            <button class="rounded-none bg-blue-600 px-4 py-2 text-sm font-semibold text-white">新規登録</button>
+            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white"><i class="fa-solid fa-filter mr-2" aria-hidden="true"></i>フィルタ</button>
+            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white"><i class="fa-solid fa-file-export mr-2" aria-hidden="true"></i>CSV出力</button>
+            <button class="rounded-none bg-blue-600 px-4 py-2 text-sm font-semibold text-white"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
           </div>
         </div>
       </header>
@@ -37,12 +38,12 @@
             <div class="mt-2 text-lg font-semibold">マスタ管理</div>
           </div>
           <nav class="mt-4 space-y-1">
-            <a class="flex items-center justify-between bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700" href="#">ダッシュボード <span>01</span></a>
-            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">マスタ一覧 <span>02</span></a>
-            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">承認待ち <span>03</span></a>
-            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">更新履歴 <span>04</span></a>
-            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">監査ログ <span>05</span></a>
-            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">ユーザー/権限管理 <span>06</span></a>
+            <a class="flex items-center justify-between bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700" href="#"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード <span>01</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧 <span>02</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち <span>03</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴 <span>04</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#"><i class="fa-regular fa-clipboard mr-2" aria-hidden="true"></i>監査ログ <span>05</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#"><i class="fa-solid fa-users-gear mr-2" aria-hidden="true"></i>ユーザー/権限管理 <span>06</span></a>
           </nav>
         </aside>
 
@@ -116,21 +117,21 @@
                           <td class="px-4 py-3">2026-03-25 09:55</td>
                           <td class="px-4 py-3">Yamada</td>
                           <td class="px-4 py-3"><span class="rounded-none bg-green-50 px-2.5 py-1 text-[11px] font-medium text-green-700">Normal</span></td>
-                          <td class="px-4 py-3 text-right"><button class="rounded-none border bg-white px-3 py-2 text-sm">Open</button></td>
+                          <td class="px-4 py-3 text-right"><button class="rounded-none border bg-white px-3 py-2 text-sm"><i class="fa-regular fa-eye mr-2" aria-hidden="true"></i>Open</button></td>
                         </tr>
                         <tr>
                           <td class="px-4 py-3 font-medium">Partner master</td>
                           <td class="px-4 py-3">2026-03-25 09:10</td>
                           <td class="px-4 py-3">Sato</td>
                           <td class="px-4 py-3"><span class="rounded-none bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-700">Warning</span></td>
-                          <td class="px-4 py-3 text-right"><button class="rounded-none border bg-white px-3 py-2 text-sm">Open</button></td>
+                          <td class="px-4 py-3 text-right"><button class="rounded-none border bg-white px-3 py-2 text-sm"><i class="fa-regular fa-eye mr-2" aria-hidden="true"></i>Open</button></td>
                         </tr>
                         <tr>
                           <td class="px-4 py-3 font-medium">Role group</td>
                           <td class="px-4 py-3">2026-03-24 18:12</td>
                           <td class="px-4 py-3">Suzuki</td>
                           <td class="px-4 py-3"><span class="rounded-none bg-red-50 px-2.5 py-1 text-[11px] font-medium text-red-700">Error</span></td>
-                          <td class="px-4 py-3 text-right"><button class="rounded-none border bg-white px-3 py-2 text-sm">Open</button></td>
+                          <td class="px-4 py-3 text-right"><button class="rounded-none border bg-white px-3 py-2 text-sm"><i class="fa-regular fa-eye mr-2" aria-hidden="true"></i>Open</button></td>
                         </tr>
                       </tbody>
                     </table>

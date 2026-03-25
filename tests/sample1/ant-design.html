@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ant Design ダッシュボード Mock</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       body {
         font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -24,11 +25,11 @@
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <label class="flex min-w-[240px] items-center gap-2 rounded-md border bg-white px-3 py-2 text-sm text-slate-500" style="border-color:#d9d9d9;">
-              <span>検索</span>
+              <span><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i>検索</span>
               <input class="w-full bg-transparent outline-none" value="マスタ名・コード・担当部署で検索" />
             </label>
-            <button class="rounded-md border px-3 py-2 text-sm font-medium bg-white" style="border-color:#d9d9d9;">フィルタ</button>
-            <button class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white">新規登録</button>
+            <button class="rounded-md border px-3 py-2 text-sm font-medium bg-white" style="border-color:#d9d9d9;"><i class="fa-solid fa-filter mr-2" aria-hidden="true"></i>フィルタ</button>
+            <button class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
           </div>
         </div>
       </header>
@@ -40,13 +41,13 @@
             <div class="mt-2 text-lg font-semibold">マスタ管理</div>
           </div>
           <nav class="mt-4 space-y-1">
-            <a class="flex items-center justify-between rounded-md bg-blue-50 px-3 py-2 text-sm font-medium text-blue-600" href="#"><span>ダッシュボード</span><span>01</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>マスタ一覧</span><span>02</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>承認待ち</span><span>03</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>更新履歴</span><span>04</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>監査ログ</span><span>05</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>ユーザー/権限管理</span><span>06</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>設定</span><span>07</span></a>
+            <a class="flex items-center justify-between rounded-md bg-blue-50 px-3 py-2 text-sm font-medium text-blue-600" href="#"><span><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</span><span>01</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</span><span>02</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</span><span>03</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</span><span>04</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span><i class="fa-regular fa-clipboard mr-2" aria-hidden="true"></i>監査ログ</span><span>05</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span><i class="fa-solid fa-users-gear mr-2" aria-hidden="true"></i>ユーザー/権限管理</span><span>06</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span><i class="fa-solid fa-gear mr-2" aria-hidden="true"></i>設定</span><span>07</span></a>
           </nav>
         </aside>
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Material Design Adaptive Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       body {
         font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -27,12 +28,12 @@
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <label class="flex min-w-[260px] items-center gap-3 rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm text-[#49454f]">
-              <span>検索</span>
+              <span><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i>検索</span>
               <input class="w-full bg-transparent outline-none" value="マスタ名・コード・担当部署で検索" />
             </label>
-            <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]">フィルタ</button>
-            <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]">CSV出力</button>
-            <button class="rounded-full bg-[#6750a4] px-4 py-2 text-sm font-semibold text-white">新規登録</button>
+            <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]"><i class="fa-solid fa-filter mr-2" aria-hidden="true"></i>フィルタ</button>
+            <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]"><i class="fa-solid fa-file-export mr-2" aria-hidden="true"></i>CSV出力</button>
+            <button class="rounded-full bg-[#6750a4] px-4 py-2 text-sm font-semibold text-white"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
           </div>
         </div>
       </header>
@@ -41,22 +42,22 @@
         <aside class="border-r border-[#cac4d0] bg-[#e8def8] px-3 py-5">
           <nav class="space-y-2">
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#6750a4]">
-              <span class="rounded-full bg-[#ede7f6] px-3 py-2">●</span><span>ダッシュボード</span>
+              <span class="rounded-full bg-[#ede7f6] px-3 py-2"><i class="fa-solid fa-gauge" aria-hidden="true"></i></span><span>ダッシュボード</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>マスタ一覧</span>
+              <span class="rounded-full px-3 py-2"><i class="fa-solid fa-table-list" aria-hidden="true"></i></span><span>マスタ一覧</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>承認待ち</span>
+              <span class="rounded-full px-3 py-2"><i class="fa-regular fa-clock" aria-hidden="true"></i></span><span>承認待ち</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>更新履歴</span>
+              <span class="rounded-full px-3 py-2"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span><span>更新履歴</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>監査ログ</span>
+              <span class="rounded-full px-3 py-2"><i class="fa-regular fa-clipboard" aria-hidden="true"></i></span><span>監査ログ</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>ユーザー/権限管理</span>
+              <span class="rounded-full px-3 py-2"><i class="fa-solid fa-users-gear" aria-hidden="true"></i></span><span>ユーザー/権限管理</span>
             </a>
           </nav>
         </aside>
@@ -72,7 +73,7 @@
                   </div>
                   <div class="flex gap-2">
                     <button class="rounded-full bg-transparent px-4 py-2 text-sm font-semibold text-[#6750a4]">All</button>
-                    <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]">未読 3 件</button>
+                    <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]"><i class="fa-solid fa-bell mr-2" aria-hidden="true"></i>未読 3 件</button>
                   </div>
                 </div>
               </header>
