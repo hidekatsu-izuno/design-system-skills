@@ -267,6 +267,13 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - Treat button hierarchy strictly: one primary action in a local group, with default, text, or link buttons for secondary work.
 - Make table toolbars, sorting, filters, and row actions central to dashboard output rather than optional decoration.
 
+
+## Responsive Behavior
+- **Mobile:** Collapse `Sider` navigation behind a compact trigger and reveal it as an overlay or drawer-like panel.
+- **Tablet:** Allow partially collapsed side navigation with labels hidden or shortened, keeping the header utilities visible.
+- **Desktop:** Use the full `Layout` shell with persistent side navigation and dense content regions.
+- **Navigation rule:** Treat navigation as a collapsible `Sider`, not as a permanently expanded mobile sidebar.
+- **Table rule:** Preserve table density and filters through scroll, drawers, or stacked controls without losing operational clarity.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a management shell with optional sider, page header, filter region, and structured content blocks.
 - **Default density:** Use medium-to-dense density by default.

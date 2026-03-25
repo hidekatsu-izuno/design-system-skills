@@ -269,6 +269,13 @@ Representative Primer palette for generation based on current product UI primiti
 - Prefer flat borders and section grouping over repeated tile-like dashboard cards.
 - Keep side navigation text-forward and quiet; avoid decorative icons, counters, or branded shell weight unless the workflow clearly needs them.
 
+
+## Responsive Behavior
+- **Mobile:** Collapse dense navigation into an ActionMenu-like trigger or overflow menu and keep the page header calm and text-forward.
+- **Tablet:** Preserve PageLayout structure but allow nav and context panes to collapse before the main content does.
+- **Desktop:** Restore side navigation, underline nav, and context panes as needed for product orientation.
+- **Navigation rule:** Mobile navigation should feel like a GitHub product overflow or action menu, not a themed full-screen drawer.
+- **Table rule:** Maintain practical tables and lists with scroll or compact controls rather than converting everything into tiles.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a utility-first product page with a clear title, optional side navigation, explicit section grouping, and practical action placement.
 - **Default density:** Use medium density with compact tendencies for settings and tool screens.

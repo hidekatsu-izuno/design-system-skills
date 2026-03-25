@@ -267,6 +267,13 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - Enforce one-primary-action layouts and rely on secondary, tertiary, or ghost buttons for nearby actions.
 - Make data-table toolbars, selection, sorting, and batch actions first-class parts of generated dashboards.
 
+
+## Responsive Behavior
+- **Mobile:** Use the UI shell header with a menu trigger that collapses header items into the left side nav panel.
+- **Tablet:** Preserve the shell hierarchy, but keep navigation collapsible and maintain IBM-like density.
+- **Desktop:** Restore the full UI shell with visible side nav and layered regions.
+- **Navigation rule:** The mobile pattern should read like Carbon header-plus-side-nav behavior, with header items collapsing into navigation.
+- **Table rule:** Keep structured data views intact and allow horizontal scroll before rewriting them as loose cards.
 ## Screen Generation Heuristics
 - **Default page structure:** Use an enterprise shell with side nav, precise sectioning, and structured content panes aligned to the grid.
 - **Default density:** Use medium-to-dense density with strong alignment.

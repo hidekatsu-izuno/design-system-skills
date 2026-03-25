@@ -268,6 +268,13 @@ Representative SmartHR palette for generation based on public design-token guida
 - Make side navigation, cards, and data tables feel lightweight, practical, and accessible.
 - Avoid chip-heavy navigation and overly rounded promotional framing; SmartHR screens should feel like steady back-office product UI with gentle emphasis.
 
+
+## Responsive Behavior
+- **Mobile:** Prefer an easy-to-scan horizontal top navigation strip or simple disclosure over a heavy application drawer.
+- **Tablet:** Keep the shell quiet and back-office oriented, with restrained secondary navigation and stable form controls.
+- **Desktop:** Restore side navigation or broader grouped navigation where it helps operational tasks.
+- **Navigation rule:** Navigation on small screens should stay calm, explicit, and low-friction rather than feeling chip-heavy or overly app-like.
+- **Table rule:** Preserve table readability with scroll and clear labels; avoid compressing text to chase density.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a calm business shell with a readable header, practical navigation, and content grouped into forms, lists, and sections.
 - **Default density:** Use medium density with readable spacing.

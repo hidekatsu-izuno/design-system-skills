@@ -268,6 +268,13 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - Write status labels in short sentence-style language and keep badges semantically focused rather than ornamental.
 - Avoid glassmorphism, frosted header chrome, and oversized rounded cards; Fluent should read as calm productivity UI, not a soft consumer dashboard.
 
+
+## Responsive Behavior
+- **Mobile:** Use a compact navigation trigger that opens a panel or drawer and keep command-heavy controls close to the header.
+- **Tablet:** Allow collapsible nav with strong focus and hover states, preserving productivity-oriented structure.
+- **Desktop:** Restore visible navigation with calm surfaces and compact but readable spacing.
+- **Navigation rule:** Navigation may be minimized, but should remain easy to expand and should not stay permanently open on narrow screens.
+- **Table rule:** Keep lists and tables operationally dense, using scroll and compact command placement rather than over-carding.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a productivity shell with persistent navigation, clear page title, command region, and structured content panes.
 - **Default density:** Use medium-to-compact density by default.

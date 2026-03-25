@@ -268,6 +268,13 @@ Representative Atlassian palette for generation based on current public guidance
 - Reduce heavy dark shells and decorative shadows; Atlassian surfaces should feel light, layered, and operational.
 - Prefer lozenge-like state treatment and inline flags over full rounded pill badges for routine status display.
 
+
+## Responsive Behavior
+- **Mobile:** Move left navigation behind a compact trigger and reveal it as a panel or drawer, keeping global actions in the top area.
+- **Tablet:** Keep navigation discoverable but collapsible, and reduce secondary chrome before compressing core content.
+- **Desktop:** Restore the product shell with visible side navigation and clear lozenge-style status treatment.
+- **Navigation rule:** Favor trigger-to-panel navigation on small widths rather than a permanently expanded list.
+- **Table rule:** Let tables scroll and keep row actions concise; avoid replacing all data views with oversized cards.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a workspace shell with side navigation, a practical page header, and dense operational content blocks.
 - **Default density:** Use medium-to-dense layout density.

@@ -16,7 +16,13 @@
   </head>
   <body>
     <div class="min-h-screen lg:grid lg:grid-cols-[280px_minmax(0,1fr)]">
-      <aside class="border-r border-[#c6c6c8] bg-white px-4 py-5">
+      <nav class="flex gap-2 overflow-x-auto border-b border-[#c6c6c8] bg-white px-4 py-3 text-sm lg:hidden">
+        <a class="shrink-0 rounded-full bg-[#007aff] px-3 py-2 font-semibold text-white" href="#"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>Dashboard</a>
+        <a class="shrink-0 rounded-full bg-[#f2f2f7] px-3 py-2 text-[#3a3a3c]" href="#"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>Masters</a>
+        <a class="shrink-0 rounded-full bg-[#f2f2f7] px-3 py-2 text-[#3a3a3c]" href="#"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>Approvals</a>
+        <a class="shrink-0 rounded-full bg-[#f2f2f7] px-3 py-2 text-[#3a3a3c]" href="#"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>History</a>
+      </nav>
+      <aside class="hidden border-r border-[#c6c6c8] bg-white px-4 py-5 lg:block">
         <div class="rounded-3xl bg-[#f2f2f7] p-4">
           <p class="text-xs uppercase tracking-[0.18em] text-[#636366]">マスタ管理システム</p>
           <h1 class="mt-2 text-2xl font-semibold text-[#1c1c1e]">ダッシュボード</h1>
@@ -44,9 +50,9 @@
               <p class="mt-2 max-w-2xl text-sm leading-6 text-[#636366]">Native-feeling structure with restrained depth, grouped sections, and content-led hierarchy.</p>
             </div>
             <div class="flex flex-wrap gap-2">
-              <label class="flex min-w-[240px] items-center gap-3 rounded-full border border-[#c6c6c8] bg-white px-4 py-2 text-sm text-[#636366]">
-                <span><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i>検索</span>
-                <input class="w-full bg-transparent outline-none" value="マスタ名・コード・担当部署で検索" />
+              <label class="flex w-full min-w-0 items-center gap-3 rounded-full border border-[#c6c6c8] bg-white px-4 py-2 text-sm text-[#636366] sm:min-w-[240px] xl:w-auto">
+                <span class="shrink-0"><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i>検索</span>
+                <input class="min-w-0 w-full bg-transparent outline-none" value="マスタ名・コード・担当部署で検索" />
               </label>
               <button class="rounded-full bg-[#007aff] px-4 py-2 text-sm font-semibold text-white"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
               <button class="rounded-full border border-[#c6c6c8] bg-white px-4 py-2 text-sm font-semibold text-[#1c1c1e]"><i class="fa-solid fa-filter mr-2" aria-hidden="true"></i>フィルタ</button>

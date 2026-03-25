@@ -26,18 +26,34 @@
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
-            <label class="flex min-w-[280px] items-center gap-3 rounded-full bg-white px-4 py-2 text-sm text-slate-500 shadow-sm">
-              <span><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i>検索</span>
-              <input class="w-full bg-transparent text-sm outline-none" value="マスタ名・コード・担当部署で検索" />
+            <label class="flex w-full min-w-0 items-center gap-3 rounded-full bg-white px-4 py-2 text-sm text-slate-500 shadow-sm sm:min-w-[280px] xl:w-auto">
+              <span class="shrink-0"><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i>検索</span>
+              <input class="min-w-0 w-full bg-transparent text-sm outline-none" value="マスタ名・コード・担当部署で検索" />
             </label>
             <button class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0176D3]"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
             <button class="rounded-full border border-white/30 px-4 py-2 text-sm font-semibold text-white"><i class="fa-solid fa-file-export mr-2" aria-hidden="true"></i>CSV出力</button>
           </div>
         </div>
       </header>
+      <div class="border-b border-[#c9c9c9] bg-white px-4 py-3 lg:hidden">
+        <div class="flex items-center gap-2 overflow-x-auto text-sm">
+          <a class="shrink-0 border-b-2 border-[#0176D3] px-3 py-2 font-semibold text-[#0176D3]" href="#"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</a>
+          <a class="shrink-0 px-3 py-2 text-[#181818]" href="#"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</a>
+          <a class="shrink-0 px-3 py-2 text-[#181818]" href="#"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</a>
+          <details class="shrink-0">
+            <summary class="cursor-pointer px-3 py-2 font-medium text-[#181818]"><i class="fa-solid fa-ellipsis mr-2" aria-hidden="true"></i>More</summary>
+            <nav class="mt-2 grid gap-2 rounded-2xl border border-[#c9c9c9] bg-white p-3 shadow-sm">
+              <a class="px-2 py-1 text-[#181818]" href="#"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</a>
+              <a class="px-2 py-1 text-[#181818]" href="#"><i class="fa-regular fa-clipboard mr-2" aria-hidden="true"></i>監査ログ</a>
+              <a class="px-2 py-1 text-[#181818]" href="#"><i class="fa-solid fa-users-gear mr-2" aria-hidden="true"></i>ユーザー/権限管理</a>
+              <a class="px-2 py-1 text-[#181818]" href="#"><i class="fa-solid fa-gear mr-2" aria-hidden="true"></i>設定</a>
+            </nav>
+          </details>
+        </div>
+      </div>
 
       <div class="lg:grid lg:grid-cols-[252px_minmax(0,1fr)]">
-        <aside class="border-r border-[#c9c9c9] bg-white px-4 py-5">
+        <aside class="hidden border-r border-[#c9c9c9] bg-white px-4 py-5 lg:block">
           <div class="rounded-2xl bg-[#f3f3f3] p-4">
             <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Global navigation</p>
             <p class="mt-2 text-sm text-[#181818]">ダッシュボード、マスタ一覧、承認待ちを切り替える主要メニュー。</p>

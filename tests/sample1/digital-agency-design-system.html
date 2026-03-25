@@ -29,13 +29,25 @@
             <button class="rounded-none bg-[#005ac2] px-4 py-2 text-sm font-semibold text-white"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
           </div>
         </div>
-        <nav class="mt-4 flex flex-wrap gap-1 text-sm">
+        <nav class="mt-4 hidden flex-wrap gap-1 text-sm lg:flex">
           <a class="rounded-none bg-[#e8f1ff] px-3 py-2 font-medium text-[#005ac2]" href="#"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</a>
           <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</a>
           <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</a>
           <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</a>
         </nav>
       </header>
+      <details class="border-b bg-white px-4 py-3 lg:hidden" style="border-color:#c8c8c8;">
+        <summary class="flex cursor-pointer items-center justify-between text-sm font-medium text-slate-700">
+          <span><i class="fa-solid fa-bars mr-2" aria-hidden="true"></i>メニュー</span>
+          <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
+        </summary>
+        <nav class="mt-3 grid gap-2 text-sm">
+          <a class="rounded-none bg-[#e8f1ff] px-3 py-2 font-medium text-[#005ac2]" href="#"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</a>
+          <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</a>
+          <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</a>
+          <a class="rounded-none px-3 py-2 text-slate-600" href="#"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</a>
+        </nav>
+      </details>
 
       <main class="mx-auto max-w-7xl px-4 py-6">
         <div class="mb-4 text-sm text-slate-500">ホーム > マスタ一覧状況 > マスタ管理</div>

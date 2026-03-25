@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="mx-auto max-w-7xl px-4 pb-4 lg:px-8">
-          <nav class="flex flex-wrap gap-2 text-sm">
+          <nav class="hidden flex-wrap gap-2 text-sm lg:flex">
             <span class="rounded-full px-3 py-1.5 font-semibold" style="background:#111111; color:#ffffff;"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</span>
             <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</span>
             <span class="rounded-full px-3 py-1.5" style="background:#f7f5f2; color:#5e5a55;"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</span>
@@ -38,10 +38,23 @@
           </nav>
         </div>
       </header>
+      <details class="border-b border-[#ddd6ce] bg-white px-4 py-3 lg:hidden">
+        <summary class="flex cursor-pointer items-center justify-between text-sm font-medium" style="color:#111111;">
+          <span><i class="fa-solid fa-bars mr-2" aria-hidden="true"></i>メニュー</span>
+          <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
+        </summary>
+        <nav class="mt-3 grid gap-2 text-sm">
+          <a class="rounded-full px-3 py-2 font-semibold" style="background:#fff1eb; color:#111111;" href="#"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</a>
+          <a class="rounded-full px-3 py-2" style="background:#f7f5f2; color:#5e5a55;" href="#"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</a>
+          <a class="rounded-full px-3 py-2" style="background:#f7f5f2; color:#5e5a55;" href="#"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</a>
+          <a class="rounded-full px-3 py-2" style="background:#f7f5f2; color:#5e5a55;" href="#"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</a>
+          <a class="rounded-full px-3 py-2" style="background:#f7f5f2; color:#5e5a55;" href="#"><i class="fa-solid fa-users-gear mr-2" aria-hidden="true"></i>ユーザー/権限管理</a>
+        </nav>
+      </details>
 
       <main class="mx-auto max-w-7xl px-4 py-6 lg:px-8">
         <section class="grid gap-6 xl:grid-cols-[240px_minmax(0,1fr)]">
-          <aside class="space-y-4">
+          <aside class="hidden space-y-4 xl:block">
             <div class="rounded-[24px] border p-4" style="background:#ffffff; border-color:#ddd6ce; box-shadow:0 14px 40px rgba(17,17,17,0.06);">
               <p class="text-xs font-semibold uppercase tracking-[0.18em]" style="color:#5e5a55;">Navigation</p>
               <div class="mt-3 space-y-2 text-sm">

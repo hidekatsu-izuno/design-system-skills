@@ -268,6 +268,13 @@ Representative Apple system palette for generation. Use semantic system colors i
 - Keep grouped sections, buttons, and status indicators subtle and consistent with platform metaphors.
 - Avoid KPI-tile dashboard grids as the dominant pattern; prefer grouped lists, inset tables, split views, and quiet summary sections that feel native to Apple platforms.
 
+
+## Responsive Behavior
+- **Mobile:** Prefer compact tab bars, segmented controls, or toolbar-driven navigation over a generic admin drawer.
+- **Tablet:** Sidebar and split-view patterns are appropriate, but they should collapse into compact top-level switching in compact width.
+- **Desktop:** Restore native-feeling sidebars, split views, and quiet toolbars.
+- **Navigation rule:** Compact widths should feel like Apple compact navigation, not like a web app forcing a persistent menu.
+- **Table rule:** Use grouped lists, inset tables, or horizontal scroll as needed, while preserving native-feeling spacing.
 ## Screen Generation Heuristics
 - **Default page structure:** Use content-first structure with native headers, grouped sections, and platform-appropriate sidebars or tab bars.
 - **Default density:** Use comfortable density. Let breathing room and legibility outweigh data compression.

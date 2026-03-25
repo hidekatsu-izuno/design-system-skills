@@ -267,6 +267,13 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - Treat reusable layout quality and crafted composition as part of the design output, not just component reuse.
 - Where public guidance is thin, avoid speculative component/token claims and keep the spec explicit about inference.
 
+
+## Responsive Behavior
+- **Mobile:** Collapse navigation into a branded but lightweight disclosure or menu trigger so the expressive shell does not consume the screen.
+- **Tablet:** Keep brand accents, but reduce decorative framing before sacrificing utility content.
+- **Desktop:** Restore the full branded shell with clear navigation and expressive but controlled surface treatment.
+- **Navigation rule:** Small-screen navigation should be concise and intentional, not a permanent ornamental sidebar.
+- **Table rule:** Let data views scroll and keep decorative treatments secondary to usability.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a clear product shell with opportunities for brand expression in selected anchor areas, while keeping operational content practical.
 - **Default density:** Use medium density with enough breathing room to let the visual system read clearly.

@@ -269,6 +269,13 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - Vary container shapes and corner sizes by component role instead of applying one universal rounded treatment.
 - Let one higher-emphasis tonal container lead the page before secondary metric cards; avoid making every summary tile equal in weight.
 
+
+## Responsive Behavior
+- **Mobile:** Use a top app bar with a menu icon that opens navigation as a temporary drawer or sheet. Do not leave a rail or permanent drawer visible.
+- **Tablet:** Prefer a navigation rail, optionally paired with a supporting pane, and let secondary content wrap under the app bar as needed.
+- **Desktop:** Allow rail, drawer, and supporting pane combinations as adaptive shell elements rather than one fixed sidebar.
+- **Navigation rule:** Material navigation should shift between drawer and rail by width; mobile access should be icon-triggered.
+- **Table rule:** Dense tables may scroll horizontally, but important actions should stay reachable from cards or header actions.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a top app bar with one primary content column. Add navigation rail, drawer, or a supporting pane as complexity increases.
 - **Default density:** Use medium density by default. Tighten spacing only for data-heavy enterprise screens.

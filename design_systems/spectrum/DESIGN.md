@@ -269,6 +269,13 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - Use lighter navigation framing and refined workflow chrome before falling back to console-like side rails.
 - Include a light workflow toolbar or context strip before relying on dense dashboard cards so the page reads like a polished Adobe workspace.
 
+
+## Responsive Behavior
+- **Mobile:** Use an action-menu or tray-like navigation trigger with compact, polished controls rather than a broad admin drawer.
+- **Tablet:** Preserve a calm workflow shell and collapse only secondary navigation before main workspace content.
+- **Desktop:** Restore workspace-style navigation and utility chrome with restrained hierarchy.
+- **Navigation rule:** Compact navigation should feel like Spectrum action or tray behavior, not a generic accordion menu.
+- **Table rule:** Keep workspace data readable through scroll and grouped sections while maintaining a polished, low-noise shell.
 ## Screen Generation Heuristics
 - **Default page structure:** Use a workflow shell with clear content region, supporting panels, and polished but restrained app chrome.
 - **Default density:** Use medium density, allowing denser panels where workflow complexity requires it.

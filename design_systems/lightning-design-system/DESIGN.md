@@ -268,6 +268,13 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - Prefer utility icons and explicit status/action patterns over bespoke pills and decorative labels.
 - Do not lead with a generic hero card; start from an object/page header plus highlights panel and related-list structure when generating CRM-like dashboards.
 
+
+## Responsive Behavior
+- **Mobile:** Keep the page in a record-page rhythm: show a compact set of primary tabs first and move overflow destinations into a secondary menu.
+- **Tablet:** Preserve object header context and visible tabs where possible, reducing only secondary navigation.
+- **Desktop:** Restore the full object/page shell with highlights, related sections, and broader tab visibility.
+- **Navigation rule:** Small-width navigation should behave like compact tab plus overflow navigation, not a generic left drawer unless the pattern truly demands it.
+- **Table rule:** Related lists may scroll or stack, but object context and primary actions should remain visible.
 ## Screen Generation Heuristics
 - **Default page structure:** Use an app shell or record-page shell with utility navigation, object header, tabs, and related content regions.
 - **Default density:** Use medium-to-dense density with strong business scanability.

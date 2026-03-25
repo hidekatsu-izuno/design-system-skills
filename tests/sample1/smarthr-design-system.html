@@ -24,12 +24,12 @@
             <p class="mt-2 text-sm" style="color:#565451;">信頼感のある業務画面で、更新・承認・注意事項をまとめて確認します。</p>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#23221f; border:1px solid #d6d3d1; border-radius:12px;"><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i>マスタ名・コード・担当部署で検索</button>
+            <button class="w-full px-3 py-2 text-left text-sm font-medium sm:w-auto" style="background:#ffffff; color:#23221f; border:1px solid #d6d3d1; border-radius:12px;"><i class="fa-solid fa-magnifying-glass mr-2" aria-hidden="true"></i><span class="inline-block max-w-full align-middle">マスタ名・コード・担当部署で検索</span></button>
             <button class="px-4 py-2 text-sm font-semibold" style="background:#00c4cc; color:#ffffff; border-radius:12px;"><i class="fa-solid fa-plus mr-2" aria-hidden="true"></i>新規登録</button>
           </div>
         </div>
         <div class="mx-auto max-w-7xl px-4 pb-4 lg:px-8">
-          <nav class="flex flex-wrap gap-5 text-sm">
+          <nav class="hidden flex-wrap gap-5 text-sm lg:flex">
             <span class="border-b-2 pb-2 font-semibold" style="border-color:#00c4cc; color:#00868c;"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</span>
             <span class="pb-2" style="color:#565451;"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</span>
             <span class="pb-2" style="color:#565451;"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</span>
@@ -38,10 +38,17 @@
           </nav>
         </div>
       </header>
+      <nav class="flex gap-2 overflow-x-auto border-b bg-white px-4 py-3 text-sm lg:hidden" style="border-color:#d6d3d1;">
+        <a class="shrink-0 rounded-md px-3 py-2 font-semibold" style="background:#e5fafb; color:#00868c;" href="#"><i class="fa-solid fa-gauge mr-2" aria-hidden="true"></i>ダッシュボード</a>
+        <a class="shrink-0 rounded-md px-3 py-2" style="background:#f8f7f6; color:#565451;" href="#"><i class="fa-solid fa-table-list mr-2" aria-hidden="true"></i>マスタ一覧</a>
+        <a class="shrink-0 rounded-md px-3 py-2" style="background:#f8f7f6; color:#565451;" href="#"><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>承認待ち</a>
+        <a class="shrink-0 rounded-md px-3 py-2" style="background:#f8f7f6; color:#565451;" href="#"><i class="fa-solid fa-clock-rotate-left mr-2" aria-hidden="true"></i>更新履歴</a>
+        <a class="shrink-0 rounded-md px-3 py-2" style="background:#f8f7f6; color:#565451;" href="#"><i class="fa-solid fa-users-gear mr-2" aria-hidden="true"></i>ユーザー/権限管理</a>
+      </nav>
 
       <main class="mx-auto max-w-7xl px-4 py-6 lg:px-8">
         <section class="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)]">
-          <aside class="space-y-3">
+          <aside class="hidden space-y-3 lg:block">
             <div class="rounded-lg border p-4" style="background:#f8f7f6; border-color:#d6d3d1;">
               <p class="text-xs font-medium uppercase tracking-[0.14em]" style="color:#565451;">ナビゲーション</p>
               <div class="mt-3 space-y-1 text-sm">
