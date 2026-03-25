@@ -1,187 +1,369 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>マスタ管理システム - ダッシュボード</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spectrum / マスタ管理システム</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
-    body {
-      background:
-        radial-gradient(circle at top right, rgba(20, 115, 230, 0.10), transparent 22%),
-        radial-gradient(circle at 20% 0%, rgba(111, 92, 255, 0.08), transparent 18%),
-        #f6f3ee;
+    :root {
+      --bg: #f6f3ee;
+      --surface: #ffffff;
+      --soft: #faf8f4;
+      --border: #d5d5d5;
+      --text: #2c2c2c;
+      --muted: #5c5c5c;
+      --primary: #1473e6;
+      --secondary: #e8f1ff;
+      --accent: #6f5cff;
+      --radius: 30px;
+      --shadow: 0 12px 32px rgba(44,44,44,0.08);
     }
-    .soft-panel { box-shadow: 0 10px 30px rgba(44, 44, 44, 0.06); }
+    body { font-family: "Adobe Clean", "Segoe UI", "Noto Sans JP", sans-serif; }
+    .panel { border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .short { white-space: nowrap; word-break: keep-all; }
+    .drawer-toggle { position: absolute; opacity: 0; pointer-events: none; }
+    .drawer-scrim, .drawer-panel { opacity: 0; pointer-events: none; transition: all 180ms ease; }
+    .drawer-panel { transform: translateX(-100%); }
+    #nav-drawer:checked ~ .page-shell .drawer-scrim,
+    #nav-drawer:checked ~ .page-shell .drawer-panel { opacity: 1; pointer-events: auto; }
+    #nav-drawer:checked ~ .page-shell .drawer-panel { transform: translateX(0); }
   </style>
 </head>
-<body class="min-h-screen text-slate-800 antialiased">
-  <div class="fixed inset-x-0 top-0 z-40 h-1 bg-gradient-to-r from-[#1473E6] via-[#6F5CFF] to-[#F59E0B]"></div>
-  <header class="sticky top-0 z-30 border-b border-[#d5d5d5] bg-white">
-    <div class="mx-auto flex max-w-[1720px] items-center gap-3 px-4 py-3 lg:px-6">
-      <button id="openDrawer" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d5d5d5] bg-white text-[#1473E6] lg:hidden" aria-label="メニューを開く" aria-controls="mobileDrawer" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
-      <div class="flex min-w-0 flex-1 items-center gap-3">
-        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#1473E6]/10 text-[#1473E6]"><i class="fa-solid fa-gauge-high"></i></div>
-        <div class="min-w-0">
-          <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">マスタ管理システム</div>
-          <div class="truncate text-lg font-semibold text-slate-900">ダッシュボード</div>
+<body class="min-h-screen bg-[color:var(--bg)] text-[color:var(--text)]">
+  <input id="nav-drawer" class="drawer-toggle" type="checkbox" />
+  <div class="page-shell min-h-screen">
+    <header class="sticky top-0 z-30 border-b border-[color:var(--border)] bg-[color:var(--surface)]/95 backdrop-blur">
+      <div class="mx-auto flex max-w-[1680px] items-center gap-3 px-4 py-3 lg:px-6">
+        <label for="nav-drawer" class="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--surface)] text-[color:var(--primary)] lg:hidden" aria-label="メニューを開く">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </label>
+        <div class="min-w-0 flex-1">
+          <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[color:var(--muted)]">Spectrum</div>
+          <div class="short mt-1 text-lg font-semibold">ダッシュボード</div>
+        </div>
+        <div class="hidden min-w-[320px] max-w-xl flex-1 items-center gap-3 rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] px-4 py-2 lg:flex">
+          <i class="fa-solid fa-magnifying-glass text-[color:var(--primary)]" aria-hidden="true"></i>
+          <span class="truncate text-sm text-[color:var(--muted)]">マスタ名・コード・担当部署で検索</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="hidden items-center gap-2 rounded-[calc(var(--radius)-6px)] bg-[color:var(--primary)] px-4 py-2 text-sm font-semibold text-white md:inline-flex"><i class="fa-solid fa-plus" aria-hidden="true"></i><span class="short">新規登録</span></button>
+          <button class="hidden items-center gap-2 rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-2 text-sm font-semibold text-[color:var(--text)] md:inline-flex"><i class="fa-solid fa-file-export text-[color:var(--primary)]" aria-hidden="true"></i><span class="short">CSV出力</span></button>
+          <button class="hidden items-center gap-2 rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-2 text-sm font-semibold text-[color:var(--text)] md:inline-flex"><i class="fa-solid fa-filter text-[color:var(--primary)]" aria-hidden="true"></i><span class="short">フィルタ</span></button>
+          <button class="relative inline-flex h-11 w-11 items-center justify-center rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--surface)] text-[color:var(--text)]"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="absolute -right-1 -top-1 rounded-full bg-[color:var(--primary)] px-1.5 py-0.5 text-[10px] font-bold text-white">3</span></button>
         </div>
       </div>
-      <div class="hidden min-w-0 flex-[1.2] items-center gap-2 rounded-2xl border border-[#d5d5d5] bg-[#faf8f4] px-3 py-2 lg:flex">
-        <i class="fa-solid fa-magnifying-glass text-slate-400"></i><input class="min-w-0 flex-1 border-0 bg-transparent text-sm outline-none placeholder:text-slate-400" placeholder="マスタ名・コード・担当部署で検索">
-      </div>
-      <div class="hidden items-center gap-2 lg:flex">
-        <button class="inline-flex items-center gap-2 rounded-full border border-[#d5d5d5] bg-white px-4 py-2 text-sm font-medium text-slate-700 soft-panel"><i class="fa-solid fa-plus text-[#1473E6]"></i>新規登録</button>
-        <button class="inline-flex items-center gap-2 rounded-full border border-[#d5d5d5] bg-white px-4 py-2 text-sm font-medium text-slate-700 soft-panel"><i class="fa-solid fa-file-export text-[#1473E6]"></i>CSV出力</button>
-        <button class="inline-flex items-center gap-2 rounded-full border border-[#d5d5d5] bg-white px-4 py-2 text-sm font-medium text-slate-700 soft-panel"><i class="fa-solid fa-filter text-[#1473E6]"></i>フィルタ</button>
-        <button class="inline-flex items-center gap-2 rounded-full border border-[#d5d5d5] bg-white px-4 py-2 text-sm font-medium text-slate-700 soft-panel"><span class="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#1473E6]/10 text-[#1473E6]"><i class="fa-solid fa-bell"></i><span class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#D31510] px-1 text-[10px] font-bold text-white">3</span></span><span class="hidden xl:inline">未読 3 件</span></button>
-        <button class="inline-flex items-center gap-3 rounded-full border border-[#d5d5d5] bg-[#faf8f4] px-4 py-2 text-left text-sm soft-panel">
-          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#1473E6]/10 font-semibold text-[#1473E6]">山</span>
-          <span class="leading-tight"><span class="block font-medium text-slate-900">山田 花子</span><span class="block text-xs text-slate-500">情報システム部 / 管理者</span></span>
-        </button>
-      </div>
-      <div class="flex items-center gap-2 lg:hidden">
-        <button class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d5d5d5] bg-white text-slate-700"><i class="fa-solid fa-bell"></i></button>
-        <button class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d5d5d5] bg-white text-[#1473E6]"><i class="fa-solid fa-plus"></i></button>
-      </div>
-    </div>
-    <div class="mx-auto max-w-[1720px] px-4 pb-3 lg:px-6">
-      <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-        <a href="#" class="font-medium text-slate-700">ダッシュボード</a><i class="fa-solid fa-angle-right text-[10px]"></i>
-        <a href="#" class="font-medium text-slate-700">運用</a><i class="fa-solid fa-angle-right text-[10px]"></i>
-        <span class="text-slate-900">更新監視</span>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <div id="drawerBackdrop" class="fixed inset-0 z-40 hidden bg-slate-900/35 lg:hidden"></div>
-  <aside id="mobileDrawer" class="fixed inset-y-0 left-0 z-50 w-[86vw] max-w-sm -translate-x-full border-r border-[#d5d5d5] bg-white p-4 transition-transform duration-200 lg:hidden">
-    <div class="mb-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#1473E6]/10 text-[#1473E6]"><i class="fa-solid fa-gauge-high"></i></div>
-        <div><div class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">マスタ管理システム</div><div class="font-semibold text-slate-900">ダッシュボード</div></div>
+    <label for="nav-drawer" class="drawer-scrim fixed inset-0 z-40 bg-black/35 lg:hidden"></label>
+    <aside class="drawer-panel fixed inset-y-0 left-0 z-50 w-[86vw] max-w-sm border-r border-[color:var(--border)] bg-[color:var(--surface)] p-4 lg:hidden">
+      <div class="mb-4 flex items-center justify-between">
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--muted)]">Spectrum</div>
+          <div class="mt-1 font-semibold">主要メニュー</div>
+        </div>
+        <label for="nav-drawer" class="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-[calc(var(--radius)-8px)] border border-[color:var(--border)] bg-[color:var(--surface)]"><i class="fa-solid fa-xmark" aria-hidden="true"></i></label>
       </div>
-      <button id="closeDrawer" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#d5d5d5] bg-white text-slate-700" aria-label="メニューを閉じる"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="mb-4 flex items-center gap-2 rounded-2xl border border-[#d5d5d5] bg-white px-3 py-2"><i class="fa-solid fa-magnifying-glass text-slate-400"></i><input class="w-full border-0 bg-transparent text-sm outline-none placeholder:text-slate-400" placeholder="マスタ名・コード・担当部署で検索"></div>
-    <nav class="space-y-2">
-      <a class="flex items-center gap-3 rounded-2xl bg-[#1473E6] px-4 py-3 font-semibold text-white" href="#"><i class="fa-solid fa-gauge-high w-5 text-center"></i>ダッシュボード</a>
-      <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-white" href="#"><i class="fa-solid fa-table-columns w-5 text-center text-slate-500"></i>マスタ一覧</a>
-      <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-clock w-5 text-center text-slate-500"></i>承認待ち</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">7</span></a>
-      <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-rotate w-5 text-center text-slate-500"></i>更新履歴</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">active</span></a>
-      <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-file-lines w-5 text-center text-slate-500"></i>監査ログ</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">new</span></a>
-      <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-users-gear w-5 text-center text-slate-500"></i>ユーザー/権限管理</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">admin</span></a>
-      <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-white" href="#"><i class="fa-solid fa-gear w-5 text-center text-slate-500"></i>設定</a>
-    </nav>
-  </aside>
-
-  <div class="mx-auto flex max-w-[1720px] gap-6 px-4 py-6 lg:px-6">
-    <aside class="hidden w-72 shrink-0 lg:block">
-      <div class="sticky top-24 rounded-[28px] border border-[#d5d5d5] bg-white p-4 soft-panel">
-        <div class="mb-4 flex items-center justify-between"><div><div class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">ワークスペース</div><div class="font-semibold text-slate-900">主要メニュー</div></div><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">active</span></div>
-        <nav class="space-y-2">
-          <a class="flex items-center gap-3 rounded-2xl bg-[#1473E6] px-4 py-3 font-semibold text-white" href="#"><i class="fa-solid fa-gauge-high w-5 text-center"></i>ダッシュボード</a>
-          <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-[#faf8f4]" href="#"><i class="fa-solid fa-table-columns w-5 text-center text-slate-500"></i>マスタ一覧</a>
-          <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-[#faf8f4]" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-clock w-5 text-center text-slate-500"></i>承認待ち</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">7</span></a>
-          <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-[#faf8f4]" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-rotate w-5 text-center text-slate-500"></i>更新履歴</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">active</span></a>
-          <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-[#faf8f4]" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-file-lines w-5 text-center text-slate-500"></i>監査ログ</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">new</span></a>
-          <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-[#faf8f4]" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-users-gear w-5 text-center text-slate-500"></i>ユーザー/権限管理</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">admin</span></a>
-          <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-slate-700 hover:bg-[#faf8f4]" href="#"><i class="fa-solid fa-gear w-5 text-center text-slate-500"></i>設定</a>
-        </nav>
-      </div>
+      <div class="mb-4 rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] px-4 py-3 text-sm text-[color:var(--muted)]">マスタ名・コード・担当部署で検索</div>
+      <nav class="space-y-2"><a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold bg-[color:var(--secondary)] text-[color:var(--accent)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">ダッシュボード</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--primary)] text-white px-2 py-0.5 text-[10px] font-bold">active</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-table-columns" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">マスタ一覧</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--soft)] text-[color:var(--muted)] px-2 py-0.5 text-[10px] font-bold">7</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-clock" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">承認待ち</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--soft)] text-[color:var(--muted)] px-2 py-0.5 text-[10px] font-bold">7</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">更新履歴</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">監査ログ</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--soft)] text-[color:var(--muted)] px-2 py-0.5 text-[10px] font-bold">new</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-users-gear" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">ユーザー/権限管理</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--soft)] text-[color:var(--muted)] px-2 py-0.5 text-[10px] font-bold">admin</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-gear" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">設定</span></a></nav>
     </aside>
 
-    <main class="min-w-0 flex-1">
-      <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <article class="rounded-[26px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-          <div class="mb-4 flex items-center justify-between"><span class="text-sm font-medium text-slate-500">管理中マスタ総数</span><span class="rounded-full bg-[#1473E6]/10 px-2 py-1 text-xs font-semibold text-[#1473E6]">+2</span></div>
-          <div class="mb-2 text-3xl font-semibold text-slate-900">128</div><div class="text-sm text-slate-500">前週比 +6</div>
-        </article>
-        <article class="rounded-[26px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-          <div class="mb-4 flex items-center justify-between"><span class="text-sm font-medium text-slate-500">本日の更新件数</span><span class="rounded-full bg-emerald-500/10 px-2 py-1 text-xs font-semibold text-emerald-600">順調</span></div>
-          <div class="mb-2 text-3xl font-semibold text-slate-900">9</div><div class="text-sm text-slate-500">前日比 +3</div>
-        </article>
-        <article class="rounded-[26px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-          <div class="mb-4 flex items-center justify-between"><span class="text-sm font-medium text-slate-500">承認待ち件数</span><span class="rounded-full bg-amber-500/10 px-2 py-1 text-xs font-semibold text-amber-600">要対応</span></div>
-          <div class="mb-2 text-3xl font-semibold text-slate-900">7</div><div class="text-sm text-slate-500">SLA超過 2</div>
-        </article>
-        <article class="rounded-[26px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-          <div class="mb-4 flex items-center justify-between"><span class="text-sm font-medium text-slate-500">エラー/不整合件数</span><span class="rounded-full bg-rose-500/10 px-2 py-1 text-xs font-semibold text-rose-600">注意</span></div>
-          <div class="mb-2 text-3xl font-semibold text-slate-900">3</div><div class="text-sm text-slate-500">参照不整合 1 / 必須欠損 2</div>
-        </article>
-      </section>
+    <div class="mx-auto grid max-w-[1680px] lg:grid-cols-[280px_minmax(0,1fr)]">
+      <aside class="hidden border-r border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-5 lg:block">
+        <div class="sticky top-24 space-y-4">
+          <div class="panel p-4">
+            <div class="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--muted)]">Navigation</div>
+            <nav class="mt-4 space-y-2"><a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold bg-[color:var(--secondary)] text-[color:var(--accent)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">ダッシュボード</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--primary)] text-white px-2 py-0.5 text-[10px] font-bold">active</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-table-columns" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">マスタ一覧</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--soft)] text-[color:var(--muted)] px-2 py-0.5 text-[10px] font-bold">7</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-clock" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">承認待ち</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--soft)] text-[color:var(--muted)] px-2 py-0.5 text-[10px] font-bold">7</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">更新履歴</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">監査ログ</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--soft)] text-[color:var(--muted)] px-2 py-0.5 text-[10px] font-bold">new</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-users-gear" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">ユーザー/権限管理</span><span class="ml-auto short inline-flex rounded-full bg-[color:var(--soft)] text-[color:var(--muted)] px-2 py-0.5 text-[10px] font-bold">admin</span></a>
+<a href="#" class="flex items-center gap-3 rounded-[var(--radius)] px-4 py-3 text-sm font-semibold text-[color:var(--text)] hover:bg-[color:var(--soft)]"><span class="inline-flex h-9 w-9 items-center justify-center rounded-[calc(var(--radius)-8px)] bg-[color:var(--soft)] text-[color:var(--primary)]"><i class="fa-solid fa-gear" aria-hidden="true"></i></span><span class="short min-w-0 flex-1 truncate">設定</span></a></nav>
+          </div>
+        </div>
+      </aside>
 
-      <section class="mt-6 grid gap-4 xl:grid-cols-[1.2fr_0.8fr]">
-        <article class="rounded-[30px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-          <div class="mb-4 flex items-center justify-between"><div><h2 class="text-base font-semibold text-slate-900">アラート</h2><p class="text-sm text-slate-500">更新失敗・不整合・期限切れを優先表示</p></div><button class="rounded-full border border-[#d5d5d5] bg-[#faf8f4] px-3 py-2 text-sm font-medium text-slate-700"><i class="fa-solid fa-filter mr-2 text-[#1473E6]"></i>全体</button></div>
-          <div class="space-y-3">
-            <div class="rounded-2xl border border-rose-200 bg-rose-50 p-4"><div class="flex flex-wrap items-start justify-between gap-3"><div><div class="mb-1 flex items-center gap-2 text-sm font-semibold text-rose-700"><i class="fa-solid fa-triangle-exclamation"></i>更新失敗</div><p class="text-sm text-slate-700">商品カテゴリマスタ / 2026-03-25 09:12 / 再実行待ち</p></div><div class="flex flex-wrap gap-2"><button class="rounded-full border border-rose-300 bg-white px-3 py-2 text-sm font-medium text-rose-700">詳細を見る</button><button class="rounded-full border border-rose-300 bg-white px-3 py-2 text-sm font-medium text-rose-700">対象マスタへ移動</button></div></div></div>
-            <div class="rounded-2xl border border-amber-200 bg-amber-50 p-4"><div class="flex flex-wrap items-start justify-between gap-3"><div><div class="mb-1 flex items-center gap-2 text-sm font-semibold text-amber-700"><i class="fa-solid fa-file-circle-xmark"></i>必須項目欠損</div><p class="text-sm text-slate-700">取引先マスタ / 2026-03-25 10:05 / 確認中</p></div><div class="flex flex-wrap gap-2"><button class="rounded-full border border-amber-300 bg-white px-3 py-2 text-sm font-medium text-amber-700">詳細を見る</button><button class="rounded-full border border-amber-300 bg-white px-3 py-2 text-sm font-medium text-amber-700">対象マスタへ移動</button></div></div></div>
-            <div class="rounded-2xl border border-sky-200 bg-sky-50 p-4"><div class="flex flex-wrap items-start justify-between gap-3"><div><div class="mb-1 flex items-center gap-2 text-sm font-semibold text-sky-700"><i class="fa-solid fa-link-slash"></i>参照不整合</div><p class="text-sm text-slate-700">部門コードマスタ / 2026-03-25 11:20 / 修正候補あり</p></div><div class="flex flex-wrap gap-2"><button class="rounded-full border border-sky-300 bg-white px-3 py-2 text-sm font-medium text-sky-700">詳細を見る</button><button class="rounded-full border border-sky-300 bg-white px-3 py-2 text-sm font-medium text-sky-700">対象マスタへ移動</button></div></div></div>
+      <main class="min-w-0 px-4 py-6 lg:px-6">
+        <section class="panel p-5">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--primary)]">マスタ管理システム</div>
+              <h1 class="mt-2 text-2xl font-bold">更新が必要な対象へ最短で到達するダッシュボード</h1>
+              <p class="mt-3 max-w-3xl text-sm leading-6 text-[color:var(--muted)]">今日対応すべきマスタ、承認待ち、エラー件数、更新履歴を一覧的に把握し、次のアクションをすぐ選べる構成です。</p>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs font-bold">
+              <span class="short rounded-full bg-[color:var(--secondary)] px-3 py-1 text-[color:var(--accent)]">未読 3 件</span>
+              <span class="short rounded-full bg-[color:var(--soft)] px-3 py-1 text-[color:var(--muted)]">情報システム部 / 管理者</span>
+              <span class="short rounded-full bg-[color:var(--secondary)] px-3 py-1 text-[color:var(--accent)]">主要マスタ確認</span>
+            </div>
           </div>
-        </article>
-        <article class="rounded-[30px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-          <div class="mb-4 flex items-center justify-between"><div><h2 class="text-base font-semibold text-slate-900">承認待ち</h2><p class="text-sm text-slate-500">SLA超過と差戻し候補を先頭表示</p></div><button class="rounded-full border border-[#d5d5d5] bg-[#faf8f4] px-3 py-2 text-sm font-medium text-slate-700">一覧へ</button></div>
-          <div class="space-y-3">
-            <div class="rounded-2xl border border-[#d5d5d5] bg-[#faf8f4] p-4"><div class="flex items-start justify-between gap-3"><div><div class="flex items-center gap-2 text-sm font-semibold text-slate-900"><span>田中 一郎</span><span class="rounded-full bg-rose-500/10 px-2 py-1 text-[11px] font-semibold text-rose-600">SLA超過</span></div><p class="mt-1 text-sm text-slate-600">対象: 顧客属性マスタ / 種別: 更新申請 / 申請日時: 2026-03-25 08:40</p></div><div class="flex gap-2"><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-sm font-medium text-slate-700">詳細確認</button><button class="rounded-full border border-[#1473E6] bg-[#1473E6] px-3 py-2 text-sm font-medium text-white">承認</button></div></div></div>
-            <div class="rounded-2xl border border-[#d5d5d5] bg-white p-4"><div class="flex items-start justify-between gap-3"><div><div class="flex items-center gap-2 text-sm font-semibold text-slate-900"><span>佐藤 望</span><span class="rounded-full bg-amber-500/10 px-2 py-1 text-[11px] font-semibold text-amber-600">差戻し候補</span></div><p class="mt-1 text-sm text-slate-600">対象: 商品カテゴリマスタ / 種別: 新規申請 / 申請日時: 2026-03-25 10:22</p></div><div class="flex gap-2"><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-sm font-medium text-slate-700">詳細確認</button><button class="rounded-full border border-[#d31510] bg-white px-3 py-2 text-sm font-medium text-[#d31510]">差戻し</button></div></div></div>
-            <div class="rounded-2xl border border-[#d5d5d5] bg-[#faf8f4] p-4"><div class="flex items-start justify-between gap-3"><div><div class="flex items-center gap-2 text-sm font-semibold text-slate-900"><span>鈴木 結</span><span class="rounded-full bg-emerald-500/10 px-2 py-1 text-[11px] font-semibold text-emerald-600">確認済み</span></div><p class="mt-1 text-sm text-slate-600">対象: 部門コードマスタ / 種別: 変更申請 / 申請日時: 2026-03-24 18:10</p></div><div class="flex gap-2"><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-sm font-medium text-slate-700">詳細確認</button><button class="rounded-full border border-[#1473E6] bg-[#1473E6] px-3 py-2 text-sm font-medium text-white">承認</button></div></div></div>
-          </div>
-        </article>
-      </section>
+        </section>
 
-      <section class="mt-6 grid gap-4 xl:grid-cols-[1.5fr_0.9fr]">
-        <article class="rounded-[30px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-          <div class="mb-4 flex flex-wrap items-center justify-between gap-3"><div><h2 class="text-base font-semibold text-slate-900">マスタ一覧</h2><p class="text-sm text-slate-500">ソート、フィルタ、ページ遷移に対応</p></div><div class="flex flex-wrap gap-2"><button class="rounded-full border border-[#d5d5d5] bg-[#faf8f4] px-3 py-2 text-sm font-medium text-slate-700"><i class="fa-solid fa-filter mr-2 text-[#1473E6]"></i>フィルタ</button><button class="rounded-full border border-[#d5d5d5] bg-[#faf8f4] px-3 py-2 text-sm font-medium text-slate-700"><i class="fa-solid fa-sort mr-2 text-[#1473E6]"></i>ソート</button></div></div>
-          <div class="overflow-x-auto">
-            <table class="min-w-[980px] w-full border-separate border-spacing-y-2 text-left text-sm">
-              <thead class="text-xs uppercase tracking-[0.18em] text-slate-500"><tr><th class="px-4 py-2 font-semibold">マスタ名</th><th class="px-4 py-2 font-semibold">マスタコード</th><th class="px-4 py-2 font-semibold">管理部署</th><th class="px-4 py-2 font-semibold">最終更新日</th><th class="px-4 py-2 font-semibold">更新者</th><th class="px-4 py-2 font-semibold">ステータス</th><th class="px-4 py-2 font-semibold">レコード件数</th><th class="px-4 py-2 font-semibold">エラー件数</th><th class="px-4 py-2 font-semibold">操作</th></tr></thead>
-              <tbody>
-                <tr class="rounded-2xl bg-[#faf8f4]"><td class="px-4 py-4 font-medium text-slate-900">商品カテゴリマスタ</td><td class="px-4 py-4 text-slate-600">CAT-001</td><td class="px-4 py-4 text-slate-600">商品企画部</td><td class="px-4 py-4 text-slate-600">2026-03-25</td><td class="px-4 py-4 text-slate-600">山田 花子</td><td class="px-4 py-4"><span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600">公開中</span></td><td class="px-4 py-4 text-slate-600">2,184</td><td class="px-4 py-4 text-slate-600">0</td><td class="px-4 py-4"><div class="flex flex-wrap gap-2"><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-regular fa-eye mr-1 text-[#1473E6]"></i>詳細</button><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-regular fa-pen-to-square mr-1 text-[#1473E6]"></i>編集</button><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-solid fa-rotate mr-1 text-[#1473E6]"></i>履歴</button></div></td></tr>
-                <tr class="rounded-2xl bg-white"><td class="px-4 py-4 font-medium text-slate-900">取引先マスタ</td><td class="px-4 py-4 text-slate-600">VND-014</td><td class="px-4 py-4 text-slate-600">購買部</td><td class="px-4 py-4 text-slate-600">2026-03-24</td><td class="px-4 py-4 text-slate-600">佐藤 望</td><td class="px-4 py-4"><span class="rounded-full bg-amber-500/10 px-2.5 py-1 text-xs font-semibold text-amber-600">確認待ち</span></td><td class="px-4 py-4 text-slate-600">428</td><td class="px-4 py-4 text-slate-600">1</td><td class="px-4 py-4"><div class="flex flex-wrap gap-2"><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-regular fa-eye mr-1 text-[#1473E6]"></i>詳細</button><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-regular fa-pen-to-square mr-1 text-[#1473E6]"></i>編集</button><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-solid fa-rotate mr-1 text-[#1473E6]"></i>履歴</button></div></td></tr>
-                <tr class="rounded-2xl bg-[#faf8f4]"><td class="px-4 py-4 font-medium text-slate-900">部門コードマスタ</td><td class="px-4 py-4 text-slate-600">DPT-210</td><td class="px-4 py-4 text-slate-600">管理本部</td><td class="px-4 py-4 text-slate-600">2026-03-23</td><td class="px-4 py-4 text-slate-600">鈴木 結</td><td class="px-4 py-4"><span class="rounded-full bg-sky-500/10 px-2.5 py-1 text-xs font-semibold text-sky-600">公開中</span></td><td class="px-4 py-4 text-slate-600">94</td><td class="px-4 py-4 text-slate-600">2</td><td class="px-4 py-4"><div class="flex flex-wrap gap-2"><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-regular fa-eye mr-1 text-[#1473E6]"></i>詳細</button><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-regular fa-pen-to-square mr-1 text-[#1473E6]"></i>編集</button><button class="rounded-full border border-[#d5d5d5] bg-white px-3 py-2 text-xs font-medium text-slate-700"><i class="fa-solid fa-rotate mr-1 text-[#1473E6]"></i>履歴</button></div></td></tr>
-              </tbody>
-            </table>
+        <section class="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <article class="panel p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--muted)]">管理中マスタ総数</p>
+          <div class="mt-3 text-3xl font-bold text-[color:var(--text)]">128</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">前週比 +4</p>
+        </div>
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-700"><i class="fa-solid fa-database" aria-hidden="true"></i></span>
+      </div>
+    </article>
+    <article class="panel p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--muted)]">本日の更新件数</p>
+          <div class="mt-3 text-3xl font-bold text-[color:var(--text)]">24</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">前日比 +9%</p>
+        </div>
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-sky-500/10 text-sky-700"><i class="fa-solid fa-rotate" aria-hidden="true"></i></span>
+      </div>
+    </article>
+    <article class="panel p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--muted)]">承認待ち件数</p>
+          <div class="mt-3 text-3xl font-bold text-[color:var(--text)]">7</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">SLA超過 2</p>
+        </div>
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-amber-500/10 text-amber-700"><i class="fa-solid fa-user-check" aria-hidden="true"></i></span>
+      </div>
+    </article>
+    <article class="panel p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--muted)]">エラー/不整合件数</p>
+          <div class="mt-3 text-3xl font-bold text-[color:var(--text)]">3</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">昨日時点比 -1</p>
+        </div>
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-rose-500/10 text-rose-700"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+      </div>
+    </article></section>
+
+        <section class="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <article class="panel p-5">
+            <div class="flex items-center justify-between gap-3">
+              <h2 class="text-base font-semibold">アラート</h2>
+              <span class="short rounded-full bg-[color:var(--secondary)] px-3 py-1 text-xs font-bold text-[color:var(--accent)]">優先対応</span>
+            </div>
+            <div class="mt-4 space-y-3">
+    <article class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-700">高</span>
+            <h3 class="font-semibold">更新失敗</h3>
           </div>
-        </article>
-        <aside class="space-y-4">
-          <article class="rounded-[30px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-            <div class="mb-4 flex items-center justify-between"><div><h2 class="text-base font-semibold text-slate-900">更新履歴・通知</h2><p class="text-sm text-slate-500">全体 / 自分関連 / エラーのみ</p></div><button class="rounded-full border border-[#d5d5d5] bg-[#faf8f4] px-3 py-2 text-sm font-medium text-slate-700"><i class="fa-solid fa-rotate mr-2 text-[#1473E6]"></i>全体</button></div>
-            <div class="space-y-3">
-              <div class="rounded-2xl border border-[#d5d5d5] bg-[#faf8f4] p-4"><div class="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-900"><i class="fa-solid fa-circle-check text-emerald-500"></i>承認結果</div><p class="text-sm text-slate-600">顧客属性マスタが承認されました / 2026-03-25 11:45</p></div>
-              <div class="rounded-2xl border border-[#d5d5d5] bg-white p-4"><div class="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-900"><i class="fa-solid fa-triangle-exclamation text-rose-500"></i>エラー通知</div><p class="text-sm text-slate-600">部門コードマスタの参照不整合を検出 / 2026-03-25 10:58</p></div>
-              <div class="rounded-2xl border border-[#d5d5d5] bg-[#faf8f4] p-4"><div class="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-900"><i class="fa-solid fa-arrows-rotate text-[#1473E6]"></i>定期取込結果</div><p class="text-sm text-slate-600">商品カテゴリマスタの夜間取込が完了 / 2026-03-25 02:10</p></div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">取引先マスタ / 2026-03-25 08:20</p>
+        </div>
+        <a href="#" class="short text-xs font-semibold text-[color:var(--primary)]">詳細を見る</a>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-3 text-xs font-semibold text-[color:var(--primary)]">
+        <a href="#">対象マスタへ移動</a>
+      </div>
+    </article>
+    <article class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-700">中</span>
+            <h3 class="font-semibold">必須項目欠損</h3>
+          </div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">商品マスタ / 2026-03-25 09:05</p>
+        </div>
+        <a href="#" class="short text-xs font-semibold text-[color:var(--primary)]">詳細を見る</a>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-3 text-xs font-semibold text-[color:var(--primary)]">
+        <a href="#">対象マスタへ移動</a>
+      </div>
+    </article>
+    <article class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-700">高</span>
+            <h3 class="font-semibold">参照不整合</h3>
+          </div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">部門コードマスタ / 2026-03-25 10:58</p>
+        </div>
+        <a href="#" class="short text-xs font-semibold text-[color:var(--primary)]">詳細を見る</a>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-3 text-xs font-semibold text-[color:var(--primary)]">
+        <a href="#">対象マスタへ移動</a>
+      </div>
+    </article></div>
+          </article>
+
+          <article class="panel p-5">
+            <div class="flex items-center justify-between gap-3">
+              <h2 class="text-base font-semibold">承認待ち</h2>
+              <span class="short text-sm font-semibold text-[color:var(--muted)]">SLA超過 2 件</span>
+            </div>
+            <div class="mt-4 space-y-3">
+    <article class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-sm text-[color:var(--muted)]">佐藤 / 部門マスタ</p>
+          <p class="mt-1 font-semibold">項目追加の申請</p>
+        </div>
+        <span class="short inline-flex rounded-full bg-[color:var(--secondary)] text-[color:var(--accent)] px-2.5 py-1 text-xs font-bold">承認待ち</span>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-3 text-xs font-semibold text-[color:var(--primary)]">
+        <a href="#">詳細確認</a>
+        <a href="#">承認</a>
+        <a href="#">差戻し</a>
+      </div>
+    </article>
+    <article class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-sm text-[color:var(--muted)]">高橋 / 取引先マスタ</p>
+          <p class="mt-1 font-semibold">コード正規化の申請</p>
+        </div>
+        <span class="short inline-flex rounded-full bg-rose-500/10 text-rose-700 px-2.5 py-1 text-xs font-bold">SLA超過</span>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-3 text-xs font-semibold text-[color:var(--primary)]">
+        <a href="#">詳細確認</a>
+        <a href="#">承認</a>
+        <a href="#">差戻し</a>
+      </div>
+    </article>
+    <article class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-sm text-[color:var(--muted)]">青木 / 顧客属性マスタ</p>
+          <p class="mt-1 font-semibold">更新差分の確認</p>
+        </div>
+        <span class="short inline-flex rounded-full bg-[color:var(--secondary)] text-[color:var(--accent)] px-2.5 py-1 text-xs font-bold">承認待ち</span>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-3 text-xs font-semibold text-[color:var(--primary)]">
+        <a href="#">詳細確認</a>
+        <a href="#">承認</a>
+        <a href="#">差戻し</a>
+      </div>
+    </article></div>
+          </article>
+        </section>
+
+        <section class="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
+          <article class="panel overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[color:var(--border)] px-5 py-4">
+              <div>
+                <h2 class="text-base font-semibold">マスタ一覧</h2>
+                <p class="mt-1 text-sm text-[color:var(--muted)]">ソート、フィルタ、ページネーションに対応した一覧です。</p>
+              </div>
+              <span class="short text-sm text-[color:var(--muted)]">1 - 3 / 248</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-[980px] w-full text-sm">
+                <thead class="bg-[color:var(--soft)] text-left text-[color:var(--muted)]">
+                  <tr>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">マスタ名</th>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">マスタコード</th>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">管理部署</th>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">最終更新日</th>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">更新者</th>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">ステータス</th>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">レコード件数</th>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">エラー件数</th>
+                    <th class="whitespace-nowrap px-4 py-3 font-semibold">操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+      <tr class="bg-[color:var(--soft)]/70 border-t border-[color:var(--border)]">
+        <td class="whitespace-nowrap px-4 py-4 font-semibold">商品カテゴリマスタ</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">CAT-001</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">商品企画部</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">2026-03-25</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">山田 花子</td>
+        <td class="px-4 py-4"><span class="short inline-flex rounded-full bg-emerald-500/10 text-emerald-700 px-2.5 py-1 text-xs font-bold">公開中</span></td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">2,184</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">0</td>
+        <td class="px-4 py-4"><div class="flex flex-wrap gap-2 text-xs font-semibold text-[color:var(--primary)]"><a href="#">詳細</a><a href="#">編集</a><a href="#">履歴</a></div></td>
+      </tr>
+      <tr class="bg-[color:var(--surface)] border-t border-[color:var(--border)]">
+        <td class="whitespace-nowrap px-4 py-4 font-semibold">取引先マスタ</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">VND-014</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">購買部</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">2026-03-24</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">佐藤 望</td>
+        <td class="px-4 py-4"><span class="short inline-flex rounded-full bg-amber-500/10 text-amber-700 px-2.5 py-1 text-xs font-bold">確認待ち</span></td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">428</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">1</td>
+        <td class="px-4 py-4"><div class="flex flex-wrap gap-2 text-xs font-semibold text-[color:var(--primary)]"><a href="#">詳細</a><a href="#">編集</a><a href="#">履歴</a></div></td>
+      </tr>
+      <tr class="bg-[color:var(--soft)]/70 border-t border-[color:var(--border)]">
+        <td class="whitespace-nowrap px-4 py-4 font-semibold">部門コードマスタ</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">DPT-210</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">管理本部</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">2026-03-23</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">鈴木 結</td>
+        <td class="px-4 py-4"><span class="short inline-flex rounded-full bg-emerald-500/10 text-emerald-700 px-2.5 py-1 text-xs font-bold">公開中</span></td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">94</td>
+        <td class="whitespace-nowrap px-4 py-4 text-[color:var(--muted)]">2</td>
+        <td class="px-4 py-4"><div class="flex flex-wrap gap-2 text-xs font-semibold text-[color:var(--primary)]"><a href="#">詳細</a><a href="#">編集</a><a href="#">履歴</a></div></td>
+      </tr></tbody>
+              </table>
             </div>
           </article>
-          <article class="rounded-[30px] border border-[#d5d5d5] bg-white p-5 soft-panel">
-            <div class="mb-4 flex items-center justify-between"><div><h2 class="text-base font-semibold text-slate-900">通知</h2><p class="text-sm text-slate-500">未確認項目を強調表示</p></div><span class="rounded-full bg-rose-500/10 px-2.5 py-1 text-xs font-semibold text-rose-600">未読 3 件</span></div>
-            <div class="space-y-3">
-              <div class="rounded-2xl border border-[#d5d5d5] bg-[#faf8f4] p-4"><div class="flex items-start gap-3"><div class="mt-0.5 flex h-9 w-9 items-center justify-center rounded-full bg-[#1473E6]/10 text-[#1473E6]"><i class="fa-solid fa-bell"></i></div><div><p class="text-sm font-medium text-slate-900">更新承認の依頼があります</p><p class="text-sm text-slate-600">取引先マスタ / 5分前</p></div></div></div>
-              <div class="rounded-2xl border border-[#d5d5d5] bg-white p-4"><div class="flex items-start gap-3"><div class="mt-0.5 flex h-9 w-9 items-center justify-center rounded-full bg-[#1473E6]/10 text-[#1473E6]"><i class="fa-solid fa-file-circle-check"></i></div><div><p class="text-sm font-medium text-slate-900">監査ログが更新されました</p><p class="text-sm text-slate-600">ユーザー/権限管理 / 18分前</p></div></div></div>
-            </div>
-          </article>
-        </aside>
-      </section>
-    </main>
+
+          <aside class="space-y-6">
+            <article class="panel p-5">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <h2 class="text-base font-semibold">更新履歴・通知</h2>
+                  <p class="mt-1 text-sm text-[color:var(--muted)]">全体 / 自分関連 / エラーのみ</p>
+                </div>
+                <button class="short rounded-[calc(var(--radius)-8px)] border border-[color:var(--border)] bg-[color:var(--soft)] px-3 py-2 text-sm font-semibold text-[color:var(--text)]">全体</button>
+              </div>
+              <div class="mt-4 space-y-3">
+    <div class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="text-sm font-semibold">承認結果</div>
+      <p class="mt-1 text-sm text-[color:var(--muted)]">顧客属性マスタが承認されました</p>
+      <p class="mt-2 text-xs text-[color:var(--muted)]">2026-03-25 11:45</p>
+    </div>
+    <div class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="text-sm font-semibold">エラー通知</div>
+      <p class="mt-1 text-sm text-[color:var(--muted)]">部門コードマスタの参照不整合を検出</p>
+      <p class="mt-2 text-xs text-[color:var(--muted)]">2026-03-25 10:58</p>
+    </div>
+    <div class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <div class="text-sm font-semibold">定期取込結果</div>
+      <p class="mt-1 text-sm text-[color:var(--muted)]">商品カテゴリマスタの夜間取込が完了</p>
+      <p class="mt-2 text-xs text-[color:var(--muted)]">2026-03-25 02:10</p>
+    </div></div>
+            </article>
+            <article class="panel p-5">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <h2 class="text-base font-semibold">通知</h2>
+                  <p class="mt-1 text-sm text-[color:var(--muted)]">未確認項目を強調表示</p>
+                </div>
+                <span class="short rounded-full bg-rose-500/10 px-2.5 py-1 text-xs font-bold text-rose-700">未読 3 件</span>
+              </div>
+              <div class="mt-4 space-y-3">
+    <div class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <p class="text-sm font-semibold">更新承認の依頼があります</p>
+      <p class="mt-1 text-sm text-[color:var(--muted)]">取引先マスタ / 5分前</p>
+    </div>
+    <div class="rounded-[calc(var(--radius)-6px)] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+      <p class="text-sm font-semibold">監査ログが更新されました</p>
+      <p class="mt-1 text-sm text-[color:var(--muted)]">ユーザー/権限管理 / 18分前</p>
+    </div></div>
+            </article>
+          </aside>
+        </section>
+      </main>
+    </div>
   </div>
-
-  <script>
-    const openDrawer = document.getElementById('openDrawer');
-    const closeDrawer = document.getElementById('closeDrawer');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    const drawerBackdrop = document.getElementById('drawerBackdrop');
-    function setDrawer(open) {
-      mobileDrawer.classList.toggle('-translate-x-full', !open);
-      mobileDrawer.classList.toggle('translate-x-0', open);
-      drawerBackdrop.classList.toggle('hidden', !open);
-      document.body.classList.toggle('overflow-hidden', open);
-      openDrawer?.setAttribute('aria-expanded', String(open));
-    }
-    openDrawer?.addEventListener('click', () => setDrawer(true));
-    closeDrawer?.addEventListener('click', () => setDrawer(false));
-    drawerBackdrop?.addEventListener('click', () => setDrawer(false));
-    mobileDrawer?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setDrawer(false)));
-  </script>
 </body>
 </html>
