@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use disciplined cards, lists, tables, and badges as workflow surfaces rather than casual dashboard tiles.
 - **Dialogs, toasts, loading, pagination:** Use Dialog, Tray, Toast, ProgressCircle, Skeleton, and Pagination patterns with a polished but unobtrusive feel.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Prefer `ActionMenu`, `Tray`, `Tabs`, `ActionButton`, `TableView`, and compact toolbar groupings as the core workflow component language.
+- Tables should feel like `TableView` inside a page layout with header or toolbar above and the table filling the remaining space, rather than as a loose card dropped into a dashboard.
+- Status and selection cues should stay polished and compact; avoid generic enterprise badges or overgrown KPI chips.
 
 ## 5. Layout Principles
 - Use workflow containers, side panels, and polished shell framing to organize complex tasks.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Keep the shell polished and task-oriented with workflow emphasis, compact action surfaces, and deliberate iconography.
 - Avoid generic admin dashboard framing; supporting trays, refined action areas, and product-workspace structure should do more of the organizing work.
+- The page should read like a creative-professional workspace with polished utility chrome, not a neutral operations dashboard with renamed colors.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

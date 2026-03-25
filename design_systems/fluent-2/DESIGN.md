@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use soft but disciplined cards, lists, tables, and badges to support productivity workflows without becoming decorative.
 - **Dialogs, toasts, loading, pagination:** Use dialog, drawer, teaching bubble, toast, progress, skeleton, and loading patterns with explicit state transitions.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Use `Nav` / navigation pane behavior explicitly: inline around medium and larger widths, overlay on compact widths, with plain-language labels and consistent leading icons.
+- Keep command surfaces close to the work area through toolbars, split buttons, and subtle command groups rather than broad hero actions.
+- Cards should stay softly rounded and token-driven, but avoid oversized glassy chrome or generic KPI-tile rows that erase Fluent’s productivity-shell character.
 
 ## 5. Layout Principles
 - Use productivity-first shells with clear navigation, calm surfaces, and explicit local structure.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Keep navigation task-focused with plain-language labels, category icons, and only shallow nesting.
 - Favor an inline productivity nav pane on larger widths instead of reusing a generic dashboard side shell.
+- Avoid a consumer-style glossy dashboard or an oversized rounded shell; Fluent should read like Microsoft productivity software first.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

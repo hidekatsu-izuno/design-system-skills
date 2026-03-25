@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use calm cards, tables, lists, and soft status chips to support back-office tasks without visual noise.
 - **Dialogs, toasts, loading, pagination:** Use dialogs, notices, loading states, and pagination that preserve business-product trust and clarity.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Treat `TabBar` as the primary screen-level switcher and use `Reel` behavior on mobile when tabs overflow.
+- Prefer SmartHR-style feedback and support components such as `NotificationBar`, `ResponseMessage`, `InformationPanel`, `StatusLabel`, `Table`, and `AppNavi` / `SideNav` where relevant.
+- Keep chips and badges soft and informational only; do not let chip-heavy navigation or generic dashboard tiles dominate the product shell.
 
 ## 5. Layout Principles
 - Use straightforward business-product shells with stable grouping and minimal decorative chrome.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Use `TabBar` as the primary view-switching shell with a clear underline and a calm back-office product rhythm.
 - Avoid drawer-first or sidebar-first admin framing and avoid generic overview-card dashboards when a tab-scoped product view is more appropriate.
+- When data is dense, preserve SmartHR’s table readability and mobile stacking guidance rather than forcing desktop-style dashboard modules into small screens.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

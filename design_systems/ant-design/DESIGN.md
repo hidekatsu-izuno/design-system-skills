@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use Card, Table, List, Badge, and Tag patterns to structure dense operational information. Tables are first-class and should remain strong when comparison matters.
 - **Dialogs, toasts, loading, pagination:** Use Modal, Drawer, Popconfirm, Message, Notification, Spin, Skeleton, Progress, and Pagination to support admin workflows without ambiguity.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- The default shell should read as `Layout` with `Header`, `Sider`, and `Content`, not as an abstract generic sidebar app.
+- Preserve Ant’s strong Table, Form, and filter-toolbar rhythm: search, segmented filters, batch actions, and pagination should feel adjacent to the data area rather than detached hero controls.
+- Use `Tag` and `Badge` as concise inline state markers and avoid oversized rounded summary chips that blur into other systems.
 
 ## 5. Layout Principles
 - Use management shells with header, sider, and content regions when the information architecture is broad.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Keep the shell `Layout.Sider`-first and enterprise-web pragmatic rather than treating mobile navigation as a generic modal drawer pattern.
 - Dense work areas, compact sections, and left-side navigation should define the page before decorative summary framing.
+- Avoid a generic modal-drawer-plus-cards mobile shell; the small-screen pattern should still feel like collapsed `Sider` behavior with Ant-style structure and dense data-first organization.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

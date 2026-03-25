@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use cards and lists sparingly around strong tables. Prefer lozenges and inline status indicators over oversized pills or decorative chips.
 - **Dialogs, toasts, loading, pagination:** Use Modal Dialog, Inline Dialog, Section Message, Flag, Spinner, Skeleton, and Pagination to support workflow continuity.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Prefer nested or grouped side navigation with clear current-state treatment, plus page-level local navigation where the workspace has multiple modes.
+- Use `Lozenge`, `Flag`, and `Section Message` style inline communication instead of large dashboard callout cards.
+- Keep tables, issue-like lists, and inline row actions prominent; summaries should stay secondary to the work-tracking surface.
 
 ## 5. Layout Principles
 - Use left navigation and product-level structure for larger SaaS shells.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Prefer a side-navigation-first workspace with grouped sections, strong current-state indication, and inline lozenge status treatment.
 - Avoid KPI hero rows and broad dashboard framing when a context-first navigation workflow is more appropriate.
+- The page should feel like a SaaS workspace with supporting aside regions and dense collaboration/status cues, not like a neutral admin dashboard template.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

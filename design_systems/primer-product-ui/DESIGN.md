@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use flat borders, muted containers, tables, timelines, and compact status labels rather than decorative dashboard tiles.
 - **Dialogs, toasts, loading, pagination:** Use dialogs, flash messages, loading states, and pagination in a restrained product-oriented way.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Use `PageLayout` as a real landmark system with a `NavList` sidebar, content area, and optional context pane, not just as a generic three-column layout.
+- Preserve Primer’s component vocabulary in the content area: `UnderlineNav`, `ActionMenu`, `ActionList`, `Flash/Banner`, `Blankslate`, and compact table/list patterns.
+- Leading visuals in `NavList` should be consistent when used, counters should stay compact, and the shell should remain quiet and text-forward.
 
 ## 5. Layout Principles
 - Use page headers, page layout primitives, side nav, and context panes to organize work.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Use `PageLayout` as a real sidebar/main/pane relationship with `NavList` as a vertical grouped navigation primitive.
 - Avoid broad KPI-card dashboard framing; the page should read like a GitHub product surface with breadcrumbs, panes, and content landmarks.
+- Avoid hero metrics rows and branded shell treatments; Primer should look like a serious GitHub product page with flat borders and clear landmarks.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

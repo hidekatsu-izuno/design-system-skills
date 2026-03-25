@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Prefer grouped lists, inset tables, and calm summary containers over KPI-tile dashboards. Status should remain subtle.
 - **Dialogs, toasts, loading, pagination:** Use alerts, sheets, banners, and progress indicators in a platform-native way and avoid noisy transient patterns.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Prefer sidebar plus split-view selection patterns, grouped list sections, inset tables, and quiet toolbars as the primary component grammar for data-rich screens.
+- In compact widths, switch view families with tab bars or segmented controls rather than inventing a generic web drawer.
+- Keep status treatment subtle and native-feeling; avoid enterprise lozenges, large warning panels, or a dashboard row of equal KPI tiles.
 
 ## 5. Layout Principles
 - Use content-first composition with grouped sections, split views, and quiet toolbars.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Prefer sidebar + split view + grouped lists as the dominant composition, with native-feeling content groupings instead of KPI-tile dashboards.
 - Let compact tab bars or segmented controls take over in compact widths instead of preserving a generic admin shell.
+- The page should feel like an Apple app screen adapted to the web, not like an enterprise dashboard with Apple colors and typography.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use sections, tables, and lists for structured information. Grouping should support comprehension rather than product personality.
 - **Dialogs, toasts, loading, pagination:** Use dialogs, notices, progress, and pagination only when they reduce ambiguity in public-service flows.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Explicitly use `hamburger menu button`, `drawer`, and `mobile menu` style compact navigation with literal labels and minimal nested chrome.
+- Prefer notices, plainly bordered sections, explanatory headings, and straightforward tables over product-style cards or summary tiles.
+- Keep interaction copy and labels concrete, administrative, and public-service oriented; avoid product-marketing tone and decorative badges.
 
 ## 5. Layout Principles
 - Use straightforward headers, grouped sections, and explicit service flow structure.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Prefer a plain service-page shell with explicit labels and restrained grouping instead of a broad app-like dashboard scaffold.
 - Avoid persistent app-style side rails and decorative hero/card framing when a literal service layout will communicate more clearly.
+- Avoid generic KPI dashboards and overview-card framing; this system should look like a trustworthy service page or administrative form, not a branded SaaS workspace.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

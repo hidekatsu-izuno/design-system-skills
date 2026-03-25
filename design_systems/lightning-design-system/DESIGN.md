@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use record headers, highlights panels, related lists, badges, and data tables that maintain object-page rhythm.
 - **Dialogs, toasts, loading, pagination:** Use modals, prompt-style feedback, spinners, notifications, and pagination to support CRM operations.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Treat `page header`, `record header`, `highlights panel`, `path`, `tabs`, `related list`, and `datatable` as the defining component set for this system.
+- Primary content should feel like an object or record home: object identity and status first, related lists and support panels second, generic summary tiles last.
+- Tabs and overflow should organize the major sections before any mobile drawer-like pattern is introduced.
 
 ## 5. Layout Principles
 - Use record-page composition, object headers, highlights, related lists, and utility regions.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Use object or record-page composition with a persistent page header, main content area, and secondary sidebar rather than a generic dashboard hero row.
 - Tabs should organize the primary sections and side panels should hold supporting record information.
+- Avoid a top-bar-plus-cards admin shell; Lightning screens should read like CRM object pages with utility regions and related content.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

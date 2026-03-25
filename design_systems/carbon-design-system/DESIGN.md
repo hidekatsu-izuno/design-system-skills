@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use cards sparingly around strong layers and tables. Carbon tables, lists, and tags should remain explicit and disciplined.
 - **Dialogs, toasts, loading, pagination:** Use modal, side panel, notification, inline loading, progress, skeleton, and pagination patterns with restrained chrome.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Treat `UI shell header`, `side nav`, `left panel`, `header panel`, `tile`, and `data table` as the core component language for dashboard-like screens.
+- Prefer layered `Tile` and `DataTable` structures over soft cards; Carbon summaries should feel like IBM product modules, not consumer dashboard cards.
+- Header actions and shell triggers should do visible structural work, such as opening navigation or utility panels, rather than acting like decorative toolbar buttons.
 
 ## 5. Layout Principles
 - Use the 2x grid and layered shell logic to create order before decoration.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Use a dark Gray 100 style UI shell header as the primary frame and keep the left panel structurally separate below it.
 - Avoid soft floating dashboard framing; Carbon shells should read as layered IBM product structure first.
+- The 2x grid and layer hierarchy should organize the page before any metrics row appears; summary modules are subordinate to shell, table, and work area structure.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

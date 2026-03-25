@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use tonal containers, cards, lists, tables, and chips to group content semantically. Avoid flattening every summary into identical tiles.
 - **Dialogs, toasts, loading, pagination:** Use dialogs, bottom sheets, snackbars, progress, and loading states that clarify task flow without excessive interruption.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Prefer Top App Bar plus modal navigation drawer on compact widths, then Navigation Rail plus supporting pane on wider widths; do not reuse the same sidebar shell at every breakpoint.
+- Summary areas should read as tonal containers and elevated cards with Material shape scale, not as generic flat white admin tiles.
+- Use chips, segmented filters, and list rows as secondary organization devices around tables instead of turning all status into large dashboard badges.
 
 ## 5. Layout Principles
 - Use adaptive shells with top app bars, navigation rails, drawers, and supporting panes based on width and complexity.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Prefer top app bar + drawer / rail transitions and tonal container hierarchy over a universal KPI-card dashboard row.
 - Supporting panes and role-based containers should take precedence over one repeated four-card hero pattern.
+- Avoid a flat white enterprise admin shell; Material surfaces should be separated by color roles, elevation, and shape rather than by heavy border grids alone.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.

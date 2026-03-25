@@ -39,6 +39,9 @@ Use semantic roles in implementation. The values below are representative genera
 - **Cards, lists, tables, badges:** Use cards and grouped surfaces to add structure and personality, but keep tables and lists readable and useful.
 - **Dialogs, toasts, loading, pagination:** Use overlays and transient feedback with controlled brand expression, not dramatic motion or heavy chrome.
 - **Icons and symbolic affordances:** In static HTML mocks, use Font Awesome as the fallback icon set when the native design-system icon package is unavailable. Keep icons functional rather than decorative. Apply them to common affordance points such as menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions. Prefer close semantic matches, keep visible labels, and avoid replacing text-only controls with icon-only controls unless the design system clearly expects that pattern.
+- Add a showcase-like supporting area, branded highlight band, or warm editorial surface so the screen keeps a recognizably designed first impression.
+- Let buttons, cards, section headers, and supporting modules carry controlled brand expression; tables and operational content still need to remain practical.
+- Avoid stripping the system down to neutral SaaS admin primitives; Sparkle needs composition, warm surfaces, and expressive emphasis beyond color swaps alone.
 
 ## 5. Layout Principles
 - Use coherent branding with reusable product structure rather than one-off visual flourishes.
@@ -49,6 +52,7 @@ Use semantic roles in implementation. The values below are representative genera
 
 - Allow a more branded first impression and a showcase-like supporting area so the product still feels design-system-adjacent rather than neutral SaaS admin.
 - Keep warm surfaces and expressive composition visible beyond color alone; do not flatten Sparkle into a generic enterprise dashboard.
+- The page may be more editorial and brand-aware than the other systems, but it still needs a real product shell and actionable landmarks.
 
 ## Compatibility Notes
 - When generating static mocks without the official icon library, approximate the system's iconography with Font Awesome icons that are semantically close and visually restrained.
