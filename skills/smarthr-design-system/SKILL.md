@@ -25,13 +25,18 @@ Use this skill when the output should look and behave like SmartHR Design System
 ## Output Rules
 
 - Do not show design commentary or rationale as visible UI text.
+- Do not render specification notes, implementation notes, or behavior explanations as visible UI text.
 - Do not invent visual treatments that conflict with `./DESIGN.md`.
 - Do not flatten the result into a generic enterprise dashboard if SmartHR implies a calmer back-office product surface.
 
 ## Copy Rules
 
 - Write product UI copy, not design commentary.
+- Default to operational system UI copy, not marketing copy.
 - Use headings and labels that describe state, content, or action.
+- Do not add taglines, promotional value statements, or landing-page style lead text unless explicitly requested.
+- Do not add descriptive helper text for the whole screen, search area, table, or form unless the task explicitly requires it.
+- Do not invent summary metrics, counts, status totals, badges, or other data points that are not present in the request or source specification.
 - Do not render phrases that describe the design system itself.
 
 ## Quality Bar
