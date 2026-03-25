@@ -1,0 +1,7 @@
+{
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "text": "Always output commit messages entirely in English. Never use Japanese. Keep the summary short, specific, and action-oriented. Use imperative mood for the subject line."
+        }
+    ]
+}
