@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ユーザーマスタ検索</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light;
+      --md-primary: #6750a4;
+      --md-on-primary: #ffffff;
+      --md-primary-container: #e9ddff;
+      --md-on-primary-container: #22005d;
+      --md-secondary-container: #e8def8;
+      --md-surface: #fffbfe;
+      --md-surface-container: #f3edf7;
+      --md-outline: #79747e;
+      --md-outline-variant: #cac4d0;
+      --md-on-surface: #1c1b1f;
+      --md-on-surface-variant: #49454f;
+      --md-success: #146c2e;
+    }
+
+    body {
+      font-family: "Roboto", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: radial-gradient(circle at top left, #efe7ff 0, rgba(239, 231, 255, 0) 28%), var(--md-surface);
+      color: var(--md-on-surface);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .shadow-tonal {
+      box-shadow: 0 1px 2px rgba(28, 27, 31, 0.08), 0 4px 14px rgba(28, 27, 31, 0.08);
+    }
+
+    .short-label {
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    #nav-drawer {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #nav-drawer:not(:checked) ~ .page-shell .drawer-scrim,
+    #nav-drawer:not(:checked) ~ .page-shell .drawer-panel {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #nav-drawer:not(:checked) ~ .page-shell .drawer-panel {
+      transform: translateX(-100%);
+    }
+
+    #nav-drawer:checked ~ .page-shell .drawer-scrim,
+    #nav-drawer:checked ~ .page-shell .drawer-panel {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #nav-drawer:checked ~ .page-shell .drawer-panel {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <input id="nav-drawer" type="checkbox" />
+  <div class="page-shell flex min-h-screen flex-col">
+    <header class="sticky top-0 z-30 border-b border-[color:var(--md-outline-variant)]/70 bg-[color:var(--md-surface)]/90 backdrop-blur">
+      <div class="flex h-16 items-center justify-between gap-4 px-4 sm:px-6">
+        <div class="flex items-center gap-3">
+          <label class="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-[color:var(--md-on-surface-variant)] hover:bg-[color:var(--md-surface-container)] md:hidden" for="nav-drawer" aria-label="メニューを開く">
+            <span class="material-symbols-outlined">menu</span>
+          </label>
+          <div>
+            <p class="text-xs font-medium tracking-[0.08em] text-[color:var(--md-on-surface-variant)]">ユーザー管理</p>
+            <h1 class="text-[22px] font-medium leading-7">ユーザーマスタ検索</h1>
+          </div>
+        </div>
+        <a class="inline-flex h-10 items-center gap-2 rounded-full bg-[color:var(--md-primary)] px-5 text-sm font-medium text-[color:var(--md-on-primary)] shadow-tonal" href="../new/index.html">
+          <span class="material-symbols-outlined">person_add</span>
+          <span class="short-label">新規登録</span>
+        </a>
+      </div>
+    </header>
+
+    <label class="drawer-scrim fixed inset-0 z-20 bg-black/30 transition md:hidden" for="nav-drawer"></label>
+    <aside class="drawer-panel fixed inset-y-0 left-0 z-30 flex w-72 flex-col gap-4 border-r border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-4 py-5 transition duration-200 ease-out md:hidden">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium tracking-[0.08em] text-[color:var(--md-on-surface-variant)]">sample3</p>
+          <p class="mt-1 text-lg font-medium">メニュー</p>
+        </div>
+        <label class="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-[color:var(--md-on-surface-variant)] hover:bg-[color:var(--md-surface-container)]" for="nav-drawer" aria-label="メニューを閉じる">
+          <span class="material-symbols-outlined">close</span>
+        </label>
+      </div>
+      <nav class="flex flex-col gap-2">
+        <a class="flex items-center gap-3 rounded-[20px] px-4 py-3 text-[color:var(--md-on-surface-variant)] hover:bg-[color:var(--md-surface-container)]" href="../../organization/list/index.html">
+          <span class="material-symbols-outlined">account_tree</span>
+          <span class="short-label text-sm font-medium">組織管理</span>
+        </a>
+        <a class="flex items-center gap-3 rounded-[20px] bg-[color:var(--md-secondary-container)] px-4 py-3" href="./index.html">
+          <span class="material-symbols-outlined">group</span>
+          <span class="short-label text-sm font-medium">ユーザー管理</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="flex flex-1">
+      <aside class="hidden w-[108px] flex-col items-center gap-3 border-r border-[color:var(--md-outline-variant)]/70 bg-[color:var(--md-surface)] px-3 py-5 md:flex">
+        <a class="flex w-full flex-col items-center gap-1 rounded-[28px] px-3 py-3 text-[color:var(--md-on-surface-variant)] hover:bg-[color:var(--md-surface-container)]" href="../../organization/list/index.html">
+          <span class="material-symbols-outlined">account_tree</span>
+          <span class="short-label text-xs font-medium">組織管理</span>
+        </a>
+        <a class="flex w-full flex-col items-center gap-1 rounded-[28px] bg-[color:var(--md-secondary-container)] px-3 py-3 text-[color:var(--md-on-surface)]" href="./index.html">
+          <span class="material-symbols-outlined">group</span>
+          <span class="short-label text-xs font-medium">ユーザー管理</span>
+        </a>
+      </aside>
+
+      <main class="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 py-6 sm:px-6 lg:px-8">
+        <nav class="flex flex-wrap items-center gap-2 text-sm text-[color:var(--md-on-surface-variant)]">
+          <a class="rounded-full px-2 py-1 hover:bg-[color:var(--md-surface-container)]" href="../../AGENTS.md">sample3</a>
+          <span>/</span>
+          <span class="short-label">ユーザー管理</span>
+          <span>/</span>
+          <span class="text-[color:var(--md-on-surface)]">ユーザーマスタ検索</span>
+        </nav>
+
+        <section class="overflow-hidden rounded-[28px] bg-[color:var(--md-surface-container)] p-4 shadow-tonal sm:p-6">
+          <div class="mb-5">
+            <h2 class="text-lg font-medium">検索条件</h2>
+            <p class="mt-1 text-sm text-[color:var(--md-on-surface-variant)]">ユーザーコード、氏名、メール、所属組織、利用状態で絞り込みます。</p>
+          </div>
+
+          <div class="grid gap-4 lg:grid-cols-2">
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-medium text-[color:var(--md-on-surface-variant)]">ユーザーコード</span>
+              <input class="h-14 rounded-[16px] border border-[color:var(--md-outline)] bg-[color:var(--md-surface)] px-4 text-base outline-none transition focus:border-[color:var(--md-primary)] focus:ring-4 focus:ring-[color:var(--md-primary-container)]" type="text" value="U0" />
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-medium text-[color:var(--md-on-surface-variant)]">ユーザー名</span>
+              <input class="h-14 rounded-[16px] border border-[color:var(--md-outline)] bg-[color:var(--md-surface)] px-4 text-base outline-none transition focus:border-[color:var(--md-primary)] focus:ring-4 focus:ring-[color:var(--md-primary-container)]" type="text" placeholder="部分一致" />
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-medium text-[color:var(--md-on-surface-variant)]">メールアドレス</span>
+              <input class="h-14 rounded-[16px] border border-[color:var(--md-outline)] bg-[color:var(--md-surface)] px-4 text-base outline-none transition focus:border-[color:var(--md-primary)] focus:ring-4 focus:ring-[color:var(--md-primary-container)]" type="email" placeholder="example@example.com" />
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-medium text-[color:var(--md-on-surface-variant)]">組織ID</span>
+              <select class="h-14 rounded-[16px] border border-[color:var(--md-outline)] bg-[color:var(--md-surface)] px-4 text-base outline-none transition focus:border-[color:var(--md-primary)] focus:ring-4 focus:ring-[color:var(--md-primary-container)]">
+                <option selected>未指定</option>
+                <option>1100 営業本部</option>
+                <option>1200 開発本部</option>
+              </select>
+            </label>
+            <fieldset class="lg:col-span-2">
+              <legend class="mb-2 text-sm font-medium text-[color:var(--md-on-surface-variant)]">有効</legend>
+              <div class="flex h-14 items-center gap-2 rounded-[16px] border border-[color:var(--md-outline)] bg-[color:var(--md-surface)] px-3 text-sm">
+                <label class="flex items-center gap-1">
+                  <input class="h-4 w-4 accent-[color:var(--md-primary)]" name="active" type="radio" />
+                  <span class="short-label">全</span>
+                </label>
+                <label class="flex items-center gap-1">
+                  <input checked class="h-4 w-4 accent-[color:var(--md-primary)]" name="active" type="radio" />
+                  <span class="short-label">有効</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="mt-5 flex flex-wrap items-center justify-end gap-3">
+            <button class="inline-flex h-10 items-center rounded-full px-4 text-sm font-medium text-[color:var(--md-primary)] hover:bg-[color:var(--md-primary-container)]" type="button">クリア</button>
+            <button class="inline-flex h-10 items-center gap-2 rounded-full bg-[color:var(--md-primary)] px-5 text-sm font-medium text-[color:var(--md-on-primary)] shadow-tonal" type="button">
+              <span class="material-symbols-outlined">search</span>
+              <span class="short-label">検索</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="overflow-hidden rounded-[28px] border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] shadow-tonal">
+          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[color:var(--md-outline-variant)] px-4 py-4 sm:px-6">
+            <div>
+              <h2 class="text-lg font-medium">検索結果</h2>
+              <p class="mt-1 text-sm text-[color:var(--md-on-surface-variant)]">3件を表示しています。</p>
+            </div>
+            <div class="flex items-center gap-2 rounded-full bg-[color:var(--md-surface-container)] px-4 py-2 text-sm text-[color:var(--md-on-surface-variant)]">
+              <span class="material-symbols-outlined !text-[18px]">swap_vert</span>
+              <span>ユーザーコード ASC</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="min-w-full border-separate border-spacing-0 text-sm">
+              <thead class="bg-[color:var(--md-surface-container)] text-left text-[color:var(--md-on-surface-variant)]">
+                <tr>
+                  <th class="whitespace-nowrap px-4 py-3 font-medium sm:px-6">ユーザーID</th>
+                  <th class="whitespace-nowrap px-4 py-3 font-medium">ユーザーコード</th>
+                  <th class="whitespace-nowrap px-4 py-3 font-medium">ユーザー名</th>
+                  <th class="whitespace-nowrap px-4 py-3 font-medium">メールアドレス</th>
+                  <th class="whitespace-nowrap px-4 py-3 font-medium">組織ID</th>
+                  <th class="whitespace-nowrap px-4 py-3 font-medium">有効フラグ</th>
+                  <th class="whitespace-nowrap px-4 py-3 font-medium">作成日時</th>
+                  <th class="whitespace-nowrap px-4 py-3 font-medium sm:px-6">更新日時</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="cursor-pointer border-t border-[color:var(--md-outline-variant)] transition hover:bg-[color:var(--md-surface-container)]/70">
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6">5001</td>
+                  <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--md-primary)]">U001</td>
+                  <td class="px-4 py-4">山田 花子</td>
+                  <td class="whitespace-nowrap px-4 py-4">hanako.yamada@example.co.jp</td>
+                  <td class="whitespace-nowrap px-4 py-4">1100</td>
+                  <td class="px-4 py-4"><span class="short-label inline-flex rounded-full bg-[#d7f8d8] px-3 py-1 text-xs font-medium text-[color:var(--md-success)]">有効</span></td>
+                  <td class="whitespace-nowrap px-4 py-4">2026-01-14 08:30</td>
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6">2026-03-20 17:45</td>
+                </tr>
+                <tr class="cursor-pointer border-t border-[color:var(--md-outline-variant)] transition hover:bg-[color:var(--md-surface-container)]/70">
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6">5002</td>
+                  <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--md-primary)]">U014</td>
+                  <td class="px-4 py-4">佐藤 翔太</td>
+                  <td class="whitespace-nowrap px-4 py-4">shota.sato@example.co.jp</td>
+                  <td class="whitespace-nowrap px-4 py-4">1100</td>
+                  <td class="px-4 py-4"><span class="short-label inline-flex rounded-full bg-[#d7f8d8] px-3 py-1 text-xs font-medium text-[color:var(--md-success)]">有効</span></td>
+                  <td class="whitespace-nowrap px-4 py-4">2026-01-20 10:10</td>
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6">2026-03-22 09:05</td>
+                </tr>
+                <tr class="cursor-pointer border-t border-[color:var(--md-outline-variant)] transition hover:bg-[color:var(--md-surface-container)]/70">
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6">5010</td>
+                  <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--md-primary)]">U102</td>
+                  <td class="px-4 py-4">高橋 美咲</td>
+                  <td class="whitespace-nowrap px-4 py-4">misaki.takahashi@example.co.jp</td>
+                  <td class="whitespace-nowrap px-4 py-4">1200</td>
+                  <td class="px-4 py-4"><span class="short-label inline-flex rounded-full bg-[#d7f8d8] px-3 py-1 text-xs font-medium text-[color:var(--md-success)]">有効</span></td>
+                  <td class="whitespace-nowrap px-4 py-4">2026-02-05 11:40</td>
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6">2026-03-25 14:25</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
