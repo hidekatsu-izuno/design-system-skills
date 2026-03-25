@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>マスタ管理システム - 商品マスタ検索</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body { background: #f7f8f9; }
+  </style>
+</head>
+<body class="min-h-screen text-[#172b4d] antialiased">
+  <header class="sticky top-0 z-40 border-b border-[#dfe1e6] bg-white">
+    <div class="mx-auto flex max-w-[1680px] items-center gap-3 px-4 py-3 lg:px-6">
+      <button id="openDrawer" class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#dfe1e6] bg-white text-[#0c66e4] lg:hidden" aria-label="メニューを開く" aria-controls="mobileDrawer" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      <div class="flex min-w-0 flex-1 items-center gap-3">
+        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-[#e9f2ff] text-[#0c66e4]"><i class="fa-solid fa-box"></i></div>
+        <div class="min-w-0">
+          <div class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6b778c]">マスタ管理システム</div>
+          <div class="truncate text-lg font-semibold text-[#172b4d]">商品マスタ検索</div>
+        </div>
+      </div>
+      <div class="hidden min-w-0 flex-[1.15] items-center gap-2 rounded-lg border border-[#dfe1e6] bg-[#f7f8f9] px-3 py-2 lg:flex">
+        <i class="fa-solid fa-magnifying-glass text-[#6b778c]"></i>
+        <input class="min-w-0 flex-1 border-0 bg-transparent text-sm outline-none placeholder:text-[#6b778c]" placeholder="商品コード・JANコード・商品名で検索">
+      </div>
+      <div class="hidden items-center gap-2 lg:flex">
+        <button class="inline-flex items-center gap-2 rounded-lg border border-[#dfe1e6] bg-[#0c66e4] px-4 py-2 text-sm font-medium text-white"><i class="fa-solid fa-plus"></i>新規商品登録</button>
+        <button class="inline-flex items-center gap-2 rounded-lg border border-[#dfe1e6] bg-white px-4 py-2 text-sm font-medium text-[#172b4d]"><i class="fa-solid fa-file-export text-[#0c66e4]"></i>CSV出力</button>
+        <button class="inline-flex items-center gap-2 rounded-lg border border-[#dfe1e6] bg-white px-4 py-2 text-sm font-medium text-[#172b4d]"><i class="fa-solid fa-bookmark text-[#0c66e4]"></i>検索条件保存</button>
+        <button class="inline-flex items-center gap-2 rounded-lg border border-[#dfe1e6] bg-white px-4 py-2 text-sm font-medium text-[#172b4d]">
+          <span class="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#e9f2ff] text-[#0c66e4]">
+            <i class="fa-solid fa-bell"></i>
+            <span class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#de350b] px-1 text-[10px] font-bold text-white">2</span>
+          </span>
+          <span class="hidden xl:inline">未読 2 件</span>
+        </button>
+        <button class="inline-flex items-center gap-3 rounded-lg border border-[#dfe1e6] bg-white px-4 py-2 text-left text-sm">
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#e9f2ff] font-semibold text-[#0c66e4]">山</span>
+          <span class="leading-tight"><span class="block font-medium">山田 花子</span><span class="block text-xs text-[#6b778c]">商品管理部 / 管理者</span></span>
+        </button>
+      </div>
+      <div class="flex items-center gap-2 lg:hidden">
+        <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#dfe1e6] bg-white text-[#172b4d]"><i class="fa-solid fa-bell"></i></button>
+        <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#dfe1e6] bg-white text-[#0c66e4]"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+    <div class="mx-auto max-w-[1680px] px-4 pb-3 lg:px-6">
+      <div class="flex flex-wrap items-center gap-2 text-xs text-[#6b778c]">
+        <a class="font-medium text-[#172b4d]" href="#">ダッシュボード</a><i class="fa-solid fa-angle-right text-[10px]"></i>
+        <a class="font-medium text-[#172b4d]" href="#">商品管理</a><i class="fa-solid fa-angle-right text-[10px]"></i>
+        <span class="text-[#172b4d]">商品マスタ検索</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="drawerBackdrop" class="fixed inset-0 z-40 hidden bg-slate-900/35 lg:hidden"></div>
+  <aside id="mobileDrawer" class="fixed inset-y-0 left-0 z-50 w-[86vw] max-w-sm -translate-x-full border-r border-[#dfe1e6] bg-white p-4 transition-transform duration-200 lg:hidden">
+    <div class="mb-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#e9f2ff] text-[#0c66e4]"><i class="fa-solid fa-box"></i></div>
+        <div><div class="text-xs font-semibold uppercase tracking-[0.22em] text-[#6b778c]">マスタ管理システム</div><div class="font-semibold text-[#172b4d]">商品マスタ検索</div></div>
+      </div>
+      <button id="closeDrawer" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[#dfe1e6] bg-white text-[#172b4d]" aria-label="メニューを閉じる"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="mb-4 flex items-center gap-2 rounded-lg border border-[#dfe1e6] bg-[#f7f8f9] px-3 py-2"><i class="fa-solid fa-magnifying-glass text-[#6b778c]"></i><input class="w-full border-0 bg-transparent text-sm outline-none placeholder:text-[#6b778c]" placeholder="商品コード・JANコード・商品名で検索"></div>
+    <nav class="space-y-2">
+      <a class="flex items-center gap-3 rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><i class="fa-solid fa-gauge-high w-5 text-center text-[#6b778c]"></i>ダッシュボード</a>
+      <a class="flex items-center gap-3 rounded-lg bg-[#e9f2ff] px-4 py-3 font-semibold text-[#0c66e4]" href="#"><i class="fa-solid fa-box w-5 text-center"></i>商品マスタ検索</a>
+      <a class="flex items-center gap-3 rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><i class="fa-solid fa-sitemap w-5 text-center text-[#6b778c]"></i>商品カテゴリ管理</a>
+      <a class="flex items-center justify-between rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-clock w-5 text-center text-[#6b778c]"></i>承認待ち</span><span class="rounded-full bg-[#e9f2ff] px-2 py-1 text-xs font-semibold text-[#0c66e4]">3</span></a>
+      <a class="flex items-center justify-between rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-rotate w-5 text-center text-[#6b778c]"></i>更新履歴</span><span class="rounded-full bg-[#e9f2ff] px-2 py-1 text-xs font-semibold text-[#0c66e4]">new</span></a>
+      <a class="flex items-center gap-3 rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><i class="fa-solid fa-file-lines w-5 text-center text-[#6b778c]"></i>監査ログ</a>
+      <a class="flex items-center gap-3 rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><i class="fa-solid fa-gear w-5 text-center text-[#6b778c]"></i>設定</a>
+    </nav>
+  </aside>
+
+  <div class="mx-auto flex max-w-[1680px] gap-6 px-4 py-6 lg:px-6">
+    <aside class="hidden w-72 shrink-0 lg:block">
+      <div class="sticky top-24 rounded-2xl border border-[#dfe1e6] bg-white p-4">
+        <div class="mb-4 flex items-center justify-between">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-[0.22em] text-[#6b778c]">ワークスペース</div>
+            <div class="font-semibold text-[#172b4d]">主要メニュー</div>
+          </div>
+          <span class="rounded-full bg-[#e9f2ff] px-2 py-1 text-xs font-semibold text-[#0c66e4]">active</span>
+        </div>
+        <nav class="space-y-2">
+          <a class="flex items-center gap-3 rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><i class="fa-solid fa-gauge-high w-5 text-center text-[#6b778c]"></i>ダッシュボード</a>
+          <a class="flex items-center gap-3 rounded-lg bg-[#e9f2ff] px-4 py-3 font-semibold text-[#0c66e4]" href="#"><i class="fa-solid fa-box w-5 text-center"></i>商品マスタ検索</a>
+          <a class="flex items-center gap-3 rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><i class="fa-solid fa-sitemap w-5 text-center text-[#6b778c]"></i>商品カテゴリ管理</a>
+          <a class="flex items-center justify-between rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-clock w-5 text-center text-[#6b778c]"></i>承認待ち</span><span class="rounded-full bg-[#e9f2ff] px-2 py-1 text-xs font-semibold text-[#0c66e4]">3</span></a>
+          <a class="flex items-center justify-between rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-rotate w-5 text-center text-[#6b778c]"></i>更新履歴</span><span class="rounded-full bg-[#e9f2ff] px-2 py-1 text-xs font-semibold text-[#0c66e4]">new</span></a>
+          <a class="flex items-center gap-3 rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><i class="fa-solid fa-file-lines w-5 text-center text-[#6b778c]"></i>監査ログ</a>
+          <a class="flex items-center gap-3 rounded-lg px-4 py-3 font-medium text-[#172b4d] hover:bg-[#f7f8f9]" href="#"><i class="fa-solid fa-gear w-5 text-center text-[#6b778c]"></i>設定</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <section class="rounded-2xl border border-[#dfe1e6] bg-white p-5">
+        <div class="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <h1 class="text-xl font-semibold text-[#172b4d]">商品マスタ検索</h1>
+              <span class="rounded-full bg-[#e9f2ff] px-2.5 py-1 text-xs font-semibold text-[#0c66e4]">248 件</span>
+            </div>
+            <p class="mt-1 text-sm text-[#6b778c]">商品コード、JANコード、カテゴリ、販売状態などの条件で商品を絞り込みます。</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-[#dffcf0] px-2.5 py-1 text-xs font-semibold text-[#216e4e]">ACTIVE</span>
+              <span class="rounded-full bg-[#f1f2f4] px-2.5 py-1 text-xs font-semibold text-[#44546f]">食品カテゴリ</span>
+              <span class="rounded-full bg-[#f1f2f4] px-2.5 py-1 text-xs font-semibold text-[#44546f]">在庫管理あり</span>
+              <span class="rounded-full bg-[#f1f2f4] px-2.5 py-1 text-xs font-semibold text-[#44546f]">標準単価 500 - 3000</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button class="rounded-lg border border-[#0c66e4] bg-[#0c66e4] px-4 py-2 text-sm font-medium text-white"><i class="fa-solid fa-magnifying-glass mr-2"></i>検索</button>
+            <button class="rounded-lg border border-[#dfe1e6] bg-white px-4 py-2 text-sm font-medium text-[#172b4d]"><i class="fa-solid fa-eraser mr-2 text-[#0c66e4]"></i>条件クリア</button>
+            <button class="rounded-lg border border-[#dfe1e6] bg-white px-4 py-2 text-sm font-medium text-[#172b4d]"><i class="fa-solid fa-bookmark mr-2 text-[#0c66e4]"></i>検索条件保存</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-4 rounded-2xl border border-[#dfe1e6] bg-white p-5">
+        <div class="mb-4 flex items-center justify-between">
+          <div>
+            <h2 class="text-base font-semibold text-[#172b4d]">検索条件</h2>
+            <p class="text-sm text-[#6b778c]">主要条件を上段に、詳細条件を下段にまとめたフォームです。</p>
+          </div>
+          <button class="rounded-lg border border-[#dfe1e6] bg-[#f7f8f9] px-3 py-2 text-sm font-medium text-[#172b4d]"><i class="fa-solid fa-sliders mr-2 text-[#0c66e4]"></i>詳細条件</button>
+        </div>
+
+        <div class="grid gap-4 xl:grid-cols-4 md:grid-cols-2">
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">商品コード</span>
+            <input value="MST" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">JANコード</span>
+            <input placeholder="前方一致" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">商品名</span>
+            <input value="商品" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">商品名カナ</span>
+            <input placeholder="部分一致" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">商品略称</span>
+            <input placeholder="略称" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">カテゴリ</span>
+            <select class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none">
+              <option>食品</option>
+              <option>飲料</option>
+              <option>雑貨</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">商品種別</span>
+            <select class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none">
+              <option>NORMAL</option>
+              <option>SERVICE</option>
+              <option>SET</option>
+              <option>OPTION</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">ステータス</span>
+            <select class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none">
+              <option>ACTIVE</option>
+              <option>SUSPENDED</option>
+              <option>ENDED</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="mt-4 grid gap-4 xl:grid-cols-5 md:grid-cols-2">
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">標準単価 下限</span>
+            <input value="500" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">標準単価 上限</span>
+            <input value="3000" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">税区分</span>
+            <select class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none">
+              <option>TAXABLE</option>
+              <option>REDUCED</option>
+              <option>EXEMPT</option>
+              <option>NON_TAXABLE</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">発売日 From</span>
+            <input type="date" value="2025-01-01" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm font-medium text-[#44546f]">発売日 To</span>
+            <input type="date" value="2026-03-25" class="w-full rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-sm outline-none" />
+          </label>
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-4 rounded-xl border border-[#dfe1e6] bg-[#f7f8f9] p-4 text-sm">
+          <label class="inline-flex items-center gap-2 font-medium text-[#172b4d]"><input type="checkbox" checked class="rounded border-[#8590a2]">在庫管理あり</label>
+          <label class="inline-flex items-center gap-2 font-medium text-[#172b4d]"><input type="checkbox" class="rounded border-[#8590a2]">シリアル管理あり</label>
+          <label class="inline-flex items-center gap-2 font-medium text-[#172b4d]"><input type="checkbox" class="rounded border-[#8590a2]">ロット管理あり</label>
+          <label class="inline-flex items-center gap-2 font-medium text-[#172b4d]"><input type="checkbox" checked class="rounded border-[#8590a2]">販売終了済みを含む</label>
+        </div>
+      </section>
+
+      <section class="mt-6">
+        <article class="min-w-0 rounded-2xl border border-[#dfe1e6] bg-white p-5">
+          <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 class="text-base font-semibold text-[#172b4d]">検索結果一覧</h2>
+              <p class="text-sm text-[#6b778c]">商品コード、商品名、カテゴリ、ステータス、価格を一覧で比較できます。</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button class="rounded-lg border border-[#dfe1e6] bg-[#f7f8f9] px-3 py-2 text-sm font-medium text-[#172b4d]"><i class="fa-solid fa-filter mr-2 text-[#0c66e4]"></i>列フィルタ</button>
+              <button class="rounded-lg border border-[#dfe1e6] bg-[#f7f8f9] px-3 py-2 text-sm font-medium text-[#172b4d]"><i class="fa-solid fa-sort mr-2 text-[#0c66e4]"></i>ソート</button>
+            </div>
+          </div>
+          <div class="max-w-full overflow-x-auto">
+            <table class="min-w-[1220px] w-full border-separate border-spacing-y-2 text-left text-sm">
+              <thead class="whitespace-nowrap text-xs uppercase tracking-[0.18em] text-[#6b778c]">
+                <tr>
+                  <th class="px-4 py-2 font-semibold">商品コード</th>
+                  <th class="px-4 py-2 font-semibold">JANコード</th>
+                  <th class="px-4 py-2 font-semibold">商品名</th>
+                  <th class="px-4 py-2 font-semibold">カテゴリ</th>
+                  <th class="px-4 py-2 font-semibold">商品種別</th>
+                  <th class="px-4 py-2 font-semibold">単位</th>
+                  <th class="px-4 py-2 font-semibold">標準単価</th>
+                  <th class="px-4 py-2 font-semibold">税区分</th>
+                  <th class="px-4 py-2 font-semibold">在庫管理</th>
+                  <th class="px-4 py-2 font-semibold">ステータス</th>
+                  <th class="px-4 py-2 font-semibold">最終更新日時</th>
+                  <th class="px-4 py-2 font-semibold">更新者</th>
+                  <th class="px-4 py-2 font-semibold">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="rounded-xl bg-[#f7f8f9]">
+                  <td class="whitespace-nowrap px-4 py-4 font-medium text-[#172b4d]">MST-001</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">4901234567890</td>
+                  <td class="max-w-[220px] whitespace-nowrap px-4 py-4 font-medium text-[#172b4d]"><div class="truncate">こだわり醤油 500ml</div></td>
+                  <td class="max-w-[180px] whitespace-nowrap px-4 py-4 text-[#6b778c]"><div class="truncate">食品 / 調味料</div></td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">NORMAL</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">EA</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">1,200</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">TAXABLE 10%</td>
+                  <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#dffcf0] px-2.5 py-1 text-xs font-semibold text-[#216e4e]">あり</span></td>
+                  <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#dffcf0] px-2.5 py-1 text-xs font-semibold text-[#216e4e]">ACTIVE</span></td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">2026-03-25 10:14</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">山田 花子</td>
+                  <td class="whitespace-nowrap px-4 py-4">
+                    <div class="flex flex-nowrap gap-2">
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-regular fa-eye mr-1 text-[#0c66e4]"></i>詳細</button>
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-regular fa-pen-to-square mr-1 text-[#0c66e4]"></i>編集</button>
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-solid fa-rotate mr-1 text-[#0c66e4]"></i>履歴</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="rounded-xl bg-white">
+                  <td class="whitespace-nowrap px-4 py-4 font-medium text-[#172b4d]">MST-014</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">4909876543210</td>
+                  <td class="max-w-[220px] whitespace-nowrap px-4 py-4 font-medium text-[#172b4d]"><div class="truncate">季節限定ギフトセット</div></td>
+                  <td class="max-w-[180px] whitespace-nowrap px-4 py-4 text-[#6b778c]"><div class="truncate">食品 / ギフト</div></td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">SET</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">EA</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">2,980</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">REDUCED 8%</td>
+                  <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#e9f2ff] px-2.5 py-1 text-xs font-semibold text-[#0c66e4]">あり</span></td>
+                  <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#fff4e5] px-2.5 py-1 text-xs font-semibold text-[#b65c00]">SUSPENDED</span></td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">2026-03-24 18:42</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">佐藤 望</td>
+                  <td class="whitespace-nowrap px-4 py-4">
+                    <div class="flex flex-nowrap gap-2">
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-regular fa-eye mr-1 text-[#0c66e4]"></i>詳細</button>
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-regular fa-pen-to-square mr-1 text-[#0c66e4]"></i>編集</button>
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-solid fa-rotate mr-1 text-[#0c66e4]"></i>履歴</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="rounded-xl bg-[#f7f8f9]">
+                  <td class="whitespace-nowrap px-4 py-4 font-medium text-[#172b4d]">MST-021</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">4905555555555</td>
+                  <td class="max-w-[220px] whitespace-nowrap px-4 py-4 font-medium text-[#172b4d]"><div class="truncate">包装オプション S</div></td>
+                  <td class="max-w-[180px] whitespace-nowrap px-4 py-4 text-[#6b778c]"><div class="truncate">雑貨 / 包装資材</div></td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">OPTION</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">EA</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">180</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">TAXABLE 10%</td>
+                  <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#f1f2f4] px-2.5 py-1 text-xs font-semibold text-[#44546f]">なし</span></td>
+                  <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#ffebe6] px-2.5 py-1 text-xs font-semibold text-[#c9372c]">ENDED</span></td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">2026-03-10 09:05</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[#6b778c]">鈴木 結</td>
+                  <td class="whitespace-nowrap px-4 py-4">
+                    <div class="flex flex-nowrap gap-2">
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-regular fa-eye mr-1 text-[#0c66e4]"></i>詳細</button>
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-regular fa-pen-to-square mr-1 text-[#0c66e4]"></i>編集</button>
+                      <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2 text-xs font-medium text-[#172b4d]"><i class="fa-solid fa-rotate mr-1 text-[#0c66e4]"></i>履歴</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-sm text-[#6b778c]">
+            <div>1 - 3 / 248 件</div>
+            <div class="flex items-center gap-2">
+              <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2">前へ</button>
+              <button class="rounded-lg border border-[#0c66e4] bg-[#0c66e4] px-3 py-2 font-medium text-white">1</button>
+              <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2">2</button>
+              <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2">3</button>
+              <button class="rounded-lg border border-[#dfe1e6] bg-white px-3 py-2">次へ</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const openDrawer = document.getElementById('openDrawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerBackdrop = document.getElementById('drawerBackdrop');
+    function setDrawer(open) {
+      mobileDrawer.classList.toggle('-translate-x-full', !open);
+      mobileDrawer.classList.toggle('translate-x-0', open);
+      drawerBackdrop.classList.toggle('hidden', !open);
+      document.body.classList.toggle('overflow-hidden', open);
+      openDrawer?.setAttribute('aria-expanded', String(open));
+    }
+    openDrawer?.addEventListener('click', () => setDrawer(true));
+    closeDrawer?.addEventListener('click', () => setDrawer(false));
+    drawerBackdrop?.addEventListener('click', () => setDrawer(false));
+    mobileDrawer?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setDrawer(false)));
+  </script>
+</body>
+</html>

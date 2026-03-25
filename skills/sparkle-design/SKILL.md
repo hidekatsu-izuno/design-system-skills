@@ -1,0 +1,40 @@
+---
+name: sparkle-design
+description: Use when the task asks for UI design, frontend implementation, branded product surfaces, dashboards, or static mocks that should follow Sparkle Design.
+---
+
+# Sparkle Design Skill
+
+Use this skill when the output should look and behave like Sparkle Design. Read [./DESIGN.md](./DESIGN.md) first and treat it as the source of truth for layout, components, colors, typography, and UI constraints.
+
+## Working Model
+
+- Read `./DESIGN.md` before making any visual or structural decision.
+- Extract the system's branded composition, warm surfaces, product storytelling restraint, and practical UI patterns before writing code.
+- Adapt the requested information architecture into Sparkle patterns instead of defaulting to a generic dashboard shell.
+- Prefer documented Sparkle component logic and naming whenever multiple solutions are plausible.
+
+## Workflow
+
+- Understand the user's content, task flow, and required screen regions first.
+- Preserve the requested information architecture and labels unless the task explicitly changes them.
+- Choose shell, navigation, grouped surfaces, lists, tables, and states from `./DESIGN.md`.
+- Implement with documented Sparkle-style patterns first, especially for branded but controlled composition, warm surfaces, and restrained product UI.
+- If a static mock needs icons and the native icon set is unavailable, follow the fallback guidance in `./DESIGN.md`.
+
+## Output Rules
+
+- Do not show design commentary or rationale as visible UI text.
+- Do not invent visual treatments that conflict with `./DESIGN.md`.
+- Do not flatten the result into a generic enterprise dashboard if Sparkle implies a more branded composition.
+
+## Copy Rules
+
+- Write product UI copy, not design commentary.
+- Use headings and labels that describe state, content, or action.
+- Do not render phrases that describe the design system itself.
+
+## Quality Bar
+
+- Keep the result recognizably Sparkle at the shell, component, spacing, and state level.
+- Prefer stronger component fidelity over generic visual similarity.
