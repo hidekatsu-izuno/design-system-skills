@@ -7,168 +7,291 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    :root { --bg:#FFFFFF; --surface:#FFFFFF; --soft:#F8F7F6; --text:#23221F; --muted:#6B665E; --primary:#00C4CC; --border:#D6D3D1; }
-    body { font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif; background:var(--bg); color:var(--text); }
+    :root {
+      --bg: #f8f7f6;
+      --surface: #ffffff;
+      --soft: #f3f7f7;
+      --text: #23221f;
+      --muted: #68635f;
+      --primary: #00c4cc;
+      --secondary: #e5fafb;
+      --border: #d6d3d1;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif; background: var(--bg); color: var(--text); }
   </style>
 </head>
 <body class="min-h-screen bg-[color:var(--bg)] text-[color:var(--text)]">
-  <header class="sticky top-0 z-30 border-b" style="background:var(--surface); border-color:var(--border);">
+  <header class="sticky top-0 z-30 border-b border-[color:var(--border)] bg-[color:var(--surface)]">
     <div class="mx-auto flex max-w-[1440px] items-center gap-3 px-4 py-3 lg:px-6">
-      <button data-open-menu="smarthr-design-system" class="inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden" style="border-color:var(--border);"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      <button id="smarthr-menu-open" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[color:var(--border)] bg-white text-[color:var(--primary)] lg:hidden" aria-label="ナビゲーションを開く">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
       <div class="min-w-0 flex-1">
-        <div class="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">マスタ管理システム</div>
-        <h1 class="truncate text-xl font-semibold">ダッシュボード</h1>
+        <div class="text-xs uppercase tracking-[0.26em] text-[color:var(--muted)]">SmartHR</div>
+        <div class="flex items-center gap-3">
+          <h1 class="truncate text-xl font-semibold">ダッシュボード</h1>
+          <span class="hidden rounded-full bg-[color:var(--soft)] px-3 py-1 text-xs font-medium text-[color:var(--muted)] md:inline-flex">ホーム / マスタ管理 / ダッシュボード</span>
+        </div>
       </div>
-      <div class="hidden min-w-0 flex-1 items-center justify-end gap-3 lg:flex">
-        <label class="min-w-0 flex-1 max-w-[420px]">
+      <div class="hidden items-center gap-3 lg:flex">
+        <label class="min-w-[300px] max-w-[420px] flex-1 min-w-0">
           <span class="sr-only">検索</span>
-          <span class="flex items-center gap-2 rounded-full border bg-white px-3 py-2 text-sm" style="border-color:var(--border);">
-            <i class="fa-solid fa-magnifying-glass text-[color:var(--muted)]" aria-hidden="true"></i>
-            <input class="min-w-0 flex-1 bg-transparent outline-none" placeholder="マスタ名・コード・担当部署で検索" />
+          <span class="flex items-center gap-3 rounded-2xl border border-[color:var(--border)] bg-[color:var(--soft)] px-3 py-2 text-sm text-[color:var(--muted)]">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input class="min-w-0 flex-1 bg-transparent outline-none placeholder:text-[color:var(--muted)]" placeholder="マスタ名・コード・担当部署で検索" />
           </span>
         </label>
-        <button class="inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-regular fa-bell" aria-hidden="true"></i><span>未読 3 件</span></button>
+        <button class="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[color:var(--border)] bg-[color:var(--soft)]">
+          <i class="fa-regular fa-bell" aria-hidden="true"></i>
+          <span class="absolute -right-1 -top-1 rounded-full bg-[color:var(--primary)] px-1.5 py-0.5 text-[10px] font-semibold text-white">3</span>
+        </button>
+        <button class="inline-flex items-center gap-2 rounded-2xl bg-[color:var(--primary)] px-4 py-2 text-sm font-semibold text-white">
+          <i class="fa-solid fa-plus text-xs" aria-hidden="true"></i><span>新規登録</span>
+        </button>
       </div>
     </div>
-    <div class="mx-auto max-w-[1440px] px-4 pb-3 lg:hidden">
-      <div class="flex items-center gap-2 overflow-x-auto rounded-2xl border bg-[color:var(--soft)] p-2" style="border-color:var(--border);">
-        <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-medium shadow-sm" style="color:var(--primary);"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>ダッシュボード</span></a>
-        <a href="#" class="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm text-[color:var(--muted)]"><i class="fa-regular fa-rectangle-list" aria-hidden="true"></i><span>マスタ一覧</span></a>
-        <a href="#" class="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm text-[color:var(--muted)]"><i class="fa-regular fa-clock" aria-hidden="true"></i><span>承認待ち</span></a>
-        <button data-open-sheet="smarthr-more" class="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm text-[color:var(--muted)]"><i class="fa-solid fa-ellipsis" aria-hidden="true"></i><span>More</span></button>
+    <div class="mx-auto flex max-w-[1440px] flex-col gap-3 px-4 pb-3 lg:hidden">
+      <div class="flex items-center gap-2 overflow-x-auto pb-1">
+        <button class="smarthr-nav-btn inline-flex items-center gap-2 rounded-full bg-[color:var(--primary)] px-4 py-2 text-sm font-semibold text-white" data-target="smarthr-overview"><i class="fa-solid fa-house-chimney text-xs" aria-hidden="true"></i>概要</button>
+        <button class="smarthr-nav-btn inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold" data-target="smarthr-alerts"><i class="fa-solid fa-triangle-exclamation text-xs" aria-hidden="true"></i>アラート</button>
+        <button class="smarthr-nav-btn inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold" data-target="smarthr-approvals"><i class="fa-solid fa-clock text-xs" aria-hidden="true"></i>承認待ち</button>
+        <button class="smarthr-nav-btn inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold" data-target="smarthr-table"><i class="fa-solid fa-table-columns text-xs" aria-hidden="true"></i>一覧</button>
+        <button class="smarthr-nav-btn inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold" data-target="smarthr-history"><i class="fa-solid fa-clock-rotate-left text-xs" aria-hidden="true"></i>履歴</button>
+        <button id="smarthr-more-open" class="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold"><i class="fa-solid fa-ellipsis text-xs" aria-hidden="true"></i>メニュー</button>
       </div>
     </div>
   </header>
 
-  <div data-drawer="smarthr-design-system" class="fixed inset-0 z-40 hidden lg:hidden">
-    <button data-close-menu="smarthr-design-system" class="absolute inset-0 bg-black/30"></button>
-    <aside class="absolute left-0 top-0 h-full w-[320px] border-r bg-[color:var(--surface)] p-5 shadow-2xl" style="border-color:var(--border);">
-      <div class="mb-4 flex items-center justify-between">
-        <div class="text-sm font-semibold">メニュー</div>
-        <button data-close-menu="smarthr-design-system" class="inline-flex h-10 w-10 items-center justify-center rounded-full border" style="border-color:var(--border);"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+  <div id="smarthr-drawer" class="fixed inset-0 z-40 hidden lg:hidden">
+    <button id="smarthr-menu-close" class="absolute inset-0 bg-black/35" aria-label="ナビゲーションを閉じる"></button>
+    <aside class="absolute left-0 top-0 h-full w-[320px] border-r border-[color:var(--border)] bg-[color:var(--surface)] p-5 shadow-2xl">
+      <div class="mb-5 flex items-center justify-between">
+        <div class="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">メニュー</div>
+        <button id="smarthr-menu-close-2" class="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-[color:var(--border)] bg-[color:var(--soft)]">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
       </div>
-      <nav class="space-y-1 text-sm">
-        <a href="#" class="flex items-center gap-3 rounded-full bg-[color:var(--soft)] px-3 py-2 font-medium" style="color:var(--primary);"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>ダッシュボード</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-full px-3 py-2"><i class="fa-regular fa-rectangle-list" aria-hidden="true"></i><span>マスタ一覧</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-full px-3 py-2"><i class="fa-regular fa-clock" aria-hidden="true"></i><span>承認待ち</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-full px-3 py-2"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>更新履歴</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-full px-3 py-2"><i class="fa-solid fa-users-gear" aria-hidden="true"></i><span>ユーザー/権限管理</span></a>
+      <nav class="space-y-1">
+        <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl bg-[color:var(--secondary)] px-4 py-3 text-left font-semibold text-[color:var(--primary)]" data-target="smarthr-overview"><i class="fa-solid fa-house-chimney w-4 text-center" aria-hidden="true"></i><span>概要</span></button>
+        <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left font-semibold hover:bg-black/5" data-target="smarthr-alerts"><i class="fa-solid fa-triangle-exclamation w-4 text-center" aria-hidden="true"></i><span>アラート</span></button>
+        <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left font-semibold hover:bg-black/5" data-target="smarthr-approvals"><i class="fa-solid fa-clock w-4 text-center" aria-hidden="true"></i><span>承認待ち</span></button>
+        <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left font-semibold hover:bg-black/5" data-target="smarthr-table"><i class="fa-solid fa-table-columns w-4 text-center" aria-hidden="true"></i><span>一覧</span></button>
+        <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left font-semibold hover:bg-black/5" data-target="smarthr-history"><i class="fa-solid fa-clock-rotate-left w-4 text-center" aria-hidden="true"></i><span>履歴</span></button>
       </nav>
     </aside>
   </div>
 
-  <div data-sheet="smarthr-more" class="fixed inset-0 z-40 hidden lg:hidden">
-    <button data-close-sheet="smarthr-more" class="absolute inset-0 bg-black/20"></button>
-    <div class="absolute inset-x-4 top-20 rounded-[28px] border bg-[color:var(--surface)] p-4 shadow-2xl" style="border-color:var(--border);">
-      <div class="flex items-center justify-between">
-        <div class="text-sm font-semibold">追加メニュー</div>
-        <button data-close-sheet="smarthr-more" class="inline-flex h-10 w-10 items-center justify-center rounded-full border" style="border-color:var(--border);"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+  <div class="mx-auto flex max-w-[1440px]">
+    <aside class="hidden w-[280px] shrink-0 border-r border-[color:var(--border)] bg-[color:var(--surface)] lg:block">
+      <div class="p-5">
+        <div class="mb-4 text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">Navigation</div>
+        <nav class="space-y-1">
+          <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl bg-[color:var(--secondary)] px-4 py-3 text-left font-semibold text-[color:var(--primary)]" data-target="smarthr-overview"><i class="fa-solid fa-house-chimney w-4 text-center" aria-hidden="true"></i><span>概要</span></button>
+          <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left font-semibold hover:bg-black/5" data-target="smarthr-alerts"><i class="fa-solid fa-triangle-exclamation w-4 text-center" aria-hidden="true"></i><span>アラート</span></button>
+          <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left font-semibold hover:bg-black/5" data-target="smarthr-approvals"><i class="fa-solid fa-clock w-4 text-center" aria-hidden="true"></i><span>承認待ち</span></button>
+          <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left font-semibold hover:bg-black/5" data-target="smarthr-table"><i class="fa-solid fa-table-columns w-4 text-center" aria-hidden="true"></i><span>一覧</span></button>
+          <button class="smarthr-nav-btn flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left font-semibold hover:bg-black/5" data-target="smarthr-history"><i class="fa-solid fa-clock-rotate-left w-4 text-center" aria-hidden="true"></i><span>履歴</span></button>
+        </nav>
       </div>
-      <div class="mt-4 grid gap-2 text-sm">
-        <a href="#" class="rounded-2xl bg-[color:var(--soft)] px-4 py-3">監査ログ</a>
-        <a href="#" class="rounded-2xl bg-[color:var(--soft)] px-4 py-3">設定</a>
-      </div>
-    </div>
-  </div>
+    </aside>
 
-  <div class="mx-auto max-w-[1440px] px-4 py-4 lg:px-6 lg:py-6">
-    <div class="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] xl:grid-cols-[240px_minmax(0,1fr)_320px]">
-      <aside class="hidden lg:block">
-        <div class="rounded-[28px] border bg-[color:var(--surface)] p-4" style="border-color:var(--border);">
-          <nav class="space-y-1 text-sm">
-            <a href="#" class="flex items-center gap-3 rounded-full bg-[color:var(--soft)] px-3 py-2 font-medium" style="color:var(--primary);"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>ダッシュボード</span></a>
-            <a href="#" class="flex items-center gap-3 rounded-full px-3 py-2"><i class="fa-regular fa-rectangle-list" aria-hidden="true"></i><span>マスタ一覧</span></a>
-            <a href="#" class="flex items-center gap-3 rounded-full px-3 py-2"><i class="fa-regular fa-clock" aria-hidden="true"></i><span>承認待ち</span></a>
-            <a href="#" class="flex items-center gap-3 rounded-full px-3 py-2"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>更新履歴</span></a>
-          </nav>
-        </div>
-      </aside>
-
-      <main class="min-w-0 space-y-6">
-        <section class="rounded-[28px] border bg-[color:var(--surface)] p-5" style="border-color:var(--border);">
-          <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <div>
-              <div class="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">タブビュー</div>
-              <h2 class="mt-1 text-2xl font-semibold">落ち着いた業務画面</h2>
-              <p class="mt-2 max-w-2xl text-sm text-[color:var(--muted)]">TabBar を軸に、日々の確認・更新・承認をゆるやかに切り替えます。</p>
-            </div>
-            <div class="flex gap-2">
-              <button class="rounded-full border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-solid fa-filter" aria-hidden="true"></i><span class="ml-2">フィルタ</span></button>
-              <button class="rounded-full bg-[color:var(--primary)] px-4 py-2 text-sm text-white">新規登録</button>
-            </div>
+    <main class="min-w-0 flex-1 p-4 lg:p-6">
+      <section id="smarthr-overview" class="rounded-[28px] border border-[color:var(--border)] bg-[color:var(--surface)] p-5">
+        <div class="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+          <div class="max-w-3xl">
+            <div class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">Overview</div>
+            <h2 class="mt-2 text-2xl font-semibold">落ち着いた業務画面で、確認から対応までを素早く進める</h2>
+            <p class="mt-2 text-sm leading-6 text-[color:var(--muted)]">SmartHRらしい明るさを残しつつ、使いやすい業務アプリの構成に寄せています。</p>
           </div>
-        </section>
+          <div class="flex flex-wrap gap-2">
+            <button class="inline-flex items-center gap-2 rounded-2xl bg-[color:var(--primary)] px-4 py-2 text-sm font-semibold text-white"><i class="fa-solid fa-plus text-xs" aria-hidden="true"></i><span>新規登録</span></button>
+            <button class="inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--soft)] px-4 py-2 text-sm font-semibold"><i class="fa-solid fa-file-export text-xs" aria-hidden="true"></i><span>CSV出力</span></button>
+            <button class="inline-flex items-center gap-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--soft)] px-4 py-2 text-sm font-semibold"><i class="fa-solid fa-filter text-xs" aria-hidden="true"></i><span>フィルタ</span></button>
+          </div>
+        </div>
+      </section>
 
-        <section class="grid gap-4 md:grid-cols-3">
-          <div class="rounded-[28px] border bg-[color:var(--soft)] p-5" style="border-color:var(--border);"><div class="text-sm text-[color:var(--muted)]">管理中マスタ総数</div><div class="mt-2 text-3xl font-semibold">248</div></div>
-          <div class="rounded-[28px] border bg-[color:var(--surface)] p-5" style="border-color:var(--border);"><div class="text-sm text-[color:var(--muted)]">本日の更新件数</div><div class="mt-2 text-3xl font-semibold">36</div></div>
-          <div class="rounded-[28px] border bg-[color:var(--soft)] p-5" style="border-color:var(--border);"><div class="text-sm text-[color:var(--muted)]">承認待ち件数</div><div class="mt-2 text-3xl font-semibold">7</div></div>
-        </section>
+      <section class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <article class="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--soft)] p-5">
+          <div class="text-sm text-[color:var(--muted)]">管理中マスタ総数</div>
+          <div class="mt-2 text-3xl font-semibold">248</div>
+          <div class="mt-2 text-xs text-[color:var(--muted)]">+12 this month</div>
+        </article>
+        <article class="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--soft)] p-5">
+          <div class="text-sm text-[color:var(--muted)]">本日の更新件数</div>
+          <div class="mt-2 text-3xl font-semibold">36</div>
+          <div class="mt-2 text-xs text-[color:var(--muted)]">+8 vs yesterday</div>
+        </article>
+        <article class="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--soft)] p-5">
+          <div class="text-sm text-[color:var(--muted)]">承認待ち件数</div>
+          <div class="mt-2 text-3xl font-semibold">7</div>
+          <div class="mt-2 text-xs text-[color:var(--muted)]">2 over SLA</div>
+        </article>
+        <article class="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--soft)] p-5">
+          <div class="text-sm text-[color:var(--muted)]">エラー/不整合件数</div>
+          <div class="mt-2 text-3xl font-semibold">5</div>
+          <div class="mt-2 text-xs text-[color:var(--muted)]">3 need immediate action</div>
+        </article>
+      </section>
 
-        <section class="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
-          <div class="space-y-6">
-            <section class="rounded-[28px] border bg-[color:var(--surface)] p-5" style="border-color:var(--border);">
-              <div class="flex items-center justify-between">
-                <h3 class="text-lg font-semibold">マスタ一覧</h3>
-                <div class="hidden gap-2 md:flex">
-                  <button class="rounded-full border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-solid fa-file-export" aria-hidden="true"></i><span class="ml-2">CSV出力</span></button>
+      <section class="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
+        <section id="smarthr-alerts" class="rounded-[28px] border border-[color:var(--border)] bg-[color:var(--surface)] p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">アラート</h3>
+            <a href="#" class="text-sm text-[color:var(--primary)]">すべて見る</a>
+          </div>
+          <div class="mt-4 space-y-3">
+            <article class="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+              <div class="flex items-start gap-3">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#E5484D14] text-[#C23B44]"><i class="fa-solid fa-triangle-exclamation text-sm" aria-hidden="true"></i></span>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-2"><div class="font-medium">商品マスタ</div><span class="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-[color:var(--primary)]">参照不整合</span></div>
+                  <p class="mt-1 text-sm text-[color:var(--muted)]">公開期限が切れています</p>
+                  <div class="mt-3 flex gap-3 text-xs text-[color:var(--primary)]"><a href="#">詳細を見る</a><a href="#">対象マスタへ移動</a></div>
                 </div>
               </div>
-              <div class="mt-4 overflow-x-auto">
-                <table class="min-w-[820px] w-full text-sm">
-                  <thead style="background:var(--soft); color:var(--muted);"><tr><th class="px-4 py-3 text-left">マスタ名</th><th class="px-4 py-3 text-left">コード</th><th class="px-4 py-3 text-left">状態</th><th class="px-4 py-3 text-left">操作</th></tr></thead>
-                  <tbody>
-                    <tr class="border-t" style="border-color:var(--border);"><td class="px-4 py-3 font-medium">商品マスタ</td><td class="px-4 py-3 text-[color:var(--muted)]">MST-001</td><td class="px-4 py-3">正常</td><td class="px-4 py-3"><a href="#" style="color:var(--primary);">詳細</a></td></tr>
-                    <tr class="border-t" style="border-color:var(--border);"><td class="px-4 py-3 font-medium">取引先マスタ</td><td class="px-4 py-3 text-[color:var(--muted)]">MST-014</td><td class="px-4 py-3">更新中</td><td class="px-4 py-3"><a href="#" style="color:var(--primary);">詳細</a></td></tr>
-                  </tbody>
-                </table>
+            </article>
+            <article class="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+              <div class="flex items-start gap-3">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FF990014] text-[#B45309]"><i class="fa-solid fa-triangle-exclamation text-sm" aria-hidden="true"></i></span>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-2"><div class="font-medium">取引先マスタ</div><span class="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-[color:var(--primary)]">更新失敗</span></div>
+                  <p class="mt-1 text-sm text-[color:var(--muted)]">昨夜のCSV取り込みで失敗</p>
+                  <div class="mt-3 flex gap-3 text-xs text-[color:var(--primary)]"><a href="#">詳細を見る</a><a href="#">対象マスタへ移動</a></div>
+                </div>
               </div>
-            </section>
-
-            <section class="rounded-[28px] border bg-[color:var(--surface)] p-5" style="border-color:var(--border);">
-              <div class="flex items-center justify-between">
-                <h3 class="text-lg font-semibold">更新履歴・通知</h3>
-                <span class="rounded-full bg-[color:var(--soft)] px-2 py-1 text-xs">未読 3 件</span>
-              </div>
-              <ul class="mt-3 space-y-3 text-sm">
-                <li class="border-b pb-3" style="border-color:var(--border);">承認結果: 商品カテゴリマスタの申請が承認されました</li>
-                <li class="border-b pb-3" style="border-color:var(--border);">エラー通知: 取引先マスタの取り込みジョブが再試行待ちです</li>
-              </ul>
-            </section>
+            </article>
           </div>
-
-          <aside class="space-y-6">
-            <section class="rounded-[28px] border bg-[color:var(--surface)] p-5" style="border-color:var(--border);">
-              <h3 class="text-lg font-semibold">承認待ち</h3>
-              <div class="mt-4 space-y-3">
-                <div class="rounded-[22px] bg-[color:var(--soft)] p-4"><div class="font-medium">取引先マスタ</div><div class="text-sm text-[color:var(--muted)]">山口 宏</div></div>
-                <div class="rounded-[22px] bg-[color:var(--soft)] p-4"><div class="font-medium">商品カテゴリマスタ</div><div class="text-sm text-[color:var(--muted)]">中村 杏奈</div></div>
-              </div>
-            </section>
-            <section class="rounded-[28px] border bg-[color:var(--surface)] p-5" style="border-color:var(--border);">
-              <h3 class="text-lg font-semibold">アラート</h3>
-              <div class="mt-4 space-y-3">
-                <div class="rounded-[22px] bg-[color:var(--soft)] p-4"><div class="font-medium">商品マスタ</div><div class="text-sm text-[color:var(--muted)]">参照不整合</div></div>
-                <div class="rounded-[22px] bg-[color:var(--soft)] p-4"><div class="font-medium">取引先マスタ</div><div class="text-sm text-[color:var(--muted)]">更新失敗</div></div>
-              </div>
-            </section>
-          </aside>
         </section>
-      </main>
-    </div>
+
+        <section id="smarthr-approvals" class="rounded-[28px] border border-[color:var(--border)] bg-[color:var(--surface)] p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">承認待ち</h3>
+            <span class="text-sm text-[color:var(--muted)]">SLA 2件超過</span>
+          </div>
+          <div class="mt-4 space-y-3">
+            <article class="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-sm text-[color:var(--muted)]">申請者 / 対象</div>
+                  <div class="mt-1 font-medium">佐藤 / 部門マスタ</div>
+                  <p class="mt-1 text-sm text-[color:var(--muted)]">項目追加の申請</p>
+                </div>
+                <span class="rounded-full bg-[#E5FAFB] px-2.5 py-1 text-xs font-semibold text-[color:var(--primary)]">承認待ち</span>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2 text-xs text-[color:var(--primary)]"><a href="#">詳細確認</a><a href="#">承認</a><a href="#">差戻し</a></div>
+            </article>
+            <article class="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--soft)] p-4">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-sm text-[color:var(--muted)]">申請者 / 対象</div>
+                  <div class="mt-1 font-medium">高橋 / 取引先マスタ</div>
+                  <p class="mt-1 text-sm text-[color:var(--muted)]">コード正規化の申請</p>
+                </div>
+                <span class="rounded-full bg-[#FF990014] px-2.5 py-1 text-xs font-semibold text-[#B45309]">SLA超過</span>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2 text-xs text-[color:var(--primary)]"><a href="#">詳細確認</a><a href="#">承認</a><a href="#">差戻し</a></div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="smarthr-table" class="mt-6 rounded-[28px] border border-[color:var(--border)] bg-[color:var(--surface)] p-5">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-lg font-semibold">一覧</h3>
+            <p class="text-sm text-[color:var(--muted)]">業務の流れに沿って、記録を落ち着いて確認できます。</p>
+          </div>
+          <span class="text-sm text-[color:var(--muted)]">1 - 4 / 248</span>
+        </div>
+        <div class="mt-4 overflow-x-auto">
+          <table class="min-w-[820px] w-full text-sm">
+            <thead class="text-left text-[color:var(--muted)]">
+              <tr class="border-b border-[color:var(--border)]">
+                <th class="pb-3 pr-4 font-medium">マスタ名</th>
+                <th class="pb-3 pr-4 font-medium">コード</th>
+                <th class="pb-3 pr-4 font-medium">管理部署</th>
+                <th class="pb-3 pr-4 font-medium">状態</th>
+                <th class="pb-3 pr-4 font-medium">更新者</th>
+                <th class="pb-3 font-medium">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-[color:var(--border)]">
+                <td class="py-4 pr-4 font-medium">商品マスタ</td>
+                <td class="py-4 pr-4 text-[color:var(--muted)]">MST-001</td>
+                <td class="py-4 pr-4">商品管理部</td>
+                <td class="py-4 pr-4"><span class="rounded-full bg-[#E8F5E9] px-2.5 py-1 text-xs font-semibold text-[#1B5E20]">正常</span></td>
+                <td class="py-4 pr-4">河合</td>
+                <td class="py-4"><div class="flex gap-3 text-[color:var(--primary)]"><a href="#"><i class="fa-regular fa-eye mr-1" aria-hidden="true"></i>詳細</a><a href="#"><i class="fa-regular fa-pen-to-square mr-1" aria-hidden="true"></i>編集</a></div></td>
+              </tr>
+              <tr class="border-b border-[color:var(--border)]">
+                <td class="py-4 pr-4 font-medium">取引先マスタ</td>
+                <td class="py-4 pr-4 text-[color:var(--muted)]">MST-014</td>
+                <td class="py-4 pr-4">購買部</td>
+                <td class="py-4 pr-4"><span class="rounded-full bg-[#FFF4E5] px-2.5 py-1 text-xs font-semibold text-[#8A4B00]">要確認</span></td>
+                <td class="py-4 pr-4">野村</td>
+                <td class="py-4"><div class="flex gap-3 text-[color:var(--primary)]"><a href="#"><i class="fa-regular fa-eye mr-1" aria-hidden="true"></i>詳細</a><a href="#"><i class="fa-regular fa-pen-to-square mr-1" aria-hidden="true"></i>編集</a></div></td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-4 font-medium">部門マスタ</td>
+                <td class="py-4 pr-4 text-[color:var(--muted)]">MST-021</td>
+                <td class="py-4 pr-4">人事部</td>
+                <td class="py-4 pr-4"><span class="rounded-full bg-[#E5FAFB] px-2.5 py-1 text-xs font-semibold text-[color:var(--primary)]">承認待ち</span></td>
+                <td class="py-4 pr-4">青木</td>
+                <td class="py-4"><div class="flex gap-3 text-[color:var(--primary)]"><a href="#"><i class="fa-regular fa-eye mr-1" aria-hidden="true"></i>詳細</a><a href="#"><i class="fa-regular fa-pen-to-square mr-1" aria-hidden="true"></i>編集</a></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="smarthr-history" class="mt-6 rounded-[28px] border border-[color:var(--border)] bg-[color:var(--surface)] p-5">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-semibold">履歴</h3>
+          <a href="#" class="text-sm text-[color:var(--primary)]">更新履歴一覧</a>
+        </div>
+        <div class="mt-4 space-y-3">
+          <div class="flex gap-3 rounded-[24px] bg-[color:var(--soft)] p-4">
+            <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[color:var(--primary)]"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i></span>
+            <div>
+              <div class="font-medium">商品マスタが更新されました</div>
+              <p class="text-sm text-[color:var(--muted)]">2026-03-25 09:32 / 河合</p>
+            </div>
+          </div>
+          <div class="flex gap-3 rounded-[24px] bg-[color:var(--soft)] p-4">
+            <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[color:var(--primary)]"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span>
+            <div>
+              <div class="font-medium">承認 2 件を完了しました</div>
+              <p class="text-sm text-[color:var(--muted)]">2026-03-25 08:10 / 管理者</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 
   <script>
-    (() => {
-      const bind = (selector, opener, closer) => {
-        const root = document.querySelector(selector);
-        if (!root) return;
-        document.querySelectorAll(opener).forEach((el) => el.addEventListener('click', () => root.classList.remove('hidden')));
-        document.querySelectorAll(closer).forEach((el) => el.addEventListener('click', () => root.classList.add('hidden')));
-      };
-      bind('[data-drawer="smarthr-design-system"]', '[data-open-menu="smarthr-design-system"]', '[data-close-menu="smarthr-design-system"]');
-      bind('[data-sheet="smarthr-more"]', '[data-open-sheet="smarthr-more"]', '[data-close-sheet="smarthr-more"]');
-    })();
+    const smarthrDrawer = document.getElementById('smarthr-drawer');
+    const smarthrOpen = document.getElementById('smarthr-menu-open');
+    const smarthrMoreOpen = document.getElementById('smarthr-more-open');
+    const smarthrClose = document.getElementById('smarthr-menu-close');
+    const smarthrClose2 = document.getElementById('smarthr-menu-close-2');
+    const smarthrButtons = document.querySelectorAll('.smarthr-nav-btn');
+    const closeDrawer = () => smarthrDrawer?.classList.add('hidden');
+    const openDrawer = () => smarthrDrawer?.classList.remove('hidden');
+    smarthrOpen?.addEventListener('click', openDrawer);
+    smarthrMoreOpen?.addEventListener('click', openDrawer);
+    smarthrClose?.addEventListener('click', closeDrawer);
+    smarthrClose2?.addEventListener('click', closeDrawer);
+    smarthrButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.target);
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        closeDrawer();
+      });
+    });
   </script>
 </body>
 </html>

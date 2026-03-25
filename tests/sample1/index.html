@@ -3,42 +3,75 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>sample1 Preview Index</title>
+  <title>Sample 1 Preview</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    body { font-family: "Noto Sans JP", system-ui, sans-serif; background: #f7f7f5; color: #1f1f1f; }
+    body { font-family: Inter, "Hiragino Sans", "Noto Sans JP", sans-serif; }
   </style>
 </head>
-<body class="min-h-screen">
-  <main class="mx-auto max-w-6xl px-4 py-8 lg:px-6">
-    <section class="rounded-3xl border bg-white p-6 shadow-sm" style="border-color:#ddd6ce;">
-      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <div class="text-xs uppercase tracking-[0.3em] text-gray-500">tests/sample1</div>
-          <h1 class="mt-2 text-3xl font-semibold">UI Preview</h1>
-          <p class="mt-2 text-sm text-gray-600">マスタ管理システム用のデザインシステム別モック一覧です。</p>
-        </div>
-        <a href="AGENTS.md" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm" style="border-color:#ddd6ce;">
-          <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
-          <span>AGENTS.md</span>
+<body class="min-h-screen bg-[#f6f3ef] text-[#1b1b1b]">
+  <main class="mx-auto max-w-6xl px-4 py-10">
+    <div class="rounded-3xl border border-black/10 bg-white p-6 shadow-sm">
+      <p class="text-xs uppercase tracking-[0.3em] text-black/45">Preview</p>
+      <h1 class="mt-2 text-3xl font-semibold">tests/sample1</h1>
+      <p class="mt-2 max-w-3xl text-sm text-black/60">各デザインシステムのモックと AGENTS.md を素早く開くための簡素な一覧です。</p>
+    </div>
+
+    <section class="mt-8">
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Mock files</h2>
+        <a class="text-sm text-[#005AC2]" href="./AGENTS.md">AGENTS.md</a>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./ant-design.html">
+          <div class="text-sm font-semibold">Ant Design</div>
+          <div class="mt-1 text-xs text-black/50">ant-design.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./atlassian-design-system.html">
+          <div class="text-sm font-semibold">Atlassian Design System</div>
+          <div class="mt-1 text-xs text-black/50">atlassian-design-system.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./carbon-design-system.html">
+          <div class="text-sm font-semibold">Carbon Design System</div>
+          <div class="mt-1 text-xs text-black/50">carbon-design-system.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./digital-agency-design-system.html">
+          <div class="text-sm font-semibold">Digital Agency Design System</div>
+          <div class="mt-1 text-xs text-black/50">digital-agency-design-system.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./fluent-2.html">
+          <div class="text-sm font-semibold">Fluent 2</div>
+          <div class="mt-1 text-xs text-black/50">fluent-2.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./human-interface-guidelines.html">
+          <div class="text-sm font-semibold">Human Interface Guidelines</div>
+          <div class="mt-1 text-xs text-black/50">human-interface-guidelines.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./lightning-design-system.html">
+          <div class="text-sm font-semibold">Lightning Design System</div>
+          <div class="mt-1 text-xs text-black/50">lightning-design-system.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./material-design.html">
+          <div class="text-sm font-semibold">Material Design</div>
+          <div class="mt-1 text-xs text-black/50">material-design.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./primer-product-ui.html">
+          <div class="text-sm font-semibold">Primer Product UI</div>
+          <div class="mt-1 text-xs text-black/50">primer-product-ui.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./smarthr-design-system.html">
+          <div class="text-sm font-semibold">SmartHR Design System</div>
+          <div class="mt-1 text-xs text-black/50">smarthr-design-system.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./sparkle-design.html">
+          <div class="text-sm font-semibold">Sparkle Design</div>
+          <div class="mt-1 text-xs text-black/50">sparkle-design.html</div>
+        </a>
+        <a class="rounded-2xl border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md" href="./spectrum.html">
+          <div class="text-sm font-semibold">Spectrum</div>
+          <div class="mt-1 text-xs text-black/50">spectrum.html</div>
         </a>
       </div>
-    </section>
-
-    <section class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="ant-design.html"><div class="flex items-center gap-3"><i class="fa-solid fa-font text-gray-500"></i><div><div class="font-semibold">Ant Design</div><div class="text-sm text-gray-600">ant-design.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="atlassian-design-system.html"><div class="flex items-center gap-3"><i class="fa-solid fa-compass text-gray-500"></i><div><div class="font-semibold">Atlassian Design System</div><div class="text-sm text-gray-600">atlassian-design-system.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="carbon-design-system.html"><div class="flex items-center gap-3"><i class="fa-solid fa-cube text-gray-500"></i><div><div class="font-semibold">Carbon Design System</div><div class="text-sm text-gray-600">carbon-design-system.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="digital-agency-design-system.html"><div class="flex items-center gap-3"><i class="fa-solid fa-landmark text-gray-500"></i><div><div class="font-semibold">Digital Agency Design System</div><div class="text-sm text-gray-600">digital-agency-design-system.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="fluent-2.html"><div class="flex items-center gap-3"><i class="fa-brands fa-windows text-gray-500"></i><div><div class="font-semibold">Fluent 2</div><div class="text-sm text-gray-600">fluent-2.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="human-interface-guidelines.html"><div class="flex items-center gap-3"><i class="fa-brands fa-apple text-gray-500"></i><div><div class="font-semibold">Human Interface Guidelines</div><div class="text-sm text-gray-600">human-interface-guidelines.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="lightning-design-system.html"><div class="flex items-center gap-3"><i class="fa-solid fa-bolt text-gray-500"></i><div><div class="font-semibold">Lightning Design System</div><div class="text-sm text-gray-600">lightning-design-system.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="material-design.html"><div class="flex items-center gap-3"><i class="fa-solid fa-gauge-high text-gray-500"></i><div><div class="font-semibold">Material Design</div><div class="text-sm text-gray-600">material-design.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="primer-product-ui.html"><div class="flex items-center gap-3"><i class="fa-brands fa-github text-gray-500"></i><div><div class="font-semibold">Primer Product UI</div><div class="text-sm text-gray-600">primer-product-ui.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="smarthr-design-system.html"><div class="flex items-center gap-3"><i class="fa-solid fa-briefcase text-gray-500"></i><div><div class="font-semibold">SmartHR Design System</div><div class="text-sm text-gray-600">smarthr-design-system.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="sparkle-design.html"><div class="flex items-center gap-3"><i class="fa-solid fa-sparkles text-gray-500"></i><div><div class="font-semibold">Sparkle Design</div><div class="text-sm text-gray-600">sparkle-design.html</div></div></div></a>
-      <a class="rounded-2xl border bg-white p-4" style="border-color:#ddd6ce;" href="spectrum.html"><div class="flex items-center gap-3"><i class="fa-solid fa-palette text-gray-500"></i><div><div class="font-semibold">Spectrum</div><div class="text-sm text-gray-600">spectrum.html</div></div></div></a>
     </section>
   </main>
 </body>

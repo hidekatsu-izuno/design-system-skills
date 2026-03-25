@@ -7,183 +7,174 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    :root { --bg: #F7F8F9; --surface: #FFFFFF; --soft: #F1F2F4; --text: #172B4D; --muted: #44546F; --primary: #0C66E4; --border: #DFE1E6; }
-    body { font-family: Charlie Text, "Noto Sans JP", sans-serif; background: var(--bg); color: var(--text); }
+    :root { --bg:#F7F8F9; --surface:#FFFFFF; --soft:#F1F2F4; --text:#172B4D; --muted:#44546F; --primary:#0C66E4; --border:#DFE1E6; }
+    body { font-family: "Charlie Text", "Noto Sans JP", sans-serif; background: var(--bg); color: var(--text); }
   </style>
 </head>
 <body class="min-h-screen bg-[color:var(--bg)] text-[color:var(--text)]">
-  <header class="sticky top-0 z-30 border-b" style="background:var(--surface); border-color:var(--border);">
+  <header class="sticky top-0 z-40 border-b border-[color:var(--border)] bg-[color:var(--surface)]">
     <div class="mx-auto flex max-w-[1440px] items-center gap-3 px-4 py-3 lg:px-6">
-      <button data-open-menu="atl" class="inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden" style="border-color:var(--border);">
-        <i aria-hidden="true" class="fa-solid fa-bars"></i>
-      </button>
-      <div class="min-w-0">
-        <div class="text-xs uppercase tracking-[0.28em]" style="color:var(--muted);">マスタ管理システム</div>
-        <h1 class="truncate text-xl font-semibold">ダッシュボード</h1>
+      <button data-open="menu" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--border)] bg-white text-[color:var(--primary)] lg:hidden" aria-label="open navigation"><i class="fa-solid fa-bars"></i></button>
+      <div class="min-w-0 flex-1">
+        <div class="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">マスタ管理システム</div>
+        <div class="flex items-center gap-3">
+          <h1 class="truncate text-xl font-semibold">ダッシュボード</h1>
+          <span class="rounded-full bg-[color:var(--soft)] px-3 py-1 text-xs font-semibold text-[color:var(--primary)]">active</span>
+        </div>
       </div>
-      <div class="hidden min-w-0 flex-1 items-center gap-3 lg:flex">
-        <label class="min-w-0 flex-1">
+      <div class="hidden flex-1 items-center justify-end gap-3 lg:flex">
+        <label class="min-w-[280px] max-w-[420px] flex-1 min-w-0">
           <span class="sr-only">検索</span>
-          <span class="flex items-center gap-3 rounded-xl border bg-white px-3 py-2 text-sm" style="border-color:var(--border); color:var(--muted);">
-            <i aria-hidden="true" class="fa-solid fa-magnifying-glass"></i>
+          <span class="flex items-center gap-3 rounded-xl border border-[color:var(--border)] bg-white px-3 py-2 text-sm text-[color:var(--muted)]">
+            <i class="fa-solid fa-magnifying-glass"></i>
             <input class="min-w-0 flex-1 bg-transparent outline-none" placeholder="マスタ名・コード・担当部署で検索" />
           </span>
         </label>
-        <button class="relative inline-flex h-11 w-11 items-center justify-center rounded-full border" style="border-color:var(--border);">
-          <i aria-hidden="true" class="fa-regular fa-bell"></i>
-          <span class="absolute -right-1 -top-1 rounded-full px-1.5 py-0.5 text-[10px] font-semibold text-white" style="background:var(--primary);">3</span>
-        </button>
-      </div>
-      <div class="hidden items-center gap-2 lg:flex">
-        <button class="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-white" style="background:var(--primary);"><i class="fa-solid fa-plus text-xs" aria-hidden="true"></i><span>新規登録</span></button>
-        <button class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-solid fa-file-export text-xs" aria-hidden="true"></i><span>CSV出力</span></button>
-        <button class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-solid fa-filter text-xs" aria-hidden="true"></i><span>フィルタ</span></button>
+        <button class="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--border)] bg-white"><i class="fa-regular fa-bell"></i><span class="absolute -right-1 -top-1 rounded-full bg-[color:var(--primary)] px-1.5 py-0.5 text-[10px] font-semibold text-white">3</span></button>
+        <div class="rounded-2xl border border-[color:var(--border)] bg-white px-3 py-2">
+          <div class="text-sm font-medium">山田 花子</div>
+          <div class="text-xs text-[color:var(--muted)]">情報システム部 / 管理者</div>
+        </div>
       </div>
     </div>
     <div class="mx-auto flex max-w-[1440px] flex-col gap-3 px-4 pb-3 lg:hidden">
-      <label class="min-w-0 flex-1">
+      <label class="w-full min-w-0">
         <span class="sr-only">検索</span>
-        <span class="flex items-center gap-3 rounded-xl border bg-white px-3 py-2 text-sm" style="border-color:var(--border); color:var(--muted);">
-          <i aria-hidden="true" class="fa-solid fa-magnifying-glass"></i>
+        <span class="flex items-center gap-3 rounded-xl border border-[color:var(--border)] bg-white px-3 py-2 text-sm text-[color:var(--muted)]">
+          <i class="fa-solid fa-magnifying-glass"></i>
           <input class="min-w-0 flex-1 bg-transparent outline-none" placeholder="マスタ名・コード・担当部署で検索" />
         </span>
       </label>
-      <div class="flex gap-2 overflow-x-auto">
-        <button class="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-white" style="background:var(--primary);"><i class="fa-solid fa-plus text-xs" aria-hidden="true"></i><span>新規登録</span></button>
-        <button class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-solid fa-file-export text-xs" aria-hidden="true"></i><span>CSV出力</span></button>
-        <button class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-solid fa-filter text-xs" aria-hidden="true"></i><span>フィルタ</span></button>
+      <div class="flex items-center gap-2 overflow-x-auto pb-1">
+        <button class="inline-flex items-center gap-2 rounded-xl border border-transparent bg-[color:var(--primary)] px-3 py-2 text-sm font-medium text-white"><i class="fa-solid fa-plus text-xs"></i><span>新規登録</span></button>
+        <button class="inline-flex items-center gap-2 rounded-xl border border-[color:var(--border)] bg-white px-3 py-2 text-sm font-medium"><i class="fa-solid fa-file-export text-xs"></i><span>CSV出力</span></button>
+        <button class="inline-flex items-center gap-2 rounded-xl border border-[color:var(--border)] bg-white px-3 py-2 text-sm font-medium"><i class="fa-solid fa-filter text-xs"></i><span>フィルタ</span></button>
       </div>
     </div>
   </header>
 
-  <div data-drawer="atl" class="fixed inset-0 z-40 hidden lg:hidden">
-    <button data-close-menu="atl" class="absolute inset-0 bg-black/40"></button>
-    <aside class="absolute left-0 top-0 h-full w-[320px] border-r bg-[color:var(--surface)] p-5 shadow-2xl" style="border-color:var(--border);">
+  <div data-drawer class="fixed inset-0 z-50 hidden lg:hidden">
+    <button data-close="menu" class="absolute inset-0 bg-black/40" aria-label="close navigation"></button>
+    <aside class="absolute left-0 top-0 h-full w-[min(92vw,360px)] border-r border-[color:var(--border)] bg-[color:var(--surface)] p-5 shadow-2xl">
       <div class="mb-4 flex items-center justify-between">
-        <div class="text-xs uppercase tracking-[0.28em]" style="color:var(--muted);">メニュー</div>
-        <button data-close-menu="atl" class="inline-flex h-10 w-10 items-center justify-center rounded-full border" style="border-color:var(--border);"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <div class="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">Workspace navigation</div>
+        <button data-close="menu" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)]"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <nav class="space-y-1">
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm" style="background:var(--soft); color:var(--primary); font-weight:600;"><i class="fa-solid fa-gauge-high w-4 text-center" aria-hidden="true"></i><span>ダッシュボード</span><span class="ml-auto rounded-full px-2 py-0.5 text-[10px] text-white" style="background:var(--primary);">active</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-table-columns w-4 text-center" aria-hidden="true"></i><span>マスタ一覧</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-clock w-4 text-center" aria-hidden="true"></i><span>承認待ち</span><span class="ml-auto rounded-full border px-2 py-0.5 text-[10px]" style="border-color:var(--border); color:var(--muted);">7</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-rotate-left w-4 text-center" aria-hidden="true"></i><span>更新履歴</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-clipboard-list w-4 text-center" aria-hidden="true"></i><span>監査ログ</span><span class="ml-auto rounded-full border px-2 py-0.5 text-[10px]" style="border-color:var(--border); color:var(--muted);">new</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-users-gear w-4 text-center" aria-hidden="true"></i><span>ユーザー/権限管理</span><span class="ml-auto rounded-full border px-2 py-0.5 text-[10px]" style="border-color:var(--border); color:var(--muted);">admin</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-gear w-4 text-center" aria-hidden="true"></i><span>設定</span></a>
+        <a class="flex items-center gap-3 rounded-xl bg-[color:var(--soft)] px-3 py-2 text-sm font-semibold text-[color:var(--primary)]" href="#"><i class="fa-solid fa-gauge-high w-4 text-center"></i><span>ダッシュボード</span><span class="ml-auto rounded-full bg-[color:var(--primary)] px-2 py-0.5 text-[10px] text-white">active</span></a>
+        <a class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm hover:bg-black/5" href="#"><i class="fa-solid fa-table-columns w-4 text-center"></i><span>マスタ一覧</span></a>
+        <a class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm hover:bg-black/5" href="#"><i class="fa-solid fa-clock w-4 text-center"></i><span>承認待ち</span><span class="ml-auto rounded-full border border-[color:var(--border)] bg-white/70 px-2 py-0.5 text-[10px] text-[color:var(--muted)]">7</span></a>
+        <a class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm hover:bg-black/5" href="#"><i class="fa-solid fa-rotate-left w-4 text-center"></i><span>更新履歴</span></a>
+        <a class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm hover:bg-black/5" href="#"><i class="fa-solid fa-clipboard-list w-4 text-center"></i><span>監査ログ</span><span class="ml-auto rounded-full border border-[color:var(--border)] bg-white/70 px-2 py-0.5 text-[10px] text-[color:var(--muted)]">new</span></a>
+        <a class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm hover:bg-black/5" href="#"><i class="fa-solid fa-users-gear w-4 text-center"></i><span>ユーザー/権限管理</span><span class="ml-auto rounded-full border border-[color:var(--border)] bg-white/70 px-2 py-0.5 text-[10px] text-[color:var(--muted)]">admin</span></a>
+        <a class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm hover:bg-black/5" href="#"><i class="fa-solid fa-gear w-4 text-center"></i><span>設定</span></a>
       </nav>
     </aside>
   </div>
 
-  <div class="mx-auto flex max-w-[1440px]">
-    <aside class="hidden w-[280px] shrink-0 border-r p-4 lg:block" style="border-color:var(--border); background:var(--soft);">
-      <div class="mb-3 text-xs uppercase tracking-[0.28em]" style="color:var(--muted);">メニュー</div>
-      <nav class="space-y-1">
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm" style="background:var(--soft); color:var(--primary); font-weight:600;"><i class="fa-solid fa-gauge-high w-4 text-center" aria-hidden="true"></i><span>ダッシュボード</span><span class="ml-auto rounded-full px-2 py-0.5 text-[10px] text-white" style="background:var(--primary);">active</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-table-columns w-4 text-center" aria-hidden="true"></i><span>マスタ一覧</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-clock w-4 text-center" aria-hidden="true"></i><span>承認待ち</span><span class="ml-auto rounded-full border px-2 py-0.5 text-[10px]" style="border-color:var(--border); color:var(--muted);">7</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-rotate-left w-4 text-center" aria-hidden="true"></i><span>更新履歴</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-clipboard-list w-4 text-center" aria-hidden="true"></i><span>監査ログ</span><span class="ml-auto rounded-full border px-2 py-0.5 text-[10px]" style="border-color:var(--border); color:var(--muted);">new</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-users-gear w-4 text-center" aria-hidden="true"></i><span>ユーザー/権限管理</span><span class="ml-auto rounded-full border px-2 py-0.5 text-[10px]" style="border-color:var(--border); color:var(--muted);">admin</span></a>
-        <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm"><i class="fa-solid fa-gear w-4 text-center" aria-hidden="true"></i><span>設定</span></a>
-      </nav>
+  <div class="mx-auto max-w-[1440px] lg:grid lg:grid-cols-[280px_minmax(0,1fr)_320px]">
+    <aside class="hidden lg:block border-r border-[color:var(--border)] bg-[color:var(--surface)]">
+      <div class="p-5">
+        <div class="mb-4 text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">Navigation</div>
+        <nav class="space-y-1 text-sm">
+          <a class="flex items-center gap-3 rounded-xl bg-[color:var(--soft)] px-3 py-2 font-semibold text-[color:var(--primary)]" href="#"><i class="fa-solid fa-gauge-high w-4 text-center"></i><span>ダッシュボード</span><span class="ml-auto rounded-full bg-[color:var(--primary)] px-2 py-0.5 text-[10px] text-white">active</span></a>
+          <a class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-black/5" href="#"><i class="fa-solid fa-table-columns w-4 text-center"></i><span>マスタ一覧</span></a>
+          <a class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-black/5" href="#"><i class="fa-solid fa-clock w-4 text-center"></i><span>承認待ち</span><span class="ml-auto rounded-full border border-[color:var(--border)] bg-white/70 px-2 py-0.5 text-[10px] text-[color:var(--muted)]">7</span></a>
+          <a class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-black/5" href="#"><i class="fa-solid fa-rotate-left w-4 text-center"></i><span>更新履歴</span></a>
+          <a class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-black/5" href="#"><i class="fa-solid fa-clipboard-list w-4 text-center"></i><span>監査ログ</span><span class="ml-auto rounded-full border border-[color:var(--border)] bg-white/70 px-2 py-0.5 text-[10px] text-[color:var(--muted)]">new</span></a>
+          <a class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-black/5" href="#"><i class="fa-solid fa-users-gear w-4 text-center"></i><span>ユーザー/権限管理</span><span class="ml-auto rounded-full border border-[color:var(--border)] bg-white/70 px-2 py-0.5 text-[10px] text-[color:var(--muted)]">admin</span></a>
+          <a class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-black/5" href="#"><i class="fa-solid fa-gear w-4 text-center"></i><span>設定</span></a>
+        </nav>
+      </div>
     </aside>
 
-    <main class="min-w-0 flex-1 p-4 lg:p-6">
-      <div class="grid gap-6 xl:grid-cols-[minmax(0,1.3fr)_340px]">
-        <section class="rounded-[28px] border p-6" style="border-color:var(--border); background:var(--surface);">
-          <div class="text-xs uppercase tracking-[0.25em]" style="color:var(--muted);">概要</div>
-          <h2 class="mt-2 text-2xl font-semibold">マスタ運用の主要状況</h2>
-          <p class="mt-2 max-w-2xl text-sm" style="color:var(--muted);">重要な承認、一覧、通知へすばやく移動できる構成です。</p>
-        </section>
-        <aside class="rounded-[28px] border p-5" style="border-color:var(--border); background:var(--surface);">
-          <div class="text-xs uppercase tracking-[0.25em]" style="color:var(--muted);">補助情報</div>
-          <div class="mt-4 space-y-3">
-            <div class="rounded-2xl p-4" style="background:var(--soft);">
-              <div class="font-medium">対応が必要な承認</div>
-              <div class="mt-1 text-sm" style="color:var(--muted);">7 requests, 2 over SLA</div>
-            </div>
-            <div class="rounded-2xl border p-4" style="border-color:var(--border);">
-              <div class="font-medium">補足</div>
-              <div class="mt-1 text-sm" style="color:var(--muted);">画面幅に応じて必要な導線を表示します。</div>
-            </div>
+    <main class="min-w-0 p-4 lg:p-6">
+      <section class="rounded-2xl border border-[color:var(--border)] bg-[color:var(--soft)] p-6">
+        <div class="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+          <div>
+            <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--muted)]">Overview</div>
+            <h2 class="mt-2 text-2xl font-semibold">今日対応すべきマスタと承認状況をひと目で確認</h2>
+            <p class="mt-2 max-w-3xl text-sm text-[color:var(--muted)]">Collaborative work surfaces, status scanning, and clear inline actions for daily operations.</p>
           </div>
-        </aside>
-      </div>
+          <div class="hidden items-center gap-2 lg:flex">
+            <button class="inline-flex items-center gap-2 rounded-xl border border-transparent bg-[color:var(--primary)] px-3 py-2 text-sm font-medium text-white"><i class="fa-solid fa-plus text-xs"></i><span>新規登録</span></button>
+            <button class="inline-flex items-center gap-2 rounded-xl border border-[color:var(--border)] bg-white px-3 py-2 text-sm font-medium"><i class="fa-solid fa-file-export text-xs"></i><span>CSV出力</span></button>
+            <button class="inline-flex items-center gap-2 rounded-xl border border-[color:var(--border)] bg-white px-3 py-2 text-sm font-medium"><i class="fa-solid fa-filter text-xs"></i><span>フィルタ</span></button>
+          </div>
+        </div>
+      </section>
 
-      <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <div class="rounded-2xl border p-4" style="background:var(--soft); border-color:var(--border);"><div class="text-sm" style="color:var(--muted);">管理中マスタ総数</div><div class="mt-2 text-3xl font-semibold">248</div><div class="mt-1 text-xs" style="color:var(--muted);">+12 this month</div></div>
-        <div class="rounded-2xl border p-4" style="background:var(--surface); border-color:var(--border);"><div class="text-sm" style="color:var(--muted);">本日の更新件数</div><div class="mt-2 text-3xl font-semibold">36</div><div class="mt-1 text-xs" style="color:var(--muted);">+8 vs yesterday</div></div>
-        <div class="rounded-2xl border p-4" style="background:var(--soft); border-color:var(--border);"><div class="text-sm" style="color:var(--muted);">承認待ち件数</div><div class="mt-2 text-3xl font-semibold">7</div><div class="mt-1 text-xs" style="color:var(--muted);">2 over SLA</div></div>
-        <div class="rounded-2xl border p-4" style="background:var(--surface); border-color:var(--border);"><div class="text-sm" style="color:var(--muted);">エラー/不整合件数</div><div class="mt-2 text-3xl font-semibold">5</div><div class="mt-1 text-xs" style="color:var(--muted);">3 need immediate action</div></div>
-      </div>
+      <section class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <a href="#" class="rounded-2xl border border-[color:var(--border)] bg-white p-5 shadow-sm"><div class="text-sm text-[color:var(--muted)]">管理中マスタ総数</div><div class="mt-2 text-3xl font-semibold">248</div><div class="mt-2 text-xs text-[color:var(--muted)]">+12 this month</div></a>
+        <a href="#" class="rounded-2xl border border-[color:var(--border)] bg-white p-5 shadow-sm"><div class="text-sm text-[color:var(--muted)]">本日の更新件数</div><div class="mt-2 text-3xl font-semibold">36</div><div class="mt-2 text-xs text-[color:var(--muted)]">+8 vs yesterday</div></a>
+        <a href="#" class="rounded-2xl border border-[color:var(--border)] bg-white p-5 shadow-sm"><div class="text-sm text-[color:var(--muted)]">承認待ち件数</div><div class="mt-2 text-3xl font-semibold">7</div><div class="mt-2 text-xs text-[color:var(--muted)]">2 over SLA</div></a>
+        <a href="#" class="rounded-2xl border border-[color:var(--border)] bg-white p-5 shadow-sm"><div class="text-sm text-[color:var(--muted)]">エラー/不整合件数</div><div class="mt-2 text-3xl font-semibold">5</div><div class="mt-2 text-xs text-[color:var(--muted)]">3 need immediate action</div></a>
+      </section>
 
-      <div class="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px]">
-        <div class="space-y-6">
-          <section class="space-y-3">
-            <div class="flex items-center justify-between">
-              <h2 class="text-lg font-semibold">アラート</h2>
-              <a href="#" class="text-sm" style="color:var(--primary);">すべて見る</a>
-            </div>
-            <div class="rounded-2xl border p-4" style="border-color:var(--border); background:var(--surface);"><div class="flex gap-3"><i class="fa-solid fa-triangle-exclamation mt-1 text-sm" aria-hidden="true" style="color:var(--primary);"></i><div><div class="font-medium">商品マスタ</div><div class="text-xs" style="color:var(--muted);">参照不整合</div><div class="mt-1 text-sm" style="color:var(--muted);">公開期限が切れています</div></div></div></div>
-            <div class="rounded-2xl border p-4" style="border-color:var(--border); background:var(--surface);"><div class="flex gap-3"><i class="fa-solid fa-triangle-exclamation mt-1 text-sm" aria-hidden="true" style="color:var(--primary);"></i><div><div class="font-medium">取引先マスタ</div><div class="text-xs" style="color:var(--muted);">更新失敗</div><div class="mt-1 text-sm" style="color:var(--muted);">昨夜のCSV取り込みで失敗</div></div></div></div>
-            <div class="rounded-2xl border p-4" style="border-color:var(--border); background:var(--surface);"><div class="flex gap-3"><i class="fa-solid fa-triangle-exclamation mt-1 text-sm" aria-hidden="true" style="color:var(--primary);"></i><div><div class="font-medium">部門マスタ</div><div class="text-xs" style="color:var(--muted);">必須項目欠損</div><div class="mt-1 text-sm" style="color:var(--muted);">責任部署が未設定です</div></div></div></div>
-          </section>
-
-          <section class="rounded-2xl border overflow-hidden" style="border-color:var(--border); background:var(--surface);">
-            <div class="flex items-center justify-between border-b px-4 py-4" style="border-color:var(--border);">
-              <div><h2 class="text-lg font-semibold">マスタ一覧</h2><p class="text-sm" style="color:var(--muted);">主要マスタの状態を確認します。</p></div>
-              <div class="hidden gap-2 md:flex">
-                <button class="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-white" style="background:var(--primary);"><i class="fa-solid fa-plus text-xs" aria-hidden="true"></i><span>新規登録</span></button>
-                <button class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-solid fa-file-export text-xs" aria-hidden="true"></i><span>CSV出力</span></button>
-                <button class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm" style="border-color:var(--border);"><i class="fa-solid fa-filter text-xs" aria-hidden="true"></i><span>フィルタ</span></button>
+      <div class="mt-4 grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px]">
+        <section class="space-y-6">
+          <div class="grid gap-6 xl:grid-cols-2">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between"><h3 class="text-lg font-semibold">アラート</h3><a href="#" class="text-sm text-[color:var(--primary)]">すべて見る</a></div>
+              <div class="space-y-3">
+                <div class="rounded-2xl border border-[color:var(--border)] bg-white p-4"><div class="flex items-start gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-red-50 text-[#B3261E]"><i class="fa-solid fa-triangle-exclamation text-sm"></i></span><div class="min-w-0 flex-1"><div class="flex items-center gap-2"><div class="font-medium">商品マスタ</div><span class="rounded-full bg-[color:var(--soft)] px-2 py-0.5 text-[10px] font-semibold text-[color:var(--primary)]">参照不整合</span></div><p class="mt-1 text-sm text-[color:var(--muted)]">公開期限が切れています</p><div class="mt-3 flex gap-2 text-xs text-[color:var(--primary)]"><a href="#">詳細を見る</a><a href="#">対象マスタへ移動</a></div></div></div></div>
+                <div class="rounded-2xl border border-[color:var(--border)] bg-white p-4"><div class="flex items-start gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-amber-50 text-[#C65D00]"><i class="fa-solid fa-triangle-exclamation text-sm"></i></span><div class="min-w-0 flex-1"><div class="flex items-center gap-2"><div class="font-medium">取引先マスタ</div><span class="rounded-full bg-[color:var(--soft)] px-2 py-0.5 text-[10px] font-semibold text-[color:var(--primary)]">更新失敗</span></div><p class="mt-1 text-sm text-[color:var(--muted)]">昨夜のCSV取り込みで失敗</p><div class="mt-3 flex gap-2 text-xs text-[color:var(--primary)]"><a href="#">詳細を見る</a><a href="#">対象マスタへ移動</a></div></div></div></div>
               </div>
             </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between"><h3 class="text-lg font-semibold">承認待ち</h3><a href="#" class="text-sm text-[color:var(--primary)]">一覧へ</a></div>
+              <div class="space-y-3">
+                <div class="rounded-2xl border border-[color:var(--border)] bg-white p-4"><div class="flex items-center justify-between gap-3"><div><div class="font-medium">取引先マスタ</div><div class="text-sm text-[color:var(--muted)]">山口 宏 ・ 更新申請</div></div><span class="rounded-full bg-[#FCE8E6] px-2 py-1 text-[11px] font-semibold text-[#B3261E]">Over SLA</span></div><div class="mt-3 flex items-center justify-between text-sm"><span class="text-[color:var(--muted)]">申請日時 09:15</span><div class="flex gap-2"><button class="rounded-lg border border-[color:var(--border)] px-3 py-1.5">詳細確認</button><button class="rounded-lg bg-[color:var(--primary)] px-3 py-1.5 text-white">承認</button></div></div></div>
+                <div class="rounded-2xl border border-[color:var(--border)] bg-white p-4"><div class="flex items-center justify-between gap-3"><div><div class="font-medium">商品カテゴリマスタ</div><div class="text-sm text-[color:var(--muted)]">中村 杏奈 ・ 新規追加</div></div><span class="rounded-full bg-[color:var(--soft)] px-2 py-1 text-[11px] font-semibold text-[color:var(--primary)]">On track</span></div><div class="mt-3 flex items-center justify-between text-sm"><span class="text-[color:var(--muted)]">申請日時 10:40</span><div class="flex gap-2"><button class="rounded-lg border border-[color:var(--border)] px-3 py-1.5">詳細確認</button><button class="rounded-lg bg-[color:var(--primary)] px-3 py-1.5 text-white">承認</button></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <section class="rounded-xl border border-[color:var(--border)] bg-white shadow-sm overflow-hidden">
+            <div class="flex flex-col gap-3 border-b border-[color:var(--border)] px-4 py-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 class="text-lg font-semibold">マスタ一覧</h3>
+                <p class="text-sm text-[color:var(--muted)]">ソート、フィルタ、ページネーションに対応した主要マスタ一覧です。</p>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[color:var(--muted)]"><span>1 - 4 / 248</span><button class="rounded-lg border border-[color:var(--border)] px-3 py-1.5">前へ</button><button class="rounded-lg border border-[color:var(--border)] px-3 py-1.5">次へ</button></div>
+            </div>
             <div class="overflow-x-auto">
-              <table class="min-w-[860px] w-full text-sm">
-                <thead style="background:var(--soft); color:var(--muted);"><tr><th class="px-4 py-3 text-left">マスタ名</th><th class="px-4 py-3 text-left">コード</th><th class="px-4 py-3 text-left">管理部署</th><th class="px-4 py-3 text-left">最終更新日</th><th class="px-4 py-3 text-left">更新者</th><th class="px-4 py-3 text-left">状態</th><th class="px-4 py-3 text-left">操作</th></tr></thead>
+              <table class="min-w-[980px] w-full text-sm">
+                <thead class="bg-[color:var(--soft)] text-left text-[color:var(--muted)]">
+                  <tr><th class="px-4 py-3">マスタ名</th><th class="px-4 py-3">コード</th><th class="px-4 py-3">管理部署</th><th class="px-4 py-3">最終更新日</th><th class="px-4 py-3">更新者</th><th class="px-4 py-3">ステータス</th><th class="px-4 py-3">レコード件数</th><th class="px-4 py-3">エラー件数</th><th class="px-4 py-3">操作</th></tr>
+                </thead>
                 <tbody>
-                  <tr class="border-t" style="border-color:var(--border);"><td class="px-4 py-3 font-medium">商品マスタ</td><td class="px-4 py-3" style="color:var(--muted);">MST-001</td><td class="px-4 py-3">商品管理部</td><td class="px-4 py-3">2026-03-25</td><td class="px-4 py-3">河合</td><td class="px-4 py-3"><span class="rounded-full px-2 py-1 text-xs" style="background:var(--soft); color:var(--primary);">正常</span></td><td class="px-4 py-3"><a href="#" style="color:var(--primary);"><i class="fa-regular fa-eye mr-1" aria-hidden="true"></i>詳細</a></td></tr>
-                  <tr class="border-t" style="border-color:var(--border);"><td class="px-4 py-3 font-medium">取引先マスタ</td><td class="px-4 py-3" style="color:var(--muted);">MST-014</td><td class="px-4 py-3">購買部</td><td class="px-4 py-3">2026-03-24</td><td class="px-4 py-3">野村</td><td class="px-4 py-3"><span class="rounded-full px-2 py-1 text-xs" style="background:var(--soft); color:var(--primary);">要確認</span></td><td class="px-4 py-3"><a href="#" style="color:var(--primary);"><i class="fa-regular fa-eye mr-1" aria-hidden="true"></i>詳細</a></td></tr>
-                  <tr class="border-t" style="border-color:var(--border);"><td class="px-4 py-3 font-medium">部門マスタ</td><td class="px-4 py-3" style="color:var(--muted);">MST-021</td><td class="px-4 py-3">人事部</td><td class="px-4 py-3">2026-03-25</td><td class="px-4 py-3">青木</td><td class="px-4 py-3"><span class="rounded-full px-2 py-1 text-xs" style="background:var(--soft); color:var(--primary);">承認待ち</span></td><td class="px-4 py-3"><a href="#" style="color:var(--primary);"><i class="fa-regular fa-eye mr-1" aria-hidden="true"></i>詳細</a></td></tr>
-                  <tr class="border-t" style="border-color:var(--border);"><td class="px-4 py-3 font-medium">店舗マスタ</td><td class="px-4 py-3" style="color:var(--muted);">MST-033</td><td class="px-4 py-3">営業企画</td><td class="px-4 py-3">2026-03-23</td><td class="px-4 py-3">山城</td><td class="px-4 py-3"><span class="rounded-full px-2 py-1 text-xs" style="background:var(--soft); color:var(--primary);">更新中</span></td><td class="px-4 py-3"><a href="#" style="color:var(--primary);"><i class="fa-regular fa-eye mr-1" aria-hidden="true"></i>詳細</a></td></tr>
+                  <tr class="border-t border-[color:var(--border)]"><td class="px-4 py-3 font-medium">商品マスタ</td><td class="px-4 py-3 text-[color:var(--muted)]">MST-001</td><td class="px-4 py-3">商品管理部</td><td class="px-4 py-3">2026-03-25</td><td class="px-4 py-3">河合</td><td class="px-4 py-3"><span class="inline-flex rounded-md bg-[#E8F5E9] px-2.5 py-1 text-xs font-semibold text-[#1B5E20]">正常</span></td><td class="px-4 py-3">12,304</td><td class="px-4 py-3">0</td><td class="px-4 py-3"><div class="flex gap-3 text-sm text-[color:var(--primary)]"><a href="#"><i class="fa-regular fa-eye mr-1"></i>詳細</a><a href="#"><i class="fa-regular fa-pen-to-square mr-1"></i>編集</a><a href="#"><i class="fa-solid fa-clock-rotate-left mr-1"></i>履歴</a></div></td></tr>
+                  <tr class="border-t border-[color:var(--border)]"><td class="px-4 py-3 font-medium">取引先マスタ</td><td class="px-4 py-3 text-[color:var(--muted)]">MST-014</td><td class="px-4 py-3">購買部</td><td class="px-4 py-3">2026-03-24</td><td class="px-4 py-3">野村</td><td class="px-4 py-3"><span class="inline-flex rounded-md bg-[#FFF4E5] px-2.5 py-1 text-xs font-semibold text-[#8A4B00]">要確認</span></td><td class="px-4 py-3">3,118</td><td class="px-4 py-3">2</td><td class="px-4 py-3"><div class="flex gap-3 text-sm text-[color:var(--primary)]"><a href="#"><i class="fa-regular fa-eye mr-1"></i>詳細</a><a href="#"><i class="fa-regular fa-pen-to-square mr-1"></i>編集</a><a href="#"><i class="fa-solid fa-clock-rotate-left mr-1"></i>履歴</a></div></td></tr>
+                  <tr class="border-t border-[color:var(--border)]"><td class="px-4 py-3 font-medium">部門マスタ</td><td class="px-4 py-3 text-[color:var(--muted)]">MST-021</td><td class="px-4 py-3">人事部</td><td class="px-4 py-3">2026-03-25</td><td class="px-4 py-3">青木</td><td class="px-4 py-3"><span class="inline-flex rounded-md bg-[color:var(--soft)] px-2.5 py-1 text-xs font-semibold text-[color:var(--primary)]">承認待ち</span></td><td class="px-4 py-3">218</td><td class="px-4 py-3">0</td><td class="px-4 py-3"><div class="flex gap-3 text-sm text-[color:var(--primary)]"><a href="#"><i class="fa-regular fa-eye mr-1"></i>詳細</a><a href="#"><i class="fa-regular fa-pen-to-square mr-1"></i>編集</a><a href="#"><i class="fa-solid fa-clock-rotate-left mr-1"></i>履歴</a></div></td></tr>
                 </tbody>
               </table>
             </div>
           </section>
-        </div>
+        </section>
 
-        <div class="space-y-6">
-          <section class="space-y-3">
-            <div class="flex items-center justify-between"><h2 class="text-lg font-semibold">承認待ち</h2><a href="#" class="text-sm" style="color:var(--primary);">一覧へ</a></div>
-            <div class="rounded-2xl border p-4" style="border-color:var(--border); background:var(--surface);"><div class="flex items-center justify-between gap-3"><div><div class="font-medium">取引先マスタ</div><div class="text-sm" style="color:var(--muted);">山口 宏</div></div><span class="rounded-full px-2 py-1 text-[11px] font-semibold" style="background:var(--soft); color:var(--primary);">Over SLA</span></div><div class="mt-3 flex items-center justify-between text-sm"><span style="color:var(--muted);">申請日時 09:15</span><div class="flex gap-2"><button class="rounded-lg border px-3 py-1.5" style="border-color:var(--border);">詳細</button><button class="rounded-lg px-3 py-1.5 text-white" style="background:var(--primary);">承認</button></div></div></div>
-            <div class="rounded-2xl border p-4" style="border-color:var(--border); background:var(--surface);"><div class="flex items-center justify-between gap-3"><div><div class="font-medium">商品カテゴリマスタ</div><div class="text-sm" style="color:var(--muted);">中村 杏奈</div></div><span class="rounded-full px-2 py-1 text-[11px] font-semibold" style="background:var(--soft); color:var(--primary);">On track</span></div><div class="mt-3 flex items-center justify-between text-sm"><span style="color:var(--muted);">申請日時 10:40</span><div class="flex gap-2"><button class="rounded-lg border px-3 py-1.5" style="border-color:var(--border);">詳細</button><button class="rounded-lg px-3 py-1.5 text-white" style="background:var(--primary);">承認</button></div></div></div>
-            <div class="rounded-2xl border p-4" style="border-color:var(--border); background:var(--surface);"><div class="flex items-center justify-between gap-3"><div><div class="font-medium">店舗マスタ</div><div class="text-sm" style="color:var(--muted);">田口 健</div></div><span class="rounded-full px-2 py-1 text-[11px] font-semibold" style="background:var(--soft); color:var(--primary);">On track</span></div><div class="mt-3 flex items-center justify-between text-sm"><span style="color:var(--muted);">申請日時 11:05</span><div class="flex gap-2"><button class="rounded-lg border px-3 py-1.5" style="border-color:var(--border);">詳細</button><button class="rounded-lg px-3 py-1.5 text-white" style="background:var(--primary);">承認</button></div></div></div>
-          </section>
-
-          <section class="rounded-2xl border p-5" style="border-color:var(--border); background:var(--surface);">
-            <div class="mb-3 flex items-center justify-between"><h2 class="text-lg font-semibold">更新履歴・通知</h2><button class="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm" style="border-color:var(--border);"><i class="fa-regular fa-bell" aria-hidden="true"></i><span>未読 3 件</span></button></div>
-            <ul>
-              <li class="flex gap-3 border-b py-3 last:border-b-0" style="border-color:var(--border);"><span class="w-12 shrink-0 text-xs" style="color:var(--muted);">10:54</span><div><div class="text-sm font-medium">承認結果</div><div class="text-sm" style="color:var(--muted);">商品カテゴリマスタの申請が承認されました</div></div></li>
-              <li class="flex gap-3 border-b py-3 last:border-b-0" style="border-color:var(--border);"><span class="w-12 shrink-0 text-xs" style="color:var(--muted);">10:12</span><div><div class="text-sm font-medium">エラー通知</div><div class="text-sm" style="color:var(--muted);">取引先マスタの取り込みジョブが再試行待ちです</div></div></li>
-              <li class="flex gap-3 border-b py-3 last:border-b-0" style="border-color:var(--border);"><span class="w-12 shrink-0 text-xs" style="color:var(--muted);">09:40</span><div><div class="text-sm font-medium">更新ログ</div><div class="text-sm" style="color:var(--muted);">店舗マスタの営業時間が一括更新されました</div></div></li>
+        <aside class="space-y-6">
+          <section class="rounded-2xl border border-[color:var(--border)] bg-white p-5 shadow-sm">
+            <div class="mb-3 flex items-center justify-between"><h3 class="text-lg font-semibold">更新履歴・通知</h3><button class="inline-flex items-center gap-2 rounded-lg border border-[color:var(--border)] px-3 py-1.5 text-sm"><i class="fa-regular fa-bell"></i><span>未読 3 件</span></button></div>
+            <ul class="space-y-0">
+              <li class="flex gap-3 border-b border-[color:var(--border)] py-3"><span class="w-12 shrink-0 text-xs text-[color:var(--muted)]">10:54</span><div><div class="text-sm font-medium">承認結果</div><div class="text-sm text-[color:var(--muted)]">商品カテゴリマスタの申請が承認されました</div></div></li>
+              <li class="flex gap-3 border-b border-[color:var(--border)] py-3"><span class="w-12 shrink-0 text-xs text-[color:var(--muted)]">10:12</span><div><div class="text-sm font-medium">エラー通知</div><div class="text-sm text-[color:var(--muted)]">取引先マスタの取り込みジョブが再試行待ちです</div></div></li>
+              <li class="flex gap-3 border-b border-[color:var(--border)] py-3"><span class="w-12 shrink-0 text-xs text-[color:var(--muted)]">09:40</span><div><div class="text-sm font-medium">更新ログ</div><div class="text-sm text-[color:var(--muted)]">店舗マスタの営業時間が一括更新されました</div></div></li>
             </ul>
           </section>
-        </div>
+        </aside>
       </div>
     </main>
   </div>
 
   <script>
     (() => {
-      const root = document.querySelector('[data-drawer="atl"]');
-      const openers = document.querySelectorAll('[data-open-menu="atl"]');
-      const closers = document.querySelectorAll('[data-close-menu="atl"]');
-      if (!root) return;
-      const close = () => root.classList.add('hidden');
-      const open = () => root.classList.remove('hidden');
-      openers.forEach((el) => el.addEventListener('click', open));
-      closers.forEach((el) => el.addEventListener('click', close));
+      const root = document.querySelector('[data-drawer]');
+      const open = document.querySelector('[data-open="menu"]');
+      const close = document.querySelectorAll('[data-close="menu"]');
+      if (!root || !open) return;
+      open.addEventListener('click', () => root.classList.remove('hidden'));
+      close.forEach((el) => el.addEventListener('click', () => root.classList.add('hidden')));
     })();
   </script>
 </body>
