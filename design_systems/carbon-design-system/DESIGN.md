@@ -10,14 +10,36 @@ Use this specification for serious enterprise interfaces, operational dashboards
 - **Status:** Active | IBM maintained
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Optimize for clarity and enterprise-scale usability.
 - Use the grid to create order before adding decoration.
 - Keep motion restrained and purposeful.
 - Use layered surfaces and theme-aware contrast carefully.
 - Make dense information readable through structure and rhythm.
 
-## Color System
+### Content & Accessibility
+- Use explicit labels and strong state communication for fields and controls.
+- Preserve visible focus and strong contrast in all themes.
+- Use accessible component states as a non-negotiable baseline.
+- Prefer inline explanation over hidden affordances.
+- Use calm, direct content in error and empty-state messaging.
+
+- **Accessibility note:** Strong | accessibility status per component
+- **Content note:** Content and naming guidance
+- **Internationalization note:** Global enterprise support implied
+- **Localization / RTL note:** Strong | bidirectional support documented
+- **Validation note:** Error messaging and inline validation guidance
+- **State model note:** States documented in components
+- **Privacy / trust note:** Enterprise governance context
+
+### Official Sources
+- https://carbondesignsystem.com/
+- https://carbondesignsystem.com/guidelines/color/overview/
+- https://carbondesignsystem.com/guidelines/typography/overview/
+- https://carbondesignsystem.com/guidelines/2x-grid/overview/
+- https://carbondesignsystem.com/components/overview/
+
+## Colors
 Representative Carbon palette for generation based on public themes and IBM blue emphasis. Use Carbon tokens in implementation; these values are representative.
 
 - **Interactive `#0F62FE`:** Primary action and active emphasis.
@@ -44,7 +66,7 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - **Iconography:** IBM iconography guidance
 - **Motion direction:** Motion is limited and purposeful
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use the Carbon spacing scale with a strong 2x Grid mindset.
 - Use modest radius and avoid soft card-heavy consumer styling.
 - Prefer layered backgrounds and subtle borders over dramatic shadow depth.
@@ -54,19 +76,8 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - **Radius / shape note:** Productive geometry and corner styles
 - **Elevation / shadow note:** Layer model more central than shadows
 
-## Layout Rules
-- Use the 2x Grid to create alignment, rhythm, and density control.
-- Support structured enterprise shells with clear sections and utility actions.
-- Use panels and grouped regions when task segmentation helps comprehension.
-- Allow dense content, but keep rows, columns, and hierarchy crisp.
-- Treat whitespace as a structural tool rather than a luxury aesthetic.
-
-- **Official layout note:** 2x grid and layout principles
-- **Responsive behavior:** Responsive by grid and layout tokens
-- **App structure:** Enterprise shell and workflows
-- **Data display guidance:** Carbon charts ecosystem official
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use side navigation and shell patterns for larger products.
 - Use tabs for sibling content areas and view switching.
 - Use breadcrumbs when navigating deep product hierarchies.
@@ -75,7 +86,6 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - **Official navigation note:** Navigation patterns and shell guidance
 - **Pattern note:** Side nav, header, switcher
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use the 2x Grid to create alignment, rhythm, and density control.
+- Support structured enterprise shells with clear sections and utility actions.
+- Use panels and grouped regions when task segmentation helps comprehension.
+- Allow dense content, but keep rows, columns, and hierarchy crisp.
+- Treat whitespace as a structural tool rather than a luxury aesthetic.
 
-## Content & Accessibility
-- Use explicit labels and strong state communication for fields and controls.
-- Preserve visible focus and strong contrast in all themes.
-- Use accessible component states as a non-negotiable baseline.
-- Prefer inline explanation over hidden affordances.
-- Use calm, direct content in error and empty-state messaging.
+- **Official layout note:** 2x grid and layout principles
+- **Responsive behavior:** Responsive by grid and layout tokens
+- **App structure:** Enterprise shell and workflows
+- **Data display guidance:** Carbon charts ecosystem official
 
-- **Accessibility note:** Strong | accessibility status per component
-- **Content note:** Content and naming guidance
-- **Internationalization note:** Global enterprise support implied
-- **Localization / RTL note:** Strong | bidirectional support documented
-- **Validation note:** Error messaging and inline validation guidance
-- **State model note:** States documented in components
-- **Privacy / trust note:** Enterprise governance context
+### Screen Generation Heuristics
+- **Default page structure:** Use an enterprise shell with side nav, precise sectioning, and structured content panes aligned to the grid.
+- **Default density:** Use medium-to-dense density with strong alignment.
+- **Default navigation model:** Use shell navigation, side nav, tabs, and breadcrumbs for complex product structures.
+- **Preferred form composition:** Use labeled fields, strong validation, and orderly field groups that align tightly to the grid.
+- **Preferred feedback pattern:** Use inline messaging, notifications, and modal confirmation only when a stronger interruption is justified.
+- **Preferred data-display pattern:** Use tables, tiles, panels, and status-rich lists with disciplined hierarchy.
+- **Prompt bias:** Use prompts such as 'Carbon enterprise console', 'IBM-style structured dashboard', '2x grid layout', and 'disciplined operational UI'.
+- **Component naming consistency:** High | enterprise-standard names
+- **Layout rule explicitness:** High | grid and shell guidance explicit
+- **Theme describability:** High | layered theming is explicit
+- **Prompt-to-UI suitability:** High | strong for complex enterprise workflows
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do build the page around grid structure and task clarity.
 - Do use layered surfaces and type hierarchy to manage complex information.
@@ -265,23 +284,3 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - Do not over-round controls or turn every section into a floating card.
 - Do not collapse dense workflows into excessively spacious layouts.
 - Do not sacrifice grid discipline for asymmetrical flourish.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use an enterprise shell with side nav, precise sectioning, and structured content panes aligned to the grid.
-- **Default density:** Use medium-to-dense density with strong alignment.
-- **Default navigation model:** Use shell navigation, side nav, tabs, and breadcrumbs for complex product structures.
-- **Preferred form composition:** Use labeled fields, strong validation, and orderly field groups that align tightly to the grid.
-- **Preferred feedback pattern:** Use inline messaging, notifications, and modal confirmation only when a stronger interruption is justified.
-- **Preferred data-display pattern:** Use tables, tiles, panels, and status-rich lists with disciplined hierarchy.
-- **Prompt bias:** Use prompts such as 'Carbon enterprise console', 'IBM-style structured dashboard', '2x grid layout', and 'disciplined operational UI'.
-- **Component naming consistency:** High | enterprise-standard names
-- **Layout rule explicitness:** High | grid and shell guidance explicit
-- **Theme describability:** High | layered theming is explicit
-- **Prompt-to-UI suitability:** High | strong for complex enterprise workflows
-
-## Official Sources
-- https://carbondesignsystem.com/
-- https://carbondesignsystem.com/guidelines/color/overview/
-- https://carbondesignsystem.com/guidelines/typography/overview/
-- https://carbondesignsystem.com/guidelines/2x-grid/overview/
-- https://carbondesignsystem.com/components/overview/

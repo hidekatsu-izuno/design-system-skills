@@ -10,14 +10,34 @@ Use this specification for digital products that need a deliberate visual system
 - **Status:** Active | publicly launched 2025
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Use a reusable visual language that still preserves product personality.
 - Favor scalable patterns over one-off visual flourishes.
 - Let brand expression support product clarity, not overpower it.
 - Keep layout and navigation practical for digital products.
 - Use design-system thinking to make quality repeatable.
 
-## Color System
+### Content & Accessibility
+- Use readable contrast and explicit interaction states despite the stronger brand layer.
+- Keep copy direct and useful; do not let tone undermine comprehension.
+- Preserve accessible spacing and target sizes in branded components.
+- Use imagery and iconography to support hierarchy, not to replace it.
+- Keep form and validation guidance clear even in visually expressive screens.
+
+- **Accessibility note:** Medium | public guidance exists but not deep yet
+- **Content note:** Brand and communication guidance present
+- **Internationalization note:** Global consulting context | docs mostly Japanese
+- **Localization / RTL note:** N/A | Japanese-first documentation
+- **Validation note:** Not a highlighted public section yet
+- **State model note:** State guidance emerging
+- **Privacy / trust note:** Client trust and brand quality focus
+
+### Official Sources
+- https://sparkle-design.goodpatch.com/sparkle-design
+- https://goodpatch.com/blog/2025-07-sparkle-design-3
+- https://goodpatch.com/blog/2025-06-sparkle-design-1
+
+## Colors
 Representative Sparkle palette inferred from public Sparkle Design examples and Goodpatch branding context. Treat these values as generation guidance, not as an official token export.
 
 - **Primary `#111111`:** Strong base text and key contrast anchor.
@@ -44,7 +64,7 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - **Iconography:** Brand/icon assets likely included
 - **Motion direction:** Motion not a primary public theme
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use consistent spacing that keeps the product feeling polished and intentionally composed.
 - Use moderate-to-soft radii when the brand direction supports it, but keep controls practical.
 - Use depth selectively; avoid stacking gratuitous shadows everywhere.
@@ -54,19 +74,8 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - **Radius / shape note:** Brand style decisions present
 - **Elevation / shadow note:** Visual hierarchy guidance present
 
-## Layout Rules
-- Use clear page structure and a recognizable product shell.
-- Allow stronger brand moments in headers, hero sections, or section transitions when the workflow supports them.
-- Keep product areas practical and navigable even when visual identity is more pronounced.
-- Use cards, sections, and modular panels to scale the system cleanly.
-- Prefer deliberate composition over generic dashboard repetition.
-
-- **Official layout note:** Information architecture and layout guidance
-- **Responsive behavior:** Responsive guidance likely included
-- **App structure:** Consulting patterns for digital services
-- **Data display guidance:** Not a major public system axis
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use clear top-level navigation and local navigation patterns that feel product-specific but still familiar.
 - Use tabs and side navigation when they simplify content grouping rather than for decoration.
 - Keep labels literal even when visual styling is more expressive.
@@ -75,7 +84,6 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - **Official navigation note:** Navigation guidance emerging with system assets
 - **Pattern note:** System-level nav guidance likely present
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +243,32 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use clear page structure and a recognizable product shell.
+- Allow stronger brand moments in headers, hero sections, or section transitions when the workflow supports them.
+- Keep product areas practical and navigable even when visual identity is more pronounced.
+- Use cards, sections, and modular panels to scale the system cleanly.
+- Prefer deliberate composition over generic dashboard repetition.
 
-## Content & Accessibility
-- Use readable contrast and explicit interaction states despite the stronger brand layer.
-- Keep copy direct and useful; do not let tone undermine comprehension.
-- Preserve accessible spacing and target sizes in branded components.
-- Use imagery and iconography to support hierarchy, not to replace it.
-- Keep form and validation guidance clear even in visually expressive screens.
+- **Official layout note:** Information architecture and layout guidance
+- **Responsive behavior:** Responsive guidance likely included
+- **App structure:** Consulting patterns for digital services
+- **Data display guidance:** Not a major public system axis
 
-- **Accessibility note:** Medium | public guidance exists but not deep yet
-- **Content note:** Brand and communication guidance present
-- **Internationalization note:** Global consulting context | docs mostly Japanese
-- **Localization / RTL note:** N/A | Japanese-first documentation
-- **Validation note:** Not a highlighted public section yet
-- **State model note:** State guidance emerging
-- **Privacy / trust note:** Client trust and brand quality focus
+### Screen Generation Heuristics
+- **Default page structure:** Use a clear product shell with opportunities for brand expression in selected anchor areas, while keeping operational content practical.
+- **Default density:** Use medium density with enough breathing room to let the visual system read clearly.
+- **Default navigation model:** Use familiar top-level nav, tabs, and side navigation in a product-specific but readable way.
+- **Preferred form composition:** Use clean, well-labeled forms with branded restraint rather than decorative novelty.
+- **Preferred feedback pattern:** Use notices, toasts, and dialogs that match the system's visual voice without becoming theatrical.
+- **Preferred data-display pattern:** Use cards, lists, and tables with stronger composition than generic admin UI, but keep them operational.
+- **Prompt bias:** Use prompts such as 'brand-conscious product UI', 'Goodpatch-style design system', 'controlled expressive accents', and 'polished reusable layout'.
+- **Component naming consistency:** Medium | some brand-led naming likely remains
+- **Layout rule explicitness:** Medium | reusable rules still maturing publicly
+- **Theme describability:** Medium | style direction is strong but less formalized
+- **Prompt-to-UI suitability:** Medium | useful as a visual direction source
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do let the product feel intentionally branded and well composed.
 - Do keep reusable patterns stronger than one-off art direction.
@@ -265,21 +282,3 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - Do not let branding weaken form clarity or navigation comprehension.
 - Do not use playful consumer gimmicks if the product context is serious.
 - Do not treat expressive accents as a substitute for hierarchy and layout discipline.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a clear product shell with opportunities for brand expression in selected anchor areas, while keeping operational content practical.
-- **Default density:** Use medium density with enough breathing room to let the visual system read clearly.
-- **Default navigation model:** Use familiar top-level nav, tabs, and side navigation in a product-specific but readable way.
-- **Preferred form composition:** Use clean, well-labeled forms with branded restraint rather than decorative novelty.
-- **Preferred feedback pattern:** Use notices, toasts, and dialogs that match the system's visual voice without becoming theatrical.
-- **Preferred data-display pattern:** Use cards, lists, and tables with stronger composition than generic admin UI, but keep them operational.
-- **Prompt bias:** Use prompts such as 'brand-conscious product UI', 'Goodpatch-style design system', 'controlled expressive accents', and 'polished reusable layout'.
-- **Component naming consistency:** Medium | some brand-led naming likely remains
-- **Layout rule explicitness:** Medium | reusable rules still maturing publicly
-- **Theme describability:** Medium | style direction is strong but less formalized
-- **Prompt-to-UI suitability:** Medium | useful as a visual direction source
-
-## Official Sources
-- https://sparkle-design.goodpatch.com/sparkle-design
-- https://goodpatch.com/blog/2025-07-sparkle-design-3
-- https://goodpatch.com/blog/2025-06-sparkle-design-1

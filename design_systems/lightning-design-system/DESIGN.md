@@ -10,14 +10,36 @@ Use this specification for CRM-style, record-centric business applications. Favo
 - **Status:** Active | SLDS 1 public docs
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Design around records, lists, and business-object workflows.
 - Keep page regions explicit and consistent.
 - Use accessible business UI patterns rather than decorative surfaces.
 - Support data-heavy tasks, filtering, and guided action flow.
 - Make status and object metadata easy to scan.
 
-## Color System
+### Content & Accessibility
+- Use direct labels and business-readable terminology.
+- Preserve explicit states in forms, tables, prompts, and alerts.
+- Use iconography to support object identification, not replace text labels.
+- Keep validation close to the field or record action that caused it.
+- Use accessible table and form patterns for enterprise workflows.
+
+- **Accessibility note:** Strong | accessible blueprints emphasized
+- **Content note:** Voice and tone guidance limited
+- **Internationalization note:** Global Salesforce product support
+- **Localization / RTL note:** Limited | not prominent in public docs
+- **Validation note:** Alerts, prompts, validation in blueprints
+- **State model note:** Interaction states per blueprint
+- **Privacy / trust note:** CRM trust and data-sensitive workflows
+
+### Official Sources
+- https://v1.lightningdesignsystem.com/
+- https://v1.lightningdesignsystem.com/design-tokens/
+- https://v1.lightningdesignsystem.com/utilities/themes/
+- https://v1.lightningdesignsystem.com/components/overview/
+- https://v1.lightningdesignsystem.com/accessibility/overview/
+
+## Colors
 Representative Lightning palette for generation based on public SLDS guidance and Salesforce product styling. Use official tokens in implementation; these values are representative.
 
 - **Brand `#0176D3`:** Primary interactive emphasis and brand-led action color.
@@ -44,7 +66,7 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - **Iconography:** Utility icons in SLDS
 - **Motion direction:** Motion guidance light but present
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use utility spacing and region-based composition.
 - Use subtle radius values and straightforward enterprise surfaces.
 - Use depth sparingly and structurally, especially for overlays and utility panels.
@@ -54,19 +76,8 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - **Radius / shape note:** Border radius utilities
 - **Elevation / shadow note:** Utility shadows and depth tokens
 
-## Layout Rules
-- Use record-page composition with header, highlights panel, tabs, and related lists when appropriate.
-- Use utility bars, object actions, and supporting panels for dense workflows.
-- Support responsive desktop-first enterprise layouts rather than mobile-social composition.
-- Keep filter, table, and form structures explicit and region-based.
-- Use blueprint-like page segmentation whenever the workflow benefits from it.
-
-- **Official layout note:** Responsive grid utilities and page regions
-- **Responsive behavior:** Responsive and adaptive tags on blueprints
-- **App structure:** Record pages and app shell
-- **Data display guidance:** Analytics and report UI patterns
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use global navigation, app launcher patterns, and object-level nav where needed.
 - Use tabs within record pages and object areas.
 - Use breadcrumbs lightly; object context often comes from shell and page titles.
@@ -75,7 +86,6 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - **Official navigation note:** Global nav and app launcher blueprints
 - **Pattern note:** Global header, app launcher, breadcrumbs
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use record-page composition with header, highlights panel, tabs, and related lists when appropriate.
+- Use utility bars, object actions, and supporting panels for dense workflows.
+- Support responsive desktop-first enterprise layouts rather than mobile-social composition.
+- Keep filter, table, and form structures explicit and region-based.
+- Use blueprint-like page segmentation whenever the workflow benefits from it.
 
-## Content & Accessibility
-- Use direct labels and business-readable terminology.
-- Preserve explicit states in forms, tables, prompts, and alerts.
-- Use iconography to support object identification, not replace text labels.
-- Keep validation close to the field or record action that caused it.
-- Use accessible table and form patterns for enterprise workflows.
+- **Official layout note:** Responsive grid utilities and page regions
+- **Responsive behavior:** Responsive and adaptive tags on blueprints
+- **App structure:** Record pages and app shell
+- **Data display guidance:** Analytics and report UI patterns
 
-- **Accessibility note:** Strong | accessible blueprints emphasized
-- **Content note:** Voice and tone guidance limited
-- **Internationalization note:** Global Salesforce product support
-- **Localization / RTL note:** Limited | not prominent in public docs
-- **Validation note:** Alerts, prompts, validation in blueprints
-- **State model note:** Interaction states per blueprint
-- **Privacy / trust note:** CRM trust and data-sensitive workflows
+### Screen Generation Heuristics
+- **Default page structure:** Use an app shell or record-page shell with utility navigation, object header, tabs, and related content regions.
+- **Default density:** Use medium-to-dense density with strong business scanability.
+- **Default navigation model:** Use global app navigation, object context, tabs, and contextual utility actions.
+- **Preferred form composition:** Use sectioned enterprise forms with explicit labels, validation, and record-level actions.
+- **Preferred feedback pattern:** Use prompts, scoped notifications, and inline field messaging for business actions.
+- **Preferred data-display pattern:** Use data tables, record lists, related lists, and object summaries as primary patterns.
+- **Prompt bias:** Use prompts such as 'Salesforce-style record page', 'object highlights panel', 'related list table', and 'SLDS business shell'.
+- **Component naming consistency:** Medium | Salesforce-specific names appear
+- **Layout rule explicitness:** High | blueprint regions and adaptivity explicit
+- **Theme describability:** High | styling hooks describe visual variance
+- **Prompt-to-UI suitability:** High | strong for CRM and record-centric screens
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do design around record objects, related lists, and guided business workflows.
 - Do use page regions and object headers to structure screens.
@@ -265,23 +284,3 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - Do not hide record context or key actions behind ambiguous navigation.
 - Do not replace business tables with card mosaics unless the use case clearly needs it.
 - Do not soften the system into a lifestyle-brand aesthetic.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use an app shell or record-page shell with utility navigation, object header, tabs, and related content regions.
-- **Default density:** Use medium-to-dense density with strong business scanability.
-- **Default navigation model:** Use global app navigation, object context, tabs, and contextual utility actions.
-- **Preferred form composition:** Use sectioned enterprise forms with explicit labels, validation, and record-level actions.
-- **Preferred feedback pattern:** Use prompts, scoped notifications, and inline field messaging for business actions.
-- **Preferred data-display pattern:** Use data tables, record lists, related lists, and object summaries as primary patterns.
-- **Prompt bias:** Use prompts such as 'Salesforce-style record page', 'object highlights panel', 'related list table', and 'SLDS business shell'.
-- **Component naming consistency:** Medium | Salesforce-specific names appear
-- **Layout rule explicitness:** High | blueprint regions and adaptivity explicit
-- **Theme describability:** High | styling hooks describe visual variance
-- **Prompt-to-UI suitability:** High | strong for CRM and record-centric screens
-
-## Official Sources
-- https://v1.lightningdesignsystem.com/
-- https://v1.lightningdesignsystem.com/design-tokens/
-- https://v1.lightningdesignsystem.com/utilities/themes/
-- https://v1.lightningdesignsystem.com/components/overview/
-- https://v1.lightningdesignsystem.com/accessibility/overview/

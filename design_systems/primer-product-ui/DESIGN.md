@@ -10,14 +10,36 @@ Use this specification for GitHub-like product interfaces, developer tools, sett
 - **Status:** Active | GitHub maintained
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Let product utility and content hierarchy drive the screen.
 - Use primitives and semantic variables to keep the interface systematic.
 - Keep styling understated and developer-tool practical.
 - Support both dense data and comfortable readability.
 - Use component naming and layout patterns that feel familiar to serious software products.
 
-## Color System
+### Content & Accessibility
+- Use clear technical language and avoid ambiguous marketing copy in product screens.
+- Maintain strong focus treatment and keyboard navigability.
+- Use icons to support labels and status, not replace readable text.
+- Keep error and help copy concise and task-oriented.
+- Use code or monospace treatment only where semantics justify it.
+
+- **Accessibility note:** Strong | component-level accessibility docs
+- **Content note:** Copy and UX writing within patterns
+- **Internationalization note:** Global GitHub product support
+- **Localization / RTL note:** Limited | GitHub product focus
+- **Validation note:** FormControl validation and flash messages
+- **State model note:** Default/hover/disabled/focus documented
+- **Privacy / trust note:** GitHub trust and security context
+
+### Official Sources
+- https://primer.style/product
+- https://primer.style/product/primitives/color
+- https://primer.style/product/primitives/typography
+- https://primer.style/product/components/page-layout
+- https://primer.style/product/components
+
+## Colors
 Representative Primer palette for generation based on current product UI primitives. Use variables in implementation; these hex values are representative.
 
 - **Accent `#0969DA`:** Primary interactive emphasis and link/action color.
@@ -44,7 +66,7 @@ Representative Primer palette for generation based on current product UI primiti
 - **Iconography:** Octicons
 - **Motion direction:** Animation utilities minimal
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use a disciplined spacing scale with practical compactness.
 - Use small-to-moderate radii and restrained shadows.
 - Prefer borders, muted surfaces, and layout grouping over rich card effects.
@@ -54,19 +76,8 @@ Representative Primer palette for generation based on current product UI primiti
 - **Radius / shape note:** Border radius primitives
 - **Elevation / shadow note:** Box-shadow tokens limited but present
 
-## Layout Rules
-- Use page layouts with clear header, side navigation, and content hierarchy when the product area is complex.
-- Support split layouts, settings pages, and repository-style information density.
-- Use sections, subheaders, and muted containers to organize complex screens.
-- Keep actions near the data or task they affect.
-- Favor compact clarity over ornamental whitespace.
-
-- **Official layout note:** Layout primitives and page patterns
-- **Responsive behavior:** Responsive layouts for GitHub pages
-- **App structure:** Page layouts for product workflows
-- **Data display guidance:** Data-rich GitHub tables more than charts
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use side nav, underline nav, and page-local patterns for clear product orientation.
 - Use breadcrumbs only when nested hierarchy is genuinely helpful.
 - Use tabs for sibling views and segmented content regions.
@@ -75,7 +86,6 @@ Representative Primer palette for generation based on current product UI primiti
 - **Official navigation note:** NavList, UnderlineNav, side nav patterns
 - **Pattern note:** NavList, UnderlineNav, breadcrumbs
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Primer palette for generation based on current product UI primiti
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use page layouts with clear header, side navigation, and content hierarchy when the product area is complex.
+- Support split layouts, settings pages, and repository-style information density.
+- Use sections, subheaders, and muted containers to organize complex screens.
+- Keep actions near the data or task they affect.
+- Favor compact clarity over ornamental whitespace.
 
-## Content & Accessibility
-- Use clear technical language and avoid ambiguous marketing copy in product screens.
-- Maintain strong focus treatment and keyboard navigability.
-- Use icons to support labels and status, not replace readable text.
-- Keep error and help copy concise and task-oriented.
-- Use code or monospace treatment only where semantics justify it.
+- **Official layout note:** Layout primitives and page patterns
+- **Responsive behavior:** Responsive layouts for GitHub pages
+- **App structure:** Page layouts for product workflows
+- **Data display guidance:** Data-rich GitHub tables more than charts
 
-- **Accessibility note:** Strong | component-level accessibility docs
-- **Content note:** Copy and UX writing within patterns
-- **Internationalization note:** Global GitHub product support
-- **Localization / RTL note:** Limited | GitHub product focus
-- **Validation note:** FormControl validation and flash messages
-- **State model note:** Default/hover/disabled/focus documented
-- **Privacy / trust note:** GitHub trust and security context
+### Screen Generation Heuristics
+- **Default page structure:** Use a utility-first product page with a clear title, optional side navigation, explicit section grouping, and practical action placement.
+- **Default density:** Use medium density with compact tendencies for settings and tool screens.
+- **Default navigation model:** Use side navigation, underline nav, tabs, and page headers for strong orientation.
+- **Preferred form composition:** Use clearly labeled fields, concise help text, and practical action groups.
+- **Preferred feedback pattern:** Use banners, flash messages, inline validation, and dialogs only when blocking is justified.
+- **Preferred data-display pattern:** Use lists, tables, cards, and timelines in a calm, utility-first way.
+- **Prompt bias:** Use prompts such as 'GitHub product settings page', 'Primer side nav', 'muted borders', and 'developer tool UI'.
+- **Component naming consistency:** High | standard product UI names
+- **Layout rule explicitness:** High | layout primitives and page patterns explicit
+- **Theme describability:** High | color modes and primitives are clear
+- **Prompt-to-UI suitability:** High | excellent for repository/productivity screens
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do make the UI feel practical, reliable, and developer-friendly.
 - Do use muted surfaces, borders, and strong alignment to manage complexity.
@@ -265,23 +284,3 @@ Representative Primer palette for generation based on current product UI primiti
 - Do not hide important settings and actions behind ambiguous icon-only patterns.
 - Do not over-round containers or use whimsical control styling.
 - Do not replace practical lists and tables with over-carded layouts without reason.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a utility-first product page with a clear title, optional side navigation, explicit section grouping, and practical action placement.
-- **Default density:** Use medium density with compact tendencies for settings and tool screens.
-- **Default navigation model:** Use side navigation, underline nav, tabs, and page headers for strong orientation.
-- **Preferred form composition:** Use clearly labeled fields, concise help text, and practical action groups.
-- **Preferred feedback pattern:** Use banners, flash messages, inline validation, and dialogs only when blocking is justified.
-- **Preferred data-display pattern:** Use lists, tables, cards, and timelines in a calm, utility-first way.
-- **Prompt bias:** Use prompts such as 'GitHub product settings page', 'Primer side nav', 'muted borders', and 'developer tool UI'.
-- **Component naming consistency:** High | standard product UI names
-- **Layout rule explicitness:** High | layout primitives and page patterns explicit
-- **Theme describability:** High | color modes and primitives are clear
-- **Prompt-to-UI suitability:** High | excellent for repository/productivity screens
-
-## Official Sources
-- https://primer.style/product
-- https://primer.style/product/primitives/color
-- https://primer.style/product/primitives/typography
-- https://primer.style/product/components/page-layout
-- https://primer.style/product/components

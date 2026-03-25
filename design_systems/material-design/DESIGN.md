@@ -10,14 +10,36 @@ Use this specification for adaptive product UI that should feel expressive, stru
 - **Status:** Active | Material 3 current
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Use semantic roles and emphasis levels rather than arbitrary decoration.
 - Prefer adaptive layouts that respond cleanly to narrow, medium, and large screens.
 - Use motion to clarify hierarchy and state changes, not to entertain.
 - Keep surfaces layered and purposeful.
 - Make primary actions obvious and secondary actions quiet.
 
-## Color System
+### Content & Accessibility
+- Use short labels and explicit helper text for form fields.
+- Preserve visible focus, pressed, selected, disabled, and error states.
+- Do not rely on color alone to convey meaning.
+- Use accessible contrast on both tonal and neutral surfaces.
+- Pair empty states with action-oriented copy and a clear next step.
+
+- **Accessibility note:** Strong | accessibility foundations and alt text
+- **Content note:** Writing and labels in guidance
+- **Internationalization note:** Global writing guidance
+- **Localization / RTL note:** Limited | not core Material 3 section
+- **Validation note:** Error states in text fields and dialogs
+- **State model note:** Hover, focus, pressed, disabled explicit
+- **Privacy / trust note:** Security and permission patterns adjacent
+
+### Official Sources
+- https://m3.material.io/
+- https://m3.material.io/styles/color/roles
+- https://m3.material.io/styles/typography/overview
+- https://m3.material.io/foundations/layout/understanding-layout/overview
+- https://m3.material.io/components
+
+## Colors
 Representative Material 3 palette for generation. Use semantic roles in implementation; the values below are representative rather than exhaustive token exports.
 
 - **Primary `#6750A4`:** Main action color and selected-state emphasis.
@@ -44,7 +66,7 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **Iconography:** Material Symbols and icons
 - **Motion direction:** Motion system and transitions
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use a 4dp-based spacing rhythm with 8dp and 16dp as the most common steps.
 - Use medium rounding by default; prefer 12px to 16px corners for cards, fields, and dialogs.
 - Use elevation to separate surfaces, not to create dramatic shadows.
@@ -54,19 +76,8 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **Radius / shape note:** Shape scale is first-class
 - **Elevation / shadow note:** Elevation levels and surfaces
 
-## Layout Rules
-- Use top app bars, navigation bars, rails, or drawers based on screen width and destination count.
-- Prefer single-column composition on mobile and wider panes or supporting panels on desktop.
-- Group related content into cards or tonal sections when it improves scanability.
-- Use dense layouts only when task complexity requires them.
-- Keep primary actions anchored near the end of the task flow or in persistent action regions.
-
-- **Official layout note:** Responsive layout guidance
-- **Responsive behavior:** Adaptive layouts by breakpoint and window class
-- **App structure:** App bars, rails, sheets, panes
-- **Data display guidance:** Charts and data display patterns limited
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use bottom navigation for a small number of top-level destinations on mobile.
 - Use navigation rail for larger mobile and tablet layouts when persistent section switching helps.
 - Use a drawer for broad information architecture or utility-heavy destinations.
@@ -75,7 +86,6 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **Official navigation note:** Navigation bar, rail, drawer patterns
 - **Pattern note:** Top app bar, nav bar, nav drawer, rail
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use top app bars, navigation bars, rails, or drawers based on screen width and destination count.
+- Prefer single-column composition on mobile and wider panes or supporting panels on desktop.
+- Group related content into cards or tonal sections when it improves scanability.
+- Use dense layouts only when task complexity requires them.
+- Keep primary actions anchored near the end of the task flow or in persistent action regions.
 
-## Content & Accessibility
-- Use short labels and explicit helper text for form fields.
-- Preserve visible focus, pressed, selected, disabled, and error states.
-- Do not rely on color alone to convey meaning.
-- Use accessible contrast on both tonal and neutral surfaces.
-- Pair empty states with action-oriented copy and a clear next step.
+- **Official layout note:** Responsive layout guidance
+- **Responsive behavior:** Adaptive layouts by breakpoint and window class
+- **App structure:** App bars, rails, sheets, panes
+- **Data display guidance:** Charts and data display patterns limited
 
-- **Accessibility note:** Strong | accessibility foundations and alt text
-- **Content note:** Writing and labels in guidance
-- **Internationalization note:** Global writing guidance
-- **Localization / RTL note:** Limited | not core Material 3 section
-- **Validation note:** Error states in text fields and dialogs
-- **State model note:** Hover, focus, pressed, disabled explicit
-- **Privacy / trust note:** Security and permission patterns adjacent
+### Screen Generation Heuristics
+- **Default page structure:** Use a top app bar with one primary content column. Add navigation rail, drawer, or a supporting pane as complexity increases.
+- **Default density:** Use medium density by default. Tighten spacing only for data-heavy enterprise screens.
+- **Default navigation model:** Use app bar plus tabs, bottom nav, rail, or drawer depending on viewport size and destination count.
+- **Preferred form composition:** Use stacked labeled fields with helper text, clear validation, and one dominant submit action.
+- **Preferred feedback pattern:** Use snackbars for transient updates, inline errors for forms, and dialogs only for blocking decisions.
+- **Preferred data-display pattern:** Use cards, lists, and data tables with clear row hierarchy and restrained inline actions.
+- **Prompt bias:** Use prompts such as 'Material 3 dashboard', 'tonal surfaces', 'adaptive navigation rail', and 'filled / outlined / text button hierarchy'.
+- **Component naming consistency:** High | mainstream names with variants
+- **Layout rule explicitness:** High | adaptive layout rules are explicit
+- **Theme describability:** High | dynamic color roles convert well from md
+- **Prompt-to-UI suitability:** High | components + tokens + layout map well
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do use tonal hierarchy to distinguish importance levels.
 - Do use chips for lightweight filtering and selection metadata.
@@ -265,23 +284,3 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - Do not over-outline every container when tonal surfaces are sufficient.
 - Do not use consumer-social styling such as oversized avatars and playful gradients by default.
 - Do not invent custom control shapes that fight Material components.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a top app bar with one primary content column. Add navigation rail, drawer, or a supporting pane as complexity increases.
-- **Default density:** Use medium density by default. Tighten spacing only for data-heavy enterprise screens.
-- **Default navigation model:** Use app bar plus tabs, bottom nav, rail, or drawer depending on viewport size and destination count.
-- **Preferred form composition:** Use stacked labeled fields with helper text, clear validation, and one dominant submit action.
-- **Preferred feedback pattern:** Use snackbars for transient updates, inline errors for forms, and dialogs only for blocking decisions.
-- **Preferred data-display pattern:** Use cards, lists, and data tables with clear row hierarchy and restrained inline actions.
-- **Prompt bias:** Use prompts such as 'Material 3 dashboard', 'tonal surfaces', 'adaptive navigation rail', and 'filled / outlined / text button hierarchy'.
-- **Component naming consistency:** High | mainstream names with variants
-- **Layout rule explicitness:** High | adaptive layout rules are explicit
-- **Theme describability:** High | dynamic color roles convert well from md
-- **Prompt-to-UI suitability:** High | components + tokens + layout map well
-
-## Official Sources
-- https://m3.material.io/
-- https://m3.material.io/styles/color/roles
-- https://m3.material.io/styles/typography/overview
-- https://m3.material.io/foundations/layout/understanding-layout/overview
-- https://m3.material.io/components

@@ -10,14 +10,36 @@ Use this specification for interfaces that should feel native to Apple platforms
 - **Status:** Active | continuously updated by Apple
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Prioritize clarity in labels, icon use, and overall navigation structure.
 - Let content lead; interface chrome should support, not dominate.
 - Use native metaphors and control behavior whenever possible.
 - Adjust layout, spacing, and control treatment by platform family.
 - Keep motion and depth subtle and platform-consistent.
 
-## Color System
+### Content & Accessibility
+- Use concise, human labels and avoid jargon-heavy control text.
+- Preserve dynamic type scalability and comfortable tap targets.
+- Use semantic colors, not raw brand colors, for status whenever possible.
+- Ensure controls read as native and predictable to VoiceOver users.
+- Keep destructive actions explicit and visually separated from safe actions.
+
+- **Accessibility note:** Strong | built into platform guidance
+- **Content note:** Writing guidance included
+- **Internationalization note:** Localization guidance across locales
+- **Localization / RTL note:** Strong | locale-aware Apple controls
+- **Validation note:** System alerts and validation via native controls
+- **State model note:** Standard control states via platform behaviors
+- **Privacy / trust note:** Privacy is a platform concern
+
+### Official Sources
+- https://developer.apple.com/design/human-interface-guidelines/
+- https://developer.apple.com/design/human-interface-guidelines/color
+- https://developer.apple.com/design/human-interface-guidelines/typography
+- https://developer.apple.com/design/human-interface-guidelines/layout
+- https://developer.apple.com/design/human-interface-guidelines/controls
+
+## Colors
 Representative Apple system palette for generation. Use semantic system colors in implementation; these hex values are representative.
 
 - **System Blue `#007AFF`:** Primary action color and interactive emphasis.
@@ -44,7 +66,7 @@ Representative Apple system palette for generation. Use semantic system colors i
 - **Iconography:** SF Symbols and app icons
 - **Motion direction:** Animation guidance by platform
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use platform-native spacing and alignment; prioritize optical balance over a rigid visible grid.
 - Use rounded rectangles and materials that align with the target Apple platform.
 - Use blur, translucency, and depth only in platform-native ways.
@@ -54,19 +76,8 @@ Representative Apple system palette for generation. Use semantic system colors i
 - **Radius / shape note:** Rounded rect conventions by platform
 - **Elevation / shadow note:** Depth through materials and blur
 
-## Layout Rules
-- Use platform-appropriate containers such as split views, sidebars, tab bars, toolbars, and sheets.
-- Respect safe areas, title regions, and expected control placement for each platform.
-- Use grouped sections and inset panels where native patterns call for them.
-- Avoid over-dense enterprise layouts unless the app category clearly supports them.
-- When generating for macOS, allow more persistent side navigation and toolbar actions than on iPhone.
-
-- **Official layout note:** Platform layout and safe-area guidance
-- **Responsive behavior:** Canonical adaptations by device
-- **App structure:** Tab bars, split views, sidebars
-- **Data display guidance:** Charts available in platform frameworks
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use tab bars for a small number of top-level destinations on iPhone.
 - Use sidebars and split views for iPadOS and macOS information architecture.
 - Use back navigation and hierarchical drill-in patterns when content is naturally nested.
@@ -75,7 +86,6 @@ Representative Apple system palette for generation. Use semantic system colors i
 - **Official navigation note:** Tab bars, sidebars, split views
 - **Pattern note:** Sidebar, tab bar, navigation split
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Apple system palette for generation. Use semantic system colors i
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use platform-appropriate containers such as split views, sidebars, tab bars, toolbars, and sheets.
+- Respect safe areas, title regions, and expected control placement for each platform.
+- Use grouped sections and inset panels where native patterns call for them.
+- Avoid over-dense enterprise layouts unless the app category clearly supports them.
+- When generating for macOS, allow more persistent side navigation and toolbar actions than on iPhone.
 
-## Content & Accessibility
-- Use concise, human labels and avoid jargon-heavy control text.
-- Preserve dynamic type scalability and comfortable tap targets.
-- Use semantic colors, not raw brand colors, for status whenever possible.
-- Ensure controls read as native and predictable to VoiceOver users.
-- Keep destructive actions explicit and visually separated from safe actions.
+- **Official layout note:** Platform layout and safe-area guidance
+- **Responsive behavior:** Canonical adaptations by device
+- **App structure:** Tab bars, split views, sidebars
+- **Data display guidance:** Charts available in platform frameworks
 
-- **Accessibility note:** Strong | built into platform guidance
-- **Content note:** Writing guidance included
-- **Internationalization note:** Localization guidance across locales
-- **Localization / RTL note:** Strong | locale-aware Apple controls
-- **Validation note:** System alerts and validation via native controls
-- **State model note:** Standard control states via platform behaviors
-- **Privacy / trust note:** Privacy is a platform concern
+### Screen Generation Heuristics
+- **Default page structure:** Use content-first structure with native headers, grouped sections, and platform-appropriate sidebars or tab bars.
+- **Default density:** Use comfortable density. Let breathing room and legibility outweigh data compression.
+- **Default navigation model:** Use tab bars, sidebars, toolbars, split views, and sheets according to Apple platform conventions.
+- **Preferred form composition:** Use clearly grouped fields, native pickers, and conservative validation messaging.
+- **Preferred feedback pattern:** Use alerts, banners, inline validation, and native transient feedback sparingly.
+- **Preferred data-display pattern:** Use lists, collections, and tables that prioritize readability over operational density.
+- **Prompt bias:** Use prompts such as 'native iOS settings screen', 'macOS sidebar detail view', 'SF Symbols', and 'content-first Apple UI'.
+- **Component naming consistency:** Medium | native names differ by platform
+- **Layout rule explicitness:** High | device-specific rules are explicit
+- **Theme describability:** Medium | appearance follows system settings
+- **Prompt-to-UI suitability:** Medium | best when prompt targets Apple platforms
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do prefer native controls and familiar Apple patterns.
 - Do keep chrome quiet and let content carry the screen.
@@ -265,23 +284,3 @@ Representative Apple system palette for generation. Use semantic system colors i
 - Do not crowd the screen with multiple simultaneous emphasis patterns.
 - Do not replace native segmented controls, sheets, or menus with bespoke alternatives without reason.
 - Do not use over-branded buttons or aggressively custom form fields.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use content-first structure with native headers, grouped sections, and platform-appropriate sidebars or tab bars.
-- **Default density:** Use comfortable density. Let breathing room and legibility outweigh data compression.
-- **Default navigation model:** Use tab bars, sidebars, toolbars, split views, and sheets according to Apple platform conventions.
-- **Preferred form composition:** Use clearly grouped fields, native pickers, and conservative validation messaging.
-- **Preferred feedback pattern:** Use alerts, banners, inline validation, and native transient feedback sparingly.
-- **Preferred data-display pattern:** Use lists, collections, and tables that prioritize readability over operational density.
-- **Prompt bias:** Use prompts such as 'native iOS settings screen', 'macOS sidebar detail view', 'SF Symbols', and 'content-first Apple UI'.
-- **Component naming consistency:** Medium | native names differ by platform
-- **Layout rule explicitness:** High | device-specific rules are explicit
-- **Theme describability:** Medium | appearance follows system settings
-- **Prompt-to-UI suitability:** Medium | best when prompt targets Apple platforms
-
-## Official Sources
-- https://developer.apple.com/design/human-interface-guidelines/
-- https://developer.apple.com/design/human-interface-guidelines/color
-- https://developer.apple.com/design/human-interface-guidelines/typography
-- https://developer.apple.com/design/human-interface-guidelines/layout
-- https://developer.apple.com/design/human-interface-guidelines/controls

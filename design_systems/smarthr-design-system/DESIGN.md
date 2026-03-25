@@ -10,14 +10,36 @@ Use this specification for Japanese business SaaS, HR workflows, and back-office
 - **Status:** Active | SmartHR maintained
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Design for trust, clarity, and dependable business operation.
 - Use concise labels and explicit guidance for form-heavy screens.
 - Keep visual language approachable but not casual.
 - Prefer practical layout and component choices over expressive experimentation.
 - Support accessibility and Japanese business-product readability by default.
 
-## Color System
+### Content & Accessibility
+- Use plain, direct interface language suited to business and HR operations.
+- Make validation and required fields explicit.
+- Preserve accessible contrast and focus treatment across all controls.
+- Use icons and illustrations as support, not as the main communication layer.
+- Keep forms calm, readable, and easy to complete in sequence.
+
+- **Accessibility note:** Strong | checklist and alt-text guidance
+- **Content note:** Communication content category exists
+- **Internationalization note:** Japanese product focus | global not primary
+- **Localization / RTL note:** N/A | Japanese-first documentation
+- **Validation note:** Product guidance includes error states
+- **State model note:** State handling in SmartHR UI components
+- **Privacy / trust note:** HR data sensitivity strongly implied
+
+### Official Sources
+- https://smarthr.design/
+- https://smarthr.design/products/design-tokens/color-palette/
+- https://smarthr.design/products/design-tokens/typography/
+- https://smarthr.design/products/design-tokens/media-query/
+- https://smarthr.design/products/components/
+
+## Colors
 Representative SmartHR palette for generation based on public design-token guidance and product styling. Use official tokens in implementation; these values are representative.
 
 - **Primary `#00C4CC`:** Main action and brand-led emphasis.
@@ -44,7 +66,7 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Iconography:** Icon guidance and assets
 - **Motion direction:** Motion not heavily emphasized publicly
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use a practical spacing cadence that keeps forms and lists easy to scan.
 - Use moderate rounding and calm surface hierarchy.
 - Use shadows lightly and prefer whitespace plus borders for structure.
@@ -54,19 +76,8 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Radius / shape note:** Shape decisions in UI kit
 - **Elevation / shadow note:** Surface hierarchy guidance present
 
-## Layout Rules
-- Use straightforward page composition with clear title, navigation, and content blocks.
-- Support form-heavy operational flows and list/detail patterns.
-- Use cards, tables, and grouped sections to keep business content readable.
-- Avoid ornamental asymmetry and aggressive visual flourishes.
-- Favor trust-building clarity over trend-driven density extremes.
-
-- **Official layout note:** Product layout guidance exists
-- **Responsive behavior:** Responsive product design implied
-- **App structure:** Product IA and screen composition
-- **Data display guidance:** Data display in product guidance
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use simple, readable navigation with strong labels and modest hierarchy depth.
 - Use tabs, side navigation, or local navigation only where task grouping benefits from it.
 - Use breadcrumbs when the information architecture becomes deep enough to justify them.
@@ -75,7 +86,6 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Official navigation note:** Product navigation guidance exists
 - **Pattern note:** Header and local nav patterns
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use straightforward page composition with clear title, navigation, and content blocks.
+- Support form-heavy operational flows and list/detail patterns.
+- Use cards, tables, and grouped sections to keep business content readable.
+- Avoid ornamental asymmetry and aggressive visual flourishes.
+- Favor trust-building clarity over trend-driven density extremes.
 
-## Content & Accessibility
-- Use plain, direct interface language suited to business and HR operations.
-- Make validation and required fields explicit.
-- Preserve accessible contrast and focus treatment across all controls.
-- Use icons and illustrations as support, not as the main communication layer.
-- Keep forms calm, readable, and easy to complete in sequence.
+- **Official layout note:** Product layout guidance exists
+- **Responsive behavior:** Responsive product design implied
+- **App structure:** Product IA and screen composition
+- **Data display guidance:** Data display in product guidance
 
-- **Accessibility note:** Strong | checklist and alt-text guidance
-- **Content note:** Communication content category exists
-- **Internationalization note:** Japanese product focus | global not primary
-- **Localization / RTL note:** N/A | Japanese-first documentation
-- **Validation note:** Product guidance includes error states
-- **State model note:** State handling in SmartHR UI components
-- **Privacy / trust note:** HR data sensitivity strongly implied
+### Screen Generation Heuristics
+- **Default page structure:** Use a calm business shell with a readable header, practical navigation, and content grouped into forms, lists, and sections.
+- **Default density:** Use medium density with readable spacing.
+- **Default navigation model:** Use straightforward navigation, tabs, and side navigation only where task organization benefits.
+- **Preferred form composition:** Use stacked or well-aligned labeled fields with explicit validation and helper text.
+- **Preferred feedback pattern:** Use inline validation, notices, toasts, and dialogs with clear business wording.
+- **Preferred data-display pattern:** Use tables, cards, and lists for employee data, settings, and administrative workflows.
+- **Prompt bias:** Use prompts such as 'SmartHR business app', 'Japanese HR workflow', 'calm teal accents', and 'clear back-office form layout'.
+- **Component naming consistency:** High | straightforward Japanese and OSS names
+- **Layout rule explicitness:** Medium | guidance exists but not always condensed
+- **Theme describability:** Medium | themes exist but docs are product-specific
+- **Prompt-to-UI suitability:** High | good for Japanese business app screens
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do make the interface feel dependable and business-ready.
 - Do prioritize form clarity, list readability, and explicit feedback.
@@ -265,23 +284,3 @@ Representative SmartHR palette for generation based on public design-token guida
 - Do not hide validation or rely on placeholder-only labeling.
 - Do not over-pack screens with dense micro-panels if simple sections will do.
 - Do not use playful novelty components that weaken trust.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a calm business shell with a readable header, practical navigation, and content grouped into forms, lists, and sections.
-- **Default density:** Use medium density with readable spacing.
-- **Default navigation model:** Use straightforward navigation, tabs, and side navigation only where task organization benefits.
-- **Preferred form composition:** Use stacked or well-aligned labeled fields with explicit validation and helper text.
-- **Preferred feedback pattern:** Use inline validation, notices, toasts, and dialogs with clear business wording.
-- **Preferred data-display pattern:** Use tables, cards, and lists for employee data, settings, and administrative workflows.
-- **Prompt bias:** Use prompts such as 'SmartHR business app', 'Japanese HR workflow', 'calm teal accents', and 'clear back-office form layout'.
-- **Component naming consistency:** High | straightforward Japanese and OSS names
-- **Layout rule explicitness:** Medium | guidance exists but not always condensed
-- **Theme describability:** Medium | themes exist but docs are product-specific
-- **Prompt-to-UI suitability:** High | good for Japanese business app screens
-
-## Official Sources
-- https://smarthr.design/
-- https://smarthr.design/products/design-tokens/color-palette/
-- https://smarthr.design/products/design-tokens/typography/
-- https://smarthr.design/products/design-tokens/media-query/
-- https://smarthr.design/products/components/

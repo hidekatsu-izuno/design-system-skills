@@ -10,14 +10,36 @@ Use this specification for collaboration-heavy SaaS and work-management UI. Favo
 - **Status:** Active | core Atlassian system
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Optimize for collaborative work and high-information screens.
 - Use semantic tokens and predictable spacing before decorative styling.
 - Make hierarchy readable in dense layouts.
 - Keep patterns operational, practical, and action-oriented.
 - Prefer inline feedback over unnecessary interruption.
 
-## Color System
+### Content & Accessibility
+- Use direct action labels and short explanatory helper text.
+- Maintain strong focus and selected states in dense interfaces.
+- Use inline validation and inline messaging where possible.
+- Keep icon-only controls paired with accessible names.
+- Use status lozenges, flags, and badges consistently.
+
+- **Accessibility note:** Strong | dedicated accessibility content
+- **Content note:** Dedicated content design guidance
+- **Internationalization note:** International product patterns implied
+- **Localization / RTL note:** Limited | not emphasized in top-level docs
+- **Validation note:** Flags, inline messages, field errors
+- **State model note:** Comprehensive interaction states via tokens
+- **Privacy / trust note:** Enterprise trust and permissions implied
+
+### Official Sources
+- https://atlassian.design/
+- https://atlassian.design/foundations/color-new
+- https://atlassian.design/foundations/typography
+- https://atlassian.design/foundations/layout
+- https://atlassian.design/components
+
+## Colors
 Representative Atlassian palette for generation based on current public guidance and token usage. Use semantic tokens in implementation; these values are representative.
 
 - **Blue `#0C66E4`:** Primary action, active state, and key navigation emphasis.
@@ -44,7 +66,7 @@ Representative Atlassian palette for generation based on current public guidance
 - **Iconography:** Atlassian icons
 - **Motion direction:** Motion guidance exists
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use a tight but consistent spacing system suited to enterprise collaboration tools.
 - Use moderate radius values and avoid overly soft consumer card styling.
 - Use shadows minimally; rely on background value shifts and borders more than depth theatrics.
@@ -54,19 +76,8 @@ Representative Atlassian palette for generation based on current public guidance
 - **Radius / shape note:** Border radius tokens
 - **Elevation / shadow note:** Elevation via tokens where needed
 
-## Layout Rules
-- Use persistent side navigation or workspace shells for complex products.
-- Allow dense content regions with clear section headers and inline metadata.
-- Use page-level banners, inline messages, and panel layouts to support workflows.
-- Keep action placement predictable across issue, task, and project surfaces.
-- Prefer operational clarity over decorative asymmetry.
-
-- **Official layout note:** Page layout patterns and spacing tokens
-- **Responsive behavior:** Responsive web app guidance
-- **App structure:** App layouts for Jira/Confluence-like tools
-- **Data display guidance:** Data display patterns, charts not central
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use left navigation and product-level top structure for app shells.
 - Use tabs for content subviews inside a workspace or object page.
 - Use breadcrumbs when users traverse deep project or object hierarchies.
@@ -75,7 +86,6 @@ Representative Atlassian palette for generation based on current public guidance
 - **Official navigation note:** Side navigation and in-app nav patterns
 - **Pattern note:** Side nav, tabs, menus, breadcrumbs
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Atlassian palette for generation based on current public guidance
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use persistent side navigation or workspace shells for complex products.
+- Allow dense content regions with clear section headers and inline metadata.
+- Use page-level banners, inline messages, and panel layouts to support workflows.
+- Keep action placement predictable across issue, task, and project surfaces.
+- Prefer operational clarity over decorative asymmetry.
 
-## Content & Accessibility
-- Use direct action labels and short explanatory helper text.
-- Maintain strong focus and selected states in dense interfaces.
-- Use inline validation and inline messaging where possible.
-- Keep icon-only controls paired with accessible names.
-- Use status lozenges, flags, and badges consistently.
+- **Official layout note:** Page layout patterns and spacing tokens
+- **Responsive behavior:** Responsive web app guidance
+- **App structure:** App layouts for Jira/Confluence-like tools
+- **Data display guidance:** Data display patterns, charts not central
 
-- **Accessibility note:** Strong | dedicated accessibility content
-- **Content note:** Dedicated content design guidance
-- **Internationalization note:** International product patterns implied
-- **Localization / RTL note:** Limited | not emphasized in top-level docs
-- **Validation note:** Flags, inline messages, field errors
-- **State model note:** Comprehensive interaction states via tokens
-- **Privacy / trust note:** Enterprise trust and permissions implied
+### Screen Generation Heuristics
+- **Default page structure:** Use a workspace shell with side navigation, a practical page header, and dense operational content blocks.
+- **Default density:** Use medium-to-dense layout density.
+- **Default navigation model:** Use side navigation, tabs, breadcrumbs, and in-context actions.
+- **Preferred form composition:** Use structured sections, inline help, and strong field-level validation.
+- **Preferred feedback pattern:** Use inline messages, flags, banners, and dialog confirmation for destructive changes.
+- **Preferred data-display pattern:** Use tables, issue lists, cards, side panels, and metadata-rich rows.
+- **Prompt bias:** Use prompts such as 'Atlassian-style admin screen', 'collaboration workspace', 'dense issue table', and 'semantic product tokens'.
+- **Component naming consistency:** High | standard product naming
+- **Layout rule explicitness:** High | page layout patterns are explicit
+- **Theme describability:** High | brand and semantic themes clear
+- **Prompt-to-UI suitability:** High | good for SaaS work-management prompts
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do build for dense collaboration workflows and long-lived work objects.
 - Do keep tables, lists, and forms highly structured.
@@ -265,23 +284,3 @@ Representative Atlassian palette for generation based on current public guidance
 - Do not hide critical actions behind ambiguous overflow unless the workflow warrants it.
 - Do not use novelty gradients or expressive illustration as the main hierarchy tool.
 - Do not collapse dense workflows into overly sparse mobile-style compositions on desktop.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a workspace shell with side navigation, a practical page header, and dense operational content blocks.
-- **Default density:** Use medium-to-dense layout density.
-- **Default navigation model:** Use side navigation, tabs, breadcrumbs, and in-context actions.
-- **Preferred form composition:** Use structured sections, inline help, and strong field-level validation.
-- **Preferred feedback pattern:** Use inline messages, flags, banners, and dialog confirmation for destructive changes.
-- **Preferred data-display pattern:** Use tables, issue lists, cards, side panels, and metadata-rich rows.
-- **Prompt bias:** Use prompts such as 'Atlassian-style admin screen', 'collaboration workspace', 'dense issue table', and 'semantic product tokens'.
-- **Component naming consistency:** High | standard product naming
-- **Layout rule explicitness:** High | page layout patterns are explicit
-- **Theme describability:** High | brand and semantic themes clear
-- **Prompt-to-UI suitability:** High | good for SaaS work-management prompts
-
-## Official Sources
-- https://atlassian.design/
-- https://atlassian.design/foundations/color-new
-- https://atlassian.design/foundations/typography
-- https://atlassian.design/foundations/layout
-- https://atlassian.design/components

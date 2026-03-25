@@ -10,14 +10,36 @@ Use this specification for enterprise web applications, dashboards, and internal
 - **Status:** Active | v5 current
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Design for efficient task completion in data-heavy environments.
 - Use strong grid alignment and a clear page shell.
 - Let components solve operational tasks directly.
 - Keep theming systematic and algorithmic rather than handcrafted per screen.
 - Support broad form, table, and filtering workflows.
 
-## Color System
+### Content & Accessibility
+- Use direct labels, placeholders only as hints, and strong field-level validation.
+- Preserve clear hover, active, selected, disabled, and error states.
+- Support RTL and localization-aware layout decisions.
+- Use messages, notifications, and status color consistently.
+- Keep icon usage secondary to readable labels.
+
+- **Accessibility note:** Strong | WCAG-oriented component guidance
+- **Content note:** Writing for enterprise flows
+- **Internationalization note:** Internationalization support in components
+- **Localization / RTL note:** Strong | direction and locale support in components
+- **Validation note:** Status and feedback patterns strong
+- **State model note:** Common control states standardized
+- **Privacy / trust note:** Enterprise admin trust patterns
+
+### Official Sources
+- https://ant.design/
+- https://ant.design/docs/spec/introduce
+- https://ant.design/docs/spec/colors
+- https://ant.design/docs/spec/font
+- https://ant.design/components/overview
+
+## Colors
 Representative Ant Design palette for generation based on v5 semantics and common product usage. Use official token algorithms in implementation; these values are representative.
 
 - **Primary `#1677FF`:** Primary action and active interactive emphasis.
@@ -44,7 +66,7 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - **Iconography:** Ant Design Icons ecosystem
 - **Motion direction:** Motion principles less central
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use a clear grid system and regular panel spacing.
 - Use moderate radii and avoid overly soft consumer rounded surfaces.
 - Use shadows when surfacing overlays, drawers, and cards, but keep them utilitarian.
@@ -54,19 +76,8 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - **Radius / shape note:** Radius tokens and algorithm
 - **Elevation / shadow note:** Shadows for layered surfaces
 
-## Layout Rules
-- Use a dashboard or management shell with header, sider, and content regions when appropriate.
-- Support dense table, filter, and form areas without collapsing hierarchy.
-- Use cards and sections to organize related modules in larger screens.
-- Keep admin workflows explicit through action bars, filters, and summaries.
-- Prefer operational symmetry over expressive composition.
-
-- **Official layout note:** Grid and layout spec
-- **Responsive behavior:** Responsive grid and mobile variants
-- **App structure:** Dashboard and management app structure
-- **Data display guidance:** Ant Design Charts ecosystem
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use top navigation, side navigation, or a hybrid application shell for enterprise apps.
 - Use tabs and steps for local workflow segmentation.
 - Use breadcrumbs in deep admin structures and nested settings areas.
@@ -75,7 +86,6 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - **Official navigation note:** Navigation specs for enterprise apps
 - **Pattern note:** Top nav, side nav, steps
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use a dashboard or management shell with header, sider, and content regions when appropriate.
+- Support dense table, filter, and form areas without collapsing hierarchy.
+- Use cards and sections to organize related modules in larger screens.
+- Keep admin workflows explicit through action bars, filters, and summaries.
+- Prefer operational symmetry over expressive composition.
 
-## Content & Accessibility
-- Use direct labels, placeholders only as hints, and strong field-level validation.
-- Preserve clear hover, active, selected, disabled, and error states.
-- Support RTL and localization-aware layout decisions.
-- Use messages, notifications, and status color consistently.
-- Keep icon usage secondary to readable labels.
+- **Official layout note:** Grid and layout spec
+- **Responsive behavior:** Responsive grid and mobile variants
+- **App structure:** Dashboard and management app structure
+- **Data display guidance:** Ant Design Charts ecosystem
 
-- **Accessibility note:** Strong | WCAG-oriented component guidance
-- **Content note:** Writing for enterprise flows
-- **Internationalization note:** Internationalization support in components
-- **Localization / RTL note:** Strong | direction and locale support in components
-- **Validation note:** Status and feedback patterns strong
-- **State model note:** Common control states standardized
-- **Privacy / trust note:** Enterprise admin trust patterns
+### Screen Generation Heuristics
+- **Default page structure:** Use a management shell with optional sider, page header, filter region, and structured content blocks.
+- **Default density:** Use medium-to-dense density by default.
+- **Default navigation model:** Use top nav, sider, tabs, steps, and breadcrumbs depending on workflow depth.
+- **Preferred form composition:** Use labeled fields, sectioned forms, inline validation, and clear submit/cancel actions.
+- **Preferred feedback pattern:** Use message, notification, result, and modal patterns according to urgency.
+- **Preferred data-display pattern:** Use tables, cards, lists, statistics, and charts with explicit filters and sorting.
+- **Prompt bias:** Use prompts such as 'Ant Design admin dashboard', 'sider layout', 'dense enterprise table', and 'algorithmic token theme'.
+- **Component naming consistency:** High | common web component names
+- **Layout rule explicitness:** Medium | layout principles are broad
+- **Theme describability:** High | algorithmic themes are easy to describe
+- **Prompt-to-UI suitability:** High | rich web components for admin UIs
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do lean into the system's broad component coverage for enterprise tasks.
 - Do use tables, filters, forms, and cards as primary building blocks.
@@ -265,23 +284,3 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - Do not create huge whitespace gaps that weaken dashboard scanability.
 - Do not replace straightforward controls with overly bespoke alternatives.
 - Do not bury key filters and table actions behind excessive nesting.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a management shell with optional sider, page header, filter region, and structured content blocks.
-- **Default density:** Use medium-to-dense density by default.
-- **Default navigation model:** Use top nav, sider, tabs, steps, and breadcrumbs depending on workflow depth.
-- **Preferred form composition:** Use labeled fields, sectioned forms, inline validation, and clear submit/cancel actions.
-- **Preferred feedback pattern:** Use message, notification, result, and modal patterns according to urgency.
-- **Preferred data-display pattern:** Use tables, cards, lists, statistics, and charts with explicit filters and sorting.
-- **Prompt bias:** Use prompts such as 'Ant Design admin dashboard', 'sider layout', 'dense enterprise table', and 'algorithmic token theme'.
-- **Component naming consistency:** High | common web component names
-- **Layout rule explicitness:** Medium | layout principles are broad
-- **Theme describability:** High | algorithmic themes are easy to describe
-- **Prompt-to-UI suitability:** High | rich web components for admin UIs
-
-## Official Sources
-- https://ant.design/
-- https://ant.design/docs/spec/introduce
-- https://ant.design/docs/spec/colors
-- https://ant.design/docs/spec/font
-- https://ant.design/components/overview

@@ -10,14 +10,36 @@ Use this specification for Adobe-style product experiences, creative workflows, 
 - **Status:** Active | Adobe maintained
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Support creative and professional workflows without losing clarity.
 - Use semantic tokens and reusable language across product families.
 - Balance polish with systematic component behavior.
 - Let workflow structure guide page composition.
 - Keep themes expressive but controlled.
 
-## Color System
+### Content & Accessibility
+- Use direct labels and avoid hiding critical state in pure iconography.
+- Preserve contrast and state clarity across themes.
+- Use supporting text and contextual help around complex tools or workflows.
+- Keep terminology consistent across panels and actions.
+- Use empty states and onboarding copy to guide the next creative action.
+
+- **Accessibility note:** Strong | accessibility central across components
+- **Content note:** Voice and tone is a first-class section
+- **Internationalization note:** Global Adobe product support
+- **Localization / RTL note:** Strong | localization and global products
+- **Validation note:** Validation built into workflow and components
+- **State model note:** Component states and variants explicit
+- **Privacy / trust note:** Enterprise creative cloud trust context
+
+### Official Sources
+- https://spectrum.adobe.com/
+- https://spectrum.adobe.com/page/design-language/
+- https://spectrum.adobe.com/page/color/
+- https://spectrum.adobe.com/page/typography/
+- https://spectrum.adobe.com/page/components/
+
+## Colors
 Representative Spectrum palette for generation. Use official Spectrum tokens in implementation; these values are representative and tuned for UI generation.
 
 - **Blue `#1473E6`:** Primary action and selected-state emphasis.
@@ -44,7 +66,7 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - **Iconography:** Spectrum icons across families
 - **Motion direction:** Motion and transitions in language system
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use a consistent spacing scale that supports panels, toolbars, and workflow regions.
 - Use moderate radius and refined surfaces rather than severe sharpness.
 - Use overlays and depth with control, especially for popovers, trays, and dialogs.
@@ -54,19 +76,8 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - **Radius / shape note:** Corner radius in component language
 - **Elevation / shadow note:** Depth and overlay styling tokens
 
-## Layout Rules
-- Use workflow-centered composition with panels, tools, and content zones.
-- Support both focused document-like screens and denser application shells.
-- Use side panels, headers, and trays when they strengthen creation or review flows.
-- Keep the interface polished, but avoid decorative clutter around work content.
-- Use thematic consistency across surfaces and control families.
-
-- **Official layout note:** Layout, workflow, and responsive guidance
-- **Responsive behavior:** Responsive patterns across devices
-- **App structure:** Workflow-centered page architecture
-- **Data display guidance:** Charts less central than workflows
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use shell navigation, tabs, and side panels based on the product workflow.
 - Use breadcrumbs or path indicators only when hierarchy truly matters.
 - Keep local tool navigation close to the content it affects.
@@ -75,7 +86,6 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - **Official navigation note:** Workflow navigation and shell patterns
 - **Pattern note:** Shell nav, side nav, tabs
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use workflow-centered composition with panels, tools, and content zones.
+- Support both focused document-like screens and denser application shells.
+- Use side panels, headers, and trays when they strengthen creation or review flows.
+- Keep the interface polished, but avoid decorative clutter around work content.
+- Use thematic consistency across surfaces and control families.
 
-## Content & Accessibility
-- Use direct labels and avoid hiding critical state in pure iconography.
-- Preserve contrast and state clarity across themes.
-- Use supporting text and contextual help around complex tools or workflows.
-- Keep terminology consistent across panels and actions.
-- Use empty states and onboarding copy to guide the next creative action.
+- **Official layout note:** Layout, workflow, and responsive guidance
+- **Responsive behavior:** Responsive patterns across devices
+- **App structure:** Workflow-centered page architecture
+- **Data display guidance:** Charts less central than workflows
 
-- **Accessibility note:** Strong | accessibility central across components
-- **Content note:** Voice and tone is a first-class section
-- **Internationalization note:** Global Adobe product support
-- **Localization / RTL note:** Strong | localization and global products
-- **Validation note:** Validation built into workflow and components
-- **State model note:** Component states and variants explicit
-- **Privacy / trust note:** Enterprise creative cloud trust context
+### Screen Generation Heuristics
+- **Default page structure:** Use a workflow shell with clear content region, supporting panels, and polished but restrained app chrome.
+- **Default density:** Use medium density, allowing denser panels where workflow complexity requires it.
+- **Default navigation model:** Use shell navigation, tabs, side panels, and contextual overlays according to the workflow.
+- **Preferred form composition:** Use polished labeled fields with concise helper text and controlled validation.
+- **Preferred feedback pattern:** Use toasts, dialogs, popovers, and inline status patterns with a calm but refined tone.
+- **Preferred data-display pattern:** Use lists, asset grids, tables, and panel-based details depending on workflow fit.
+- **Prompt bias:** Use prompts such as 'Adobe Spectrum workflow UI', 'refined panels', 'creative tool shell', and 'polished semantic tokens'.
+- **Component naming consistency:** Medium | Adobe-specific family terms appear
+- **Layout rule explicitness:** High | workflow layout is explicit
+- **Theme describability:** High | visual language is richly named
+- **Prompt-to-UI suitability:** High | strong for creative and content workflows
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do make the UI feel polished and systematized.
 - Do use semantic colors and refined typography consistently.
@@ -265,23 +284,3 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - Do not crowd creative workflows with unnecessary chrome.
 - Do not flatten all hierarchy into one neutral gray layer.
 - Do not use rough or mismatched component styling that breaks the polished system tone.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a workflow shell with clear content region, supporting panels, and polished but restrained app chrome.
-- **Default density:** Use medium density, allowing denser panels where workflow complexity requires it.
-- **Default navigation model:** Use shell navigation, tabs, side panels, and contextual overlays according to the workflow.
-- **Preferred form composition:** Use polished labeled fields with concise helper text and controlled validation.
-- **Preferred feedback pattern:** Use toasts, dialogs, popovers, and inline status patterns with a calm but refined tone.
-- **Preferred data-display pattern:** Use lists, asset grids, tables, and panel-based details depending on workflow fit.
-- **Prompt bias:** Use prompts such as 'Adobe Spectrum workflow UI', 'refined panels', 'creative tool shell', and 'polished semantic tokens'.
-- **Component naming consistency:** Medium | Adobe-specific family terms appear
-- **Layout rule explicitness:** High | workflow layout is explicit
-- **Theme describability:** High | visual language is richly named
-- **Prompt-to-UI suitability:** High | strong for creative and content workflows
-
-## Official Sources
-- https://spectrum.adobe.com/
-- https://spectrum.adobe.com/page/design-language/
-- https://spectrum.adobe.com/page/color/
-- https://spectrum.adobe.com/page/typography/
-- https://spectrum.adobe.com/page/components/

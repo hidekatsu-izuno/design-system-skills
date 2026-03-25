@@ -10,14 +10,36 @@ Use this specification for Japanese public-service websites, form-heavy governme
 - **Status:** Beta | public government rollout
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Design for trust, clarity, and public comprehension.
 - Make accessibility and legal/service readability the default.
 - Use conservative visual treatment and explicit interaction patterns.
 - Prefer standardization over product-specific flourish.
 - Keep forms and service flows obvious and low-ambiguity.
 
-## Color System
+### Content & Accessibility
+- Use plain language and explicit procedural wording.
+- Preserve strong contrast, visible focus, and accessible target sizes.
+- Use helper text, error text, and notices close to the point of action.
+- Do not rely on iconography alone to communicate state or instruction.
+- Keep forms predictable and cognitively light.
+
+- **Accessibility note:** Strong | public-sector accessibility emphasized
+- **Content note:** Plain Japanese and service writing implied
+- **Internationalization note:** Japanese government focus
+- **Localization / RTL note:** N/A | Japanese public-sector context
+- **Validation note:** Error and notice components for services
+- **State model note:** Usage pages describe state behavior
+- **Privacy / trust note:** Strong | public trust and legal accessibility
+
+### Official Sources
+- https://design.digital.go.jp/
+- https://design.digital.go.jp/dads/components/button/
+- https://design.digital.go.jp/components/
+- https://design.digital.go.jp/templates/
+- https://design.digital.go.jp/guidelines/accessibility/
+
+## Colors
 Representative Digital Agency palette for generation based on public component examples and government web guidance. Use official values when implementing; the values below are representative for generation.
 
 - **Primary Blue `#005AC2`:** Primary action, links, and core interactive emphasis.
@@ -44,7 +66,7 @@ Representative Digital Agency palette for generation based on public component e
 - **Iconography:** Icons in public components
 - **Motion direction:** Motion restrained for service clarity
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use consistent spacing that supports long-form reading and form completion.
 - Use conservative radius values and straightforward component geometry.
 - Use minimal shadow; structure should come from order, not depth effects.
@@ -54,19 +76,8 @@ Representative Digital Agency palette for generation based on public component e
 - **Radius / shape note:** Conservative component shapes
 - **Elevation / shadow note:** Minimal shadow usage for public trust
 
-## Layout Rules
-- Use simple page templates with clear header, content flow, and service structure.
-- Support long-form guidance, forms, notices, and result pages without visual complexity.
-- Use sections, headings, and notices to guide the user through the task.
-- Keep primary actions explicit and easy to locate.
-- Prefer stable, conventional layouts over experimental composition.
-
-- **Official layout note:** Page templates and component layout examples
-- **Responsive behavior:** Responsive government web guidance
-- **App structure:** Templates for public information architecture
-- **Data display guidance:** Tables and summaries more central than charts
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use straightforward global navigation, breadcrumbs, and side navigation where service scale requires them.
 - Use local navigation only when it materially improves orientation.
 - Keep navigation labels plain and official rather than branded.
@@ -75,7 +86,6 @@ Representative Digital Agency palette for generation based on public component e
 - **Official navigation note:** Header, side nav, breadcrumb in public guidance
 - **Pattern note:** Global nav, side nav, breadcrumbs
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,22 +245,32 @@ Representative Digital Agency palette for generation based on public component e
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
-## Content & Accessibility
-- Use plain language and explicit procedural wording.
-- Preserve strong contrast, visible focus, and accessible target sizes.
-- Use helper text, error text, and notices close to the point of action.
-- Do not rely on iconography alone to communicate state or instruction.
-- Keep forms predictable and cognitively light.
+### Layout Rules
+- Use simple page templates with clear header, content flow, and service structure.
+- Support long-form guidance, forms, notices, and result pages without visual complexity.
+- Use sections, headings, and notices to guide the user through the task.
+- Keep primary actions explicit and easy to locate.
+- Prefer stable, conventional layouts over experimental composition.
 
-- **Accessibility note:** Strong | public-sector accessibility emphasized
-- **Content note:** Plain Japanese and service writing implied
-- **Internationalization note:** Japanese government focus
-- **Localization / RTL note:** N/A | Japanese public-sector context
-- **Validation note:** Error and notice components for services
-- **State model note:** Usage pages describe state behavior
-- **Privacy / trust note:** Strong | public trust and legal accessibility
+- **Official layout note:** Page templates and component layout examples
+- **Responsive behavior:** Responsive government web guidance
+- **App structure:** Templates for public information architecture
+- **Data display guidance:** Tables and summaries more central than charts
 
-## Do / Don't
+### Screen Generation Heuristics
+- **Default page structure:** Use a conventional service page or form page with strong heading hierarchy, notices, and a clear primary action path.
+- **Default density:** Use medium density with generous readability for text and forms.
+- **Default navigation model:** Use straightforward header navigation, breadcrumbs, side navigation, and in-page section structure when needed.
+- **Preferred form composition:** Use strongly labeled fields, clear required markers, helper text, and explicit error messaging.
+- **Preferred feedback pattern:** Use notices, inline errors, confirmation pages, and dialogs only for essential interruption.
+- **Preferred data-display pattern:** Use simple tables, lists, summaries, and result pages with conservative styling.
+- **Prompt bias:** Use prompts such as 'Japanese public service form', 'official government service page', 'plain-language transaction flow', and 'accessible conservative UI'.
+- **Component naming consistency:** High | generic public-service names
+- **Layout rule explicitness:** High | usage and templates are explicit
+- **Theme describability:** Low | customization is intentionally constrained
+- **Prompt-to-UI suitability:** High | strong for public-service transaction screens
+
+## Do's and Don'ts
 ### Do
 - Do make the interface feel trustworthy, official, and easy to understand.
 - Do use plain language and visible procedural guidance.
@@ -264,23 +284,3 @@ Representative Digital Agency palette for generation based on public component e
 - Do not turn service screens into dashboard-like card mosaics without need.
 - Do not hide critical instructions inside tooltips or tertiary UI.
 - Do not use playful illustrations or novelty interactions in transactional service flows.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a conventional service page or form page with strong heading hierarchy, notices, and a clear primary action path.
-- **Default density:** Use medium density with generous readability for text and forms.
-- **Default navigation model:** Use straightforward header navigation, breadcrumbs, side navigation, and in-page section structure when needed.
-- **Preferred form composition:** Use strongly labeled fields, clear required markers, helper text, and explicit error messaging.
-- **Preferred feedback pattern:** Use notices, inline errors, confirmation pages, and dialogs only for essential interruption.
-- **Preferred data-display pattern:** Use simple tables, lists, summaries, and result pages with conservative styling.
-- **Prompt bias:** Use prompts such as 'Japanese public service form', 'official government service page', 'plain-language transaction flow', and 'accessible conservative UI'.
-- **Component naming consistency:** High | generic public-service names
-- **Layout rule explicitness:** High | usage and templates are explicit
-- **Theme describability:** Low | customization is intentionally constrained
-- **Prompt-to-UI suitability:** High | strong for public-service transaction screens
-
-## Official Sources
-- https://design.digital.go.jp/
-- https://design.digital.go.jp/dads/components/button/
-- https://design.digital.go.jp/components/
-- https://design.digital.go.jp/templates/
-- https://design.digital.go.jp/guidelines/accessibility/

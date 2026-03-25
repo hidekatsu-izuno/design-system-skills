@@ -10,14 +10,36 @@ Use this specification for productive, cross-platform Microsoft-style applicatio
 - **Status:** Active | Fluent 2 current
 - **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
 
-## Design Principles
+### Design Principles
 - Design for productive tasks, not pure marketing impression.
 - Use explicit states and accessible contrast throughout.
 - Keep surfaces calm and theme-aware.
 - Favor approachable geometry over severe sharpness.
 - Let component behavior stay predictable across surfaces and themes.
 
-## Color System
+### Content & Accessibility
+- Use direct labels and task-oriented copy.
+- Make focus, hover, pressed, selected, and disabled states explicit.
+- Prefer inline validation and calm status messaging over modal interruption.
+- Preserve readable contrast in both light and dark themes.
+- Use icons to support labels, not replace them.
+
+- **Accessibility note:** Strong | inclusive by default guidance
+- **Content note:** Microcopy guidance present
+- **Internationalization note:** Global products assumed
+- **Localization / RTL note:** RTL support in Fluent UI ecosystem
+- **Validation note:** Validation states standardized in components
+- **State model note:** Rest, hover, pressed, selected explicit
+- **Privacy / trust note:** Trust and privacy aligned with Microsoft products
+
+### Official Sources
+- https://fluent2.microsoft.design/
+- https://fluent2.microsoft.design/color
+- https://fluent2.microsoft.design/typography
+- https://fluent2.microsoft.design/layout
+- https://fluent2.microsoft.design/components/web/react/core/button/usage
+
+## Colors
 Representative Fluent 2 palette for generation. Use tokens in implementation; the hex values below capture the design language without claiming exhaustive token coverage.
 
 - **Brand `#0F6CBD`:** Primary Microsoft-style action and brand emphasis.
@@ -44,7 +66,7 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - **Iconography:** Fluent System Icons adjacent
 - **Motion direction:** Motion tokens and transitions
 
-## Spacing, Radius, Elevation
+## Elevation
 - Use token-driven spacing with 4px and 8px cadence at the core.
 - Use soft radii, typically around 4px to 8px for controls and 8px to 12px for containers.
 - Use shadows and elevation quietly; structure should come mostly from spacing and surface value.
@@ -54,19 +76,8 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - **Radius / shape note:** Border radius tokens
 - **Elevation / shadow note:** Shadow tokens available
 
-## Layout Rules
-- Use app shells with clear header, navigation, and content regions.
-- Support both simple single-column screens and multi-pane productivity layouts.
-- Use compact density when task throughput matters, but preserve scanability.
-- Group related content with subtle container separation rather than loud cards everywhere.
-- Make state changes obvious through field messages, badges, and action feedback.
-
-- **Official layout note:** Layout and spacing guidance
-- **Responsive behavior:** Responsive/adaptive guidance across surfaces
-- **App structure:** Shell, nav, windows, surfaces
-- **Data display guidance:** Data viz not central in core Fluent 2
-
-## Navigation Rules
+## Components
+### Navigation Rules
 - Use left-side navigation, top tabs, or app shell patterns for complex products.
 - Use toolbar patterns for dense command surfaces.
 - Use breadcrumbs when users move across deep hierarchies.
@@ -75,7 +86,6 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - **Official navigation note:** Nav, tabs, toolbar, app shell guidance
 - **Pattern note:** Nav drawer, tabs, toolbar, breadcrumbs
 
-## Component Rules
 ### Icon usage in static mocks
 - **Fallback icon rule:** When the native icon set is unavailable in a static HTML mock, use Font Awesome icons as the fallback library.
 - **Where to use icons:** Show icons in places where this design system normally expects them, especially menu triggers, search, notifications, primary and secondary actions, navigation items, status cues, and row-level actions.
@@ -235,23 +245,32 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
 
+### Layout Rules
+- Use app shells with clear header, navigation, and content regions.
+- Support both simple single-column screens and multi-pane productivity layouts.
+- Use compact density when task throughput matters, but preserve scanability.
+- Group related content with subtle container separation rather than loud cards everywhere.
+- Make state changes obvious through field messages, badges, and action feedback.
 
-## Content & Accessibility
-- Use direct labels and task-oriented copy.
-- Make focus, hover, pressed, selected, and disabled states explicit.
-- Prefer inline validation and calm status messaging over modal interruption.
-- Preserve readable contrast in both light and dark themes.
-- Use icons to support labels, not replace them.
+- **Official layout note:** Layout and spacing guidance
+- **Responsive behavior:** Responsive/adaptive guidance across surfaces
+- **App structure:** Shell, nav, windows, surfaces
+- **Data display guidance:** Data viz not central in core Fluent 2
 
-- **Accessibility note:** Strong | inclusive by default guidance
-- **Content note:** Microcopy guidance present
-- **Internationalization note:** Global products assumed
-- **Localization / RTL note:** RTL support in Fluent UI ecosystem
-- **Validation note:** Validation states standardized in components
-- **State model note:** Rest, hover, pressed, selected explicit
-- **Privacy / trust note:** Trust and privacy aligned with Microsoft products
+### Screen Generation Heuristics
+- **Default page structure:** Use a productivity shell with persistent navigation, clear page title, command region, and structured content panes.
+- **Default density:** Use medium-to-compact density by default.
+- **Default navigation model:** Use left navigation, tabs, toolbars, and contextual command surfaces.
+- **Preferred form composition:** Use aligned labeled fields, strong helper text, inline validation, and clearly grouped actions.
+- **Preferred feedback pattern:** Use message bars, toasts, inline status, and dialogs only when interruption is necessary.
+- **Preferred data-display pattern:** Use structured tables, lists, cards, and panels with visible status metadata.
+- **Prompt bias:** Use prompts such as 'Fluent 2 productivity app', 'Microsoft admin console', 'calm neutral surfaces', and 'explicit stateful controls'.
+- **Component naming consistency:** High | conventional names
+- **Layout rule explicitness:** High | spacing and layout tokens explicit
+- **Theme describability:** High | theme tokens map cleanly to prompts
+- **Prompt-to-UI suitability:** High | strong for cross-platform enterprise prompts
 
-## Do / Don't
+## Do's and Don'ts
 ### Do
 - Do make states highly legible and easy to scan.
 - Do keep productivity tasks front and center.
@@ -265,23 +284,3 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - Do not hide state changes behind subtle color-only differences.
 - Do not over-brand the shell when the product task should dominate.
 - Do not replace standard productivity components with experimental shapes.
-
-## Screen Generation Heuristics
-- **Default page structure:** Use a productivity shell with persistent navigation, clear page title, command region, and structured content panes.
-- **Default density:** Use medium-to-compact density by default.
-- **Default navigation model:** Use left navigation, tabs, toolbars, and contextual command surfaces.
-- **Preferred form composition:** Use aligned labeled fields, strong helper text, inline validation, and clearly grouped actions.
-- **Preferred feedback pattern:** Use message bars, toasts, inline status, and dialogs only when interruption is necessary.
-- **Preferred data-display pattern:** Use structured tables, lists, cards, and panels with visible status metadata.
-- **Prompt bias:** Use prompts such as 'Fluent 2 productivity app', 'Microsoft admin console', 'calm neutral surfaces', and 'explicit stateful controls'.
-- **Component naming consistency:** High | conventional names
-- **Layout rule explicitness:** High | spacing and layout tokens explicit
-- **Theme describability:** High | theme tokens map cleanly to prompts
-- **Prompt-to-UI suitability:** High | strong for cross-platform enterprise prompts
-
-## Official Sources
-- https://fluent2.microsoft.design/
-- https://fluent2.microsoft.design/color
-- https://fluent2.microsoft.design/typography
-- https://fluent2.microsoft.design/layout
-- https://fluent2.microsoft.design/components/web/react/core/button/usage
