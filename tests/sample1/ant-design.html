@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ant Design Dashboard Mock</title>
+    <title>Ant Design ダッシュボード Mock</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
@@ -18,17 +18,17 @@
       <header class="border-b bg-white px-4 py-3 lg:px-8" style="border-color:#d9d9d9;">
         <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <div class="text-xs tracking-[0.18em] text-slate-500 uppercase">Enterprise Admin</div>
-            <h1 class="mt-1 text-2xl font-semibold">Master Data Operations</h1>
-            <div class="mt-1 text-sm text-slate-500">Dashboard / Masters / Approvals</div>
+            <div class="text-xs tracking-[0.18em] text-slate-500 uppercase">マスタ管理システム</div>
+            <h1 class="mt-1 text-2xl font-semibold">ダッシュボード</h1>
+            <div class="mt-1 text-sm text-slate-500">ダッシュボード / マスタ一覧 / 承認待ち</div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <label class="flex min-w-[240px] items-center gap-2 rounded-md border bg-white px-3 py-2 text-sm text-slate-500" style="border-color:#d9d9d9;">
-              <span>Search</span>
-              <input class="w-full bg-transparent outline-none" value="Master, code, owner" />
+              <span>検索</span>
+              <input class="w-full bg-transparent outline-none" value="マスタ名・コード・担当部署で検索" />
             </label>
-            <button class="rounded-md border px-3 py-2 text-sm font-medium bg-white" style="border-color:#d9d9d9;">Filter</button>
-            <button class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white">New record</button>
+            <button class="rounded-md border px-3 py-2 text-sm font-medium bg-white" style="border-color:#d9d9d9;">フィルタ</button>
+            <button class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white">新規登録</button>
           </div>
         </div>
       </header>
@@ -36,15 +36,17 @@
       <div class="lg:grid lg:grid-cols-[248px_minmax(0,1fr)]">
         <aside class="border-r bg-white px-4 py-5" style="border-color:#d9d9d9;">
           <div class="rounded-lg border bg-slate-50 p-3" style="border-color:#d9d9d9;">
-            <div class="text-xs uppercase tracking-[0.16em] text-slate-500">Workspace</div>
-            <div class="mt-2 text-lg font-semibold">Operations</div>
+            <div class="text-xs uppercase tracking-[0.16em] text-slate-500">Menu</div>
+            <div class="mt-2 text-lg font-semibold">マスタ管理</div>
           </div>
           <nav class="mt-4 space-y-1">
-            <a class="flex items-center justify-between rounded-md bg-blue-50 px-3 py-2 text-sm font-medium text-blue-600" href="#"><span>Dashboard</span><span>01</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>Master list</span><span>02</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>Approvals</span><span>03</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>Audit logs</span><span>04</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>Settings</span><span>05</span></a>
+            <a class="flex items-center justify-between rounded-md bg-blue-50 px-3 py-2 text-sm font-medium text-blue-600" href="#"><span>ダッシュボード</span><span>01</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>マスタ一覧</span><span>02</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>承認待ち</span><span>03</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>更新履歴</span><span>04</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>監査ログ</span><span>05</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>ユーザー/権限管理</span><span>06</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-2 text-sm text-slate-600" href="#"><span>設定</span><span>07</span></a>
           </nav>
         </aside>
 
@@ -55,7 +57,7 @@
                 <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                   <div>
                     <div class="text-xs uppercase tracking-[0.16em] text-slate-500">Daily overview</div>
-                    <h2 class="mt-1 text-xl font-semibold">Operations summary</h2>
+                    <h2 class="mt-1 text-xl font-semibold">Dashboard summary</h2>
                     <p class="mt-2 max-w-2xl text-sm text-slate-500">Compact enterprise shell with predictable grid alignment, strong actions, and dense data regions.</p>
                   </div>
                   <div class="flex flex-wrap gap-2">
@@ -78,7 +80,7 @@
                   <div class="mt-2 text-sm text-slate-500">14 pending approval</div>
                 </article>
                 <article class="rounded-lg border bg-white p-4 shadow-sm" style="border-color:#d9d9d9;">
-                  <div class="text-sm text-slate-500">Approvals</div>
+                  <div class="text-sm text-slate-500">承認待ち</div>
                   <div class="mt-3 text-3xl font-semibold">7</div>
                   <div class="mt-2 text-sm text-amber-600">3 overdue</div>
                 </article>
@@ -207,7 +209,7 @@
 
             <aside class="space-y-4">
               <article class="rounded-lg border bg-white p-4 shadow-sm" style="border-color:#d9d9d9;">
-                <div class="text-xs uppercase tracking-[0.16em] text-slate-500">Filter bar</div>
+                <div class="text-xs uppercase tracking-[0.16em] text-slate-500">フィルタ bar</div>
                 <div class="mt-3 space-y-2">
                   <div class="rounded-md border bg-slate-50 px-3 py-2 text-sm" style="border-color:#d9d9d9;">Status: All</div>
                   <div class="rounded-md border bg-slate-50 px-3 py-2 text-sm" style="border-color:#d9d9d9;">Department: All</div>

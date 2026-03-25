@@ -18,22 +18,22 @@
       <header class="border-b" style="background:#ffffff; border-color:#d6d3d1;">
         <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
-            <p class="text-sm font-medium" style="color:#00c4cc;">人事・労務</p>
-            <h1 class="mt-1 text-2xl font-semibold" style="color:#23221f;">マスタ管理ダッシュボード</h1>
+            <p class="text-sm font-medium" style="color:#00c4cc;">マスタ管理システム</p>
+            <h1 class="mt-1 text-2xl font-semibold" style="color:#23221f;">ダッシュボード</h1>
             <p class="mt-2 text-sm" style="color:#565451;">信頼感のある業務画面で、更新・承認・注意事項をまとめて確認します。</p>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#23221f; border:1px solid #d6d3d1; border-radius:12px;">検索</button>
+            <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#23221f; border:1px solid #d6d3d1; border-radius:12px;">マスタ名・コード・担当部署で検索</button>
             <button class="px-4 py-2 text-sm font-semibold" style="background:#00c4cc; color:#ffffff; border-radius:12px;">新規登録</button>
           </div>
         </div>
         <div class="mx-auto max-w-7xl px-4 pb-4 lg:px-8">
           <nav class="flex flex-wrap gap-5 text-sm">
             <span class="border-b-2 pb-2 font-semibold" style="border-color:#00c4cc; color:#00868c;">ダッシュボード</span>
-            <span class="pb-2" style="color:#565451;">従業員</span>
-            <span class="pb-2" style="color:#565451;">組織</span>
-            <span class="pb-2" style="color:#565451;">申請</span>
-            <span class="pb-2" style="color:#565451;">設定</span>
+            <span class="pb-2" style="color:#565451;">マスタ一覧</span>
+            <span class="pb-2" style="color:#565451;">更新履歴</span>
+            <span class="pb-2" style="color:#565451;">承認待ち</span>
+            <span class="pb-2" style="color:#565451;">ユーザー/権限管理</span>
           </nav>
         </div>
       </header>
@@ -44,22 +44,22 @@
             <div class="rounded-lg border p-4" style="background:#f8f7f6; border-color:#d6d3d1;">
               <p class="text-xs font-medium uppercase tracking-[0.14em]" style="color:#565451;">ナビゲーション</p>
               <div class="mt-3 space-y-1 text-sm">
-                <div class="rounded-md px-3 py-2" style="background:#e5fafb; color:#00868c;">概要</div>
-                <div class="rounded-md px-3 py-2" style="color:#565451;">従業員一覧</div>
+                <div class="rounded-md px-3 py-2" style="background:#e5fafb; color:#00868c;">ダッシュボード</div>
+                <div class="rounded-md px-3 py-2" style="color:#565451;">マスタ一覧</div>
                 <div class="rounded-md px-3 py-2" style="color:#565451;">承認待ち</div>
-                <div class="rounded-md px-3 py-2" style="color:#565451;">履歴</div>
+                <div class="rounded-md px-3 py-2" style="color:#565451;">更新履歴</div>
               </div>
             </div>
             <div class="rounded-lg border p-4" style="background:#ffffff; border-color:#d6d3d1;">
               <p class="text-sm font-semibold" style="color:#23221f;">今すぐ対応</p>
-              <p class="mt-2 text-sm" style="color:#565451;">有効期限の近い申請を優先表示します。</p>
+              <p class="mt-2 text-sm" style="color:#565451;">有効期限の近い承認待ちを優先表示します。</p>
             </div>
           </aside>
 
           <div class="space-y-6">
             <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               <article class="rounded-lg border p-4" style="background:#ffffff; border-color:#d6d3d1;">
-                <p class="text-sm font-medium" style="color:#565451;">従業員</p>
+                <p class="text-sm font-medium" style="color:#565451;">マスタ一覧</p>
                 <p class="mt-3 text-3xl font-semibold" style="color:#23221f;">1,248</p>
                 <p class="mt-2 text-sm" style="color:#00a0a7;">+12 今週</p>
               </article>
@@ -85,7 +85,7 @@
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-xs font-medium uppercase tracking-[0.14em]" style="color:#565451;">承認待ち</p>
-                    <h2 class="mt-2 text-xl font-semibold" style="color:#23221f;">人事マスタの申請</h2>
+                    <h2 class="mt-2 text-xl font-semibold" style="color:#23221f;">人事マスタの承認待ち</h2>
                   </div>
                   <span class="rounded-md px-3 py-1.5 text-xs font-semibold" style="background:#e5fafb; color:#00868c;">SLA 3h</span>
                 </div>
@@ -94,7 +94,7 @@
                     <div class="flex items-start justify-between gap-3">
                       <div>
                         <p class="text-sm font-semibold" style="color:#23221f;">雇用区分の変更</p>
-                        <p class="mt-1 text-sm" style="color:#565451;">申請者: 佐藤 / 10:30</p>
+                        <p class="mt-1 text-sm" style="color:#565451;">担当者: 佐藤 / 10:30</p>
                       </div>
                       <span class="rounded-md px-3 py-1 text-xs font-semibold" style="background:#e5fafb; color:#00868c;">確認</span>
                     </div>
@@ -102,8 +102,8 @@
                   <li class="rounded-xl border p-4" style="background:#f8f7f6; border-color:#d6d3d1;">
                     <div class="flex items-start justify-between gap-3">
                       <div>
-                        <p class="text-sm font-semibold" style="color:#23221f;">組織名の修正</p>
-                        <p class="mt-1 text-sm" style="color:#565451;">申請者: 鈴木 / 09:05</p>
+                        <p class="text-sm font-semibold" style="color:#23221f;">表示名の修正</p>
+                        <p class="mt-1 text-sm" style="color:#565451;">担当者: 鈴木 / 09:05</p>
                       </div>
                       <span class="rounded-md px-3 py-1 text-xs font-semibold" style="background:#fff1db; color:#a15c00;">要確認</span>
                     </div>
@@ -131,7 +131,7 @@
               <div class="flex flex-col gap-3 border-b px-5 py-4 lg:flex-row lg:items-center lg:justify-between" style="border-color:#d6d3d1; background:#f8f7f6;">
                 <div>
                   <p class="text-xs font-medium uppercase tracking-[0.14em]" style="color:#565451;">一覧</p>
-                  <h2 class="mt-2 text-xl font-semibold" style="color:#23221f;">従業員マスタ</h2>
+                  <h2 class="mt-2 text-xl font-semibold" style="color:#23221f;">マスタ一覧</h2>
                 </div>
                 <div class="flex flex-wrap gap-2">
                   <button class="px-3 py-2 text-sm font-medium" style="background:#ffffff; color:#23221f; border:1px solid #d6d3d1; border-radius:8px;">すべて</button>

@@ -18,13 +18,13 @@
       <header class="border-b px-4 py-3 lg:px-8" style="background:#ffffff; border-color:#d5d5d5;">
         <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p class="text-xs uppercase tracking-[0.18em]" style="color:#5c5c5c;">Spectrum workflow</p>
-            <h1 class="mt-1 text-3xl font-semibold" style="color:#2c2c2c;">Master Data Workspace</h1>
-            <p class="mt-2 text-sm" style="color:#5c5c5c;">Polished creative workflow surface with clear structure and controlled depth.</p>
+            <p class="text-xs uppercase tracking-[0.18em]" style="color:#5c5c5c;">マスタ管理システム</p>
+            <h1 class="mt-1 text-3xl font-semibold" style="color:#2c2c2c;">ダッシュボード</h1>
+            <p class="mt-2 text-sm" style="color:#5c5c5c;">マスタ名・コード・担当部署を横断して確認できる画面。</p>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button class="rounded-full px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">Share</button>
-            <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:#ffffff;">Publish</button>
+            <button class="rounded-full px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">CSV出力</button>
+            <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:#ffffff;">新規登録</button>
           </div>
         </div>
       </header>
@@ -32,10 +32,12 @@
       <div class="lg:grid lg:grid-cols-[120px_minmax(0,1fr)]">
         <aside class="border-r px-4 py-5" style="background:#f8f8f8; border-color:#d5d5d5;">
           <div class="space-y-4 text-center text-xs">
-            <div class="rounded-xl py-2" style="background:#ffffff; color:#2c2c2c; box-shadow:0 6px 20px rgba(44,44,44,0.08);">Home</div>
-            <div>Assets</div>
-            <div>Review</div>
-            <div>Publish</div>
+            <div class="rounded-xl py-2" style="background:#ffffff; color:#2c2c2c; box-shadow:0 6px 20px rgba(44,44,44,0.08);">ダッシュボード</div>
+            <div>マスタ一覧</div>
+            <div>承認待ち</div>
+            <div>更新履歴</div>
+            <div>監査ログ</div>
+            <div>ユーザー/権限管理</div>
           </div>
         </aside>
 
@@ -43,21 +45,22 @@
           <header class="border p-5" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44,44,44,0.08);">
             <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <p class="text-xs uppercase tracking-[0.18em]" style="color:#5c5c5c;">Creative workflow</p>
-                <h2 class="mt-2 text-3xl font-semibold" style="color:#2c2c2c;">Master data review workspace</h2>
+                <p class="text-xs uppercase tracking-[0.18em]" style="color:#5c5c5c;">メニュー導線</p>
+                <h2 class="mt-2 text-3xl font-semibold" style="color:#2c2c2c;">マスタ管理ワークスペース</h2>
                 <p class="mt-2 text-sm" style="color:#5c5c5c;">Refined workflow chrome, lighter navigation framing, and friendlier hierarchy for approvals and alerts.</p>
               </div>
               <div class="flex gap-2">
-                <button class="rounded-full px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">Search</button>
-                <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:#ffffff;">Review</button>
+                <button class="rounded-full px-4 py-2 text-sm font-medium" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">マスタ名・コード・担当部署で検索</button>
+                <button class="rounded-full px-4 py-2 text-sm font-semibold" style="background:#1473e6; color:#ffffff;">未読 3 件</button>
               </div>
             </div>
           </header>
 
           <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">Review board</span>
-            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;">Publishing</span>
-            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;">Audit</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#ffffff; color:#2c2c2c; border:1px solid #d5d5d5;">承認待ち</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;">更新履歴</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;">監査ログ</span>
+            <span class="rounded-full px-3 py-1.5 text-xs font-semibold" style="background:#f8f8f8; color:#5c5c5c;">情報システム部 / 管理者</span>
           </div>
 
           <section class="mt-6 grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
@@ -75,7 +78,7 @@
                 <article class="border p-4" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44,44,44,0.08);">
                   <div class="flex items-start justify-between gap-3">
                     <div>
-                      <p class="text-sm font-semibold" style="color:#5c5c5c;">Masters</p>
+                      <p class="text-sm font-semibold" style="color:#5c5c5c;">マスタ一覧</p>
                       <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#2c2c2c;">128</p>
                     </div>
                     <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#1473e6; border-color:#1473e6;">Update</span>
@@ -93,7 +96,7 @@
                 <article class="border p-4" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44,44,44,0.08);">
                   <div class="flex items-start justify-between gap-3">
                     <div>
-                      <p class="text-sm font-semibold" style="color:#5c5c5c;">Approvals</p>
+                      <p class="text-sm font-semibold" style="color:#5c5c5c;">承認待ち</p>
                       <p class="mt-3 text-3xl font-semibold tracking-tight" style="color:#2c2c2c;">7</p>
                     </div>
                     <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Approval</span>
@@ -173,8 +176,8 @@
               <article class="border p-5" style="background:#ffffff; border-color:#d5d5d5; border-radius:12px; box-shadow:0 6px 20px rgba(44,44,44,0.08);">
                 <div class="flex items-center justify-between">
                   <div>
-                    <p class="text-xs uppercase tracking-[0.18em]" style="color:#5c5c5c;">Review</p>
-                    <h3 class="mt-2 text-xl font-semibold" style="color:#2c2c2c;">Approvals and alerts</h3>
+                    <p class="text-xs uppercase tracking-[0.18em]" style="color:#5c5c5c;">承認待ち</p>
+                    <h3 class="mt-2 text-xl font-semibold" style="color:#2c2c2c;">承認待ちとアラート</h3>
                   </div>
                   <span class="inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold" style="background:#ffffff; color:#b25f00; border-color:#b25f00;">Approval</span>
                 </div>

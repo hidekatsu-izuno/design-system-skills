@@ -18,14 +18,14 @@
       <header class="border-b bg-white px-4 py-3" style="border-color:#e0e0e0;">
         <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <div class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Enterprise shell</div>
-            <h1 class="mt-1 text-2xl font-semibold">Master data control center</h1>
-            <div class="mt-1 text-sm text-slate-500">Structured workflows and operational overview</div>
+            <div class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">マスタ管理システム</div>
+            <h1 class="mt-1 text-2xl font-semibold">ダッシュボード</h1>
+            <div class="mt-1 text-sm text-slate-500">マスタ一覧、承認待ち、更新履歴を俯瞰する運用画面</div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white">Secondary</button>
-            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white">Export</button>
-            <button class="rounded-none bg-blue-600 px-4 py-2 text-sm font-semibold text-white">Primary action</button>
+            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white">フィルタ</button>
+            <button class="rounded-none border px-3 py-2 text-sm font-medium bg-white">CSV出力</button>
+            <button class="rounded-none bg-blue-600 px-4 py-2 text-sm font-semibold text-white">新規登録</button>
           </div>
         </div>
       </header>
@@ -34,13 +34,15 @@
         <aside class="border-r bg-slate-50 px-4 py-5" style="border-color:#e0e0e0;">
           <div class="rounded-none border bg-white p-4" style="border-color:#e0e0e0;">
             <div class="text-xs uppercase tracking-[0.16em] text-slate-500">Side nav</div>
-            <div class="mt-2 text-lg font-semibold">Operations</div>
+            <div class="mt-2 text-lg font-semibold">マスタ管理</div>
           </div>
           <nav class="mt-4 space-y-1">
-            <a class="flex items-center justify-between bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700" href="#">Overview <span>01</span></a>
-            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">Masters <span>02</span></a>
-            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">Approvals <span>03</span></a>
-            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">Audit <span>04</span></a>
+            <a class="flex items-center justify-between bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700" href="#">ダッシュボード <span>01</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">マスタ一覧 <span>02</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">承認待ち <span>03</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">更新履歴 <span>04</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">監査ログ <span>05</span></a>
+            <a class="flex items-center justify-between px-3 py-2 text-sm text-slate-600" href="#">ユーザー/権限管理 <span>06</span></a>
           </nav>
         </aside>
 
@@ -74,7 +76,7 @@
                   <div class="mt-2 text-sm text-slate-500">14 awaiting approval</div>
                 </article>
                 <article class="border bg-white p-4" style="border-color:#e0e0e0;">
-                  <div class="text-sm text-slate-500">Approvals</div>
+                  <div class="text-sm text-slate-500">承認待ち</div>
                   <div class="mt-3 text-3xl font-semibold">7</div>
                   <div class="mt-2 text-sm text-amber-700">3 overdue</div>
                 </article>

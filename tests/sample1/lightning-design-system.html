@@ -20,17 +20,17 @@
           <div class="flex items-center gap-3">
             <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-sm font-semibold">S</div>
             <div>
-              <p class="text-xs uppercase tracking-[0.18em] text-white/70">Salesforce app shell</p>
-              <h1 class="text-2xl font-semibold">Master Account Console</h1>
+              <p class="text-xs uppercase tracking-[0.18em] text-white/70">マスタ管理システム</p>
+              <h1 class="text-2xl font-semibold">ダッシュボード</h1>
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <label class="flex min-w-[280px] items-center gap-3 rounded-full bg-white px-4 py-2 text-sm text-slate-500 shadow-sm">
-              <span>Search</span>
-              <input class="w-full bg-transparent text-sm outline-none" value="Accounts, owners, status" />
+              <span>検索</span>
+              <input class="w-full bg-transparent text-sm outline-none" value="マスタ名・コード・担当部署で検索" />
             </label>
-            <button class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0176D3]">New record</button>
-            <button class="rounded-full border border-white/30 px-4 py-2 text-sm font-semibold text-white">Actions</button>
+            <button class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0176D3]">新規登録</button>
+            <button class="rounded-full border border-white/30 px-4 py-2 text-sm font-semibold text-white">CSV出力</button>
           </div>
         </div>
       </header>
@@ -39,16 +39,18 @@
         <aside class="border-r border-[#c9c9c9] bg-white px-4 py-5">
           <div class="rounded-2xl bg-[#f3f3f3] p-4">
             <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Global navigation</p>
-            <p class="mt-2 text-sm text-[#181818]">Records, utility actions, and object context.</p>
+            <p class="mt-2 text-sm text-[#181818]">ダッシュボード、マスタ一覧、承認待ちを切り替える主要メニュー。</p>
           </div>
           <nav class="mt-5 space-y-1">
             <a href="#" class="flex items-center justify-between rounded-2xl bg-[#eef4ff] px-3 py-3 text-sm font-semibold text-[#0176D3]">
-              <span>Dashboard</span><span class="text-[11px]">01</span>
+              <span>ダッシュボード</span><span class="text-[11px]">01</span>
             </a>
-            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>Accounts</span><span class="text-[11px]">42</span></a>
-            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>Approvals</span><span class="text-[11px]">07</span></a>
-            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>Reports</span><span class="text-[11px]">18</span></a>
-            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>Settings</span><span class="text-[11px]">05</span></a>
+            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>マスタ一覧</span><span class="text-[11px]">42</span></a>
+            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>承認待ち</span><span class="text-[11px]">07</span></a>
+            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>更新履歴</span><span class="text-[11px]">18</span></a>
+            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>監査ログ</span><span class="text-[11px]">05</span></a>
+            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>ユーザー/権限管理</span><span class="text-[11px]">06</span></a>
+            <a href="#" class="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-[#181818]"><span>設定</span><span class="text-[11px]">07</span></a>
           </nav>
         </aside>
 
@@ -58,7 +60,7 @@
               <div>
                 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Object page</p>
                 <h2 class="mt-2 text-3xl font-semibold text-[#181818]">Master account</h2>
-                <p class="mt-1 text-sm text-slate-600">Record owner: Data Governance Team</p>
+                <p class="mt-1 text-sm text-slate-600">情報システム部 / 管理者: 山田 花子</p>
               </div>
               <div class="flex flex-wrap gap-2">
                 <button class="rounded-full border border-[#c9c9c9] bg-white px-4 py-2 text-sm font-semibold text-[#181818]">Follow</button>

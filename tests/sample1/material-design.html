@@ -16,18 +16,23 @@
   <body>
     <div class="min-h-screen">
       <div class="border-b border-[#cac4d0] bg-[#ede7f6] px-4 py-2 text-xs text-[#6750a4] md:px-6 lg:px-8">
-        Adaptive shell preview: top app bar, navigation rail, and supporting pane shift with viewport width.
+        マスタ管理システム: top app bar、navigation rail、supporting pane を持つ adaptive dashboard preview.
       </div>
 
       <header class="border-b border-[#cac4d0] bg-[#fffbfe] px-4 py-3 md:px-6 lg:px-8">
         <div class="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
           <div>
-            <p class="text-xs uppercase tracking-[0.18em] text-[#49454f]">Adaptive shell</p>
-            <h1 class="mt-1 text-2xl font-semibold text-[#1c1b1f]">Master management dashboard</h1>
+            <p class="text-xs uppercase tracking-[0.18em] text-[#49454f]">マスタ管理システム</p>
+            <h1 class="mt-1 text-2xl font-semibold text-[#1c1b1f]">ダッシュボード</h1>
           </div>
-          <div class="flex flex-wrap gap-2">
-            <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]">Filter</button>
-            <button class="rounded-full bg-[#6750a4] px-4 py-2 text-sm font-semibold text-white">Create</button>
+          <div class="flex flex-wrap items-center gap-2">
+            <label class="flex min-w-[260px] items-center gap-3 rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm text-[#49454f]">
+              <span>検索</span>
+              <input class="w-full bg-transparent outline-none" value="マスタ名・コード・担当部署で検索" />
+            </label>
+            <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]">フィルタ</button>
+            <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]">CSV出力</button>
+            <button class="rounded-full bg-[#6750a4] px-4 py-2 text-sm font-semibold text-white">新規登録</button>
           </div>
         </div>
       </header>
@@ -36,19 +41,22 @@
         <aside class="border-r border-[#cac4d0] bg-[#e8def8] px-3 py-5">
           <nav class="space-y-2">
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#6750a4]">
-              <span class="rounded-full bg-[#ede7f6] px-3 py-2">●</span><span>Dash</span>
+              <span class="rounded-full bg-[#ede7f6] px-3 py-2">●</span><span>ダッシュボード</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>Masters</span>
+              <span class="rounded-full px-3 py-2">●</span><span>マスタ一覧</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>Approvals</span>
+              <span class="rounded-full px-3 py-2">●</span><span>承認待ち</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>History</span>
+              <span class="rounded-full px-3 py-2">●</span><span>更新履歴</span>
             </a>
             <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
-              <span class="rounded-full px-3 py-2">●</span><span>Audit</span>
+              <span class="rounded-full px-3 py-2">●</span><span>監査ログ</span>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-1 rounded-2xl px-2 py-3 text-xs font-medium text-[#49454f]">
+              <span class="rounded-full px-3 py-2">●</span><span>ユーザー/権限管理</span>
             </a>
           </nav>
         </aside>
@@ -64,7 +72,7 @@
                   </div>
                   <div class="flex gap-2">
                     <button class="rounded-full bg-transparent px-4 py-2 text-sm font-semibold text-[#6750a4]">All</button>
-                    <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]">Notifications</button>
+                    <button class="rounded-full border border-[#cac4d0] bg-[#fffbfe] px-4 py-2 text-sm font-semibold text-[#1c1b1f]">未読 3 件</button>
                   </div>
                 </div>
               </header>
@@ -129,7 +137,7 @@
             <article class="rounded-[16px] border border-[#cac4d0] bg-[#fffbfe] p-5 shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
               <div class="flex items-center justify-between">
                 <div>
-                  <p class="text-xs uppercase tracking-[0.18em] text-[#49454f]">Approvals</p>
+                  <p class="text-xs uppercase tracking-[0.18em] text-[#49454f]">承認待ち</p>
                   <h3 class="mt-2 text-xl font-semibold text-[#1c1b1f]">Pending approval</h3>
                 </div>
                 <span class="rounded-full bg-[#ede7f7] px-3 py-1 text-xs font-medium text-[#7a5d00]">Approval</span>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fluent 2 Product Workspace</title>
+    <title>Fluent 2 Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
@@ -20,17 +20,17 @@
           <div class="flex items-center gap-3">
             <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F6CBD] text-sm font-semibold text-white">F2</div>
             <div>
-              <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Fluent 2 shell</p>
-              <h1 class="text-2xl font-semibold text-[#242424]">Operations workspace</h1>
+              <p class="text-xs uppercase tracking-[0.18em] text-slate-500">マスタ管理システム</p>
+              <h1 class="text-2xl font-semibold text-[#242424]">ダッシュボード</h1>
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <label class="flex min-w-[260px] items-center gap-3 rounded-md border border-slate-200 bg-white px-4 py-2 text-sm text-slate-500">
-              <span>Search</span>
-              <input class="w-full bg-transparent text-sm outline-none" value="Master records, owners, status" />
+              <span>検索</span>
+              <input class="w-full bg-transparent text-sm outline-none" value="マスタ名・コード・担当部署で検索" />
             </label>
-            <button class="rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">Filter</button>
-            <button class="rounded-md bg-[#0F6CBD] px-4 py-2 text-sm font-semibold text-white">New item</button>
+            <button class="rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">フィルタ</button>
+            <button class="rounded-md bg-[#0F6CBD] px-4 py-2 text-sm font-semibold text-white">新規登録</button>
           </div>
         </div>
       </header>
@@ -39,12 +39,14 @@
         <aside class="border-r border-slate-200 bg-white px-4 py-5">
           <nav class="space-y-2">
             <a class="flex items-center justify-between rounded-md bg-[#EBF3FC] px-3 py-3 text-sm font-semibold text-[#0F6CBD]" href="#">
-              <span>Dashboard</span><span class="text-[11px]">01</span>
+              <span>ダッシュボード</span><span class="text-[11px]">01</span>
             </a>
-            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>Records</span><span class="text-[11px]">42</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>Approvals</span><span class="text-[11px]">07</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>Activity</span><span class="text-[11px]">18</span></a>
-            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>Settings</span><span class="text-[11px]">05</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>マスタ一覧</span><span class="text-[11px]">42</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>承認待ち</span><span class="text-[11px]">07</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>更新履歴</span><span class="text-[11px]">18</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>監査ログ</span><span class="text-[11px]">05</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>ユーザー/権限管理</span><span class="text-[11px]">06</span></a>
+            <a class="flex items-center justify-between rounded-md px-3 py-3 text-sm text-slate-600" href="#"><span>設定</span><span class="text-[11px]">07</span></a>
           </nav>
           <div class="mt-5 rounded-lg border border-slate-200 bg-[#f5f5f5] p-4">
             <p class="text-xs uppercase tracking-[0.16em] text-slate-500">Theme state</p>
@@ -62,7 +64,7 @@
               </div>
               <div class="flex flex-wrap gap-2">
                 <button class="rounded-md bg-[#EBF3FC] px-4 py-2 text-sm font-semibold text-[#0F6CBD]">Overview</button>
-                <button class="rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">Activity</button>
+                <button class="rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">更新履歴</button>
               </div>
             </div>
           </section>
@@ -94,7 +96,7 @@
             <article class="rounded-xl border border-slate-200 bg-white p-5">
               <div class="flex items-center justify-between">
                 <div>
-                  <p class="text-xs uppercase tracking-[0.16em] text-slate-500">Records</p>
+                  <p class="text-xs uppercase tracking-[0.16em] text-slate-500">マスタ一覧</p>
                   <h3 class="mt-2 text-xl font-semibold text-[#242424]">Operational queue</h3>
                 </div>
                 <span class="rounded-md bg-[#EBF3FC] px-3 py-1 text-xs font-semibold text-[#0F6CBD]">Live</span>
@@ -141,7 +143,7 @@
               <article class="rounded-xl border border-slate-200 bg-white p-5">
                 <div class="flex items-center justify-between">
                   <div>
-                    <p class="text-xs uppercase tracking-[0.16em] text-slate-500">Approvals</p>
+                    <p class="text-xs uppercase tracking-[0.16em] text-slate-500">承認待ち</p>
                     <h3 class="mt-2 text-xl font-semibold text-[#242424]">Pending work</h3>
                   </div>
                   <span class="rounded-md bg-[#EBF3FC] px-3 py-1 text-xs font-semibold text-[#0F6CBD]">7 items</span>
@@ -158,7 +160,7 @@
                 </div>
               </article>
               <article class="rounded-xl border border-slate-200 bg-white p-5">
-                <p class="text-xs uppercase tracking-[0.16em] text-slate-500">Activity</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-slate-500">更新履歴</p>
                 <ul class="mt-4 space-y-3 text-sm text-slate-600">
                   <li>09:55 Product catalog updated.</li>
                   <li>09:42 Vendor list sent for review.</li>
