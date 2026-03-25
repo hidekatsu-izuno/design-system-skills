@@ -165,6 +165,7 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - **Preferred style:** Use sider navigation for persistent application structure on desktop.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** Treat mobile navigation as a collapsed `Sider` or drawer revealed by a trigger, not as a permanently visible side panel.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

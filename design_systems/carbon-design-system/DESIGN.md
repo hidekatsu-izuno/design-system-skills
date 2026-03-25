@@ -165,6 +165,7 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - **Preferred style:** Use side nav confidently in desktop-oriented product shells.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** In compact layouts, use the UI-shell header trigger to reveal side navigation as an overlay / left panel rather than inline navigation.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

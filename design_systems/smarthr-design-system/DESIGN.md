@@ -165,6 +165,7 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Preferred style:** Use side navigation for larger business products, but keep structure simple and readable.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** Prefer a simple top nav strip or horizontally scrollable tab bar on mobile before introducing a heavy drawer.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

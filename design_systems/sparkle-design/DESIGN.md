@@ -165,6 +165,7 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - **Preferred style:** Use side navigation when it helps complex products, but keep it structured and readable.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** On mobile, collapse navigation into a branded but lightweight menu or drawer trigger so expression does not overwhelm usability.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

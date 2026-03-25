@@ -165,6 +165,7 @@ Representative Atlassian palette for generation based on current public guidance
 - **Preferred style:** Use side navigation as a core app-shell pattern for larger products.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** Narrow widths should move side navigation behind a compact trigger or panel instead of leaving a full nav column on screen.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

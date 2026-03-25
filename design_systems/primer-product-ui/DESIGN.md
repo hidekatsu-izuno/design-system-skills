@@ -165,6 +165,7 @@ Representative Primer palette for generation based on current product UI primiti
 - **Preferred style:** Use side nav for durable product orientation in larger tools and settings areas.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** On mobile, collapse product navigation into an overflow or ActionMenu-style trigger before exposing a full side nav.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

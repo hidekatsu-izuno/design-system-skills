@@ -165,6 +165,7 @@ Representative Digital Agency palette for generation based on public component e
 - **Preferred style:** Use side navigation only for larger multi-section services, keeping labels explicit and official.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** On mobile, prefer a hamburger button that opens an explicit drawer / mobile menu from the left.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

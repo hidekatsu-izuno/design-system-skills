@@ -165,6 +165,7 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - **Preferred style:** Use side panels or nav rails when workflow context benefits from persistent structure.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** On compact widths, prefer an action-menu or tray-like navigation trigger before leaving a side nav exposed.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

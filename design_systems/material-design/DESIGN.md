@@ -165,6 +165,7 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **Preferred style:** Use rail or drawer patterns with strong current-destination emphasis.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** On mobile, prefer a top-app-bar menu icon that opens a temporary left navigation drawer; on larger widths, shift toward rail or persistent drawer patterns.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

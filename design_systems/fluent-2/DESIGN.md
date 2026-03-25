@@ -165,6 +165,7 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - **Preferred style:** Use left navigation or pane-based navigation for persistent product structure.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** Follow Fluent nav behavior: inline drawer on wider widths and overlay drawer on compact widths.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card

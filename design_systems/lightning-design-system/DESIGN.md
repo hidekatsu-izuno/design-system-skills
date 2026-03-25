@@ -165,6 +165,7 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - **Preferred style:** Use enterprise shell navigation and object context panes instead of consumer drawers.
 - **Use when:** Use for persistent destination structure or deeper information architecture.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
+- **Responsive note:** In compact contexts, preserve primary tabs first and move overflow destinations into menus before resorting to a generic side drawer.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
 ### Card
