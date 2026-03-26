@@ -194,7 +194,7 @@ Representative Digital Agency palette for generation based on public component e
 - **Preferred style:** Use plain, readable tables for summaries, result sets, and reference information.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List
@@ -261,6 +261,7 @@ Representative Digital Agency palette for generation based on public component e
 - **Default page structure:** Use a conventional service page or form page with strong heading hierarchy, notices, and a clear primary action path.
 - **Default density:** Use medium density with generous readability for text and forms.
 - **Default navigation model:** Use straightforward header navigation, breadcrumbs, side navigation, and in-page section structure when needed.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use strongly labeled fields, clear required markers, helper text, and explicit error messaging.
 - **Preferred feedback pattern:** Use notices, inline errors, confirmation pages, and dialogs only for essential interruption.
 - **Preferred data-display pattern:** Use simple tables, lists, summaries, and result pages with conservative styling.
@@ -284,3 +285,4 @@ Representative Digital Agency palette for generation based on public component e
 - Do not turn service screens into dashboard-like card mosaics without need.
 - Do not hide critical instructions inside tooltips or tertiary UI.
 - Do not use playful illustrations or novelty interactions in transactional service flows.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when the system should express that behavior through explicit controls or state.

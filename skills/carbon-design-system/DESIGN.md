@@ -194,7 +194,7 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - **Preferred style:** Use tables as a flagship component with strong structure, sorting, status, and batch action support.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** Structured list / list group
@@ -261,6 +261,7 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - **Default page structure:** Use an enterprise shell with side nav, precise sectioning, and structured content panes aligned to the grid.
 - **Default density:** Use medium-to-dense density with strong alignment.
 - **Default navigation model:** Use shell navigation, side nav, tabs, and breadcrumbs for complex product structures.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use labeled fields, strong validation, and orderly field groups that align tightly to the grid.
 - **Preferred feedback pattern:** Use inline messaging, notifications, and modal confirmation only when a stronger interruption is justified.
 - **Preferred data-display pattern:** Use tables, tiles, panels, and status-rich lists with disciplined hierarchy.
@@ -284,3 +285,4 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - Do not over-round controls or turn every section into a floating card.
 - Do not collapse dense workflows into excessively spacious layouts.
 - Do not sacrifice grid discipline for asymmetrical flourish.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Carbon patterns offer a clear stateful control.

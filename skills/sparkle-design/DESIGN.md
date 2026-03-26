@@ -192,7 +192,7 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - **Preferred style:** Use tables when the workflow is data-heavy, but maintain stronger visual discipline than generic enterprise UI.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List pattern
@@ -259,6 +259,7 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - **Default page structure:** Use a clear product shell with opportunities for brand expression in selected anchor areas, while keeping operational content practical.
 - **Default density:** Use medium density with enough breathing room to let the visual system read clearly.
 - **Default navigation model:** Use familiar top-level nav, tabs, and side navigation in a product-specific but readable way.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use clean, well-labeled forms with branded restraint rather than decorative novelty.
 - **Preferred feedback pattern:** Use notices, toasts, and dialogs that match the system's visual voice without becoming theatrical.
 - **Preferred data-display pattern:** Use cards, lists, and tables with stronger composition than generic admin UI, but keep them operational.
@@ -282,3 +283,4 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - Do not let branding weaken form clarity or navigation comprehension.
 - Do not use playful consumer gimmicks if the product context is serious.
 - Do not treat expressive accents as a substitute for hierarchy and layout discipline.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Sparkle patterns offer a clear stateful control.

@@ -194,7 +194,7 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - **Preferred style:** Use tables where precise asset or data scanning matters, with refined but readable density.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List
@@ -261,6 +261,7 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - **Default page structure:** Use a workflow shell with clear content region, supporting panels, and polished but restrained app chrome.
 - **Default density:** Use medium density, allowing denser panels where workflow complexity requires it.
 - **Default navigation model:** Use shell navigation, tabs, side panels, and contextual overlays according to the workflow.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use polished labeled fields with concise helper text and controlled validation.
 - **Preferred feedback pattern:** Use toasts, dialogs, popovers, and inline status patterns with a calm but refined tone.
 - **Preferred data-display pattern:** Use lists, asset grids, tables, and panel-based details depending on workflow fit.
@@ -284,3 +285,4 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - Do not crowd creative workflows with unnecessary chrome.
 - Do not flatten all hierarchy into one neutral gray layer.
 - Do not use rough or mismatched component styling that breaks the polished system tone.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Spectrum patterns offer a clear stateful control.

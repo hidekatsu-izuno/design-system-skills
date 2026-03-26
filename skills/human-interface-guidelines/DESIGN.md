@@ -194,7 +194,7 @@ Representative Apple system palette for generation. Use semantic system colors i
 - **Preferred style:** Use clean tables or outline views with strong text alignment and little decoration.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List and collection views
@@ -261,6 +261,7 @@ Representative Apple system palette for generation. Use semantic system colors i
 - **Default page structure:** Use content-first structure with native headers, grouped sections, and platform-appropriate sidebars or tab bars.
 - **Default density:** Use comfortable density. Let breathing room and legibility outweigh data compression.
 - **Default navigation model:** Use tab bars, sidebars, toolbars, split views, and sheets according to Apple platform conventions.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use clearly grouped fields, native pickers, and conservative validation messaging.
 - **Preferred feedback pattern:** Use alerts, banners, inline validation, and native transient feedback sparingly.
 - **Preferred data-display pattern:** Use lists, collections, and tables that prioritize readability over operational density.
@@ -284,3 +285,4 @@ Representative Apple system palette for generation. Use semantic system colors i
 - Do not crowd the screen with multiple simultaneous emphasis patterns.
 - Do not replace native segmented controls, sheets, or menus with bespoke alternatives without reason.
 - Do not use over-branded buttons or aggressively custom form fields.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when native controls should carry the state.

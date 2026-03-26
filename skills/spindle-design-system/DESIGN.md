@@ -207,7 +207,7 @@ Representative Spindle palette for generation based on the public UI color guida
 - **Preferred style:** Use practical tables with readable row spacing and quiet borders.
 - **Use when:** Use when comparison across rows and columns is the main task.
 - **Important states:** Default, sorted, selected, loading, empty, and error.
-- **Avoid:** Avoid using a table when a simpler list better supports the content.
+- **Avoid:** Avoid using a table when a simpler list better supports the content. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### Badge
 - **Official naming / aliases:** Status, InlineNotification, StackNotificationManager, Toast, SnackBar
@@ -248,3 +248,4 @@ Representative Spindle palette for generation based on the public UI color guida
 - **Do not:** Do not use glassmorphism, oversized blur, or decorative gradients as the main visual language.
 - **Do not:** Do not replace clear copy with icon-only or color-only communication.
 - **Do not:** Do not expose brand typography as the default font for routine web UI text.
+- **Do not:** Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when the UI should communicate that state structurally.

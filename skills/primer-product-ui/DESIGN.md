@@ -194,7 +194,7 @@ Representative Primer palette for generation based on current product UI primiti
 - **Preferred style:** Use data tables and structured rows where developers or operators need quick scanning.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** ActionList / list
@@ -261,6 +261,7 @@ Representative Primer palette for generation based on current product UI primiti
 - **Default page structure:** Use a utility-first product page with a clear title, optional side navigation, explicit section grouping, and practical action placement.
 - **Default density:** Use medium density with compact tendencies for settings and tool screens.
 - **Default navigation model:** Use side navigation, underline nav, tabs, and page headers for strong orientation.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use clearly labeled fields, concise help text, and practical action groups.
 - **Preferred feedback pattern:** Use banners, flash messages, inline validation, and dialogs only when blocking is justified.
 - **Preferred data-display pattern:** Use lists, tables, cards, and timelines in a calm, utility-first way.
@@ -284,3 +285,4 @@ Representative Primer palette for generation based on current product UI primiti
 - Do not hide important settings and actions behind ambiguous icon-only patterns.
 - Do not over-round containers or use whimsical control styling.
 - Do not replace practical lists and tables with over-carded layouts without reason.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Primer patterns offer a clear stateful control.

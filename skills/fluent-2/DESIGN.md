@@ -194,7 +194,7 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - **Preferred style:** Use dense but readable tables and grids with visible column hierarchy and state cues.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List
@@ -261,6 +261,7 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - **Default page structure:** Use a productivity shell with persistent navigation, clear page title, command region, and structured content panes.
 - **Default density:** Use medium-to-compact density by default.
 - **Default navigation model:** Use left navigation, tabs, toolbars, and contextual command surfaces.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use aligned labeled fields, strong helper text, inline validation, and clearly grouped actions.
 - **Preferred feedback pattern:** Use message bars, toasts, inline status, and dialogs only when interruption is necessary.
 - **Preferred data-display pattern:** Use structured tables, lists, cards, and panels with visible status metadata.
@@ -284,3 +285,4 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - Do not hide state changes behind subtle color-only differences.
 - Do not over-brand the shell when the product task should dominate.
 - Do not replace standard productivity components with experimental shapes.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Fluent patterns offer a clear stateful control.

@@ -194,7 +194,7 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - **Preferred style:** Use data tables as a core pattern for records, related items, and result sets.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List views
@@ -261,6 +261,7 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - **Default page structure:** Use an app shell or record-page shell with utility navigation, object header, tabs, and related content regions.
 - **Default density:** Use medium-to-dense density with strong business scanability.
 - **Default navigation model:** Use global app navigation, object context, tabs, and contextual utility actions.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use sectioned enterprise forms with explicit labels, validation, and record-level actions.
 - **Preferred feedback pattern:** Use prompts, scoped notifications, and inline field messaging for business actions.
 - **Preferred data-display pattern:** Use data tables, record lists, related lists, and object summaries as primary patterns.
@@ -284,3 +285,4 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - Do not hide record context or key actions behind ambiguous navigation.
 - Do not replace business tables with card mosaics unless the use case clearly needs it.
 - Do not soften the system into a lifestyle-brand aesthetic.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Lightning patterns offer a clear stateful control.

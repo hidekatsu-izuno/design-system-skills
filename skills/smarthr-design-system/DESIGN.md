@@ -194,7 +194,7 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Preferred style:** Use tables confidently for records, settings, and administrative data.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List
@@ -261,6 +261,7 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Default page structure:** Use a calm business shell with a readable header, practical navigation, and content grouped into forms, lists, and sections.
 - **Default density:** Use medium density with readable spacing.
 - **Default navigation model:** Use straightforward navigation, tabs, and side navigation only where task organization benefits.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use stacked or well-aligned labeled fields with explicit validation and helper text.
 - **Preferred feedback pattern:** Use inline validation, notices, toasts, and dialogs with clear business wording.
 - **Preferred data-display pattern:** Use tables, cards, and lists for employee data, settings, and administrative workflows.
@@ -284,3 +285,4 @@ Representative SmartHR palette for generation based on public design-token guida
 - Do not hide validation or rely on placeholder-only labeling.
 - Do not over-pack screens with dense micro-panels if simple sections will do.
 - Do not use playful novelty components that weaken trust.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when SmartHR patterns offer a clear stateful control.

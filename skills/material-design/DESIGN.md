@@ -78,9 +78,14 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 
 ## Components
 ### Navigation Rules
+- **MUST:** If the request or source specification implies a side menu, implement a navigation drawer rather than a fixed sidebar-only layout.
+- **MUST:** In static HTML, implement drawer open and close behavior with CSS-only state using `:checked`.
+- **MUST:** Provide a visible drawer trigger when side navigation is required.
+- **MUST:** Translate behavioral requirements such as sort order, alternate sort, filtering, and toggle state into UI controls or visible state indicators rather than raw text.
 - Use bottom navigation for a small number of top-level destinations on mobile.
-- Use navigation rail for larger mobile and tablet layouts when persistent section switching helps.
-- Use a drawer for broad information architecture or utility-heavy destinations.
+- Use navigation rail mainly for tablet or compact desktop layouts when persistent section switching helps and labels can remain secondary.
+- Use a navigation drawer as the default side navigation pattern for desktop product and admin screens that need a recognizable side menu with visible labels.
+- Keep drawer destinations in a vertical list with icon-leading, text-visible rows rather than centered icon stacks when the UI is presented as a side menu.
 - Use tabs for sibling content views inside a single destination.
 
 - **Official navigation note:** Navigation bar, rail, drawer patterns
@@ -177,10 +182,12 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 
 ### Side navigation/drawer
 - **Official naming / aliases:** Navigation drawer and rail
-- **Preferred style:** Use rail or drawer patterns with strong current-destination emphasis.
-- **Use when:** Use for persistent destination structure or deeper information architecture.
+- **Preferred style:** Prefer a standard navigation drawer with left-aligned icon-and-label rows for desktop side menus; use rail only when horizontal space is tight or the layout intentionally follows a compact adaptive pattern.
+- **Use when:** Use a drawer for persistent destination structure, deeper information architecture, or ordinary enterprise-style side menus. Use a rail for fewer destinations in medium-width layouts where a compact shell is more appropriate.
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
-- **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
+- **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure. Avoid using a rail as the default desktop side menu when users need always-visible destination labels.
+- **Required structure for static HTML:** Include an app-bar trigger, a hidden checkbox or equivalent CSS-only state control, a drawer panel, and a dismissal surface such as a scrim or backdrop.
+- **Explicit failure cases:** A permanently visible left menu with no drawer state is not a drawer. A side menu with no trigger is invalid. A narrow icon-stack rail is not a valid substitute when the request implies a conventional side menu.
 
 ### Card
 - **Official naming / aliases:** Elevated, filled, outlined cards
@@ -194,7 +201,7 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **Preferred style:** Use data tables with clear row density, sortable headers, and restrained inline actions.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List
@@ -258,13 +265,15 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **Data display guidance:** Charts and data display patterns limited
 
 ### Screen Generation Heuristics
-- **Default page structure:** Use a top app bar with one primary content column. Add navigation rail, drawer, or a supporting pane as complexity increases.
+- **Default page structure:** Use a top app bar with one primary content column. On desktop product screens, add a navigation drawer before considering a rail; use a rail only for intentionally compact adaptive layouts.
 - **Default density:** Use medium density by default. Tighten spacing only for data-heavy enterprise screens.
-- **Default navigation model:** Use app bar plus tabs, bottom nav, rail, or drawer depending on viewport size and destination count.
+- **Default navigation model:** Use app bar plus bottom navigation on mobile, drawer on desktop side-menu layouts, and rail only for medium-width or compact adaptive shells.
+- **Pre-implementation check:** Before writing page content, confirm whether the screen needs a drawer, whether static HTML requires `:checked` state, and whether the app bar needs a menu trigger. If yes, implement that shell first.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use stacked labeled fields with helper text, clear validation, and one dominant submit action.
 - **Preferred feedback pattern:** Use snackbars for transient updates, inline errors for forms, and dialogs only for blocking decisions.
 - **Preferred data-display pattern:** Use cards, lists, and data tables with clear row hierarchy and restrained inline actions.
-- **Prompt bias:** Use prompts such as 'Material 3 dashboard', 'tonal surfaces', 'adaptive navigation rail', and 'filled / outlined / text button hierarchy'.
+- **Prompt bias:** Use prompts such as 'Material 3 dashboard', 'tonal surfaces', 'navigation drawer with selected container', and 'filled / outlined / text button hierarchy'.
 - **Component naming consistency:** High | mainstream names with variants
 - **Layout rule explicitness:** High | adaptive layout rules are explicit
 - **Theme describability:** High | dynamic color roles convert well from md
@@ -275,6 +284,8 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - Do use tonal hierarchy to distinguish importance levels.
 - Do use chips for lightweight filtering and selection metadata.
 - Do keep navigation patterns responsive to screen size.
+- Do prefer a labeled navigation drawer for standard desktop side menus in business applications.
+- Do verify the drawer structure and trigger before finalizing any screen with side navigation.
 - Do express brand through color roles and illustration accents, not through arbitrary chrome.
 - Do use surface containers to chunk complex screens into readable groups.
 
@@ -284,3 +295,6 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - Do not over-outline every container when tonal surfaces are sufficient.
 - Do not use consumer-social styling such as oversized avatars and playful gradients by default.
 - Do not invent custom control shapes that fight Material components.
+- Do not default to a narrow icon-stack rail when the user asked for or clearly implies a conventional side menu.
+- Do not treat drawer guidance as optional when the screen clearly requires a side menu.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Material patterns offer a clear stateful control.

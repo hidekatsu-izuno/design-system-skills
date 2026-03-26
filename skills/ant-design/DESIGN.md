@@ -194,7 +194,7 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - **Preferred style:** Use data tables as a first-class pattern with filters, row actions, and status tags.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List
@@ -261,6 +261,7 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - **Default page structure:** Use a management shell with optional sider, page header, filter region, and structured content blocks.
 - **Default density:** Use medium-to-dense density by default.
 - **Default navigation model:** Use top nav, sider, tabs, steps, and breadcrumbs depending on workflow depth.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use labeled fields, sectioned forms, inline validation, and clear submit/cancel actions.
 - **Preferred feedback pattern:** Use message, notification, result, and modal patterns according to urgency.
 - **Preferred data-display pattern:** Use tables, cards, lists, statistics, and charts with explicit filters and sorting.
@@ -284,3 +285,4 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - Do not create huge whitespace gaps that weaken dashboard scanability.
 - Do not replace straightforward controls with overly bespoke alternatives.
 - Do not bury key filters and table actions behind excessive nesting.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Ant patterns offer a clear stateful control.

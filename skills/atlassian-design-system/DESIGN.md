@@ -194,7 +194,7 @@ Representative Atlassian palette for generation based on current public guidance
 - **Preferred style:** Use dense, metadata-rich tables with clear statuses, row actions, and sortable structure.
 - **Use when:** Use when users need to compare rows, scan columns, sort, or act on collections.
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
-- **Avoid:** Avoid using a table when the user does not need row or column comparison.
+- **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
 ### List
 - **Official naming / aliases:** List
@@ -261,6 +261,7 @@ Representative Atlassian palette for generation based on current public guidance
 - **Default page structure:** Use a workspace shell with side navigation, a practical page header, and dense operational content blocks.
 - **Default density:** Use medium-to-dense layout density.
 - **Default navigation model:** Use side navigation, tabs, breadcrumbs, and in-context actions.
+- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
 - **Preferred form composition:** Use structured sections, inline help, and strong field-level validation.
 - **Preferred feedback pattern:** Use inline messages, flags, banners, and dialog confirmation for destructive changes.
 - **Preferred data-display pattern:** Use tables, issue lists, cards, side panels, and metadata-rich rows.
@@ -284,3 +285,4 @@ Representative Atlassian palette for generation based on current public guidance
 - Do not hide critical actions behind ambiguous overflow unless the workflow warrants it.
 - Do not use novelty gradients or expressive illustration as the main hierarchy tool.
 - Do not collapse dense workflows into overly sparse mobile-style compositions on desktop.
+- Do not leave behavioral spec tokens such as field names plus sort directions visible as raw text when Atlassian patterns offer a clear stateful control.
