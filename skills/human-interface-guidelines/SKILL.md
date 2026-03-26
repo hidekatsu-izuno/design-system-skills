@@ -17,6 +17,7 @@ Use this skill when the output should look and behave like Apple Human Interface
 - Do not remove labels, item names, sample rows, status values, toast messages, dialog text, or other visible data that the request or source specification explicitly includes for the UI.
 - Do not add sections, cards, notes, or headings that are not present in the request or source specification; if `AGENTS.md` does not define a block such as a memo or processing note, do not generate it.
 - Do not invent visual treatments that conflict with `./DESIGN.md`.
+- Do not make page headers, app bars, or top navigation surfaces translucency-heavy, backdrop-blurred, or glassmorphic unless the request explicitly asks for that treatment or `./DESIGN.md` identifies it as a native default.
 - Do not flatten the result into a generic enterprise dashboard if HIG implies a quieter native app structure.
 - Do not add taglines, promotional value statements, or landing-page style lead text unless explicitly requested.
 - Do not add descriptive helper text for the whole screen, search area, table, or form unless the task explicitly requires it.
@@ -45,6 +46,7 @@ Use this skill when the output should look and behave like Apple Human Interface
 - In forms and search areas, place at most two primary input fields per row; only clearly secondary helper controls may break this rule.
 - Choose shell, navigation, grouped lists, tables, panels, and states from `./DESIGN.md`.
 - Implement with documented HIG-style patterns first, especially for sidebars, compact navigation, grouped settings, and native-feeling sections.
+- When implementing a page header or top bar, default to the opaque or native-material surface described in `./DESIGN.md` and avoid decorative web-style glass effects unless the request explicitly requires them.
 - If a static mock needs icons and the native icon set is unavailable, follow the fallback guidance in `./DESIGN.md`.
 
 ## Copy Rules

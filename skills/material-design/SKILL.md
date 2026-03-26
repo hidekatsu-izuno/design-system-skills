@@ -31,6 +31,8 @@ Use this skill when the output should look and behave like Material Design. Read
 - Do not leave lists, tables, or other collection views empty in a mockup just because live data is unavailable; use representative sample content unless the specification calls for an empty state.
 - Do not render phrases that describe the design system itself.
 - Do not render row actions or section states as flat prose when Material controls, chips, menus, or text buttons should carry the interaction.
+- Do not make the top app bar translucent, glassmorphic, or backdrop-blurred unless the request explicitly asks for that visual treatment.
+- Do not use semi-transparent app bar backgrounds such as `/90`, `/80`, `bg-white/…`, or `backdrop-blur` as a default Material treatment for admin or product screens.
 
 ## Explicit Failure Cases
 
@@ -39,6 +41,7 @@ Use this skill when the output should look and behave like Material Design. Read
 - A side menu that behaves the same on mobile and desktop, without a closed-by-default mobile state, is invalid unless the specification explicitly requires otherwise.
 - A layout that uses a narrow icon-stack rail as a substitute for a conventional side menu is invalid when the request expects a drawer.
 - Raw strings such as `organization_code ASC` or `updated_at DESC` shown as plain body text are invalid when they describe sort behavior rather than user-facing copy.
+- A sticky top app bar that uses backdrop blur or a translucent surface by default is invalid unless the request explicitly requires a frosted-glass effect.
 
 ## Working Model
 
@@ -73,6 +76,7 @@ If any answer is yes, implement the drawer shell before page-specific content.
 - Choose shell, navigation, cards, tables, forms, and states from `./DESIGN.md`.
 - Implement with documented Material-style patterns first, especially for app bars, drawers, rails, tonal surfaces, and adaptive shells.
 - If a static mock needs icons and the native icon set is unavailable, follow the fallback guidance in `./DESIGN.md`.
+- When implementing a top app bar, use an opaque surface color by default and avoid backdrop filters unless the request explicitly calls for translucency.
 
 ## Acceptance Criteria For Drawer
 
@@ -112,6 +116,7 @@ Before finalizing, verify:
 - The result does not replace a required drawer with a fixed sidebar-only layout.
 - A drawer trigger exists when side navigation is required.
 - Static HTML drawer behavior works through `:checked`.
+- The top app bar uses an opaque surface by default and does not apply `backdrop-blur` or semi-transparent background utilities unless explicitly requested.
 - Visible UI does not include explanatory prose from the specification.
 - Behavioral requirements such as sort order or alternate ordering are expressed as UI state or controls, not dumped as raw strings.
 - Explicit labels, actions, messages, and sample data from the specification remain present.

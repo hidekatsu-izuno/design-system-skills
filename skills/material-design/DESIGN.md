@@ -82,6 +82,7 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **MUST:** In static HTML, implement drawer open and close behavior with CSS-only state using `:checked`.
 - **MUST:** Provide a visible drawer trigger when side navigation is required.
 - **MUST:** Translate behavioral requirements such as sort order, alternate sort, filtering, and toggle state into UI controls or visible state indicators rather than raw text.
+- **MUST:** Treat the top app bar as an opaque surface by default on product and admin screens; do not apply backdrop blur or translucent backgrounds unless the request explicitly asks for that effect.
 - Use bottom navigation for a small number of top-level destinations on mobile.
 - Use navigation rail mainly for tablet or compact desktop layouts when persistent section switching helps and labels can remain secondary.
 - Use a navigation drawer as the default side navigation pattern for desktop product and admin screens that need a recognizable side menu with visible labels.
