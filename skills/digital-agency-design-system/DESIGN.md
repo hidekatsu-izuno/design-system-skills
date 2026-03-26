@@ -288,10 +288,10 @@ Representative Digital Agency palette for generation based on public component e
 
 ### App bar/header
 - **Official naming / aliases:** Header
-- **Preferred style:** Use a straightforward header with service title, utility navigation, and minimal visual flourish.
+- **Preferred style:** Use a straightforward header with service title, utility navigation, and minimal visual flourish. Use an opaque background for trust and readability rather than translucent or glass-like styling.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid default frosted or blurred headers in public-service UI.
 
 **Tailwind implementation example:**
 ```html

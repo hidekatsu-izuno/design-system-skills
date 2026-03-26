@@ -280,10 +280,10 @@ Representative Spindle palette for generation based on the public UI color guida
 
 ### App bar/header
 - **Official naming / aliases:** Header and local page header patterns
-- **Preferred style:** Use light, readable headers with clear titles, concise support copy, and a modest action set.
+- **Preferred style:** Use light, readable headers with clear titles, concise support copy, and a modest action set. Keep the header surface opaque and calm rather than frosted or translucent.
 - **Use when:** Use to anchor the page context and expose a small number of important controls.
 - **Important states:** Default, focused action, and compact behavior on small screens.
-- **Avoid:** Avoid sticky chrome that feels heavier than the page content.
+- **Avoid:** Avoid sticky chrome that feels heavier than the page content. Avoid defaulting to blur-heavy glass effects for headers.
 
 **Tailwind implementation example:**
 ```html

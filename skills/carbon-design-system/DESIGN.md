@@ -288,10 +288,10 @@ Representative Carbon palette for generation based on public themes and IBM blue
 
 ### App bar/header
 - **Official naming / aliases:** Header and masthead patterns
-- **Preferred style:** Use clear page headers and shell headers that prioritize orientation and action clarity.
+- **Preferred style:** Use clear page headers and shell headers that prioritize orientation and action clarity. Keep the header as an opaque layer or shell region, not a translucent glass bar.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid backdrop blur or frosted treatments in default Carbon headers.
 
 **Tailwind implementation example:**
 ```html

@@ -288,7 +288,7 @@ Representative Apple system palette for generation. Use semantic system colors i
 
 ### App bar/header
 - **Official naming / aliases:** Navigation bars and toolbars
-- **Preferred style:** Use restrained navigation bars, toolbars, or title areas with minimal visual noise.
+- **Preferred style:** Use restrained navigation bars, toolbars, or title areas with minimal visual noise. Translucent or material-based headers are acceptable when they match Apple platform conventions, but they should still read as native system chrome rather than decorative blur.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
 - **Avoid:** Avoid crowding the header with too many equal-weight actions.

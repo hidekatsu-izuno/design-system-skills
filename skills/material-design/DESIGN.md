@@ -293,10 +293,10 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 
 ### App bar/header
 - **Official naming / aliases:** Top app bar
-- **Preferred style:** Use top app bars with concise titles, contextual actions, and optional search or overflow.
+- **Preferred style:** Use top app bars with concise titles, contextual actions, and optional search or overflow. Default to an opaque Material surface or container color rather than a frosted or translucent glass effect.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid treating blur or translucency as the default top app bar treatment.
 
 **Tailwind implementation example:**
 ```html

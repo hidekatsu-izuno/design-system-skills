@@ -288,10 +288,10 @@ Representative Lightning palette for generation based on public SLDS guidance an
 
 ### App bar/header
 - **Official naming / aliases:** Global header
-- **Preferred style:** Use object or page headers that surface key metadata and immediate actions.
+- **Preferred style:** Use object or page headers that surface key metadata and immediate actions. Keep headers as solid enterprise surfaces, not translucent glass bars.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid frosted or blurred headers as a default SLDS pattern.
 
 **Tailwind implementation example:**
 ```html

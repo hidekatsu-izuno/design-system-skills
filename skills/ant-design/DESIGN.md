@@ -288,10 +288,10 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 
 ### App bar/header
 - **Official naming / aliases:** Layout.Header / page header
-- **Preferred style:** Use practical page headers with title, metadata, actions, and optional breadcrumb context.
+- **Preferred style:** Use practical page headers with title, metadata, actions, and optional breadcrumb context. Prefer solid fills and clear borders over translucent or frosted glass effects.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid using blur or translucency as the default header treatment.
 
 **Tailwind implementation example:**
 ```html

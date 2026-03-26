@@ -288,10 +288,10 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 
 ### App bar/header
 - **Official naming / aliases:** Top nav and headers
-- **Preferred style:** Use polished headers that orient the user without overpowering the work surface.
+- **Preferred style:** Use polished headers that orient the user without overpowering the work surface. Keep default header surfaces solid and crisp rather than frosted.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid using backdrop blur as the standard header behavior.
 
 **Tailwind implementation example:**
 ```html

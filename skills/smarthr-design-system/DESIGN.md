@@ -288,10 +288,10 @@ Representative SmartHR palette for generation based on public design-token guida
 
 ### App bar/header
 - **Official naming / aliases:** Header
-- **Preferred style:** Use practical page headers with title, summary, and a small action set.
+- **Preferred style:** Use practical page headers with title, summary, and a small action set. Keep the header surface opaque and readable rather than glassy or translucent.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid using frosted headers as the default SmartHR pattern.
 
 **Tailwind implementation example:**
 ```html

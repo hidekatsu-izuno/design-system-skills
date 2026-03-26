@@ -288,10 +288,10 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 
 ### App bar/header
 - **Official naming / aliases:** Toolbar / app shell header
-- **Preferred style:** Use page headers and command bars that prioritize task controls.
+- **Preferred style:** Use page headers and command bars that prioritize task controls. Default to solid Fluent surfaces; reserve translucent materials for explicitly platform-native cases, not as the normal web header treatment.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid using acrylic or frosted-glass styling as the standard header pattern.
 
 **Tailwind implementation example:**
 ```html

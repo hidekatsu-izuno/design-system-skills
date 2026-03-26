@@ -288,10 +288,10 @@ Representative Atlassian palette for generation based on current public guidance
 
 ### App bar/header
 - **Official naming / aliases:** Top navigation / page header
-- **Preferred style:** Use a functional page header with title, metadata, and immediate actions.
+- **Preferred style:** Use a functional page header with title, metadata, and immediate actions. Keep the header surface opaque and token-driven rather than glassy.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid defaulting to backdrop blur or frosted-glass chrome.
 
 **Tailwind implementation example:**
 ```html

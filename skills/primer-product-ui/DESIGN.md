@@ -288,10 +288,10 @@ Representative Primer palette for generation based on current product UI primiti
 
 ### App bar/header
 - **Official naming / aliases:** PageHeader / header primitives
-- **Preferred style:** Use practical page headers with clear title, metadata, and nearby actions.
+- **Preferred style:** Use practical page headers with clear title, metadata, and nearby actions. Prefer opaque canvas or subtle bordered surfaces instead of translucent glass effects.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid backdrop blur as the default page-header treatment.
 
 **Tailwind implementation example:**
 ```html

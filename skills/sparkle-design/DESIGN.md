@@ -286,10 +286,10 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 
 ### App bar/header
 - **Official naming / aliases:** Header
-- **Preferred style:** Use headers that can carry some brand expression while staying functional.
+- **Preferred style:** Use headers that can carry some brand expression while staying functional. Prefer solid branded or neutral surfaces over default frosted-glass chrome.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
-- **Avoid:** Avoid crowding the header with too many equal-weight actions.
+- **Avoid:** Avoid crowding the header with too many equal-weight actions. Avoid relying on blur or translucency as the baseline header treatment.
 
 **Tailwind implementation example:**
 ```html
