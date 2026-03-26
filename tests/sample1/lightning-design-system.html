@@ -45,12 +45,6 @@
           <i class="fa-solid fa-plus"></i><span class="short-label">新規登録</span>
         </button>
         <button class="inline-flex items-center gap-2 rounded-lg border border-[#d8e1ea] bg-white px-4 py-2 text-sm font-medium text-[#1f2d3d]">
-          <i class="fa-solid fa-file-export text-[#0176d3]"></i><span class="short-label">CSV出力</span>
-        </button>
-        <button class="inline-flex items-center gap-2 rounded-lg border border-[#d8e1ea] bg-white px-4 py-2 text-sm font-medium text-[#1f2d3d]">
-          <i class="fa-solid fa-filter text-[#0176d3]"></i><span class="short-label">フィルタ</span>
-        </button>
-        <button class="inline-flex items-center gap-2 rounded-lg border border-[#d8e1ea] bg-white px-4 py-2 text-sm font-medium text-[#1f2d3d]">
           <span class="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#eaf4ff] text-[#0176d3]">
             <i class="fa-solid fa-bell"></i>
             <span class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#c23934] px-1 text-[10px] font-bold text-white">3</span>
@@ -66,8 +60,8 @@
         </button>
       </div>
       <div class="flex items-center gap-2 lg:hidden">
-        <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#d8e1ea] bg-white text-[#1f2d3d]"><i class="fa-solid fa-bell"></i></button>
-        <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#d8e1ea] bg-white text-[#0176d3]"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#d8e1ea] bg-white text-[#1f2d3d]" aria-label="通知"><i class="fa-solid fa-bell"></i></button>
+        <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#d8e1ea] bg-white text-[#0176d3]" aria-label="検索"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
     </div>
     <div class="mx-auto max-w-[1680px] px-4 pb-3 lg:hidden lg:px-6">
@@ -152,7 +146,6 @@
           <div class="mb-4 flex items-center justify-between gap-3">
             <div>
               <h2 class="text-lg font-semibold text-[#1f2d3d]">アラート</h2>
-              <p class="text-sm text-[#6b7c93]">重要度順に問題を確認できます。</p>
             </div>
             <button class="rounded-lg border border-[#d8e1ea] bg-[#f7fafc] px-3 py-2 text-sm font-medium text-[#1f2d3d]">詳細を見る</button>
           </div>
@@ -383,7 +376,6 @@
           <div class="mb-4 flex items-center justify-between gap-3">
             <div>
               <h2 class="text-lg font-semibold text-[#1f2d3d]">更新履歴</h2>
-              <p class="text-sm text-[#6b7c93]">時系列で最新の更新を確認できます。</p>
             </div>
             <div class="flex gap-2 text-sm">
               <button class="rounded-full bg-[#0176d3] px-4 py-2 font-medium text-white">全体</button>

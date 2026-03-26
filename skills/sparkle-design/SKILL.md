@@ -23,6 +23,7 @@ Use this skill when the output should look and behave like Sparkle Design. Read 
 - Do not invent summary metrics, counts, status totals, badges, or other data points that are not present in the request or source specification.
 - Do not leave lists, tables, or other collection views empty in a mockup just because live data is unavailable; use representative sample content unless the specification calls for an empty state.
 - Do not render phrases that describe the design system itself.
+- Do not place visible explanatory copy in navigation cards or side panels just to explain that primary routes remain available.
 
 ## Working Model
 

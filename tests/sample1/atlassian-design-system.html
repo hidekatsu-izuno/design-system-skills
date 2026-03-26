@@ -50,8 +50,8 @@
           </button>
         </div>
         <div class="flex items-center gap-2 xl:hidden">
-          <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#dfe1e6] bg-white text-[#172b4d]"><i class="fa-solid fa-bell"></i></button>
-          <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#dfe1e6] bg-white text-[#0c66e4]"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#dfe1e6] bg-white text-[#172b4d]" aria-label="通知"><i class="fa-solid fa-bell"></i></button>
+          <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#dfe1e6] bg-white text-[#0c66e4]" aria-label="検索"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </div>
       <div class="mx-auto max-w-[1760px] px-4 pb-3 lg:px-6">
@@ -126,8 +126,8 @@
         <section class="mt-6 grid gap-6 xl:grid-cols-2">
           <article class="rounded-2xl border border-[#dfe1e6] bg-white p-5 panel">
             <div class="mb-4 flex items-center justify-between">
-              <div><h2 class="text-base font-semibold">アラート</h2><p class="text-sm text-[#6b778c]">重要度順に表示</p></div>
-              <div class="flex gap-2"><span class="rounded-full bg-[#e9f2ff] px-3 py-1.5 text-xs font-semibold text-[#0c66e4]">詳細を見る</span><span class="rounded-full bg-[#f7f8f9] px-3 py-1.5 text-xs font-semibold">対象マスタへ移動</span></div>
+              <div><h2 class="text-base font-semibold">アラート</h2></div>
+              <div class="flex gap-2"><a class="rounded-full bg-[#e9f2ff] px-3 py-1.5 text-xs font-semibold text-[#0c66e4]" href="#">詳細を見る</a><a class="rounded-full bg-[#f7f8f9] px-3 py-1.5 text-xs font-semibold text-[#172b4d]" href="#">対象マスタへ移動</a></div>
             </div>
             <div class="space-y-3">
               <div class="rounded-xl border border-[#ffbdad] bg-[#fff4f3] p-4">
@@ -154,7 +154,7 @@
           </article>
           <article class="rounded-2xl border border-[#dfe1e6] bg-white p-5 panel">
             <div class="mb-4 flex items-center justify-between">
-              <div><h2 class="text-base font-semibold">承認待ち</h2><p class="text-sm text-[#6b778c]">上位 4 件を表示</p></div>
+              <div><h2 class="text-base font-semibold">承認待ち</h2></div>
               <div class="flex gap-2"><span class="rounded-full bg-[#e9f2ff] px-3 py-1.5 text-xs font-semibold text-[#0c66e4]">全件</span><span class="rounded-full bg-[#f7f8f9] px-3 py-1.5 text-xs font-semibold">SLA超過</span></div>
             </div>
             <div class="space-y-3">
@@ -183,7 +183,7 @@
         <section class="mt-6 grid gap-6 xl:grid-cols-[1.6fr_0.9fr]">
           <article class="rounded-2xl border border-[#dfe1e6] bg-white p-5 panel">
             <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
-              <div><h2 class="text-base font-semibold">マスタ一覧テーブル</h2><p class="text-sm text-[#6b778c]">ソート、フィルタ、ページネーション対応</p></div>
+              <div><h2 class="text-base font-semibold">マスタ一覧テーブル</h2></div>
               <div class="flex flex-wrap gap-2"><span class="rounded-full bg-[#f7f8f9] px-3 py-1.5 text-xs font-semibold">更新日 ▼</span><span class="rounded-full bg-[#f7f8f9] px-3 py-1.5 text-xs font-semibold">ステータス</span><span class="rounded-full bg-[#f7f8f9] px-3 py-1.5 text-xs font-semibold">ページ 1 / 12</span></div>
             </div>
             <div class="overflow-x-auto">
@@ -211,7 +211,7 @@
           <article class="space-y-6">
             <section class="rounded-2xl border border-[#dfe1e6] bg-white p-5 panel">
               <div class="mb-4 flex items-center justify-between">
-                <div><h2 class="text-base font-semibold">更新履歴・通知</h2><p class="text-sm text-[#6b778c]">全体 / 自分関連 / エラーのみ</p></div>
+                <div><h2 class="text-base font-semibold">更新履歴・通知</h2></div>
                 <div class="flex gap-2"><span class="rounded-full bg-[#e9f2ff] px-3 py-1.5 text-xs font-semibold text-[#0c66e4]">全体</span><span class="rounded-full bg-[#f7f8f9] px-3 py-1.5 text-xs font-semibold">自分関連</span><span class="rounded-full bg-[#f7f8f9] px-3 py-1.5 text-xs font-semibold">エラーのみ</span></div>
               </div>
               <div class="space-y-3">

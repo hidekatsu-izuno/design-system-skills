@@ -23,6 +23,7 @@ Use this skill when the output should look and behave like the Digital Agency De
 - Do not invent summary metrics, counts, status totals, badges, or other data points that are not present in the request or source specification.
 - Do not leave lists, tables, or other collection views empty in a mockup just because live data is unavailable; use representative sample content unless the specification calls for an empty state.
 - Do not render phrases that describe the design system itself.
+- Do not render sort mode, table capability notes, or history/filter explanations as standalone prose when the state should be attached to headers or controls.
 
 ## Working Model
 
@@ -37,6 +38,7 @@ Use this skill when the output should look and behave like the Digital Agency De
 - Preserve the requested information architecture and labels unless the task explicitly changes them.
 - Distinguish user-facing strings from author guidance in `AGENTS.md`; if text explains the spec rather than the product UI, do not render it, but keep explicit UI labels, sample content, and messages.
 - Translate behavior specifications such as sorting, filtering, tabs, pagination, and selection state into appropriate interactive UI or stateful visual treatment instead of emitting raw text tokens.
+- Attach sort state to the active column header, sort button, or filter chip instead of adding standalone labels such as `最終更新日順`.
 - In mockups or static implementations, populate visible collections such as tables, lists, cards, and detail panes with representative sample data unless the request explicitly requires an empty state.
 - If the layout needs a drawer or mobile menu in static HTML, implement it as a CSS-only drawer controlled by `:checked`; do not rely on JavaScript-only menu toggles.
 - In forms and search areas, place at most two primary input fields per row; only clearly secondary helper controls may break this rule.

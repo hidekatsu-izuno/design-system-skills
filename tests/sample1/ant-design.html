@@ -52,8 +52,8 @@
           </button>
         </div>
         <div class="flex items-center gap-2 xl:hidden">
-          <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#d9d9d9] bg-white text-[#1f1f1f]"><i class="fa-solid fa-bell"></i></button>
-          <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#d9d9d9] bg-white text-[#1677ff]"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#d9d9d9] bg-white text-[#1f1f1f]" aria-label="通知"><i class="fa-solid fa-bell"></i></button>
+          <button class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#d9d9d9] bg-white text-[#1677ff]" aria-label="検索"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </div>
       <div class="mx-auto max-w-[1760px] px-4 pb-3 lg:px-6">
@@ -111,42 +111,49 @@
 
       <main class="min-w-0 flex-1">
         <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          <article class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
+          <a class="block rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow transition hover:-translate-y-0.5 hover:border-[#91caff]" href="#master-list">
             <div class="flex items-center justify-between">
               <div class="text-sm text-[#8c8c8c]">管理中マスタ総数</div><i class="fa-solid fa-database text-[#1677ff]"></i>
             </div>
             <div class="mt-3 text-3xl font-semibold">128</div>
-            <div class="mt-2 text-sm text-[#52c41a]">+12 前日比</div>
-          </article>
-          <article class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
+            <div class="mt-2 flex items-center justify-between text-sm">
+              <span class="text-[#52c41a]">+12 前日比</span><span class="font-medium text-[#1677ff]">一覧を見る</span>
+            </div>
+          </a>
+          <a class="block rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow transition hover:-translate-y-0.5 hover:border-[#91caff]" href="#history-panel">
             <div class="flex items-center justify-between">
               <div class="text-sm text-[#8c8c8c]">本日の更新件数</div><i class="fa-solid fa-pen-to-square text-[#1677ff]"></i>
             </div>
             <div class="mt-3 text-3xl font-semibold">24</div>
-            <div class="mt-2 text-sm text-[#1f1f1f]">+5 前週比</div>
-          </article>
-          <article class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
+            <div class="mt-2 flex items-center justify-between text-sm">
+              <span class="text-[#1f1f1f]">+5 前週比</span><span class="font-medium text-[#1677ff]">履歴を見る</span>
+            </div>
+          </a>
+          <a class="block rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow transition hover:-translate-y-0.5 hover:border-[#ffd591]" href="#approval-panel">
             <div class="flex items-center justify-between">
               <div class="text-sm text-[#8c8c8c]">承認待ち件数</div><i class="fa-solid fa-circle-check text-[#faad14]"></i>
             </div>
             <div class="mt-3 text-3xl font-semibold">7</div>
-            <div class="mt-2 text-sm text-[#faad14]">2 件 SLA 超過</div>
-          </article>
-          <article class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
+            <div class="mt-2 flex items-center justify-between text-sm">
+              <span class="text-[#faad14]">2 件 SLA 超過</span><span class="font-medium text-[#1677ff]">承認待ちへ</span>
+            </div>
+          </a>
+          <a class="block rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow transition hover:-translate-y-0.5 hover:border-[#ffccc7]" href="#alert-panel">
             <div class="flex items-center justify-between">
               <div class="text-sm text-[#8c8c8c]">エラー/不整合件数</div><i class="fa-solid fa-triangle-exclamation text-[#ff4d4f]"></i>
             </div>
             <div class="mt-3 text-3xl font-semibold text-[#ff4d4f]">9</div>
-            <div class="mt-2 text-sm text-[#ff4d4f]">要対応</div>
-          </article>
+            <div class="mt-2 flex items-center justify-between text-sm">
+              <span class="text-[#ff4d4f]">要対応</span><span class="font-medium text-[#1677ff]">アラートへ</span>
+            </div>
+          </a>
         </section>
 
         <section class="mt-6 grid gap-6 xl:grid-cols-2">
-          <article class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
+          <article id="alert-panel" class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
             <div class="mb-4 flex items-center justify-between">
               <div>
                 <h2 class="text-base font-semibold">アラート</h2>
-                <p class="text-sm text-[#8c8c8c]">重要度順に表示</p>
               </div>
               <button class="rounded-lg border border-[#d9d9d9] bg-[#f5f5f5] px-3 py-2 text-sm font-medium">対象マスタへ移動</button>
             </div>
@@ -174,11 +181,10 @@
             </div>
           </article>
 
-          <article class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
+          <article id="approval-panel" class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
             <div class="mb-4 flex items-center justify-between">
               <div>
                 <h2 class="text-base font-semibold">承認待ち</h2>
-                <p class="text-sm text-[#8c8c8c]">上位 4 件を表示</p>
               </div>
               <div class="flex gap-2">
                 <span class="rounded-full bg-[#f5f5f5] px-3 py-1.5 text-xs font-semibold">全件</span>
@@ -209,11 +215,10 @@
         </section>
 
         <section class="mt-6 grid gap-6 xl:grid-cols-[1.6fr_0.9fr]">
-          <article class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
+          <article id="master-list" class="rounded-2xl border border-[#d9d9d9] bg-white p-5 card-shadow">
             <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <h2 class="text-base font-semibold">マスタ一覧テーブル</h2>
-                <p class="text-sm text-[#8c8c8c]">ソート、フィルタ、ページネーション対応</p>
               </div>
               <div class="flex flex-wrap gap-2">
                 <span class="rounded-full bg-[#f5f5f5] px-3 py-1.5 text-xs font-semibold">更新日 ▼</span>
@@ -248,7 +253,6 @@
               <div class="mb-4 flex items-center justify-between">
                 <div>
                   <h2 class="text-base font-semibold">更新履歴・通知</h2>
-                  <p class="text-sm text-[#8c8c8c]">全体 / 自分関連 / エラーのみ</p>
                 </div>
                 <div class="flex gap-2">
                   <span class="rounded-full bg-[#e6f4ff] px-3 py-1.5 text-xs font-semibold text-[#1677ff]">全体</span>

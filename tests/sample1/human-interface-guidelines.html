@@ -17,44 +17,18 @@
     }
     .short { white-space: nowrap; }
     .elevated {
-      box-shadow: 0 1px 1px rgba(28, 28, 30, 0.04), 0 8px 24px rgba(28, 28, 30, 0.06);
-    }
-    #menu-toggle {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-    #menu-toggle:not(:checked) ~ .app .drawer-backdrop,
-    #menu-toggle:not(:checked) ~ .app .drawer-panel {
-      opacity: 0;
-      pointer-events: none;
-    }
-    #menu-toggle:not(:checked) ~ .app .drawer-panel {
-      transform: translateX(-102%);
-    }
-    #menu-toggle:checked ~ .app .drawer-backdrop,
-    #menu-toggle:checked ~ .app .drawer-panel {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    #menu-toggle:checked ~ .app .drawer-panel {
-      transform: translateX(0);
-    }
-  </style>
+      box-shadow: 0 1px 2px rgba(28, 28, 30, 0.04), 0 4px 12px rgba(28, 28, 30, 0.04);
+    }</style>
 </head>
 <body class="min-h-screen antialiased">
-  <input id="menu-toggle" type="checkbox" aria-hidden="true">
   <div class="app min-h-screen">
     <header class="sticky top-0 z-30 border-b border-[#c6c6c8] bg-white/90 backdrop-blur">
       <div class="mx-auto flex max-w-[1680px] items-center gap-3 px-4 py-3 lg:px-6">
-        <label for="menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#c6c6c8] bg-white text-[#007aff] lg:hidden" aria-label="メニューを開く">
-          <i class="fa-solid fa-bars"></i>
-        </label>
         <div class="min-w-0">
           <div class="text-xs font-medium tracking-[0.16em] text-[#6c6c70] short">マスタ管理システム</div>
           <div class="truncate text-[22px] font-semibold text-[#1c1c1e]">ダッシュボード</div>
         </div>
-        <div class="hidden min-w-0 flex-[1.3] items-center gap-2 rounded-2xl border border-[#c6c6c8] bg-[#f2f2f7] px-4 py-2 lg:flex">
+        <div class="hidden min-w-0 flex-[1.3] items-center gap-2 rounded-xl border border-[#c6c6c8] bg-[#f2f2f7] px-4 py-2 lg:flex">
           <i class="fa-solid fa-magnifying-glass text-[#6c6c70]"></i>
           <input class="min-w-0 flex-1 border-0 bg-transparent text-sm outline-none placeholder:text-[#6c6c70]" placeholder="マスタ名・コード・担当部署で検索">
         </div>
@@ -75,7 +49,7 @@
             </span>
             <span class="short">未読 3 件</span>
           </button>
-          <button class="inline-flex items-center gap-3 rounded-2xl border border-[#c6c6c8] bg-white px-4 py-2 text-left text-sm">
+          <button class="inline-flex items-center gap-3 rounded-xl border border-[#c6c6c8] bg-white px-4 py-2 text-left text-sm">
             <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#eaf2ff] font-semibold text-[#007aff]">山</span>
             <span class="leading-tight">
               <span class="block font-semibold">山田 花子</span>
@@ -92,77 +66,55 @@
           </button>
         </div>
       </div>
-    </header>
-
-    <label for="menu-toggle" class="drawer-backdrop fixed inset-0 z-40 bg-black/30 transition lg:hidden"></label>
-    <aside class="drawer-panel fixed inset-y-0 left-0 z-50 w-[84vw] max-w-sm border-r border-[#c6c6c8] bg-[#f2f2f7] p-4 transition duration-200 lg:hidden">
-      <div class="mb-4 flex items-center justify-between">
-        <div>
-          <div class="text-xs font-medium tracking-[0.16em] text-[#6c6c70] short">sidebar</div>
-          <div class="text-lg font-semibold text-[#1c1c1e]">メニュー</div>
-        </div>
-        <label for="menu-toggle" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#c6c6c8] bg-white text-[#1c1c1e]" aria-label="メニューを閉じる">
-          <i class="fa-solid fa-xmark"></i>
-        </label>
+      <div class="mx-auto max-w-[1680px] px-4 pb-3 lg:hidden lg:px-6">
+      <div class="flex gap-2 overflow-x-auto text-sm">
+        <a class="whitespace-nowrap rounded-full bg-[#007aff] px-4 py-2 font-semibold text-white" href="#">ダッシュボード</a>
+        <a class="whitespace-nowrap rounded-full border border-[#c6c6c8] bg-white px-4 py-2 font-medium text-[#1c1c1e]" href="#">マスタ一覧</a>
+        <a class="whitespace-nowrap rounded-full border border-[#c6c6c8] bg-white px-4 py-2 font-medium text-[#1c1c1e]" href="#">承認待ち</a>
+        <a class="whitespace-nowrap rounded-full border border-[#c6c6c8] bg-white px-4 py-2 font-medium text-[#1c1c1e]" href="#">更新履歴</a>
       </div>
-      <div class="mb-4 flex items-center gap-2 rounded-2xl border border-[#c6c6c8] bg-white px-4 py-2">
-        <i class="fa-solid fa-magnifying-glass text-[#6c6c70]"></i>
-        <input class="w-full border-0 bg-transparent text-sm outline-none placeholder:text-[#6c6c70]" placeholder="マスタ名・コード・担当部署で検索">
-      </div>
-      <nav class="space-y-1">
-        <a class="flex items-center justify-between rounded-2xl bg-[#eaf2ff] px-4 py-3 text-[#007aff]" href="#">
-          <span class="flex items-center gap-3 font-semibold"><i class="fa-solid fa-house w-5 text-center"></i>ダッシュボード</span>
-          <span class="short rounded-full bg-white px-2 py-1 text-xs font-semibold">active</span>
-        </a>
-        <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-layer-group w-5 text-center text-[#6c6c70]"></i>マスタ一覧</a>
-        <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-hourglass-half w-5 text-center text-[#6c6c70]"></i>承認待ち</span><span class="short rounded-full bg-[#eaf2ff] px-2 py-1 text-xs font-semibold text-[#007aff]">7</span></a>
-        <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-clock-rotate-left w-5 text-center text-[#6c6c70]"></i>更新履歴</a>
-        <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-shield-halved w-5 text-center text-[#6c6c70]"></i>監査ログ</span><span class="short rounded-full bg-[#eaf2ff] px-2 py-1 text-xs font-semibold text-[#007aff]">new</span></a>
-        <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-user-gear w-5 text-center text-[#6c6c70]"></i>ユーザー/権限管理</span><span class="short rounded-full bg-white px-2 py-1 text-xs text-[#6c6c70]">admin</span></a>
-        <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-gear w-5 text-center text-[#6c6c70]"></i>設定</a>
-      </nav>
-    </aside>
+    </div>
+  </header>
 
     <div class="mx-auto flex max-w-[1680px] gap-6 px-4 py-6 lg:px-6">
       <aside class="hidden w-72 shrink-0 lg:block">
-        <div class="sticky top-24 rounded-[28px] border border-[#c6c6c8] bg-[#f2f2f7] p-4 elevated">
+        <div class="sticky top-24 rounded-[18px] border border-[#c6c6c8] bg-[#f2f2f7] p-4 elevated">
           <div class="mb-4">
-            <div class="text-xs font-medium tracking-[0.16em] text-[#6c6c70] short">sidebar</div>
-            <div class="mt-1 text-lg font-semibold text-[#1c1c1e]">メニュー</div>
+            <div class="text-xs font-medium tracking-[0.16em] text-[#6c6c70] short">navigation</div><div class="mt-1 text-lg font-semibold text-[#1c1c1e]">主要メニュー</div>
           </div>
           <nav class="space-y-1">
-            <a class="flex items-center justify-between rounded-2xl bg-[#eaf2ff] px-4 py-3 text-[#007aff]" href="#">
+            <a class="flex items-center justify-between rounded-xl bg-[#eaf2ff] px-4 py-3 text-[#007aff]" href="#">
               <span class="flex items-center gap-3 font-semibold"><i class="fa-solid fa-house w-5 text-center"></i>ダッシュボード</span>
               <span class="short rounded-full bg-white px-2 py-1 text-xs font-semibold">active</span>
             </a>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-layer-group w-5 text-center text-[#6c6c70]"></i>マスタ一覧</a>
-            <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-hourglass-half w-5 text-center text-[#6c6c70]"></i>承認待ち</span><span class="short rounded-full bg-[#eaf2ff] px-2 py-1 text-xs font-semibold text-[#007aff]">7</span></a>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-clock-rotate-left w-5 text-center text-[#6c6c70]"></i>更新履歴</a>
-            <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-shield-halved w-5 text-center text-[#6c6c70]"></i>監査ログ</span><span class="short rounded-full bg-[#eaf2ff] px-2 py-1 text-xs font-semibold text-[#007aff]">new</span></a>
-            <a class="flex items-center justify-between rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-user-gear w-5 text-center text-[#6c6c70]"></i>ユーザー/権限管理</span><span class="short rounded-full bg-white px-2 py-1 text-xs text-[#6c6c70]">admin</span></a>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-gear w-5 text-center text-[#6c6c70]"></i>設定</a>
+            <a class="flex items-center gap-3 rounded-xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-layer-group w-5 text-center text-[#6c6c70]"></i>マスタ一覧</a>
+            <a class="flex items-center justify-between rounded-xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-hourglass-half w-5 text-center text-[#6c6c70]"></i>承認待ち</span><span class="short rounded-full bg-[#eaf2ff] px-2 py-1 text-xs font-semibold text-[#007aff]">7</span></a>
+            <a class="flex items-center gap-3 rounded-xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-clock-rotate-left w-5 text-center text-[#6c6c70]"></i>更新履歴</a>
+            <a class="flex items-center justify-between rounded-xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-shield-halved w-5 text-center text-[#6c6c70]"></i>監査ログ</span><span class="short rounded-full bg-[#eaf2ff] px-2 py-1 text-xs font-semibold text-[#007aff]">new</span></a>
+            <a class="flex items-center justify-between rounded-xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><span class="flex items-center gap-3"><i class="fa-solid fa-user-gear w-5 text-center text-[#6c6c70]"></i>ユーザー/権限管理</span><span class="short rounded-full bg-white px-2 py-1 text-xs text-[#6c6c70]">admin</span></a>
+            <a class="flex items-center gap-3 rounded-xl px-4 py-3 font-medium text-[#1c1c1e] hover:bg-white" href="#"><i class="fa-solid fa-gear w-5 text-center text-[#6c6c70]"></i>設定</a>
           </nav>
         </div>
       </aside>
 
       <main class="min-w-0 flex-1 space-y-6">
         <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          <article class="rounded-[28px] border border-[#c6c6c8] bg-white p-5 elevated">
+          <article class="rounded-[18px] border border-[#c6c6c8] bg-white p-5 elevated">
             <div class="text-sm text-[#6c6c70]">管理中マスタ総数</div>
             <div class="mt-2 text-3xl font-semibold">248</div>
             <div class="mt-2 text-sm text-[#6c6c70]">前週比 +12</div>
           </article>
-          <article class="rounded-[28px] border border-[#c6c6c8] bg-white p-5 elevated">
+          <article class="rounded-[18px] border border-[#c6c6c8] bg-white p-5 elevated">
             <div class="text-sm text-[#6c6c70]">本日の更新件数</div>
             <div class="mt-2 text-3xl font-semibold">14</div>
             <div class="mt-2 text-sm text-[#6c6c70]">前日比 +4</div>
           </article>
-          <article class="rounded-[28px] border border-[#c6c6c8] bg-white p-5 elevated">
+          <article class="rounded-[18px] border border-[#c6c6c8] bg-white p-5 elevated">
             <div class="text-sm text-[#6c6c70]">承認待ち件数</div>
             <div class="mt-2 text-3xl font-semibold text-[#007aff]">7</div>
             <div class="mt-2 text-sm text-[#6c6c70]">SLA 超過 2 件</div>
           </article>
-          <article class="rounded-[28px] border border-[#c6c6c8] bg-white p-5 elevated">
+          <article class="rounded-[18px] border border-[#c6c6c8] bg-white p-5 elevated">
             <div class="text-sm text-[#6c6c70]">エラー/不整合件数</div>
             <div class="mt-2 text-3xl font-semibold text-[#ff3b30]">5</div>
             <div class="mt-2 text-sm text-[#6c6c70]">要確認 3 件</div>
@@ -170,11 +122,10 @@
         </section>
 
         <section class="grid gap-6 xl:grid-cols-2">
-          <article class="rounded-[28px] border border-[#c6c6c8] bg-white p-5 elevated">
+          <article class="rounded-[18px] border border-[#c6c6c8] bg-white p-5 elevated">
             <div class="mb-4 flex items-center justify-between gap-3">
               <div>
                 <h2 class="text-base font-semibold">アラート</h2>
-                <p class="mt-1 text-sm text-[#6c6c70]">重要度順に確認してください。</p>
               </div>
               <button class="rounded-full border border-[#c6c6c8] bg-[#f2f2f7] px-3 py-2 text-sm font-medium text-[#1c1c1e]">詳細を見る</button>
             </div>
@@ -221,7 +172,7 @@
             </div>
           </article>
 
-          <article class="rounded-[28px] border border-[#c6c6c8] bg-white p-5 elevated">
+          <article class="rounded-[18px] border border-[#c6c6c8] bg-white p-5 elevated">
             <div class="mb-4 flex items-center justify-between gap-3">
               <div>
                 <h2 class="text-base font-semibold">承認待ち</h2>
@@ -276,14 +227,13 @@
           </article>
         </section>
 
-        <section class="rounded-[28px] border border-[#c6c6c8] bg-white p-5 elevated">
+        <section class="rounded-[18px] border border-[#c6c6c8] bg-white p-5 elevated">
           <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
             <div>
               <h2 class="text-base font-semibold">マスタ一覧</h2>
-              <p class="mt-1 text-sm text-[#6c6c70]">ソート、フィルタ、ページネーション対応。</p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <span class="rounded-full border border-[#c6c6c8] bg-[#f2f2f7] px-3 py-2 text-sm text-[#1c1c1e]">最終更新日順</span>
+              <button class="rounded-full border border-[#007aff] bg-[#eaf2ff] px-3 py-2 text-sm font-medium text-[#007aff]">最終更新日 <i class="fa-solid fa-arrow-down-wide-short ml-2"></i></button>
               <button class="rounded-full border border-[#c6c6c8] bg-white px-3 py-2 text-sm font-medium text-[#1c1c1e]"><i class="fa-solid fa-filter mr-2 text-[#007aff]"></i>フィルタ</button>
               <button class="rounded-full border border-[#c6c6c8] bg-white px-3 py-2 text-sm font-medium text-[#1c1c1e]"><i class="fa-solid fa-sort mr-2 text-[#007aff]"></i>ソート</button>
             </div>
@@ -387,10 +337,9 @@
           </div>
         </section>
 
-        <section class="rounded-[28px] border border-[#c6c6c8] bg-white p-5 elevated">
+        <section class="rounded-[18px] border border-[#c6c6c8] bg-white p-5 elevated">
           <div class="mb-4">
             <h2 class="text-base font-semibold">更新履歴・通知</h2>
-            <p class="mt-1 text-sm text-[#6c6c70]">最新更新ログ、承認結果、エラー通知。</p>
           </div>
           <div class="grid gap-4 xl:grid-cols-3">
             <div class="rounded-[22px] border border-[#c6c6c8] bg-[#f2f2f7] p-4">

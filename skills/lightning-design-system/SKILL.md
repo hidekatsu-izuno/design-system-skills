@@ -23,6 +23,7 @@ Use this skill when the output should look and behave like Lightning Design Syst
 - Do not invent summary metrics, counts, status totals, badges, or other data points that are not present in the request or source specification.
 - Do not leave lists, tables, or other collection views empty in a mockup just because live data is unavailable; use representative sample content unless the specification calls for an empty state.
 - Do not render phrases that describe the design system itself.
+- Do not crowd the global header with too many same-weight actions when Lightning patterns would separate page actions, utility actions, and user controls.
 
 ## Working Model
 
@@ -38,6 +39,7 @@ Use this skill when the output should look and behave like Lightning Design Syst
 - Distinguish user-facing strings from author guidance in `AGENTS.md`; if text explains the spec rather than the product UI, do not render it, but keep explicit UI labels, sample content, and messages.
 - Translate behavior specifications such as sorting, filtering, tabs, pagination, and selection state into appropriate interactive UI or stateful visual treatment instead of emitting raw text tokens.
 - In mockups or static implementations, populate visible collections such as tables, lists, cards, and detail panes with representative sample data unless the request explicitly requires an empty state.
+- Keep global-header utility actions restrained and move secondary actions into page-level action groups or section controls when possible.
 - If the layout needs a drawer or mobile menu in static HTML, implement it as a CSS-only drawer controlled by `:checked`; do not rely on JavaScript-only menu toggles.
 - In forms and search areas, place at most two primary input fields per row; only clearly secondary helper controls may break this rule.
 - Choose shell, navigation, tabs, datatables, highlights, and states from `./DESIGN.md`.

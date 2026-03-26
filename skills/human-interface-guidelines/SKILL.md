@@ -23,6 +23,8 @@ Use this skill when the output should look and behave like Apple Human Interface
 - Do not invent summary metrics, counts, status totals, badges, or other data points that are not present in the request or source specification.
 - Do not leave lists, tables, or other collection views empty in a mockup just because live data is unavailable; use representative sample content unless the specification calls for an empty state.
 - Do not render phrases that describe the design system itself.
+- Do not rely on a generic web-style drawer or mirrored dashboard sidebar when a native-feeling split view, sidebar, or tab structure would fit.
+- Do not use large floating cards, loud shadows, or oversized rounded panels that undermine Apple’s calmer grouped-section patterns.
 
 ## Working Model
 
@@ -38,7 +40,7 @@ Use this skill when the output should look and behave like Apple Human Interface
 - Distinguish user-facing strings from author guidance in `AGENTS.md`; if text explains the spec rather than the product UI, do not render it, but keep explicit UI labels, sample content, and messages.
 - Translate behavior specifications such as sorting, filtering, tabs, pagination, and selection state into appropriate interactive UI or stateful visual treatment instead of emitting raw text tokens.
 - In mockups or static implementations, populate visible collections such as tables, lists, cards, and detail panes with representative sample data unless the request explicitly requires an empty state.
-- If the layout needs a drawer or mobile menu in static HTML, implement it as a CSS-only drawer controlled by `:checked`; do not rely on JavaScript-only menu toggles.
+- Prefer sidebars, split views, and tab bars over drawers. Use a drawer only when the requested Apple platform pattern truly calls for it; if used in static HTML, implement it with CSS-only state.
 - In forms and search areas, place at most two primary input fields per row; only clearly secondary helper controls may break this rule.
 - Choose shell, navigation, grouped lists, tables, panels, and states from `./DESIGN.md`.
 - Implement with documented HIG-style patterns first, especially for sidebars, compact navigation, grouped settings, and native-feeling sections.
@@ -54,6 +56,7 @@ Use this skill when the output should look and behave like Apple Human Interface
 - If the specification includes concrete sample data or example content for visible fields, render it as UI content rather than deleting it as explanation text.
 - For mockups, prefer realistic sample rows and values over blank placeholders in data views unless the intended state is explicitly empty.
 - Suppress wrapping for short strings of 8 characters or fewer in compact UI elements; use `white-space: nowrap` or an equivalent treatment so labels do not split awkwardly.
+- Prefer grouped sections, inset lists, subtle separators, and restrained depth over floating dashboard cards.
 
 ## Quality Bar
 

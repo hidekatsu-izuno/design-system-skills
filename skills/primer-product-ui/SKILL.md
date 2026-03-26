@@ -23,6 +23,7 @@ Use this skill when the output should look and behave like Primer Product UI. Re
 - Do not invent summary metrics, counts, status totals, badges, or other data points that are not present in the request or source specification.
 - Do not leave lists, tables, or other collection views empty in a mockup just because live data is unavailable; use representative sample content unless the specification calls for an empty state.
 - Do not render phrases that describe the design system itself.
+- Do not render row actions or workflow affordances as plain text when Primer would normally use inline links, buttons, or action menus.
 
 ## Working Model
 
@@ -38,6 +39,7 @@ Use this skill when the output should look and behave like Primer Product UI. Re
 - Distinguish user-facing strings from author guidance in `AGENTS.md`; if text explains the spec rather than the product UI, do not render it, but keep explicit UI labels, sample content, and messages.
 - Translate behavior specifications such as sorting, filtering, tabs, pagination, and selection state into appropriate interactive UI or stateful visual treatment instead of emitting raw text tokens.
 - In mockups or static implementations, populate visible collections such as tables, lists, cards, and detail panes with representative sample data unless the request explicitly requires an empty state.
+- Express row-level actions with inline links, buttons, or kebab menus so records read as actionable product UI rather than documentation.
 - If the layout needs a drawer or mobile menu in static HTML, implement it as a CSS-only drawer controlled by `:checked`; do not rely on JavaScript-only menu toggles.
 - In forms and search areas, place at most two primary input fields per row; only clearly secondary helper controls may break this rule.
 - Choose shell, navigation, lists, tables, panes, and states from `./DESIGN.md`.

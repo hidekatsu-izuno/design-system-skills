@@ -193,7 +193,6 @@
           <div class="mb-5 flex flex-wrap items-start justify-between gap-3">
             <div>
               <h2 class="text-lg font-medium">サマリー</h2>
-              <p class="mt-1 text-sm text-[color:var(--md-on-surface-variant)]">今日対応すべき件数をすぐに把握できます。</p>
             </div>
             <div class="rounded-full bg-[color:var(--md-primary-container)] px-4 py-2 text-sm text-[color:var(--md-primary)]">
               前日比で確認
@@ -248,7 +247,6 @@
             <div class="flex items-center justify-between gap-3 border-b border-[color:var(--md-outline-variant)] px-4 py-4 sm:px-6">
               <div>
                 <h2 class="text-lg font-medium">アラート</h2>
-                <p class="mt-1 text-sm text-[color:var(--md-on-surface-variant)]">重要度順に表示しています。</p>
               </div>
               <button class="inline-flex h-10 items-center rounded-full bg-[color:var(--md-primary)] px-4 text-sm font-medium text-[color:var(--md-on-primary)] shadow-tonal">対象マスタへ移動</button>
             </div>
@@ -368,7 +366,6 @@
           <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[color:var(--md-outline-variant)] px-4 py-4 sm:px-6">
             <div>
               <h2 class="text-lg font-medium">マスタ一覧</h2>
-              <p class="mt-1 text-sm text-[color:var(--md-on-surface-variant)]">ソート、フィルタ、ページングの状態を確認できます。</p>
             </div>
             <div class="flex flex-wrap gap-2">
               <button class="inline-flex h-10 items-center gap-2 rounded-full bg-[color:var(--md-surface-container)] px-4 text-sm font-medium text-[color:var(--md-on-surface)]">
@@ -404,7 +401,7 @@
                   <td class="whitespace-nowrap px-4 py-4"><span class="short-label inline-flex items-center rounded-full bg-[#d7f8d8] px-3 py-1 text-xs font-medium text-[color:var(--md-success)]">ACTIVE</span></td>
                   <td class="whitespace-nowrap px-4 py-4">12,480</td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--md-error)]">0</td>
-                  <td class="whitespace-nowrap px-4 py-4 sm:px-6"><span class="text-[color:var(--md-primary)]">詳細 / 編集 / 履歴</span></td>
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6"><div class="flex flex-wrap gap-2"><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">詳細</button><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">編集</button><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">履歴</button></div></td>
                 </tr>
                 <tr class="cursor-pointer border-t border-[color:var(--md-outline-variant)] transition hover:bg-[color:var(--md-surface-container)]/70">
                   <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--md-primary)] sm:px-6">取引先マスタ</td>
@@ -415,7 +412,7 @@
                   <td class="whitespace-nowrap px-4 py-4"><span class="short-label inline-flex items-center rounded-full bg-[#ffe2bd] px-3 py-1 text-xs font-medium text-[color:var(--md-warning)]">注意</span></td>
                   <td class="whitespace-nowrap px-4 py-4">3,042</td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--md-error)]">2</td>
-                  <td class="whitespace-nowrap px-4 py-4 sm:px-6"><span class="text-[color:var(--md-primary)]">詳細 / 編集 / 履歴</span></td>
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6"><div class="flex flex-wrap gap-2"><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">詳細</button><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">編集</button><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">履歴</button></div></td>
                 </tr>
                 <tr class="cursor-pointer border-t border-[color:var(--md-outline-variant)] transition hover:bg-[color:var(--md-surface-container)]/70">
                   <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--md-primary)] sm:px-6">商品分類マスタ</td>
@@ -426,7 +423,7 @@
                   <td class="whitespace-nowrap px-4 py-4"><span class="short-label inline-flex items-center rounded-full bg-[#d7f8d8] px-3 py-1 text-xs font-medium text-[color:var(--md-success)]">ACTIVE</span></td>
                   <td class="whitespace-nowrap px-4 py-4">480</td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--md-error)]">1</td>
-                  <td class="whitespace-nowrap px-4 py-4 sm:px-6"><span class="text-[color:var(--md-primary)]">詳細 / 編集 / 履歴</span></td>
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6"><div class="flex flex-wrap gap-2"><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">詳細</button><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">編集</button><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">履歴</button></div></td>
                 </tr>
                 <tr class="cursor-pointer border-t border-[color:var(--md-outline-variant)] transition hover:bg-[color:var(--md-surface-container)]/70">
                   <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--md-primary)] sm:px-6">拠点マスタ</td>
@@ -437,7 +434,7 @@
                   <td class="whitespace-nowrap px-4 py-4"><span class="short-label inline-flex items-center rounded-full bg-[#fde8e8] px-3 py-1 text-xs font-medium text-[color:var(--md-error)]">停止</span></td>
                   <td class="whitespace-nowrap px-4 py-4">96</td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--md-error)]">3</td>
-                  <td class="whitespace-nowrap px-4 py-4 sm:px-6"><span class="text-[color:var(--md-primary)]">詳細 / 編集 / 履歴</span></td>
+                  <td class="whitespace-nowrap px-4 py-4 sm:px-6"><div class="flex flex-wrap gap-2"><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">詳細</button><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">編集</button><button class="inline-flex h-8 items-center rounded-full border border-[color:var(--md-outline-variant)] bg-[color:var(--md-surface)] px-3 text-xs font-medium text-[color:var(--md-primary)]">履歴</button></div></td>
                 </tr>
               </tbody>
             </table>
@@ -458,7 +455,6 @@
             <div class="flex items-center justify-between gap-3 border-b border-[color:var(--md-outline-variant)] px-4 py-4 sm:px-6">
               <div>
                 <h2 class="text-lg font-medium">更新履歴</h2>
-                <p class="mt-1 text-sm text-[color:var(--md-on-surface-variant)]">全体 / 自分関連 / エラーのみを切り替えられます。</p>
               </div>
               <div class="flex items-center gap-2 rounded-full bg-[color:var(--md-surface-container)] px-2 py-2 text-sm">
                 <button class="rounded-full bg-[color:var(--md-primary)] px-4 py-2 font-medium text-[color:var(--md-on-primary)]">全体</button>

@@ -23,6 +23,8 @@ Use this skill when the output should look and behave like Atlassian Design Syst
 - Do not invent summary metrics, counts, status totals, badges, or other data points that are not present in the request or source specification.
 - Do not leave lists, tables, or other collection views empty in a mockup just because live data is unavailable; use representative sample content unless the specification calls for an empty state.
 - Do not render phrases that describe the design system itself.
+- Do not render row actions, alert actions, or navigation affordances as plain text or decorative chips when they are supposed to be interactive controls.
+- Do not use icon-only buttons without an accessible name such as `aria-label`.
 
 ## Working Model
 
@@ -38,6 +40,7 @@ Use this skill when the output should look and behave like Atlassian Design Syst
 - Distinguish user-facing strings from author guidance in `AGENTS.md`; if text explains the spec rather than the product UI, do not render it, but keep explicit UI labels, sample content, and messages.
 - Translate behavior specifications such as sorting, filtering, tabs, pagination, and selection state into appropriate interactive UI or stateful visual treatment instead of emitting raw text tokens.
 - In mockups or static implementations, populate visible collections such as tables, lists, cards, and detail panes with representative sample data unless the request explicitly requires an empty state.
+- Make row-level actions, alert-panel actions, and summary-card navigation visibly interactive using links, buttons, lozenges with anchors, or action-card affordances instead of static text.
 - If the layout needs a drawer or mobile menu in static HTML, implement it as a CSS-only drawer controlled by `:checked`; do not rely on JavaScript-only menu toggles.
 - In forms and search areas, place at most two primary input fields per row; only clearly secondary helper controls may break this rule.
 - Choose shell, navigation, lists, tables, banners, flags, and states from `./DESIGN.md`.
@@ -54,6 +57,7 @@ Use this skill when the output should look and behave like Atlassian Design Syst
 - If the specification includes concrete sample data or example content for visible fields, render it as UI content rather than deleting it as explanation text.
 - For mockups, prefer realistic sample rows and values over blank placeholders in data views unless the intended state is explicitly empty.
 - Suppress wrapping for short strings of 8 characters or fewer in compact UI elements; use `white-space: nowrap` or an equivalent treatment so labels do not split awkwardly.
+- Keep icon-only controls accessible by providing an accessible name.
 
 ## Quality Bar
 

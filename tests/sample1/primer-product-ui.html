@@ -216,7 +216,6 @@
             <div class="flex items-center justify-between gap-3 border-b border-[color:var(--border-muted)] px-5 py-4">
               <div>
                 <h2 class="text-base font-semibold text-[color:var(--fg)]">アラート</h2>
-                <p class="mt-1 text-sm text-[color:var(--fg-muted)]">重要度順に表示しています。</p>
               </div>
               <button class="rounded-md border border-[color:var(--border)] bg-white px-3 py-2 text-sm font-medium text-[color:var(--fg)]">詳細を見る</button>
             </div>
@@ -272,7 +271,6 @@
             <div class="flex items-center justify-between gap-3 border-b border-[color:var(--border-muted)] px-5 py-4">
               <div>
                 <h2 class="text-base font-semibold text-[color:var(--fg)]">承認待ち</h2>
-                <p class="mt-1 text-sm text-[color:var(--fg-muted)]">冒頭3件を優先しています。</p>
               </div>
               <button class="rounded-md border border-[color:var(--border)] bg-white px-3 py-2 text-sm font-medium text-[color:var(--fg)]">一覧へ</button>
             </div>
@@ -336,7 +334,6 @@
           <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
             <div>
               <h2 class="text-base font-semibold text-[color:var(--fg)]">マスタ一覧</h2>
-              <p class="text-sm text-[color:var(--fg-muted)]">ソート、フィルタ、ページングの状態を持つ一覧です。</p>
             </div>
             <div class="flex flex-wrap gap-2">
               <button class="rounded-md border border-[color:var(--border)] bg-[color:var(--canvas-subtle)] px-3 py-2 text-sm font-medium text-[color:var(--fg)]"><i class="fa-solid fa-filter mr-2 text-[color:var(--accent)]"></i>フィルタ</button>
@@ -369,7 +366,7 @@
                   <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#ddf4e9] px-2.5 py-1 text-xs font-semibold text-[color:var(--success)]">ACTIVE</span></td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--fg-muted)]">12,480</td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--danger)]">0</td>
-                  <td class="whitespace-nowrap px-4 py-4 text-[color:var(--accent)]">詳細 / 編集 / 履歴</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[color:var(--accent)]"><div class="flex flex-wrap gap-3 text-sm font-medium"><a class="text-[color:var(--accent)] hover:underline" href="#">詳細</a><a class="text-[color:var(--accent)] hover:underline" href="#">編集</a><a class="text-[color:var(--accent)] hover:underline" href="#">履歴</a></div></td>
                 </tr>
                 <tr class="border-t border-[color:var(--border-muted)] hover:bg-[color:var(--canvas-subtle)]">
                   <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--accent)]">取引先マスタ</td>
@@ -380,7 +377,7 @@
                   <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#fff2d5] px-2.5 py-1 text-xs font-semibold text-[color:var(--attention)]">注意</span></td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--fg-muted)]">3,042</td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--danger)]">2</td>
-                  <td class="whitespace-nowrap px-4 py-4 text-[color:var(--accent)]">詳細 / 編集 / 履歴</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[color:var(--accent)]"><div class="flex flex-wrap gap-3 text-sm font-medium"><a class="text-[color:var(--accent)] hover:underline" href="#">詳細</a><a class="text-[color:var(--accent)] hover:underline" href="#">編集</a><a class="text-[color:var(--accent)] hover:underline" href="#">履歴</a></div></td>
                 </tr>
                 <tr class="border-t border-[color:var(--border-muted)] hover:bg-[color:var(--canvas-subtle)]">
                   <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--accent)]">商品分類マスタ</td>
@@ -391,7 +388,7 @@
                   <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#ddf4e9] px-2.5 py-1 text-xs font-semibold text-[color:var(--success)]">ACTIVE</span></td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--fg-muted)]">480</td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--danger)]">1</td>
-                  <td class="whitespace-nowrap px-4 py-4 text-[color:var(--accent)]">詳細 / 編集 / 履歴</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[color:var(--accent)]"><div class="flex flex-wrap gap-3 text-sm font-medium"><a class="text-[color:var(--accent)] hover:underline" href="#">詳細</a><a class="text-[color:var(--accent)] hover:underline" href="#">編集</a><a class="text-[color:var(--accent)] hover:underline" href="#">履歴</a></div></td>
                 </tr>
                 <tr class="border-t border-[color:var(--border-muted)] hover:bg-[color:var(--canvas-subtle)]">
                   <td class="whitespace-nowrap px-4 py-4 font-medium text-[color:var(--accent)]">拠点マスタ</td>
@@ -402,7 +399,7 @@
                   <td class="whitespace-nowrap px-4 py-4"><span class="rounded-full bg-[#ffebe9] px-2.5 py-1 text-xs font-semibold text-[color:var(--danger)]">停止</span></td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--fg-muted)]">96</td>
                   <td class="whitespace-nowrap px-4 py-4 text-[color:var(--danger)]">3</td>
-                  <td class="whitespace-nowrap px-4 py-4 text-[color:var(--accent)]">詳細 / 編集 / 履歴</td>
+                  <td class="whitespace-nowrap px-4 py-4 text-[color:var(--accent)]"><div class="flex flex-wrap gap-3 text-sm font-medium"><a class="text-[color:var(--accent)] hover:underline" href="#">詳細</a><a class="text-[color:var(--accent)] hover:underline" href="#">編集</a><a class="text-[color:var(--accent)] hover:underline" href="#">履歴</a></div></td>
                 </tr>
               </tbody>
             </table>
@@ -423,7 +420,6 @@
             <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <h2 class="text-base font-semibold text-[color:var(--fg)]">更新履歴</h2>
-                <p class="text-sm text-[color:var(--fg-muted)]">全体 / 自分関連 / エラーのみを切り替えられます。</p>
               </div>
               <div class="inline-flex overflow-hidden rounded-md border border-[color:var(--border)]">
                 <button class="bg-[color:var(--accent)] px-4 py-2 text-sm font-medium text-white">全体</button>

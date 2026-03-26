@@ -23,6 +23,7 @@ Use this skill when the output should look and behave like Adobe Spectrum. Read 
 - Do not invent summary metrics, counts, status totals, badges, or other data points that are not present in the request or source specification.
 - Do not leave lists, tables, or other collection views empty in a mockup just because live data is unavailable; use representative sample content unless the specification calls for an empty state.
 - Do not render phrases that describe the design system itself.
+- Do not add section subtitles that merely paraphrase the region contents when Spectrum labels and controls already establish context.
 
 ## Working Model
 
