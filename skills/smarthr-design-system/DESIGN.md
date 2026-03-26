@@ -98,12 +98,29 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Rest, hover, focus, pressed, disabled, and loading if the action can take time.
 - **Avoid:** Avoid using a secondary style for the main call to action or adding decorative button variants outside the system hierarchy.
 
+**Tailwind implementation example:**
+```html
+<div class="flex items-center gap-3 bg-[#FFFFFF] p-2 text-[#23221F]">
+  <button class="inline-flex h-10 items-center justify-center rounded-md bg-[#00C4CC] px-4 text-sm font-medium text-white shadow-sm">従業員を追加</button>
+  <button class="inline-flex h-10 items-center justify-center rounded-md border border-[#D6D3D1] bg-[#FFFFFF] px-4 text-sm font-medium text-[#23221F]">下書き保存</button>
+</div>
+```
+
 ### Text field
 - **Official naming / aliases:** Text field
 - **Preferred style:** Use practical fields with explicit labels, helper text, and readable validation.
 - **Use when:** Use for short structured text entry with explicit labels and helper text.
 - **Important states:** Rest, focus, filled, invalid, disabled, and helper/error text visibility.
 - **Avoid:** Avoid placeholder-only labeling, hidden validation, or custom field chrome that breaks the system.
+
+**Tailwind implementation example:**
+```html
+<label class="grid max-w-sm gap-2 text-sm text-[#23221F]">
+  <span class="font-medium">部署名</span>
+  <input class="h-10 rounded-md border border-[#D6D3D1] bg-[#FFFFFF] px-4 text-sm text-[#23221F] outline-none focus:border-[#00C4CC] focus:ring-2 focus:ring-[#7AE6EA]" value="人事企画部" />
+  <span class="text-xs text-[#6B6764]">管理画面で表示される名称です。</span>
+</label>
+```
 
 ### Select/combobox
 - **Official naming / aliases:** Select and combobox in SmartHR UI
@@ -112,12 +129,37 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Closed, focused, expanded, selected, filtered, invalid, and disabled states.
 - **Avoid:** Avoid replacing structured choice controls with free text when the choices are known.
 
+**Tailwind implementation example:**
+```html
+<label class="grid max-w-sm gap-2 text-sm text-[#23221F]">
+  <span class="font-medium">担当チーム</span>
+  <div class="relative">
+    <select class="h-10 w-full appearance-none rounded-md border border-[#D6D3D1] bg-[#FFFFFF] px-4 pr-10 text-sm text-[#23221F] outline-none focus:border-[#00C4CC] focus:ring-2 focus:ring-[#7AE6EA]">
+      <option>デザインシステム担当</option>
+      <option>プラットフォーム担当</option>
+    </select>
+    <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-[#6B6764]">▾</span>
+  </div>
+</label>
+```
+
 ### Checkbox
 - **Official naming / aliases:** Checkbox
 - **Preferred style:** Use readable choice controls with enough spacing for Japanese labels and explanatory text.
 - **Use when:** Use for non-exclusive multi-select or independent boolean options.
 - **Important states:** Unchecked, checked, indeterminate when relevant, focus, and disabled.
 - **Avoid:** Avoid using checkboxes for mutually exclusive choices.
+
+**Tailwind implementation example:**
+```html
+<label class="flex items-start gap-3 text-sm text-[#23221F]">
+  <input type="checkbox" checked class="mt-1 h-4 w-4 rounded border-[#D6D3D1] text-[#00C4CC] focus:ring-[#7AE6EA]" />
+  <span>
+    <span class="block font-medium">メール通知を送る</span>
+    <span class="block text-xs text-[#6B6764]">公開時に要約を送信します。</span>
+  </span>
+</label>
+```
 
 ### Radio
 - **Official naming / aliases:** Radio button
@@ -126,12 +168,34 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Unchecked, checked, focus, disabled, and clear group labeling.
 - **Avoid:** Avoid using radios for long or dynamic option sets better served by a select.
 
+**Tailwind implementation example:**
+```html
+<fieldset class="grid gap-2 text-sm text-[#23221F]">
+  <legend class="font-medium">公開範囲</legend>
+  <label class="flex items-center gap-3"><input type="radio" name="visibility" checked class="h-4 w-4 border-[#D6D3D1] text-[#00C4CC] focus:ring-[#7AE6EA]" />組織内のみ</label>
+  <label class="flex items-center gap-3"><input type="radio" name="visibility" class="h-4 w-4 border-[#D6D3D1] text-[#00C4CC] focus:ring-[#7AE6EA]" />外部公開</label>
+</fieldset>
+```
+
 ### Switch
 - **Official naming / aliases:** Switch
 - **Preferred style:** Use readable choice controls with enough spacing for Japanese labels and explanatory text.
 - **Use when:** Use for immediate on/off states with direct effect or obvious persistence.
 - **Important states:** Off, on, focus, disabled, and any paired status text.
 - **Avoid:** Avoid using switches for actions that require confirmation or a final submit button.
+
+**Tailwind implementation example:**
+```html
+<div class="flex items-center justify-between gap-4 rounded-xl bg-[#F8F7F6] p-3 text-sm text-[#23221F]">
+  <div>
+    <p class="font-medium">更新をメール通知する</p>
+    <p class="text-xs text-[#6B6764]">切り替えた直後に設定へ反映します。</p>
+  </div>
+  <button type="button" role="switch" aria-checked="true" class="relative h-7 w-12 rounded-full bg-[#00C4CC]">
+    <span class="absolute right-1 top-1 h-5 w-5 rounded-full bg-white"></span>
+  </button>
+</div>
+```
 
 ### Date/time picker
 - **Official naming / aliases:** Date picker in SmartHR UI
@@ -140,12 +204,35 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Empty, selected, invalid, focused, expanded, and disabled states.
 - **Avoid:** Avoid ad hoc date text entry without clear format help when the system supports a picker.
 
+**Tailwind implementation example:**
+```html
+<div class="grid max-w-md gap-2 text-sm text-[#23221F] sm:grid-cols-2">
+  <label class="grid gap-2">
+    <span class="font-medium">利用開始日</span>
+    <input type="date" class="h-10 rounded-md border border-[#D6D3D1] bg-[#FFFFFF] px-4 text-sm outline-none focus:border-[#00C4CC] focus:ring-2 focus:ring-[#7AE6EA]" value="2026-04-12" />
+  </label>
+  <label class="grid gap-2">
+    <span class="font-medium">時刻</span>
+    <input type="time" class="h-10 rounded-md border border-[#D6D3D1] bg-[#FFFFFF] px-4 text-sm outline-none focus:border-[#00C4CC] focus:ring-2 focus:ring-[#7AE6EA]" value="09:30" />
+  </label>
+</div>
+```
+
 ### Search
 - **Official naming / aliases:** Search
 - **Preferred style:** Use search as a direct utility for finding records, people, or settings.
 - **Use when:** Use for finding records, screens, or content, often paired with filters.
 - **Important states:** Idle, focused, active query, loading, empty results, and clear/reset states.
 - **Avoid:** Avoid styling search like a decorative hero input detached from the workflow.
+
+**Tailwind implementation example:**
+```html
+<label class="relative block max-w-md text-sm text-[#23221F]">
+  <span class="sr-only">Search</span>
+  <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#6B6764]">⌕</span>
+  <input class="h-10 w-full rounded-md border border-[#D6D3D1] bg-[#FFFFFF] pl-11 pr-4 text-sm outline-none focus:border-[#00C4CC] focus:ring-2 focus:ring-[#7AE6EA]" placeholder="従業員を検索" />
+</label>
+```
 
 ### Menu
 - **Official naming / aliases:** Menu
@@ -154,12 +241,30 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Closed, open, focused item, selected item, disabled item, and submenu when needed.
 - **Avoid:** Avoid burying primary actions inside menus when they should stay visible.
 
+**Tailwind implementation example:**
+```html
+<div class="inline-grid min-w-56 gap-1 rounded-xl border border-[#D6D3D1] bg-[#FFFFFF] p-2 shadow-sm">
+  <button class="rounded-md px-3 py-2 text-left text-sm text-[#23221F] hover:bg-[#F8F7F6]">名前を変更</button>
+  <button class="rounded-md px-3 py-2 text-left text-sm text-[#23221F] hover:bg-[#F8F7F6]">複製する</button>
+  <button class="rounded-md px-3 py-2 text-left text-sm text-[#E5484D] hover:bg-[#F8F7F6]">アーカイブ</button>
+</div>
+```
+
 ### Tabs
 - **Official naming / aliases:** Tabs
 - **Preferred style:** Use tabs when sibling business views need fast switching without adding confusion.
 - **Use when:** Use for sibling views inside one destination or object context.
 - **Important states:** Inactive, active, focus-visible, overflow if needed, and disabled when applicable.
 - **Avoid:** Avoid using tabs for process steps or unrelated destinations.
+
+**Tailwind implementation example:**
+```html
+<nav class="flex gap-2 border-b border-[#D6D3D1] text-sm text-[#6B6764]">
+  <button class="-mb-px inline-flex h-10 items-center border-b-2 border-[#00C4CC] px-3 font-medium text-[#23221F]">概要</button>
+  <button class="inline-flex h-10 items-center rounded-t-lg bg-[#FFFFFF] px-3 hover:text-[#23221F]">アクティビティ</button>
+  <button class="inline-flex h-10 items-center px-3 hover:text-[#23221F]">設定</button>
+</nav>
+```
 
 ### Breadcrumb
 - **Official naming / aliases:** Breadcrumb
@@ -168,12 +273,36 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Normal, current page, truncated if space is tight, and focus-visible links.
 - **Avoid:** Avoid long breadcrumb chains when side navigation or stronger page titles would orient the user better.
 
+**Tailwind implementation example:**
+```html
+<nav aria-label="Breadcrumb" class="text-sm text-[#6B6764]">
+  <ol class="flex items-center gap-2">
+    <li><a class="hover:text-[#23221F]" href="#">ホーム</a></li>
+    <li>/</li>
+    <li><a class="hover:text-[#23221F]" href="#">申請一覧</a></li>
+    <li>/</li>
+    <li class="font-medium text-[#23221F]">詳細</li>
+  </ol>
+</nav>
+```
+
 ### App bar/header
 - **Official naming / aliases:** Header
 - **Preferred style:** Use practical page headers with title, summary, and a small action set.
 - **Use when:** Use to anchor the page title, context, and the most important actions.
 - **Important states:** Default, scrolled where applicable, focus on actions, and overflow handling.
 - **Avoid:** Avoid crowding the header with too many equal-weight actions.
+
+**Tailwind implementation example:**
+```html
+<header class="flex items-center justify-between gap-4 border-b border-[#D6D3D1] bg-[#F8F7F6] px-5 py-4 text-[#23221F]">
+  <div>
+    <p class="text-xs uppercase tracking-[0.12em] text-[#6B6764]">案件</p>
+    <h1 class="text-lg font-semibold">従業員設定</h1>
+  </div>
+  <button class="inline-flex h-10 items-center justify-center rounded-md bg-[#00C4CC] px-4 text-sm font-medium text-white">従業員を追加</button>
+</header>
+```
 
 ### Side navigation/drawer
 - **Official naming / aliases:** Side navigation
@@ -182,12 +311,31 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Collapsed or hidden, expanded, selected destination, hover, and keyboard focus.
 - **Avoid:** Avoid introducing side navigation on small scopes that do not need persistent structure.
 
+**Tailwind implementation example:**
+```html
+<aside class="flex w-64 flex-col gap-1 rounded-xl border border-[#D6D3D1] bg-[#FFFFFF] p-3 text-sm text-[#6B6764]">
+  <a class="rounded-md bg-[#F8F7F6] px-3 py-2 font-medium text-[#23221F]" href="#">概要</a>
+  <a class="rounded-md px-3 py-2 hover:bg-[#F8F7F6] hover:text-[#23221F]" href="#">メンバー</a>
+  <a class="rounded-md px-3 py-2 hover:bg-[#F8F7F6] hover:text-[#23221F]" href="#">設定</a>
+</aside>
+```
+
 ### Card
 - **Official naming / aliases:** Card
 - **Preferred style:** Use cards and sections to keep back-office information grouped and approachable.
 - **Use when:** Use to group related content, metrics, or actions into a coherent module.
 - **Important states:** Default, hover only if interactive, selected when applicable, and loading/skeleton states.
 - **Avoid:** Avoid turning every section into a decorative floating card when simpler grouping would be clearer.
+
+**Tailwind implementation example:**
+```html
+<section class="max-w-sm rounded-xl border border-[#D6D3D1] bg-[#FFFFFF] p-5 text-[#23221F] shadow-sm">
+  <p class="text-xs text-[#6B6764]">今週の概要</p>
+  <h3 class="mt-1 text-lg font-semibold">24 件の処理が完了</h3>
+  <p class="mt-2 text-sm text-[#6B6764]">進捗を整理して見せつつ、情報面を装飾過多なカードにしない例です。</p>
+  <button class="mt-4 text-sm font-medium text-[#00C4CC]">詳細を見る</button>
+</section>
+```
 
 ### Table/Data grid
 - **Official naming / aliases:** Table
@@ -196,12 +344,35 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Default, hover, selected row, sorted column, loading, empty, and error states.
 - **Avoid:** Avoid using a table when the user does not need row or column comparison. Avoid showing sort instructions like `organization_code ASC` as plain text when the state should be attached to headers or sort controls.
 
+**Tailwind implementation example:**
+```html
+<div class="overflow-hidden rounded-xl border border-[#D6D3D1] bg-[#FFFFFF]">
+  <table class="min-w-full text-left text-sm text-[#23221F]">
+    <thead class="bg-[#F8F7F6] text-xs uppercase tracking-[0.08em] text-[#6B6764]">
+      <tr><th class="px-4 py-3">名称</th><th class="px-4 py-3">状態</th><th class="px-4 py-3">担当</th></tr>
+    </thead>
+    <tbody>
+      <tr class="border-t border-[#D6D3D1]"><td class="px-4 py-3 font-medium">入社手続き</td><td class="px-4 py-3 text-[#0F9D58]">有効</td><td class="px-4 py-3">A. Chen</td></tr>
+      <tr class="border-t border-[#D6D3D1]"><td class="px-4 py-3 font-medium">制度見直し</td><td class="px-4 py-3 text-[#6B6764]">下書き</td><td class="px-4 py-3">M. Sato</td></tr>
+    </tbody>
+  </table>
+</div>
+```
+
 ### List
 - **Official naming / aliases:** List
 - **Preferred style:** Use lists where the content is lighter-weight or more narrative than a full table.
 - **Use when:** Use for lighter-weight collections or rows that need more flexible content than a table.
 - **Important states:** Default, hover if interactive, selected when needed, loading, and empty states.
 - **Avoid:** Avoid lists when the task needs stable columns, sorting, or bulk data operations.
+
+**Tailwind implementation example:**
+```html
+<ul class="max-w-md divide-y divide-[#D6D3D1] rounded-xl border border-[#D6D3D1] bg-[#FFFFFF] text-sm text-[#23221F]">
+  <li class="flex items-center justify-between px-4 py-3"><span class="font-medium">確認依頼</span><span class="text-[#6B6764]">10:30</span></li>
+  <li class="flex items-center justify-between px-4 py-3"><span class="font-medium">承認待ち</span><span class="text-[#6B6764]">保留中</span></li>
+</ul>
+```
 
 ### Badge
 - **Official naming / aliases:** Status label
@@ -210,12 +381,25 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Neutral, positive, warning, danger, and selected/filter-active where relevant.
 - **Avoid:** Avoid using badges as the only way to communicate critical status.
 
+**Tailwind implementation example:**
+```html
+<span class="inline-flex items-center rounded-md bg-[#F8F7F6] px-3 py-1 text-xs font-semibold text-[#00C4CC]">公開中</span>
+```
+
 ### Tooltip
 - **Official naming / aliases:** Tooltip
 - **Preferred style:** Use tooltips sparingly to clarify controls without hiding essential guidance.
 - **Use when:** Use for supporting clarification that should not interrupt the task flow.
 - **Important states:** Hidden, visible, delayed appearance, and accessible trigger focus.
 - **Avoid:** Avoid hiding required instructions or validation inside tooltips.
+
+**Tailwind implementation example:**
+```html
+<div class="relative inline-flex items-center gap-2 text-sm text-[#23221F]">
+  <button class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#D6D3D1] bg-[#FFFFFF]">i</button>
+  <div class="absolute left-10 top-1/2 w-48 -translate-y-1/2 rounded-md bg-[#23221F] px-3 py-2 text-xs text-white shadow-sm">必要な補足だけを、その場で伝える例です。</div>
+</div>
+```
 
 ### Dialog/Modal
 - **Official naming / aliases:** Dialog
@@ -224,12 +408,37 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Closed, open, focus trapped, destructive confirmation, and loading/submit state.
 - **Avoid:** Avoid using dialogs for routine inline edits that fit naturally in the page.
 
+**Tailwind implementation example:**
+```html
+<div class="flex min-h-[240px] items-center justify-center bg-black/30 p-6">
+  <div class="w-full max-w-md rounded-xl bg-[#FFFFFF] p-6 text-[#23221F] shadow-sm">
+    <h3 class="text-lg font-semibold">変更を破棄しますか？</h3>
+    <p class="mt-2 text-sm text-[#6B6764]">保存していない編集内容は削除されます。</p>
+    <div class="mt-6 flex justify-end gap-3">
+      <button class="inline-flex h-10 items-center justify-center rounded-md border border-[#D6D3D1] px-4 text-sm font-medium">キャンセル</button>
+      <button class="inline-flex h-10 items-center justify-center rounded-md bg-[#E5484D] px-4 text-sm font-medium text-white">破棄する</button>
+    </div>
+  </div>
+</div>
+```
+
 ### Toast/Snackbar
 - **Official naming / aliases:** Toast / notification
 - **Preferred style:** Use toast or notice patterns for non-blocking business feedback.
 - **Use when:** Use for transient action feedback that should not block progress.
 - **Important states:** Appearing, visible, dismissing, action available, and stacked if multiple are possible.
 - **Avoid:** Avoid using transient feedback for critical errors that must remain visible.
+
+**Tailwind implementation example:**
+```html
+<div class="inline-flex items-start gap-3 rounded-xl border border-[#D6D3D1] bg-[#FFFFFF] px-4 py-3 text-sm text-[#23221F] shadow-sm">
+  <span class="mt-0.5 h-2.5 w-2.5 rounded-full bg-[#0F9D58]" aria-hidden="true"></span>
+  <div>
+    <p class="font-medium">変更を保存しました</p>
+    <p class="text-[#6B6764]">更新内容をすぐに共有できます。</p>
+  </div>
+</div>
+```
 
 ### Progress/Loading
 - **Official naming / aliases:** Loader and progress
@@ -238,12 +447,35 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Important states:** Idle, indeterminate, determinate, skeleton, and completion state.
 - **Avoid:** Avoid spinner-only loading when skeletons or explicit progress would reduce uncertainty.
 
+**Tailwind implementation example:**
+```html
+<div class="max-w-sm space-y-2 text-sm text-[#23221F]">
+  <div class="flex items-center justify-between">
+    <span class="font-medium">ファイルをアップロード中</span>
+    <span class="text-[#6B6764]">64%</span>
+  </div>
+  <div class="h-2 overflow-hidden rounded-full bg-[#F8F7F6]">
+    <div class="h-full w-[64%] bg-[#00C4CC]"></div>
+  </div>
+</div>
+```
+
 ### Pagination
 - **Official naming / aliases:** Pagination
 - **Preferred style:** Use pagination in longer administrative lists and records where chunking helps orientation.
 - **Use when:** Use when chunking long result sets improves orientation, performance, or control.
 - **Important states:** Default, current page, hover/focus, disabled edge controls, and compact variants.
 - **Avoid:** Avoid pagination when search, filtering, or progressive loading would better fit the workflow.
+
+**Tailwind implementation example:**
+```html
+<nav aria-label="Pagination" class="flex items-center gap-2 text-sm text-[#23221F]">
+  <button class="inline-flex h-9 items-center justify-center rounded-md border border-[#D6D3D1] px-3">前へ</button>
+  <button class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[#00C4CC] text-white">1</button>
+  <button class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[#D6D3D1]">2</button>
+  <button class="inline-flex h-9 items-center justify-center rounded-md border border-[#D6D3D1] px-3">次へ</button>
+</nav>
+```
 
 ### Layout Rules
 - Use straightforward page composition with clear title, navigation, and content blocks.
