@@ -8,7 +8,7 @@ Use this specification for Japanese business SaaS, HR workflows, and back-office
 - **Primary product focus:** HR SaaS product UI
 - **Platforms:** Web: Yes | primary product target | iOS: Limited | app-specific not central | Android: Limited | app-specific not public focus | Desktop: Yes | desktop web product
 - **Status:** Active | SmartHR maintained
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Design for trust, clarity, and dependable business operation.
@@ -493,7 +493,7 @@ Representative SmartHR palette for generation based on public design-token guida
 - **Default page structure:** Use a calm business shell with a readable header, practical navigation, and content grouped into forms, lists, and sections.
 - **Default density:** Use medium density with readable spacing.
 - **Default navigation model:** Use straightforward navigation, tabs, and side navigation only where task organization benefits.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use stacked or well-aligned labeled fields with explicit validation and helper text.
 - **Preferred feedback pattern:** Use inline validation, notices, toasts, and dialogs with clear business wording.
 - **Preferred data-display pattern:** Use tables, cards, and lists for employee data, settings, and administrative workflows.

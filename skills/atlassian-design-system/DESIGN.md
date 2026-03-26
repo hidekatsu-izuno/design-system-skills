@@ -8,7 +8,7 @@ Use this specification for collaboration-heavy SaaS and work-management UI. Favo
 - **Primary product focus:** Atlassian cloud products
 - **Platforms:** Web: Yes | cloud web apps | iOS: N/A | not a native iOS system | Android: N/A | web-first | Desktop: Yes | desktop web apps
 - **Status:** Active | core Atlassian system
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Optimize for collaborative work and high-information screens.
@@ -493,7 +493,7 @@ Representative Atlassian palette for generation based on current public guidance
 - **Default page structure:** Use a workspace shell with side navigation, a practical page header, and dense operational content blocks.
 - **Default density:** Use medium-to-dense layout density.
 - **Default navigation model:** Use side navigation, tabs, breadcrumbs, and in-context actions.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use structured sections, inline help, and strong field-level validation.
 - **Preferred feedback pattern:** Use inline messages, flags, banners, and dialog confirmation for destructive changes.
 - **Preferred data-display pattern:** Use tables, issue lists, cards, side panels, and metadata-rich rows.

@@ -8,7 +8,7 @@ Use this specification for Ameba-flavored web product UI that should feel friend
 - **Primary product focus:** Ameba web product UI and brand-consistent digital experiences
 - **Platforms:** Web: Yes | primary public guidance | iOS: Limited | catalog coverage exists but web-first public docs | Android: Limited | catalog coverage exists but web-first public docs | Desktop: Yes | strong browser product fit
 - **Status:** Active | publicly maintained Spindle guidance
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Respect the user and avoid UI that feels pushy, abrupt, or self-centered.

@@ -8,7 +8,7 @@ Use this specification for productive, cross-platform Microsoft-style applicatio
 - **Primary product focus:** Cross-platform Microsoft product UI
 - **Platforms:** Web: Yes | web first docs | iOS: Yes | cross-platform guidance | Android: Yes | Android support via Fluent UI | Desktop: Yes | Windows desktop heritage
 - **Status:** Active | Fluent 2 current
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Design for productive tasks, not pure marketing impression.
@@ -493,7 +493,7 @@ Representative Fluent 2 palette for generation. Use tokens in implementation; th
 - **Default page structure:** Use a productivity shell with persistent navigation, clear page title, command region, and structured content panes.
 - **Default density:** Use medium-to-compact density by default.
 - **Default navigation model:** Use left navigation, tabs, toolbars, and contextual command surfaces.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use aligned labeled fields, strong helper text, inline validation, and clearly grouped actions.
 - **Preferred feedback pattern:** Use message bars, toasts, inline status, and dialogs only when interruption is necessary.
 - **Preferred data-display pattern:** Use structured tables, lists, cards, and panels with visible status metadata.

@@ -75,10 +75,22 @@ Examples:
 - `Use smarthr-design-system for a Japanese back-office UI`
 - `Use primer-product-ui for a developer-facing admin screen`
 
+## How `SKILL.md` and `DESIGN.md` Work Together
+
+Each design-system skill is split into two files with different responsibilities:
+
+- `DESIGN.md` is the design-system reference. It defines the visual language and component guidance such as layout patterns, navigation choices, colors, typography, spacing, states, and preferred UI treatments.
+- `SKILL.md` is the agent behavior contract. It tells the agent how to apply that design system to a task, including workflow, must-rules, failure cases, copy constraints, and what to preserve or avoid from the source specification.
+
+In practice, the intended flow is:
+
+- Read `DESIGN.md` first to understand what the target design system should look and feel like.
+- Use `SKILL.md` to decide how to translate the user's request or source spec into an output that follows that design system correctly.
+
 These skills are designed around the following assumptions:
 
 - The agent should read `DESIGN.md` before making visual or structural decisions
-- `SKILL.md` defines the behavior, layout, copy, and output constraints for that design system
+- The agent should use `SKILL.md` to enforce task behavior, guardrails, and output constraints
 - The agent should not invent visible sections or UI blocks that are not requested in the prompt or source spec such as `AGENTS.md`
 
 ## Directory Structure

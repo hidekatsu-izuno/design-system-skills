@@ -8,7 +8,7 @@ Use this specification for CRM-style, record-centric business applications. Favo
 - **Primary product focus:** Salesforce application UI
 - **Platforms:** Web: Yes | responsive enterprise web | iOS: Limited | Salesforce mobile patterns separate | Android: Limited | mobile web and Salesforce apps | Desktop: Yes | desktop CRM workflows
 - **Status:** Active | SLDS 1 public docs
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Design around records, lists, and business-object workflows.
@@ -493,7 +493,7 @@ Representative Lightning palette for generation based on public SLDS guidance an
 - **Default page structure:** Use an app shell or record-page shell with utility navigation, object header, tabs, and related content regions.
 - **Default density:** Use medium-to-dense density with strong business scanability.
 - **Default navigation model:** Use global app navigation, object context, tabs, and contextual utility actions.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use sectioned enterprise forms with explicit labels, validation, and record-level actions.
 - **Preferred feedback pattern:** Use prompts, scoped notifications, and inline field messaging for business actions.
 - **Preferred data-display pattern:** Use data tables, record lists, related lists, and object summaries as primary patterns.

@@ -8,7 +8,7 @@ Use this specification for serious enterprise interfaces, operational dashboards
 - **Primary product focus:** Enterprise products and dashboards
 - **Platforms:** Web: Yes | strong web focus | iOS: Limited | not primary focus | Android: Limited | not Android-native guidance | Desktop: Yes | enterprise dashboards
 - **Status:** Active | IBM maintained
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Optimize for clarity and enterprise-scale usability.
@@ -493,7 +493,7 @@ Representative Carbon palette for generation based on public themes and IBM blue
 - **Default page structure:** Use an enterprise shell with side nav, precise sectioning, and structured content panes aligned to the grid.
 - **Default density:** Use medium-to-dense density with strong alignment.
 - **Default navigation model:** Use shell navigation, side nav, tabs, and breadcrumbs for complex product structures.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use labeled fields, strong validation, and orderly field groups that align tightly to the grid.
 - **Preferred feedback pattern:** Use inline messaging, notifications, and modal confirmation only when a stronger interruption is justified.
 - **Preferred data-display pattern:** Use tables, tiles, panels, and status-rich lists with disciplined hierarchy.

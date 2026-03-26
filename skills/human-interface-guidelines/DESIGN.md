@@ -8,7 +8,7 @@ Use this specification for interfaces that should feel native to Apple platforms
 - **Primary product focus:** Apple platform apps
 - **Platforms:** Web: Yes | Safari/web adaptation | iOS: Yes | iPhone and iPad native | Android: N/A | Apple-only guidance | Desktop: Yes | macOS specific
 - **Status:** Active | continuously updated by Apple
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Prioritize clarity in labels, icon use, and overall navigation structure.
@@ -493,7 +493,7 @@ Representative Apple system palette for generation. Use semantic system colors i
 - **Default page structure:** Use content-first structure with native headers, grouped sections, and platform-appropriate sidebars or tab bars.
 - **Default density:** Use comfortable density. Let breathing room and legibility outweigh data compression.
 - **Default navigation model:** Use tab bars, sidebars, toolbars, split views, and sheets according to Apple platform conventions.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use clearly grouped fields, native pickers, and conservative validation messaging.
 - **Preferred feedback pattern:** Use alerts, banners, inline validation, and native transient feedback sparingly.
 - **Preferred data-display pattern:** Use lists, collections, and tables that prioritize readability over operational density.

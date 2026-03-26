@@ -8,7 +8,7 @@ Use this specification for digital products that need a deliberate visual system
 - **Primary product focus:** Client and in-house digital products
 - **Platforms:** Web: Yes | website and app design | iOS: N/A | not publicly positioned for iOS | Android: N/A | not public Android system | Desktop: Yes | desktop productivity sites
 - **Status:** Active | publicly launched 2025
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Use a reusable visual language that still preserves product personality.
@@ -491,7 +491,7 @@ Representative Sparkle palette inferred from public Sparkle Design examples and 
 - **Default page structure:** Use a clear product shell with opportunities for brand expression in selected anchor areas, while keeping operational content practical.
 - **Default density:** Use medium density with enough breathing room to let the visual system read clearly.
 - **Default navigation model:** Use familiar top-level nav, tabs, and side navigation in a product-specific but readable way.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use clean, well-labeled forms with branded restraint rather than decorative novelty.
 - **Preferred feedback pattern:** Use notices, toasts, and dialogs that match the system's visual voice without becoming theatrical.
 - **Preferred data-display pattern:** Use cards, lists, and tables with stronger composition than generic admin UI, but keep them operational.

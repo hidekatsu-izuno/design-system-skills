@@ -8,7 +8,7 @@ Use this specification for GitHub-like product interfaces, developer tools, sett
 - **Primary product focus:** GitHub product interfaces
 - **Platforms:** Web: Yes | GitHub web app UI | iOS: Limited | not primary target | Android: N/A | not Android-native guidance | Desktop: Yes | desktop-heavy workflows
 - **Status:** Active | GitHub maintained
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Let product utility and content hierarchy drive the screen.
@@ -493,7 +493,7 @@ Representative Primer palette for generation based on current product UI primiti
 - **Default page structure:** Use a utility-first product page with a clear title, optional side navigation, explicit section grouping, and practical action placement.
 - **Default density:** Use medium density with compact tendencies for settings and tool screens.
 - **Default navigation model:** Use side navigation, underline nav, tabs, and page headers for strong orientation.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use clearly labeled fields, concise help text, and practical action groups.
 - **Preferred feedback pattern:** Use banners, flash messages, inline validation, and dialogs only when blocking is justified.
 - **Preferred data-display pattern:** Use lists, tables, cards, and timelines in a calm, utility-first way.

@@ -8,7 +8,7 @@ Use this specification for Japanese public-service websites, form-heavy governme
 - **Primary product focus:** Japanese public service websites
 - **Platforms:** Web: Yes | government websites | iOS: N/A | web-first guidance | Android: N/A | web-first guidance | Desktop: Yes | administrative web systems
 - **Status:** Beta | public government rollout
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Design for trust, clarity, and public comprehension.
@@ -493,7 +493,7 @@ Representative Digital Agency palette for generation based on public component e
 - **Default page structure:** Use a conventional service page or form page with strong heading hierarchy, notices, and a clear primary action path.
 - **Default density:** Use medium density with generous readability for text and forms.
 - **Default navigation model:** Use straightforward header navigation, breadcrumbs, side navigation, and in-page section structure when needed.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use strongly labeled fields, clear required markers, helper text, and explicit error messaging.
 - **Preferred feedback pattern:** Use notices, inline errors, confirmation pages, and dialogs only for essential interruption.
 - **Preferred data-display pattern:** Use simple tables, lists, summaries, and result pages with conservative styling.

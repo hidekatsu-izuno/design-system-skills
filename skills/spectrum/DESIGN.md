@@ -8,7 +8,7 @@ Use this specification for Adobe-style product experiences, creative workflows, 
 - **Primary product focus:** Adobe product and marketing flows
 - **Platforms:** Web: Yes | web workflows | iOS: Limited | some mobile web patterns | Android: Limited | not Android-native guidance | Desktop: Yes | desktop creative workflows
 - **Status:** Active | Adobe maintained
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Support creative and professional workflows without losing clarity.
@@ -493,7 +493,7 @@ Representative Spectrum palette for generation. Use official Spectrum tokens in 
 - **Default page structure:** Use a workflow shell with clear content region, supporting panels, and polished but restrained app chrome.
 - **Default density:** Use medium density, allowing denser panels where workflow complexity requires it.
 - **Default navigation model:** Use shell navigation, tabs, side panels, and contextual overlays according to the workflow.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use polished labeled fields with concise helper text and controlled validation.
 - **Preferred feedback pattern:** Use toasts, dialogs, popovers, and inline status patterns with a calm but refined tone.
 - **Preferred data-display pattern:** Use lists, asset grids, tables, and panel-based details depending on workflow fit.

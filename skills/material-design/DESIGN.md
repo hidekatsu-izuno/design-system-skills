@@ -8,7 +8,7 @@ Use this specification for adaptive product UI that should feel expressive, stru
 - **Primary product focus:** Cross-platform product UI
 - **Platforms:** Web: Yes | core web guidance | iOS: Yes | Android emphasis but adaptable | Android: Yes | Android canonical | Desktop: Yes | large-screen guidance
 - **Status:** Active | Material 3 current
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Use semantic roles and emphasis levels rather than arbitrary decoration.
@@ -78,11 +78,11 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 
 ## Components
 ### Navigation Rules
-- **MUST:** If the request or source specification implies a side menu, implement a navigation drawer rather than a fixed sidebar-only layout.
-- **MUST:** In static HTML, implement drawer open and close behavior with CSS-only state using `:checked`.
-- **MUST:** Provide a visible drawer trigger when side navigation is required.
-- **MUST:** Translate behavioral requirements such as sort order, alternate sort, filtering, and toggle state into UI controls or visible state indicators rather than raw text.
-- **MUST:** Treat the top app bar as an opaque surface by default on product and admin screens; do not apply backdrop blur or translucent backgrounds unless the request explicitly asks for that effect.
+- When a product or admin screen needs side navigation, Material typically uses a navigation drawer rather than a fixed sidebar-only layout.
+- In static HTML mocks, drawer examples should show an explicit open and close model; CSS-only state management is acceptable when scripting is unavailable.
+- Side navigation should include a visible drawer trigger or equivalent top-level control when it is not persistently exposed.
+- Sorting, alternate sort, filtering, and toggle requirements should appear as controls or visible state indicators rather than raw text.
+- Product and admin top app bars usually read as opaque surfaces; avoid backdrop blur or translucency unless the request explicitly asks for that effect.
 - Use bottom navigation for a small number of top-level destinations on mobile.
 - Use navigation rail mainly for tablet or compact desktop layouts when persistent section switching helps and labels can remain secondary.
 - Use a navigation drawer as the default side navigation pattern for desktop product and admin screens that need a recognizable side menu with visible labels.
@@ -502,7 +502,7 @@ Representative Material 3 palette for generation. Use semantic roles in implemen
 - **Default density:** Use medium density by default. Tighten spacing only for data-heavy enterprise screens.
 - **Default navigation model:** Use app bar plus bottom navigation on mobile, drawer on desktop side-menu layouts, and rail only for medium-width or compact adaptive shells.
 - **Pre-implementation check:** Before writing page content, confirm whether the screen needs a drawer, whether static HTML requires `:checked` state, and whether the app bar needs a menu trigger. If yes, implement that shell first.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use stacked labeled fields with helper text, clear validation, and one dominant submit action.
 - **Preferred feedback pattern:** Use snackbars for transient updates, inline errors for forms, and dialogs only for blocking decisions.
 - **Preferred data-display pattern:** Use cards, lists, and data tables with clear row hierarchy and restrained inline actions.

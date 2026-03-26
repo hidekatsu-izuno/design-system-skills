@@ -8,7 +8,7 @@ Use this specification for enterprise web applications, dashboards, and internal
 - **Primary product focus:** Enterprise web applications
 - **Platforms:** Web: Yes | primary target | iOS: Limited | Ant Design Mobile exists | Android: Limited | Ant Design Mobile exists | Desktop: Yes | enterprise desktop web
 - **Status:** Active | v5 current
-- **Implementation note:** This file is a standalone generation spec. Follow it directly when producing UI in this design system.
+- **Reference note:** Use this file as the design-system reference for visual language, components, and layout decisions.
 
 ### Design Principles
 - Design for efficient task completion in data-heavy environments.
@@ -493,7 +493,7 @@ Representative Ant Design palette for generation based on v5 semantics and commo
 - **Default page structure:** Use a management shell with optional sider, page header, filter region, and structured content blocks.
 - **Default density:** Use medium-to-dense density by default.
 - **Default navigation model:** Use top nav, sider, tabs, steps, and breadcrumbs depending on workflow depth.
-- **Behavior-to-UI check:** Before writing visible copy, identify any spec lines that describe behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions, and express them as controls or selected states rather than literal text.
+- **Behavior-to-UI expectation:** This design system expects behavior or state such as sorting, filtering, tab switching, pagination, or allowed transitions to appear as controls or selected states rather than literal text.
 - **Preferred form composition:** Use labeled fields, sectioned forms, inline validation, and clear submit/cancel actions.
 - **Preferred feedback pattern:** Use message, notification, result, and modal patterns according to urgency.
 - **Preferred data-display pattern:** Use tables, cards, lists, statistics, and charts with explicit filters and sorting.
