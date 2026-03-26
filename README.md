@@ -4,6 +4,8 @@ A collection of agent skills for generating UI mocks and frontend outputs in the
 
 Each skill includes a `SKILL.md` and a `DESIGN.md`. Together, they help an agent choose layout patterns, navigation structures, components, tone, and copy style that match the target design system instead of falling back to a generic dashboard UI.
 
+Unlike a general-purpose `frontend-design` skill, this repository is opinionated around specific design systems. Use `frontend-design` when you want broad frontend design and implementation help without locking the output to a named system; use these skills when the result should be recognizably aligned to Material Design, Ant Design, SmartHR Design System, and other concrete design languages.
+
 ## Included Skills
 
 - [Ant Design](https://ant.design/)
