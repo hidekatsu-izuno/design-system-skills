@@ -36,6 +36,7 @@ Use this skill when the output should look and behave like the Digital Agency De
 
 - Understand the user's content, task flow, and required screen regions first.
 - Preserve the requested information architecture and labels unless the task explicitly changes them.
+- If a related existing screen already exists, preserve the existing sidebar menu CSS and HTML exactly as the baseline and limit page-specific changes to the main content area only.
 - Distinguish user-facing strings from author guidance in `AGENTS.md`; if text explains the spec rather than the product UI, do not render it, but keep explicit UI labels, sample content, and messages.
 - Translate behavior specifications such as sorting, filtering, tabs, pagination, and selection state into appropriate interactive UI or stateful visual treatment instead of emitting raw text tokens.
 - Attach sort state to the active column header, sort button, or filter chip instead of adding standalone labels such as `最終更新日順`.

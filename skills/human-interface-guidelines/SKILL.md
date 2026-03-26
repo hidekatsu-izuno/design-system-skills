@@ -37,6 +37,7 @@ Use this skill when the output should look and behave like Apple Human Interface
 
 - Understand the user's content, task flow, and required screen regions first.
 - Preserve the requested information architecture and labels unless the task explicitly changes them.
+- If a related existing screen already exists, preserve the existing sidebar menu CSS and HTML exactly as the baseline and limit page-specific changes to the main content area only.
 - Distinguish user-facing strings from author guidance in `AGENTS.md`; if text explains the spec rather than the product UI, do not render it, but keep explicit UI labels, sample content, and messages.
 - Translate behavior specifications such as sorting, filtering, tabs, pagination, and selection state into appropriate interactive UI or stateful visual treatment instead of emitting raw text tokens.
 - In mockups or static implementations, populate visible collections such as tables, lists, cards, and detail panes with representative sample data unless the request explicitly requires an empty state.
